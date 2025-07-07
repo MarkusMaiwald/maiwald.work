@@ -4,10 +4,11 @@ interface DockProps {
   onTerminalClick: () => void;
   onContactClick: () => void;
   onSectionClick: (section: string) => void;
+  onHelpClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, currentLanguage }: DockProps) {
   const apps = [
     {
       id: 'terminal',
@@ -63,12 +64,12 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, currentL
       title: 'Settings',
       icon: '⚙️',
       color: 'bg-gray-500 text-white',
-      action: () => onSectionClick('help')
+      action: onHelpClick
     }
   ];
 
   return (
-    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-40">
       <div className="bg-[var(--dock-bg)] glass-effect rounded-2xl p-2 flex items-end space-x-2">
         {apps.map((app) => (
           <div

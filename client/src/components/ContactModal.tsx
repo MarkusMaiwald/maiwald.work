@@ -78,7 +78,7 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
   const currentLabels = labels[currentLanguage];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-60">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-2xl w-full max-w-md mx-4 animate-fade-in">
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg">
           <div className="flex items-center space-x-2">

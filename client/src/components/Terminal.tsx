@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { useTerminal } from '../hooks/useTerminal';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
@@ -9,17 +9,29 @@ interface TerminalProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-export function Terminal({ currentLanguage, onOpenContact, onLanguageChange }: TerminalProps) {
+export interface TerminalRef {
+  executeCommand: (command: string) => void;
+}
+
+export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange }, ref) => {
   const { 
     lines, 
     currentInput, 
     setCurrentInput, 
     handleKeyDown, 
     focusInput, 
-    inputRef 
+    inputRef,
+    processCommand 
   } = useTerminal(currentLanguage, onOpenContact);
   
   const outputRef = useRef<HTMLDivElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    executeCommand: (command: string) => {
+      processCommand(command);
+      focusInput();
+    }
+  }), [processCommand, focusInput]);
 
   useEffect(() => {
     if (outputRef.current) {
@@ -35,7 +47,7 @@ export function Terminal({ currentLanguage, onOpenContact, onLanguageChange }: T
   };
 
   return (
-    <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-full max-w-4xl mx-auto px-4 z-40">
+    <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-full max-w-4xl mx-auto px-4 z-30">
       <div className="terminal-window bg-[var(--window-chrome)] rounded-lg shadow-2xl animate-fade-in">
         {/* Window Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg">
@@ -104,4 +116,6 @@ export function Terminal({ currentLanguage, onOpenContact, onLanguageChange }: T
       </div>
     </div>
   );
-}
+});
+
+Terminal.displayName = 'Terminal';

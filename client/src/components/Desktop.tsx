@@ -1,13 +1,17 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
 import { MenuBar } from './MenuBar';
-import { Terminal } from './Terminal';
+import { Terminal, TerminalRef } from './Terminal';
 import { Dock } from './Dock';
 import { ContactModal } from './ContactModal';
+import { InfoModal } from './InfoModal';
 
 export function Desktop() {
   const { currentLanguage, toggleLanguage, setLanguage } = useLanguage();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState('');
+  const terminalRef = useRef<TerminalRef>(null);
 
   const handleTerminalClick = () => {
     // Focus terminal input
@@ -22,15 +26,15 @@ export function Desktop() {
   };
 
   const handleSectionClick = (section: string) => {
-    // Simulate typing command in terminal
-    const terminalInput = document.querySelector('input[type="text"]') as HTMLInputElement;
-    if (terminalInput) {
-      terminalInput.value = `cat ${section}`;
-      terminalInput.focus();
-      
-      // Trigger enter key event
-      const event = new KeyboardEvent('keydown', { key: 'Enter' });
-      terminalInput.dispatchEvent(event);
+    // Show info modal for the section
+    setCurrentSection(section);
+    setIsInfoModalOpen(true);
+  };
+
+  const handleHelpClick = () => {
+    // Execute help command in terminal
+    if (terminalRef.current) {
+      terminalRef.current.executeCommand('help');
     }
   };
 
@@ -56,6 +60,7 @@ export function Desktop() {
 
       {/* Terminal Window */}
       <Terminal 
+        ref={terminalRef}
         currentLanguage={currentLanguage}
         onOpenContact={handleContactClick}
         onLanguageChange={handleLanguageChange}
@@ -66,6 +71,7 @@ export function Desktop() {
         onTerminalClick={handleTerminalClick}
         onContactClick={handleContactClick}
         onSectionClick={handleSectionClick}
+        onHelpClick={handleHelpClick}
         currentLanguage={currentLanguage}
       />
 
@@ -73,6 +79,14 @@ export function Desktop() {
       <ContactModal 
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+
+      {/* Info Modal */}
+      <InfoModal 
+        isOpen={isInfoModalOpen}
+        onClose={() => setIsInfoModalOpen(false)}
+        section={currentSection}
         currentLanguage={currentLanguage}
       />
     </div>

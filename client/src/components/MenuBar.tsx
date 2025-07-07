@@ -26,7 +26,7 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-7 bg-black bg-opacity-20 glass-effect z-50 flex items-center justify-between px-4 text-white text-sm">
+    <div className="fixed top-0 left-0 right-0 h-7 bg-black bg-opacity-20 glass-effect z-60 flex items-center justify-between px-4 text-white text-sm">
       <div className="flex items-center space-x-4">
         <div className="font-bold">🍎</div>
         <span>Terminal</span>
