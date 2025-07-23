@@ -227,9 +227,9 @@ export function Desktop() {
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
                           <TypewriterEffect 
-                            text="We build the infrastructure your business runs on"
-                            className="text-xl text-white font-medium"
-                            speed={40}
+                            text=".. we build the infrastructure your business runs on!"
+                            className="text-xl text-cyberpunk-electric-blue font-medium text-glow"
+                            speed={50}
                           />
                         </div>
 
