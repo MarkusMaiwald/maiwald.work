@@ -20,30 +20,59 @@ export function useAudio() {
           }
           setAudioContext(ctx);
           setIsInitialized(true);
+          console.log('Audio context initialized');
         } catch (error) {
           console.warn('Audio initialization failed:', error);
         }
       }
     };
 
-    // Initialize on first user interaction
+    // Try to initialize immediately (might work in some browsers)
+    initAudio();
+    
+    // Also try after a short delay to give the page time to load
+    setTimeout(() => {
+      if (!isInitialized) {
+        console.log('Retrying audio initialization...');
+        initAudio();
+      }
+    }, 500);
+
+    // Also initialize on first user interaction
     const handleUserInteraction = () => {
       initAudio();
       document.removeEventListener('click', handleUserInteraction);
       document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
     };
 
     document.addEventListener('click', handleUserInteraction);
     document.addEventListener('keydown', handleUserInteraction);
+    document.addEventListener('touchstart', handleUserInteraction);
 
     return () => {
       document.removeEventListener('click', handleUserInteraction);
       document.removeEventListener('keydown', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
     };
   }, [isInitialized]);
 
   const createCracklingSound = (duration: number = 3000, config: AudioConfig = {}) => {
-    if (!audioContext) return null;
+    if (!audioContext) {
+      console.warn('Audio context not initialized, attempting to create one...');
+      // Try to create audio context if it doesn't exist
+      try {
+        const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
+        setAudioContext(ctx);
+        setIsInitialized(true);
+        // Retry after a brief delay
+        setTimeout(() => createCracklingSound(duration, config), 50);
+        return null;
+      } catch (error) {
+        console.warn('Failed to create audio context:', error);
+        return null;
+      }
+    }
 
     const { volume = 0.3, loop = false } = config;
     

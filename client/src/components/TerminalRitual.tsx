@@ -24,9 +24,14 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
 
   // Trigger audio on first user interaction if not already playing
   const handleInteraction = () => {
-    if (isInitialized && !audioTriggered) {
-      createCracklingSound(4000, { volume: 0.4 });
-      setAudioTriggered(true);
+    if (!audioTriggered) {
+      // Force audio initialization and play sound
+      setTimeout(() => {
+        if (createCracklingSound) {
+          createCracklingSound(4000, { volume: 0.4 });
+          setAudioTriggered(true);
+        }
+      }, 100);
     }
   };
 
@@ -96,10 +101,16 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
   ];
 
   useEffect(() => {
-    // Play crackling connection sound when starting (if audio is initialized)
-    if (currentCommand === 0 && isInitialized && !audioTriggered) {
-      createCracklingSound(4000, { volume: 0.4 });
-      setAudioTriggered(true);
+    // Play crackling connection sound when starting
+    if (currentCommand === 0) {
+      // Always try to trigger audio, even if not initialized yet
+      if (isInitialized && !audioTriggered) {
+        createCracklingSound(4000, { volume: 0.4 });
+        setAudioTriggered(true);
+      } else if (!audioTriggered) {
+        // Set up to trigger when user interacts
+        setAudioTriggered(false);
+      }
     }
 
     if (currentCommand < ritualSequence.length) {
@@ -147,6 +158,11 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
             {!audioTriggered && (
               <div className="text-cyberpunk-acid-green text-xs mt-2 animate-pulse">
                 Click anywhere to enable audio experience
+              </div>
+            )}
+            {audioTriggered && (
+              <div className="text-cyberpunk-electric-blue text-xs mt-2">
+                🔊 Audio active
               </div>
             )}
           </div>
