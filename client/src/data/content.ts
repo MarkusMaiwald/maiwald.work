@@ -11,7 +11,7 @@ export const content: ContentData = {
     DE: "Aufbau der Infrastruktur für eine dezentrale Zukunft."
   },
   subtitle: {
-    EN: "Linux aficionado, cloud architect, and crypto-anarchist.",
+    EN: "Linux/BSD aficionado, platform architect, product developer, and crypto-anarchist.",
     DE: "Linux-Enthusiast, Cloud-Architekt und Krypto-Anarchist."
   },
   prompt: {
