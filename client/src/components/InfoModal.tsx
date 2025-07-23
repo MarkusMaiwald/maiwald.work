@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
+import { MatrixBackground } from './CyberpunkEffects';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -113,32 +114,9 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
         }} />
       </div>
       
-      {/* Matrix Rain Background */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none overflow-hidden">
-        <div className="matrix-rain-container w-full h-full">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              className="matrix-column absolute top-0 text-xs font-mono text-cyberpunk-electric-blue"
-              style={{
-                left: `${i * 8.33}%`,
-                width: '20px',
-                animation: `matrix-rain ${3 + Math.random() * 4}s linear infinite`,
-                animationDelay: `${Math.random() * 2}s`,
-                opacity: 0.6
-              }}
-            >
-              {Array.from({ length: 30 }).map((_, j) => (
-                <div key={j} className="matrix-char" style={{ 
-                  color: j < 3 ? '#00ff41' : '#00d4ff',
-                  opacity: j < 3 ? 1 : 0.7 - (j * 0.02)
-                }}>
-                  {Math.random() > 0.5 ? '1' : '0'}
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+      {/* Real Matrix Background - Same as homepage */}
+      <div className="absolute inset-0 opacity-60">
+        <MatrixBackground />
       </div>
 
       {/* Animated scan lines */}
