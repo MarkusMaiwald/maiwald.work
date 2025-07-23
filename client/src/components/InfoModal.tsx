@@ -46,8 +46,11 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
     <div 
       className="fixed inset-0 flex items-center justify-center z-50" 
       style={{ 
-        background: 'linear-gradient(135deg, #000f1e 0%, #001829 100%)',
-        cursor: 'none' // Hide default cursor in modal
+        background: `
+          linear-gradient(135deg, #000514 0%, #001122 50%, #000f1e 100%),
+          radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%)
+        `,
+        cursor: 'none'
       }}
     >
       {/* Custom cyberpunk cursor for modal */}
@@ -67,11 +70,36 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
       />
       
       {/* Matrix-style background pattern */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <div className="w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle, rgba(0, 212, 255, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '20px 20px',
-          animation: 'matrix-drift 8s linear infinite'
+          backgroundImage: `
+            radial-gradient(circle, rgba(0, 212, 255, 0.3) 1px, transparent 1px),
+            linear-gradient(45deg, rgba(0, 212, 255, 0.1) 25%, rgba(255, 0, 110, 0.1) 75%)
+          `,
+          backgroundSize: '20px 20px, 100px 100px',
+          animation: 'matrix-drift 6s ease-in-out infinite'
+        }} />
+      </div>
+      
+      {/* Additional cyberpunk wallpaper effect */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="w-full h-full" style={{
+          background: `
+            repeating-linear-gradient(
+              0deg,
+              transparent,
+              transparent 2px,
+              rgba(0, 212, 255, 0.03) 2px,
+              rgba(0, 212, 255, 0.03) 4px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              transparent,
+              transparent 2px,
+              rgba(255, 0, 110, 0.03) 2px,
+              rgba(255, 0, 110, 0.03) 4px
+            )
+          `
         }} />
       </div>
       <div className="cyberpunk-panel w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative">
@@ -98,7 +126,10 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
           <div className="scan-line"></div>
         </div>
 
-        <div className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] bg-cyberpunk-bg relative z-10">
+        <div className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] relative z-10" style={{
+          background: 'linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)',
+          backdropFilter: 'blur(10px)'
+        }}>
           <div className="whitespace-pre-wrap text-sm text-cyberpunk-text font-mono leading-relaxed">
             {displayContent.split('\n').map((line, index) => {
               // Check if line contains a URL
