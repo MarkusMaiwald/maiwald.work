@@ -289,7 +289,7 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
             setIsVisible(true);
             setTimeout(() => inputRef.current?.focus(), 100);
           }}
-          className="fixed bottom-8 right-8 z-40 w-12 h-12 cyberpunk-button rounded-full flex items-center justify-center text-cyberpunk-electric-blue hover:text-cyberpunk-bg transition-all duration-300"
+          className="fixed bottom-4 right-16 z-40 w-12 h-12 cyberpunk-button rounded-full flex items-center justify-center text-cyberpunk-electric-blue hover:text-cyberpunk-bg transition-all duration-300"
           title="Open Easter Egg Terminal (or press ~)"
         >
           <span className="text-xl font-mono">~</span>
