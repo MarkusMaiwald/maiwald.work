@@ -307,15 +307,7 @@ export function CyberpunkWallpaper() {
         ))}
       </div>
       
-      {/* Terminal cursor in corner */}
-      <motion.div
-        className="absolute top-4 right-4 font-mono text-xs text-cyberpunk-electric-blue"
-        animate={{ opacity: [0.3, 1, 0.3] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <span className="text-cyberpunk-text-dim">system@maiwald.work</span>
-        <span className="text-cyberpunk-acid-green ml-2">█</span>
-      </motion.div>
+
     </div>
   );
 }
