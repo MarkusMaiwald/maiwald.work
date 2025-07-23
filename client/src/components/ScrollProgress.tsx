@@ -20,8 +20,10 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
   return (
     <motion.div
       initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 space-y-4 bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-4 border border-cyberpunk-border"
+      animate={{ opacity: 0.5, x: 0 }}
+      whileHover={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 space-y-4 bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-4 border border-cyberpunk-border hover:bg-opacity-50"
     >
       {sections.map((section, index) => (
         <motion.div
