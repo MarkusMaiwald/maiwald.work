@@ -104,6 +104,13 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Legal compliance section and navigation alignment:
+  * Added complete Dutch legal compliance section with Informatieplicht and Privacyverklaring
+  * Integrated real company data: Maiwald Enterprises B.V., KVK 78035902, BTW NL861240716B01
+  * Updated navigation to include LEGAL section as 5th menu item
+  * Right-aligned navigation items with text-first, dot-second layout for better organization
+  * Fixed language key mapping issue for proper EN/DE content switching
+  * Added complete contact information and GDPR-compliant privacy policy
 - July 23, 2025. Performance optimization and Matrix background implementation:
   * Replaced resource-intensive particle effects with lightweight blue Matrix rain
   * Created authentic Matrix background with falling binary digits (0s and 1s) in blue
