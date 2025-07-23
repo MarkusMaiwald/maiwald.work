@@ -48,7 +48,7 @@ export function ProjectManifesto({ currentLanguage }: ProjectManifestoProps) {
     }
   };
 
-  const content = manifestoContent[currentLanguage];
+  const content = manifestoContent[currentLanguage] || manifestoContent.en;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm">
@@ -68,7 +68,7 @@ export function ProjectManifesto({ currentLanguage }: ProjectManifestoProps) {
 
           {/* Sections */}
           <div className="space-y-6">
-            {content.sections.map((section, index) => (
+            {content.sections.map((section: any, index: number) => (
               <DataVisualization key={index} className="p-4">
                 <h3 className="text-xl font-bold text-cyberpunk-electric-blue mb-3 text-glow">
                   {section.title}
