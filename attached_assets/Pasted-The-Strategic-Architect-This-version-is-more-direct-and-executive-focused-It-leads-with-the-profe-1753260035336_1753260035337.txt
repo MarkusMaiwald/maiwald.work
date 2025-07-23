@@ -1,0 +1,16 @@
+The Strategic Architect
+
+(This version is more direct and executive-focused. It leads with the professional value proposition and uses the personal projects as clear, powerful "proof points" of expertise.)
+
+I'm [User's Name], a technology architect and the founder of Maiwald Enterprises BV. Based in the Aachen-Maastricht region for 14 years, I partner with organizations to design, architect, and deliver bespoke technology solutions in complex domains like blockchain, cloud infrastructure, and custom software. My role is to provide the strategic oversight that bridges the gap between ambitious business goals and elite technical execution.
+
+My strategic capabilities are underpinned by two key areas of personal research and development:
+
+Foundational System Architecture: I am the developer of a custom operating system and package manager (git.maiwald.work). This hands-on, first-principles approach to computing provides me with a deep, structural understanding of system performance, security, and scalability that is rare in today's high-abstraction environment. This expertise is critical when designing robust, cost-effective cloud solutions for my clients.
+
+Next-Generation Digital Identity: I am prototyping the future of user-centric applications through the development of a novel tabletop RPG. This project integrates a mobile AI Game Master with a revolutionary identity layer built on Self-Sovereign Identity (SSI) and Decentralized Identifiers (DIDs). It serves as a practical laboratory for Web3 concepts, allowing me to explore the implementation of portable digital assets and verifiable data, providing my clients with insights that are practical, not just theoretical.
+
+My personal projects ensure that the strategic advice I provide is grounded in real-world implementation experience. I don't just talk about the future of technology; I actively build it.
+
+If your organization requires a technology partner with a proven ability to architect and deliver high-stakes projects, let's connect.
+

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React-based portfolio application that simulates a macOS desktop environment with a terminal interface. The application presents a professional portfolio in an interactive terminal format, allowing users to navigate through different sections using Unix-like commands. The application supports both English and German languages and includes a contact form functionality.
+This is a React-based portfolio application that simulates a macOS desktop environment with a terminal interface. The application presents Markus Maiwald as a strategic technology architect and founder of Maiwald Enterprises BV. The portfolio positions personal projects (custom OS development, TTRPG with SSI/DID) as strategic R&D that demonstrates deep technical capabilities and forward-thinking innovation. The application supports both English and German languages and includes a contact form functionality.
 
 ## System Architecture
 
@@ -38,7 +38,8 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ### Terminal System
 - **Command Processing**: Supports Unix-like commands (help, ls, cat, clear, etc.)
-- **Content Management**: Multilingual content system for portfolio sections
+- **Content Management**: Strategic brand content organized in sections (about, services, blockchain, cloud, development, projects)
+- **Professional Narrative**: Content positions personal projects as strategic R&D rather than hobbies
 - **History**: Command history with arrow key navigation
 - **Language Support**: Dynamic language switching between English and German
 
@@ -103,6 +104,13 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Integrated strategic brand positioning and professional narrative:
+  * Updated main headline to "Architecting Your Technological Advantage"
+  * Transformed portfolio content to position Markus as strategic technology architect
+  * Added comprehensive sections: about, services, blockchain, projects, development
+  * Enhanced personal projects (OS, TTRPG) as strategic R&D demonstrations
+  * Implemented Maiwald Enterprises BV service pillars framework
+  * Updated terminal commands to support new content sections
 - July 23, 2025. Converted from PostgreSQL to SQLite for local file-based data storage
 - July 07, 2025. Initial setup
 ```
