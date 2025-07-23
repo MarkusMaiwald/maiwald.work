@@ -38,8 +38,8 @@ export function useFileSystem(currentLanguage: Language) {
               size: content.about[currentLanguage].length,
               modified: '2025-01-23 09:30'
             },
-            'projects': {
-              name: 'projects',
+            'active-projects': {
+              name: 'active-projects',
               type: 'directory',
               permissions: 'drwxr-xr-x',
               modified: '2025-01-23 09:45',
@@ -67,70 +67,126 @@ export function useFileSystem(currentLanguage: Language) {
                       modified: '2025-01-22 15:30'
                     }
                   }
+                },
+                'maiwald-enterprises': {
+                  name: 'maiwald-enterprises',
+                  type: 'directory',
+                  permissions: 'drwxr-xr-x',
+                  modified: '2025-01-23 10:30',
+                  children: {
+                    'company-profile.md': {
+                      name: 'company-profile.md',
+                      type: 'file',
+                      content: '# Maiwald Enterprises B.V.\n\n## Company Information\n- **Legal Name**: Maiwald Enterprises B.V.\n- **KVK Number**: 78035902\n- **BTW Number**: NL861240716B01\n- **Founded**: 2019\n- **Headquarters**: Netherlands\n\n## Strategic Focus\nTechnology consulting and enterprise infrastructure solutions for strategic digital transformation.\n\n## Active Clients\n- BC2IP (Blockchain Infrastructure)\n- IOP Global (International Operations)\n- Group4IT (IT Solutions)\n- IT Qube (Enterprise Technology)\n\n## Core Competencies\n- Cloud Architecture & Migration\n- DevOps & Automation\n- Security & Compliance\n- Digital Transformation Strategy',
+                      permissions: '-rw-r--r--',
+                      size: 680,
+                      modified: '2025-01-23 10:30'
+                    }
+                  }
+                },
+                'blockchain-sovereignty': {
+                  name: 'blockchain-sovereignty',
+                  type: 'directory',
+                  permissions: 'drwxr-xr-x',
+                  modified: '2025-01-23 09:15',
+                  children: {
+                    'digital-identity.md': {
+                      name: 'digital-identity.md',
+                      type: 'file',
+                      content: '# Digital Identity & Sovereignty\n\n## Self-Sovereign Identity (SSI) Framework\n\nStrategic implementation of decentralized identity systems for enterprise organizations.\n\n### Technical Architecture\n- Decentralized Identifiers (DIDs)\n- Verifiable Credentials (VCs)\n- Zero-Knowledge Proofs\n- Blockchain-Agnostic Infrastructure\n\n### Enterprise Benefits\n- Reduced Identity Management Costs\n- Enhanced Privacy Protection\n- Regulatory Compliance (GDPR, eIDAS)\n- Interoperability Across Systems\n\n### Implementation Strategy\n1. Identity Architecture Assessment\n2. Pilot Program Development\n3. Integration with Existing Systems\n4. Staff Training & Change Management\n5. Full Production Deployment',
+                      permissions: '-rw-r--r--',
+                      size: 720,
+                      modified: '2025-01-23 09:15'
+                    }
+                  }
                 }
               }
             },
-            'services': {
-              name: 'services',
+            'strategic-consulting': {
+              name: 'strategic-consulting',
               type: 'directory',
               permissions: 'drwxr-xr-x',
               modified: '2025-01-23 08:00',
               children: {
-                'blockchain.md': {
-                  name: 'blockchain.md',
+                'blockchain-sovereignty.md': {
+                  name: 'blockchain-sovereignty.md',
                   type: 'file',
                   content: content.blockchain[currentLanguage],
                   permissions: '-rw-r--r--',
                   size: content.blockchain[currentLanguage].length,
                   modified: '2025-01-23 08:00'
                 },
-                'cloud.md': {
-                  name: 'cloud.md',
+                'cloud-architecture.md': {
+                  name: 'cloud-architecture.md',
                   type: 'file',
                   content: content.cloud[currentLanguage],
                   permissions: '-rw-r--r--',
                   size: content.cloud[currentLanguage].length,
                   modified: '2025-01-23 08:15'
                 },
-                'development.md': {
-                  name: 'development.md',
+                'digital-transformation.md': {
+                  name: 'digital-transformation.md',
                   type: 'file',
                   content: content.development[currentLanguage],
                   permissions: '-rw-r--r--',
                   size: content.development[currentLanguage].length,
                   modified: '2025-01-23 08:30'
                 },
-                'overview.md': {
-                  name: 'overview.md',
+                'enterprise-consulting.md': {
+                  name: 'enterprise-consulting.md',
                   type: 'file',
                   content: content.services[currentLanguage],
                   permissions: '-rw-r--r--',
                   size: content.services[currentLanguage].length,
                   modified: '2025-01-23 07:45'
+                },
+                'technology-assessment.md': {
+                  name: 'technology-assessment.md',
+                  type: 'file',
+                  content: '# Technology Assessment Framework\n\n## Strategic Technology Evaluation\n\nMaiwald Enterprises provides comprehensive technology assessments for enterprise organizations looking to modernize their infrastructure and optimize their technology stack.\n\n### Assessment Areas\n- Current State Analysis\n- Technology Stack Review\n- Security Posture Evaluation\n- Scalability Assessment\n- Cost-Benefit Analysis\n- Risk Management Review\n\n### Deliverables\n- Executive Summary Report\n- Technical Recommendations\n- Implementation Roadmap\n- ROI Projections\n- Risk Mitigation Strategies',
+                  permissions: '-rw-r--r--',
+                  size: 620,
+                  modified: '2025-01-23 08:45'
                 }
               }
             },
-            'config': {
-              name: 'config',
+            'infrastructure-blueprints': {
+              name: 'infrastructure-blueprints',
               type: 'directory',
               permissions: 'drwxr-xr-x',
               modified: '2025-01-23 06:00',
               children: {
-                '.bashrc': {
-                  name: '.bashrc',
+                'system-architecture.yaml': {
+                  name: 'system-architecture.yaml',
                   type: 'file',
-                  content: '# Markus Maiwald - Terminal Configuration\nexport PS1="markus@maiwald.work:\\w$ "\nalias ll="ls -la"\nalias projects="cd ~/projects && ls"\nalias services="cd ~/services && ls"',
+                  content: '# Maiwald Enterprises Infrastructure Blueprint\napiVersion: v1\nkind: SystemArchitecture\nmetadata:\n  name: enterprise-stack\n  author: markus@maiwald.work\nspec:\n  compute:\n    - kubernetes-clusters\n    - container-orchestration\n    - serverless-functions\n  security:\n    - zero-trust-network\n    - end-to-end-encryption\n    - identity-management\n  data:\n    - distributed-databases\n    - real-time-analytics\n    - backup-strategies',
                   permissions: '-rw-r--r--',
-                  size: 150,
+                  size: 420,
                   modified: '2025-01-23 06:00'
                 },
-                'ssh_config': {
-                  name: 'ssh_config',
+                'network-topology.conf': {
+                  name: 'network-topology.conf',
                   type: 'file',
-                  content: 'Host git.maiwald.work\n    HostName git.maiwald.work\n    User git\n    Port 22\n    IdentityFile ~/.ssh/maiwald_rsa',
+                  content: '# Network Infrastructure Configuration\n# Maiwald Enterprises BV - Network Topology\n\n[CORE_INFRASTRUCTURE]\nload_balancers = nginx, haproxy\nfirewalls = pfsense, iptables\nmonitoring = prometheus, grafana\n\n[SECURITY_LAYERS]\nvpn_gateways = wireguard, openvpn\nids_ips = suricata, snort\nsiem = elastic_stack, splunk\n\n[CONNECTIVITY]\ncdn = cloudflare, aws_cloudfront\ndns = bind9, cloudflare_dns\nssl_termination = certbot, letsencrypt',
                   permissions: '-rw-------',
-                  size: 95,
-                  modified: '2025-01-20 14:00'
+                  size: 385,
+                  modified: '2025-01-22 16:30'
+                },
+                'deployment-manifests.yaml': {
+                  name: 'deployment-manifests.yaml',
+                  type: 'file',
+                  content: '# Kubernetes Deployment Manifests\n# Strategic deployment configurations for enterprise clients\n\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: enterprise-application\n  namespace: production\nspec:\n  replicas: 3\n  strategy:\n    type: RollingUpdate\n    rollingUpdate:\n      maxSurge: 1\n      maxUnavailable: 0\n  selector:\n    matchLabels:\n      app: enterprise-app\n  template:\n    metadata:\n      labels:\n        app: enterprise-app\n    spec:\n      containers:\n      - name: app\n        image: registry.maiwald.work/enterprise-app:latest\n        ports:\n        - containerPort: 8080\n        resources:\n          limits:\n            cpu: 500m\n            memory: 512Mi\n          requests:\n            cpu: 250m\n            memory: 256Mi',
+                  permissions: '-rw-r--r--',
+                  size: 680,
+                  modified: '2025-01-23 07:15'
+                },
+                'security-framework.conf': {
+                  name: 'security-framework.conf',
+                  type: 'file',
+                  content: '# Security Framework Configuration\n# Maiwald Enterprises - Enterprise Security Standards\n\n[AUTHENTICATION]\nmulti_factor = required\npassword_policy = complex\nsession_timeout = 30_minutes\n\n[AUTHORIZATION]\nrole_based_access = enabled\nleast_privilege = enforced\naudit_logging = comprehensive\n\n[ENCRYPTION]\ndata_at_rest = aes_256\ndata_in_transit = tls_1_3\nkey_management = vault_enterprise\n\n[COMPLIANCE]\nstandards = iso_27001, soc2_type2\nregulations = gdpr, ccpa\nauditing = quarterly_reviews',
+                  permissions: '-rw-------',
+                  size: 495,
+                  modified: '2025-01-23 05:45'
                 }
               }
             }
