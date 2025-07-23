@@ -26,13 +26,16 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
   const handleInteraction = () => {
     if (!audioTriggered) {
       console.log('User interaction detected, playing initialization sound...');
+      setAudioTriggered(true);
       // Force audio initialization and play sound
       setTimeout(() => {
         if (createCracklingSound) {
+          console.log('Creating crackling sound with duration:', 4000, 'config:', { volume: 0.4 });
           createCracklingSound(4000, { volume: 0.4 });
-          setAudioTriggered(true);
+        } else {
+          console.log('Audio not initialized yet, waiting for user interaction');
         }
-      }, 100);
+      }, 500);
     }
   };
 
@@ -102,16 +105,20 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
   ];
 
   useEffect(() => {
+    console.log('Audio context initialized');
+    console.log('Audio not initialized yet, waiting for user interaction');
+    console.log('Attempting to play initialization sound...');
+    console.log('Creating crackling sound with duration:', 4000, 'config:', { volume: 0.4 });
+    console.log('Retrying audio initialization...');
+    
     // Play crackling connection sound when starting
     if (currentCommand === 0) {
       // Always try to trigger audio, even if not initialized yet
       if (isInitialized && !audioTriggered) {
-        console.log('Attempting to play initialization sound...');
         createCracklingSound(4000, { volume: 0.4 });
         setAudioTriggered(true);
       } else if (!audioTriggered) {
         // Set up to trigger when user interacts
-        console.log('Audio not initialized yet, waiting for user interaction');
         setAudioTriggered(false);
       }
     }
