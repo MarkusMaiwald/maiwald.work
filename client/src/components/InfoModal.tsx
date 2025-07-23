@@ -102,20 +102,59 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
           `
         }} />
       </div>
-      <div className="cyberpunk-panel w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative">
+      <div 
+        className="w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative"
+        style={{
+          background: 'linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(26, 26, 26, 0.98) 50%, rgba(18, 18, 18, 0.95) 100%)',
+          border: '2px solid #00d4ff',
+          boxShadow: `
+            0 4px 20px rgba(0, 0, 0, 0.7),
+            inset 0 1px 0 rgba(0, 212, 255, 0.3),
+            0 0 30px rgba(0, 212, 255, 0.4)
+          `,
+          backdropFilter: 'blur(15px)'
+        }}
+      >
         {/* Cyberpunk Header */}
-        <div className="flex items-center justify-between p-4 border-b border-cyberpunk-border bg-cyberpunk-surface-light">
+        <div 
+          className="flex items-center justify-between p-4 border-b"
+          style={{
+            borderColor: '#00d4ff',
+            background: 'linear-gradient(90deg, rgba(26, 26, 26, 0.9) 0%, rgba(18, 18, 18, 0.95) 100%)'
+          }}
+        >
           <div className="flex items-center space-x-3">
-            <div className="w-2 h-2 bg-cyberpunk-electric-blue rounded-full animate-pulse"></div>
-            <div className="w-2 h-2 bg-cyberpunk-neon-cyan rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-            <div className="w-2 h-2 bg-cyberpunk-acid-green rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div 
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ backgroundColor: '#00d4ff' }}
+            ></div>
+            <div 
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ backgroundColor: '#00ffff', animationDelay: '0.5s' }}
+            ></div>
+            <div 
+              className="w-2 h-2 rounded-full animate-pulse"
+              style={{ backgroundColor: '#39ff14', animationDelay: '1s' }}
+            ></div>
           </div>
-          <div className="text-sm font-mono font-bold text-cyberpunk-electric-blue uppercase">
+          <div 
+            className="text-sm font-mono font-bold uppercase"
+            style={{
+              color: '#00d4ff',
+              textShadow: '0 0 10px #00d4ff'
+            }}
+          >
             {section}.DAT
           </div>
           <button
             onClick={onClose}
-            className="text-cyberpunk-text-dim hover:text-cyberpunk-neon-magenta transition-colors font-mono"
+            className="font-mono transition-colors"
+            style={{
+              color: '#a0a0a0',
+              fontSize: '14px'
+            }}
+            onMouseEnter={(e) => e.target.style.color = '#ff006e'}
+            onMouseLeave={(e) => e.target.style.color = '#a0a0a0'}
           >
             [X]
           </button>
@@ -126,11 +165,17 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
           <div className="scan-line"></div>
         </div>
 
-        <div className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] relative z-10" style={{
-          background: 'linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)',
-          backdropFilter: 'blur(10px)'
-        }}>
-          <div className="whitespace-pre-wrap text-sm text-cyberpunk-text font-mono leading-relaxed">
+        <div 
+          className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] relative z-10" 
+          style={{
+            background: 'linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)',
+            backdropFilter: 'blur(10px)'
+          }}
+        >
+          <div 
+            className="whitespace-pre-wrap text-sm font-mono leading-relaxed"
+            style={{ color: '#e0e0e0' }}
+          >
             {displayContent.split('\n').map((line, index) => {
               // Check if line contains a URL
               const urlRegex = /(https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
