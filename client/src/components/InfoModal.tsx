@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
 
@@ -9,6 +10,19 @@ interface InfoModalProps {
 }
 
 export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoModalProps) {
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscKey);
+      return () => document.removeEventListener('keydown', handleEscKey);
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const sectionContent = content[section];
