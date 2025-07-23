@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { CyberpunkAudio } from './CyberpunkEffects';
 
 interface ScrollProgressProps {
   sections: string[];
@@ -29,7 +30,11 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
         <motion.div
           key={section}
           className="flex items-center justify-end space-x-3 cursor-pointer group"
-          onClick={() => onSectionChange(index)}
+          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+          onClick={() => {
+            CyberpunkAudio.playButtonClick();
+            onSectionChange(index);
+          }}
           whileHover={{ scale: 1.1 }}
         >
           <motion.span

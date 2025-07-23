@@ -145,7 +145,11 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
           </div>
           <div className="text-sm font-mono font-bold text-cyberpunk-electric-blue">CONTACT.EXE</div>
           <button
-            onClick={onClose}
+            onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+            onClick={() => {
+              CyberpunkAudio.playButtonClick();
+              onClose();
+            }}
             className="text-cyberpunk-text-dim hover:text-cyberpunk-neon-magenta transition-colors font-mono"
           >
             [X]
@@ -207,6 +211,8 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
             <button 
               type="submit" 
               disabled={contactMutation.isPending}
+              onMouseEnter={() => !contactMutation.isPending && CyberpunkAudio.playHoverClick()}
+              onClick={() => !contactMutation.isPending && CyberpunkAudio.playButtonClick()}
               className="w-full cyberpunk-button py-3 px-6 rounded font-mono font-bold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {contactMutation.isPending 

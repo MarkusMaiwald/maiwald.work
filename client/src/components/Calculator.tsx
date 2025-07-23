@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { X, Minus } from 'lucide-react';
-import { CyberpunkPanel, GlitchText } from './CyberpunkEffects';
+import { CyberpunkPanel, GlitchText, CyberpunkAudio } from './CyberpunkEffects';
 
 interface CalculatorProps {
   onClose: () => void;
@@ -110,7 +110,11 @@ export function Calculator({ onClose, onMinimize }: CalculatorProps) {
     <motion.button
       whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0, 255, 255, 0.4)' }}
       whileTap={{ scale: 0.95 }}
-      onClick={onClick}
+      onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+      onClick={() => {
+        CyberpunkAudio.playButtonClick();
+        onClick();
+      }}
       className={`
         h-12 rounded-lg font-mono text-sm font-bold transition-all duration-200
         ${isOperator 
@@ -143,13 +147,21 @@ export function Calculator({ onClose, onMinimize }: CalculatorProps) {
           </div>
           <div className="flex items-center space-x-2">
             <button
-              onClick={onMinimize}
+              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+              onClick={() => {
+                CyberpunkAudio.playButtonClick();
+                onMinimize();
+              }}
               className="w-6 h-6 rounded bg-cyberpunk-surface-dark hover:bg-yellow-500 transition-colors flex items-center justify-center"
             >
               <Minus size={12} className="text-cyberpunk-text" />
             </button>
             <button
-              onClick={onClose}
+              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+              onClick={() => {
+                CyberpunkAudio.playButtonClick();
+                onClose();
+              }}
               className="w-6 h-6 rounded bg-cyberpunk-surface-dark hover:bg-red-500 transition-colors flex items-center justify-center"
             >
               <X size={12} className="text-cyberpunk-text" />

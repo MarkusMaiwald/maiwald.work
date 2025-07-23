@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
-import { MatrixBackground } from './CyberpunkEffects';
+import { MatrixBackground, CyberpunkAudio } from './CyberpunkEffects';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -189,14 +189,24 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
             {section}.DAT
           </div>
           <button
-            onClick={onClose}
+            onMouseEnter={() => {
+              CyberpunkAudio.playHoverClick();
+              // @ts-ignore
+              event.target.style.color = '#ff006e';
+            }}
+            onMouseLeave={(e) => {
+              // @ts-ignore
+              e.target.style.color = '#a0a0a0';
+            }}
+            onClick={() => {
+              CyberpunkAudio.playButtonClick();
+              onClose();
+            }}
             className="font-mono transition-colors"
             style={{
               color: '#a0a0a0',
               fontSize: '14px'
             }}
-            onMouseEnter={(e) => e.target.style.color = '#ff006e'}
-            onMouseLeave={(e) => e.target.style.color = '#a0a0a0'}
           >
             [X]
           </button>
@@ -234,6 +244,8 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                          onClick={() => CyberpunkAudio.playButtonClick()}
                           className="text-cyberpunk-electric-blue hover:text-cyberpunk-neon-cyan underline cursor-pointer transition-colors"
                         >
                           {part}
