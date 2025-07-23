@@ -9,6 +9,7 @@ import { InfoModal } from './InfoModal';
 import { CyberpunkEffects, GlitchText, TypewriterEffect, MatrixBackground } from './CyberpunkEffects';
 import { TerminalRitual } from './TerminalRitual';
 import { ProjectShowcase } from './ProjectShowcase';
+import { LegalSection } from './LegalSection';
 import { ParticleField } from './ParticleField';
 import { ScrollProgress } from './ScrollProgress';
 import { EasterEggTerminal } from './EasterEggTerminal';
@@ -23,7 +24,7 @@ export function Desktop() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState('');
   const [showRitual, setShowRitual] = useState(true);
-  const [currentView, setCurrentView] = useState<'terminal' | 'projects' | 'manifesto'>('terminal');
+  const [currentView, setCurrentView] = useState<'terminal' | 'projects' | 'manifesto' | 'legal'>('terminal');
   const [currentScrollSection, setCurrentScrollSection] = useState(0);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
@@ -31,7 +32,7 @@ export function Desktop() {
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const terminalRef = useRef<TerminalRef>(null);
 
-  const sections = ['NEURAL LINK', 'TERMINAL', 'PROJECTS', 'MANIFESTO'];
+  const sections = ['NEURAL LINK', 'TERMINAL', 'PROJECTS', 'MANIFESTO', 'LEGAL'];
 
   useEffect(() => {
     // Auto-hide ritual after first visit
@@ -121,6 +122,8 @@ export function Desktop() {
       setCurrentView('projects');  
     } else if (index === 3) {
       setCurrentView('manifesto');
+    } else if (index === 4) {
+      setCurrentView('legal');
     }
   };
 
@@ -274,6 +277,19 @@ export function Desktop() {
                           </p>
                         </motion.div>
                       </div>
+                    </motion.div>
+                  )}
+
+                  {currentView === 'legal' && (
+                    <motion.div
+                      key="legal"
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -50 }}
+                      transition={{ duration: 0.5 }}
+                      className="px-8 py-16 min-h-screen"
+                    >
+                      <LegalSection currentLanguage={currentLanguage} />
                     </motion.div>
                   )}
                 </AnimatePresence>

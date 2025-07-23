@@ -28,25 +28,12 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
       {sections.map((section, index) => (
         <motion.div
           key={section}
-          className="flex items-center space-x-3 cursor-pointer group"
+          className="flex items-center justify-end space-x-3 cursor-pointer group"
           onClick={() => onSectionChange(index)}
           whileHover={{ scale: 1.1 }}
         >
-          <motion.div
-            className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
-              index === currentSection
-                ? 'bg-cyberpunk-electric-blue border-cyberpunk-electric-blue shadow-lg shadow-cyberpunk-electric-blue'
-                : 'border-cyberpunk-text-dim hover:border-cyberpunk-electric-blue'
-            }`}
-            animate={{
-              scale: index === currentSection ? 1.2 : 1,
-              boxShadow: index === currentSection 
-                ? '0 0 20px var(--cyberpunk-electric-blue)' 
-                : '0 0 0px transparent'
-            }}
-          />
           <motion.span
-            className={`text-sm font-mono font-bold transition-all duration-300 ${
+            className={`text-sm font-mono font-bold transition-all duration-300 text-right ${
               index === currentSection
                 ? 'text-cyberpunk-electric-blue opacity-100 text-glow'
                 : 'text-white opacity-90 group-hover:opacity-100 group-hover:text-cyberpunk-electric-blue'
@@ -64,6 +51,19 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
           >
             {section}
           </motion.span>
+          <motion.div
+            className={`w-3 h-3 rounded-full border-2 transition-all duration-300 ${
+              index === currentSection
+                ? 'bg-cyberpunk-electric-blue border-cyberpunk-electric-blue shadow-lg shadow-cyberpunk-electric-blue'
+                : 'border-cyberpunk-text-dim hover:border-cyberpunk-electric-blue'
+            }`}
+            animate={{
+              scale: index === currentSection ? 1.2 : 1,
+              boxShadow: index === currentSection 
+                ? '0 0 20px var(--cyberpunk-electric-blue)' 
+                : '0 0 0px transparent'
+            }}
+          />
         </motion.div>
       ))}
     </motion.div>
