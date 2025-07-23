@@ -6,7 +6,7 @@ import { Terminal, TerminalRef } from './Terminal';
 import { Dock } from './Dock';
 import { ContactModal } from './ContactModal';
 import { InfoModal } from './InfoModal';
-import { CyberpunkEffects, GlitchText, TypewriterEffect } from './CyberpunkEffects';
+import { CyberpunkEffects, GlitchText, TypewriterEffect, MatrixBackground } from './CyberpunkEffects';
 import { TerminalRitual } from './TerminalRitual';
 import { ProjectShowcase } from './ProjectShowcase';
 import { ParticleField } from './ParticleField';
@@ -127,23 +127,16 @@ export function Desktop() {
   return (
     <CyberpunkEffects>
       <div className="font-system h-screen overflow-hidden relative" style={{ background: 'var(--cyberpunk-bg)' }}>
-        {/* Cyberpunk Wallpaper */}
-        <CyberpunkWallpaper />
-        
-        {/* Particle Field Background */}
-        <ParticleField />
-        
-        {/* Cyberpunk Background Effects */}
+        {/* Simple dark blue background */}
         <div 
           className="fixed inset-0" 
           style={{
-            background: `
-              radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
-              radial-gradient(circle at 75% 75%, rgba(255, 0, 110, 0.04) 0%, transparent 50%),
-              linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(18, 18, 18, 0.75) 100%)
-            `
+            background: 'linear-gradient(135deg, #000f1e 0%, #001829 100%)'
           }}
         />
+        
+        {/* Matrix Background */}
+        <MatrixBackground />
 
         {/* Terminal Ritual */}
         <AnimatePresence>

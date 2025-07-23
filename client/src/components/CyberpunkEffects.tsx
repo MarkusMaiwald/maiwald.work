@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useAudio } from '../hooks/useAudio';
 
 // Custom cursor component
@@ -50,45 +50,84 @@ export function ScanLine() {
   return <div className="scan-line" />;
 }
 
-// Data stream effects
+// Lightweight data stream effects - removed for performance
 export function DataStreams() {
-  const [streams, setStreams] = useState<Array<{ id: number; left: number; delay: number }>>([]);
-
-  useEffect(() => {
-    const generateStreams = () => {
-      const newStreams = Array.from({ length: 20 }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        delay: Math.random() * 4,
-      }));
-      setStreams(newStreams);
-    };
-
-    generateStreams();
-    const interval = setInterval(generateStreams, 8000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <>
-      {streams.map((stream) => (
-        <div
-          key={stream.id}
-          className="data-stream"
-          style={{
-            left: `${stream.left}%`,
-            animationDelay: `${stream.delay}s`,
-          }}
-        />
-      ))}
-    </>
-  );
+  return null;
 }
 
-// Matrix background effect
+// Matrix background effect - lightweight blue binary rain
 export function MatrixBackground() {
-  return <div className="matrix-bg" />;
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const characters = "01";
+    const fontSize = 14;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops: number[] = [];
+    
+    // Initialize drops
+    for (let x = 0; x < columns; x++) {
+      drops[x] = Math.random() * canvas.height;
+    }
+    
+    function draw() {
+      if (!ctx || !canvas) return;
+      
+      // Semi-transparent background for fade effect
+      ctx.fillStyle = 'rgba(0, 15, 30, 0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Blue Matrix characters
+      ctx.fillStyle = '#0080ff';
+      ctx.font = fontSize + 'px "Courier New", monospace';
+      
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters[Math.floor(Math.random() * characters.length)];
+        const x = i * fontSize;
+        const y = drops[i];
+        
+        ctx.fillText(text, x, y);
+        
+        // Reset drop to top when it reaches bottom
+        if (y > canvas.height && Math.random() > 0.98) {
+          drops[i] = 0;
+        }
+        
+        drops[i] += fontSize;
+      }
+    }
+    
+    const interval = setInterval(draw, 100); // Slower animation for better performance
+    
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none opacity-30"
+      style={{ zIndex: -1 }}
+    />
+  );
 }
 
 // Glitch text component
@@ -279,13 +318,11 @@ export function AmbientAudio() {
   return null;
 }
 
-// Main cyberpunk effects wrapper
+// Main cyberpunk effects wrapper - lightweight version
 export function CyberpunkEffects({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative h-screen overflow-hidden">
-      <MatrixBackground />
       <ScanLine />
-      <DataStreams />
       <CustomCursor />
       <AmbientAudio />
       {children}
