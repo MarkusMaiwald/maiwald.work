@@ -248,7 +248,7 @@ export function Desktop() {
                             </h3>
                             <p className="text-cyberpunk-text leading-relaxed">
                               {currentLanguage === 'EN' 
-                                ? 'Every system we build serves a greater architecture. Every line of code contributes to digital sovereignty. Every client engagement advances technological evolution. We don\'t just deliver software—we architect the future.'
+                                ? 'Our work serves a greater architecture than technology alone: We architect for digital sovereignty. Every system we forge is a declaration of independence, every platform a rupture from centralized control. We don\'t just deliver software or infrastructure—we deliver strategic autonomy.'
                                 : 'Wir bauen keine Systeme. Wir schmieden souveräne Domänen. Jede Codezeile ist ein Akt der Unabhängigkeit, jede Architektur ein Bruch mit der zentralisierten Kontrolle. Wir liefern keine Software – wir liefern strategische Autonomie.'
                               }
                             </p>
@@ -265,7 +265,7 @@ export function Desktop() {
                             </h3>
                             <p className="text-cyberpunk-text leading-relaxed">
                               {currentLanguage === 'EN'
-                                ? 'We combine cutting-edge blockchain technology, cloud-native architectures, and robust security frameworks to create resilient infrastructure that powers the digital economy of tomorrow.'
+                                ? 'To power the coming economy of the independent, we build digital fortresses in a world of fragile platforms. We wield the tools of the modern market—cutting-edge blockchain, cloud-native architectures, and cryptographic hardness. These are not ends in themselves, but the means to execute the core principles of our vision: decentralization, immutability, and self-protection.'
                                 : 'Wir nutzen die Werkzeuge des Marktes – Blockchain, Cloud, kryptografische Härte –, um die Prinzipien der Anarchie zu vollstrecken: Dezentralisierung, Eigenschutz, Unveränderlichkeit. Wir errichten digitale Festungen in einer Welt der fragilen Plattformen. Das ist die Infrastruktur für die kommende Ökonomie der Unabhängigen.'
                               }
                             </p>
@@ -279,11 +279,11 @@ export function Desktop() {
                           className="cyberpunk-panel p-8 text-center"
                         >
                           <h3 className="text-2xl font-bold text-cyberpunk-acid-green mb-4 text-glow">
-                            {currentLanguage === 'EN' ? 'INNOVATION PIPELINE' : 'THE FORGE'}
+                            {currentLanguage === 'EN' ? 'THE FORGE: PROOF IN FIRE' : 'THE FORGE'}
                           </h3>
                           <p className="text-cyberpunk-text leading-relaxed max-w-4xl mx-auto">
                             {currentLanguage === 'EN'
-                              ? 'From custom operating systems to decentralized identity platforms, our R&D portfolio demonstrates deep technical capabilities and forward-thinking innovation. Each project serves as both strategic research and proof of our architectural philosophy.'
+                              ? 'Our innovation is not theoretical research confined to a portfolio; it is a crucible where philosophy becomes functional. From hardened operating systems to decentralized identities that no one can revoke, each project is a functional weapon in the fight for digital sovereignty. This is our proof that our architecture stands not just on paper, but in fire.'
                               : 'Von gehärteten Betriebssystemen bis zu dezentralen Identitäten, die niemand widerrufen kann: Unsere Projekte sind keine Forschung. Sie sind funktionierende Waffen im Kampf um digitale Souveränität und der Beweis, dass unsere Architektur nicht nur theoretisch, sondern auch im Feuer besteht.'
                             }
                           </p>

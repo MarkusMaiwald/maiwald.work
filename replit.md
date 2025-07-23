@@ -104,6 +104,14 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Manifesto section multilingual content and philosophical refinement:
+  * Updated manifesto English content with powerful rebellious anarchist messaging
+  * Enhanced Core Philosophy: "We architect for digital sovereignty" and strategic autonomy focus
+  * Strategic Vision: "Digital fortresses in a world of fragile platforms" with cryptographic hardness
+  * The Forge: "Proof in Fire" - functional weapons for digital sovereignty vs theoretical research
+  * Fixed manifesto language switching - now fully translates between EN/DE
+  * Company subtitle properly displays with typewriter effect in both languages
+  * Matrix background animation fixed with proper keyframes for modal displays
 - July 23, 2025. Legal compliance section and navigation alignment:
   * Added complete Dutch legal compliance section with Informatieplicht and Privacyverklaring
   * Integrated real company data: Maiwald Enterprises B.V., KVK 78035902, BTW NL861240716B01
