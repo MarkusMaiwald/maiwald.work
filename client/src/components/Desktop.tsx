@@ -14,6 +14,7 @@ import { ScrollProgress } from './ScrollProgress';
 import { EasterEggTerminal } from './EasterEggTerminal';
 import { Calculator } from './Calculator';
 import { TextEditor } from './TextEditor';
+import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 
 export function Desktop() {
   const { currentLanguage, toggleLanguage, setLanguage } = useLanguage();
@@ -105,6 +106,9 @@ export function Desktop() {
   return (
     <CyberpunkEffects>
       <div className="font-system h-screen overflow-auto relative" style={{ background: 'var(--cyberpunk-bg)' }}>
+        {/* Cyberpunk Wallpaper */}
+        <CyberpunkWallpaper />
+        
         {/* Particle Field Background */}
         <ParticleField />
         
@@ -113,9 +117,9 @@ export function Desktop() {
           className="fixed inset-0" 
           style={{
             background: `
-              radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 75% 75%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
-              linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(18, 18, 18, 0.9) 100%)
+              radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(255, 0, 110, 0.04) 0%, transparent 50%),
+              linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(18, 18, 18, 0.75) 100%)
             `
           }}
         />
