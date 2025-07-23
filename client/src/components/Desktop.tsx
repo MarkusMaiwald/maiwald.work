@@ -364,6 +364,7 @@ export function Desktop() {
                 window.dispatchEvent(new CustomEvent('toggleAmbientAudio'));
               }}
               className="fixed bottom-20 right-4 z-[70] cyberpunk-button p-2 rounded-full"
+              style={{ position: 'fixed', bottom: '5rem', right: '1rem', zIndex: 70 }}
               aria-label="Toggle ambient audio"
             >
               {isAmbientAudioPlaying ? (
@@ -384,6 +385,7 @@ export function Desktop() {
                 window.dispatchEvent(new CustomEvent('openEasterEgg'));
               }}
               className="fixed bottom-4 right-16 z-[70] w-12 h-12 cyberpunk-button rounded-full flex items-center justify-center text-cyberpunk-electric-blue hover:text-cyberpunk-bg transition-all duration-300"
+              style={{ position: 'fixed', bottom: '1rem', right: '4rem', zIndex: 70 }}
               title="Open Easter Egg Terminal (or press ~)"
             >
               <span className="text-xl font-mono">~</span>
