@@ -21,20 +21,38 @@ export const content: ContentData = {
   help: {
     EN: `Available commands:
 • help - Show this help message
+• list - List available portfolio sections
 • clear - Clear the terminal screen
-• ls - List available sections
+• ls - List directory contents (real filesystem)
 • cat [section] - Display content of a section
 • whoami - Display information about Markus
 • contact - Open contact form
-• lang [en|de] - Change language`,
+• lang [en|de] - Change language
+
+Real system commands:
+• ping <host> - Network connectivity test
+• host <domain> - DNS lookup
+• uname -a - System information
+• date - Current date and time
+• ps - Running processes
+• df -h - Disk usage`,
     DE: `Verfügbare Befehle:
 • help - Diese Hilfe anzeigen
+• list - Verfügbare Portfolio-Bereiche auflisten
 • clear - Terminal-Bildschirm leeren
-• ls - Verfügbare Bereiche auflisten
+• ls - Verzeichnisinhalt auflisten (echtes Dateisystem)
 • cat [bereich] - Inhalt eines Bereichs anzeigen
 • whoami - Informationen über Markus anzeigen
 • contact - Kontaktformular öffnen
-• lang [en|de] - Sprache ändern`
+• lang [en|de] - Sprache ändern
+
+Echte System-Befehle:
+• ping <host> - Netzwerk-Konnektivitätstest
+• host <domain> - DNS-Auflösung
+• uname -a - System-Informationen
+• date - Aktuelles Datum und Uhrzeit
+• ps - Laufende Prozesse
+• df -h - Festplattenbelegung`
   },
   ls: {
     EN: `Available sections:
@@ -51,6 +69,28 @@ export const content: ContentData = {
 • cloud - Cloud & Infrastruktur-Architektur
 • development - Individuelle Software & Systemintegration
 • projects - Persönliche F&E-Projekte (OS, TTRPG)`
+  },
+  list: {
+    EN: `Available portfolio sections:
+• about - Strategic architect profile
+• services - Maiwald Enterprises service portfolio  
+• blockchain - Digital sovereignty & decentralization
+• cloud - Infrastructure architecture & deployment
+• development - Technology solutions & consulting
+• projects - Strategic R&D initiatives
+• legal - Corporate compliance & privacy policy
+
+Use 'cat <section>' to view detailed content.`,
+    DE: `Verfügbare Portfolio-Bereiche:
+• about - Strategisches Architektenprofil
+• services - Maiwald Enterprises Dienstleistungsportfolio
+• blockchain - Digitale Souveränität & Dezentralisierung
+• cloud - Infrastruktur-Architektur & Deployment
+• development - Technologielösungen & Beratung
+• projects - Strategische F&E-Initiativen
+• legal - Unternehmens-Compliance & Datenschutzrichtlinie
+
+Verwenden Sie 'cat <bereich>', um detaillierte Inhalte anzuzeigen.`
   },
   whoami: {
     EN: `Markus Maiwald - Technology Architect & Founder, Maiwald Enterprises BV

@@ -98,6 +98,10 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
       case 'help':
         response = content.help[currentLanguage];
         break;
+
+      case 'list':
+        response = content.list[currentLanguage];
+        break;
       case 'clear':
         setLines([]);
         return;

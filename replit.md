@@ -104,13 +104,16 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
-- July 23, 2025. Real terminal command execution integration:
+- July 23, 2025. Real terminal command execution and enhanced navigation:
   * IMPLEMENTED: Backend terminal service with secure command execution using Node.js child_process
   * ADDED: CyberpunkTerminal class with command validation, sanitization, and security restrictions
   * INTEGRATED: Real Linux commands (ls, ping, host, dig, whoami, uname, uptime, date, ps, df, etc.)
   * SECURITY: Whitelist of allowed commands with restricted patterns to prevent dangerous operations
   * ENHANCED: Terminal now executes actual system commands while maintaining portfolio content commands
+  * ADDED: "list" command to help menu for easy portfolio section navigation
+  * UPDATED: Help system with clear distinction between portfolio commands and real system commands
   * TESTED: ls command shows real filesystem, ping works with external hosts, host command resolves DNS
+  * RESEARCHED: term.js and Xterm.js libraries for potential future terminal emulator upgrades
   * Professional directory structure: config→infrastructure-blueprints, projects→active-projects, services→strategic-consulting
 - July 23, 2025. Enhanced modal immersion with Matrix background, custom cursor, and ESC functionality:
   * FIXED: Matrix background now displays consistently across all modals (InfoModal subpages)
