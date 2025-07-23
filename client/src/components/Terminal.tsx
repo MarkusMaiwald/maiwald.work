@@ -83,7 +83,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
               </div>
               <div className="mt-4">
                 <GlitchText className="text-3xl font-bold cyberpunk-heading">
-                  MARKUS MAIWALD
+                  MAIWALD ENTERPRISES BV
                 </GlitchText>
                 <div className="text-lg text-cyberpunk-electric-blue text-glow mt-2">
                   {content.welcome[currentLanguage]}
