@@ -5,9 +5,10 @@ import { GlitchText } from './CyberpunkEffects';
 interface MenuBarProps {
   currentLanguage: Language;
   onLanguageToggle: () => void;
+  onContactClick?: () => void;
 }
 
-export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
+export function MenuBar({ currentLanguage, onLanguageToggle, onContactClick }: MenuBarProps) {
   const [currentTime, setCurrentTime] = useState('');
   const [currentDate, setCurrentDate] = useState('');
 
@@ -38,8 +39,11 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
     <div className="fixed top-0 left-0 right-0 h-8 cyberpunk-nav z-60 flex items-center justify-between px-4 text-sm">
       <div className="flex items-center space-x-4">
         <div className="text-lg font-bold text-cyan-400">◊</div>
-        <div className="text-cyberpunk-text-dim text-xs font-mono">
-          system@maiwald.work
+        <div 
+          className="text-cyberpunk-text-dim hover:text-cyberpunk-electric-blue text-xs font-mono cursor-pointer transition-colors interactive"
+          onClick={onContactClick}
+        >
+          markus@maiwald.work
         </div>
       </div>
       

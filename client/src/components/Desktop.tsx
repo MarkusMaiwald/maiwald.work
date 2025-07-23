@@ -147,6 +147,7 @@ export function Desktop() {
               <MenuBar 
                 currentLanguage={currentLanguage} 
                 onLanguageToggle={toggleLanguage}
+                onContactClick={handleContactClick}
               />
 
               {/* Scroll Progress Indicator */}
