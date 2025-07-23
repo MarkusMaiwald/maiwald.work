@@ -579,54 +579,68 @@ DATENSICHERHEIT
   development: {
     EN: `DEVELOPMENT SERVICES
 
-FULL-STACK DEVELOPMENT
-• React, Vue.js, Angular frontend development
-• Node.js, Python, Go backend development
-• REST API and GraphQL development
-• Database design and optimization
+SYSTEM ARCHITECTURE & LEADERSHIP
+As System Architect, I deliver strategic technology solutions and lead development teams for complex projects:
 
-DEVOPS & AUTOMATION
-• CI/CD pipeline implementation
-• Infrastructure as Code (Terraform, Ansible)
-• Container orchestration with Kubernetes
-• Monitoring and observability solutions
+• System Architecture Design - Scalable, secure, and maintainable solutions
+• Product Development - From concept to deployment with strategic vision
+• Team Leadership - Leading experienced development teams
+• Technical Strategy - Aligning technology with business objectives
 
-BLOCKCHAIN DEVELOPMENT
-• Smart contract development (Solidity, Rust)
-• DeFi protocol implementation
-• NFT marketplace development
-• Cryptocurrency wallet integration
+SPECIALIZED DOMAINS
+I bring my own team for comprehensive development in:
 
-CONSULTING & ARCHITECTURE
-• System architecture design
-• Technical debt assessment
-• Performance optimization
-• Code review and best practices`,
+• Crypto & Blockchain - DeFi protocols, smart contracts, tokenomics
+• FinTech Solutions - Payment systems, trading platforms, compliance
+• Smart Contracts - Solidity, Rust, audit and optimization
+• Cloud Architecture - Multi-cloud, microservices, serverless
+• Mobile Applications - Native iOS/Android, React Native, Flutter  
+• Web Applications - Full-stack development, progressive web apps
+
+TEAM CAPABILITIES
+• Experienced developers across all major technologies
+• DevOps and infrastructure specialists  
+• UI/UX designers for user-centered design
+• QA engineers for comprehensive testing
+• Project managers for delivery excellence
+
+DELIVERY APPROACH
+• Agile methodologies with proven frameworks
+• Continuous integration and deployment
+• Code quality and security best practices
+• Documentation and knowledge transfer`,
     DE: `ENTWICKLUNGSDIENSTE
 
-FULL-STACK-ENTWICKLUNG
-• React, Vue.js, Angular Frontend-Entwicklung
-• Node.js, Python, Go Backend-Entwicklung
-• REST API und GraphQL-Entwicklung
-• Datenbank-Design und Optimierung
+SYSTEMARCHITEKTUR & FÜHRUNG
+Als Systemarchitekt liefere ich strategische Technologie-Lösungen und führe Entwicklungsteams für komplexe Projekte:
 
-DEVOPS & AUTOMATISIERUNG
-• CI/CD-Pipeline-Implementierung
-• Infrastructure as Code (Terraform, Ansible)
-• Container-Orchestrierung mit Kubernetes
-• Monitoring- und Observability-Lösungen
+• Systemarchitektur-Design - Skalierbare, sichere und wartbare Lösungen
+• Produktentwicklung - Vom Konzept bis zur Bereitstellung mit strategischer Vision
+• Teamführung - Führung erfahrener Entwicklungsteams
+• Technische Strategie - Technologie mit Geschäftszielen abstimmen
 
-BLOCKCHAIN-ENTWICKLUNG
-• Smart-Contract-Entwicklung (Solidity, Rust)
-• DeFi-Protokoll-Implementierung
-• NFT-Marketplace-Entwicklung
-• Kryptowährungs-Wallet-Integration
+SPEZIALISIERTE BEREICHE
+Ich bringe mein eigenes Team für umfassende Entwicklung mit:
 
-BERATUNG & ARCHITEKTUR
-• Systemarchitektur-Design
-• Technische Schulden-Bewertung
-• Performance-Optimierung
-• Code-Review und Best Practices`
+• Crypto & Blockchain - DeFi-Protokolle, Smart Contracts, Tokenomics
+• FinTech-Lösungen - Zahlungssysteme, Handelsplattformen, Compliance
+• Smart Contracts - Solidity, Rust, Audit und Optimierung
+• Cloud-Architektur - Multi-Cloud, Microservices, Serverless
+• Mobile Anwendungen - Native iOS/Android, React Native, Flutter
+• Web-Anwendungen - Full-Stack-Entwicklung, Progressive Web Apps
+
+TEAM-FÄHIGKEITEN
+• Erfahrene Entwickler aller wichtigen Technologien
+• DevOps- und Infrastruktur-Spezialisten
+• UI/UX-Designer für benutzerzentriertes Design
+• QA-Ingenieure für umfassende Tests
+• Projektmanager für exzellente Lieferung
+
+LIEFERANSATZ
+• Agile Methoden mit bewährten Frameworks
+• Kontinuierliche Integration und Bereitstellung
+• Code-Qualität und Sicherheits-Best-Practices
+• Dokumentation und Wissenstransfer`
   },
   languageChanged: {
     EN: "Language changed to English",

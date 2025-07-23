@@ -67,11 +67,11 @@ export function Desktop() {
     if (section === 'projects') {
       setCurrentView('projects');
       setCurrentScrollSection(2);
-    } else if (section === 'services' || section === 'development') {
+    } else if (section === 'services') {
       setCurrentView('manifesto');
       setCurrentScrollSection(3);
     } else {
-      // Open InfoModal for blockchain, cloud, and other sections
+      // Open InfoModal for blockchain, cloud, development, and other sections
       setCurrentSection(section);
       setIsInfoModalOpen(true);
     }
