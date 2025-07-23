@@ -47,11 +47,11 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
             className={`text-sm font-mono transition-all duration-300 ${
               index === currentSection
                 ? 'text-cyberpunk-electric-blue opacity-100'
-                : 'text-cyberpunk-text-dim opacity-0 group-hover:opacity-100'
+                : 'text-cyberpunk-text opacity-70 group-hover:opacity-100 group-hover:text-cyberpunk-electric-blue'
             }`}
             initial={{ opacity: 0, x: 10 }}
             animate={{ 
-              opacity: index === currentSection ? 1 : 0,
+              opacity: index === currentSection ? 1 : 0.7,
               x: index === currentSection ? 0 : 10 
             }}
           >
