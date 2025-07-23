@@ -11,6 +11,7 @@ import { TerminalRitual } from './TerminalRitual';
 import { ProjectShowcase } from './ProjectShowcase';
 import { ParticleField } from './ParticleField';
 import { ScrollProgress } from './ScrollProgress';
+import { EasterEggTerminal } from './EasterEggTerminal';
 
 export function Desktop() {
   const { currentLanguage, toggleLanguage, setLanguage } = useLanguage();
@@ -175,7 +176,7 @@ export function Desktop() {
                     >
                       <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
-                          <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6">
+                          <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
                             THE MAIWALD MANIFESTO
                           </GlitchText>
                           <TypewriterEffect 
@@ -263,6 +264,15 @@ export function Desktop() {
                 onClose={() => setIsInfoModalOpen(false)}
                 section={currentSection}
                 currentLanguage={currentLanguage}
+              />
+
+              {/* Easter Egg Terminal */}
+              <EasterEggTerminal 
+                currentLanguage={currentLanguage}
+                onProjectsReveal={() => {
+                  setCurrentView('projects');
+                  setCurrentScrollSection(2);
+                }}
               />
             </motion.div>
           )}

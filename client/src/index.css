@@ -378,6 +378,57 @@
   background: linear-gradient(180deg, var(--cyberpunk-neon-magenta), var(--cyberpunk-electric-blue));
 }
 
+@keyframes glitch-intense {
+  0% { 
+    transform: translate(0);
+    opacity: 1;
+  }
+  10% { 
+    transform: translate(-3px, 3px);
+    opacity: 0.8;
+  }
+  20% { 
+    transform: translate(3px, -3px);
+    opacity: 0.9;
+  }
+  30% { 
+    transform: translate(-2px, -2px);
+    opacity: 0.7;
+  }
+  40% { 
+    transform: translate(2px, 2px);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translate(-1px, 1px);
+    opacity: 0.6;
+  }
+  60% { 
+    transform: translate(1px, -1px);
+    opacity: 0.9;
+  }
+  70% { 
+    transform: translate(-3px, 1px);
+    opacity: 0.8;
+  }
+  80% { 
+    transform: translate(3px, -1px);
+    opacity: 0.7;
+  }
+  90% { 
+    transform: translate(-1px, -1px);
+    opacity: 0.9;
+  }
+  100% { 
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+.animate-glitch-intense {
+  animation: glitch-intense 0.4s ease-in-out;
+}
+
 /* Custom Cursor */
 * {
   cursor: none;

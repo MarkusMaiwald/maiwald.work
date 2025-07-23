@@ -94,11 +94,40 @@ export function MatrixBackground() {
 interface GlitchTextProps {
   children: React.ReactNode;
   className?: string;
+  enableHover?: boolean;
 }
 
-export function GlitchText({ children, className = '' }: GlitchTextProps) {
+export function GlitchText({ children, className = '', enableHover = false }: GlitchTextProps) {
+  const [isGlitching, setIsGlitching] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (Math.random() < 0.05) { // 5% chance to auto-glitch
+        setIsGlitching(true);
+        setTimeout(() => setIsGlitching(false), 200);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleHover = () => {
+    if (enableHover) {
+      setIsGlitching(true);
+      setTimeout(() => setIsGlitching(false), 400);
+    }
+  };
+
   return (
-    <span className={`glitch-text ${className}`}>
+    <span 
+      className={`glitch-text ${className} ${enableHover ? 'cursor-pointer hover:text-cyberpunk-electric-blue transition-colors' : ''} ${isGlitching ? 'animate-glitch-intense' : ''}`}
+      onMouseEnter={handleHover}
+      style={{
+        textShadow: isGlitching 
+          ? '2px 0 #ff006e, -2px 0 #00d4ff, 0 0 20px #ff006e, 0 0 30px #00d4ff' 
+          : undefined
+      }}
+    >
       {children}
     </span>
   );
