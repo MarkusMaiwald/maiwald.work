@@ -26,10 +26,7 @@ export function Desktop() {
   const [showRitual, setShowRitual] = useState(true);
   const [currentView, setCurrentView] = useState<'terminal' | 'projects' | 'manifesto' | 'legal'>('terminal');
   
-  // Debug current view changes
-  useEffect(() => {
-    console.log('Current view changed to:', currentView);
-  }, [currentView]);
+
   const [currentScrollSection, setCurrentScrollSection] = useState(0);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
@@ -234,19 +231,18 @@ export function Desktop() {
                           <div 
                             className="text-2xl font-bold mb-8"
                             style={{
-                              color: '#00d4ff !important',
-                              textShadow: '0 0 20px #00d4ff !important',
-                              display: 'block !important',
-                              opacity: '1 !important',
-                              visibility: 'visible !important',
+                              color: '#00d4ff',
+                              textShadow: '0 0 20px #00d4ff, 0 0 40px #00d4ff',
+                              display: 'block',
+                              opacity: 1,
+                              visibility: 'visible',
                               position: 'relative',
-                              zIndex: 1000,
-                              backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                              padding: '1rem',
-                              border: '2px solid #00d4ff'
+                              zIndex: 10,
+                              fontFamily: 'Space Grotesk, sans-serif',
+                              letterSpacing: '0.05em'
                             }}
                           >
-                            SUBTITLE: {currentLanguage === 'EN' 
+                            {currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
