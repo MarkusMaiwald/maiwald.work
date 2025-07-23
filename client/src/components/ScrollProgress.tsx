@@ -21,7 +21,7 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
     <motion.div
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
-      className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 space-y-4"
+      className="fixed right-8 top-1/2 transform -translate-y-1/2 z-40 space-y-4 bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-4 border border-cyberpunk-border"
     >
       {sections.map((section, index) => (
         <motion.div
@@ -44,14 +44,19 @@ export function ScrollProgress({ sections, currentSection, onSectionChange }: Sc
             }}
           />
           <motion.span
-            className={`text-sm font-mono transition-all duration-300 ${
+            className={`text-sm font-mono font-bold transition-all duration-300 ${
               index === currentSection
-                ? 'text-cyberpunk-electric-blue opacity-100'
-                : 'text-cyberpunk-text opacity-70 group-hover:opacity-100 group-hover:text-cyberpunk-electric-blue'
+                ? 'text-cyberpunk-electric-blue opacity-100 text-glow'
+                : 'text-white opacity-90 group-hover:opacity-100 group-hover:text-cyberpunk-electric-blue'
             }`}
+            style={{
+              textShadow: index === currentSection 
+                ? '0 0 10px var(--cyberpunk-electric-blue)' 
+                : '0 0 5px rgba(255, 255, 255, 0.5)'
+            }}
             initial={{ opacity: 0, x: 10 }}
             animate={{ 
-              opacity: index === currentSection ? 1 : 0.7,
+              opacity: index === currentSection ? 1 : 0.9,
               x: index === currentSection ? 0 : 10 
             }}
           >
