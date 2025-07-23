@@ -1,0 +1,160 @@
+🛠️ Hard Skills Overview (Group For IT + Personal Expertise)
+🧠 AI, Data & Automation
+KI-Integration:
+
+RAG (Retrieval-Augmented Generation)
+
+RASA (Open Source Conversational AI)
+
+GPT-basierte Assistenzsysteme
+
+Reporting & Testing
+
+Predictive Analytics
+
+Konfigurations‑ & Analyse‑Skripte
+
+Automatisierung mit GPO, Cron, systemd, shell
+
+☁️ Cloud, Kubernetes & Virtualization
+Kubernetes (K8s) Orchestrierung
+
+Container: Docker, Podman, systemd-nspawn
+
+Proxmox VE Cluster
+
+VMware vSphere
+
+Hyper‑V (nur technische Verwaltung)
+
+CI/CD Pipelines (GitLab CI, Gitea Actions)
+
+Infrastructure-as-Code (IaC)
+
+Cloud- & Hybrid-Infrastrukturen
+
+🧱 Linux & BSD Systems
+Linux (Arch, Debian, Alpine, RHEL)
+
+BSD (OpenBSD, FreeBSD):
+
+Routing
+
+pf
+
+Hardened Services
+
+init-Systeme: systemd, OpenRC
+
+Netzwerkintegration & Headless Deployment
+
+Shellscripting (sh, bash, fish, dash)
+
+🌐 Networking & Firewalls
+Netzwerkdesign: VLAN, DNS, DHCP, NAT, MTU, Subnetting
+
+Routingprotokolle, statisch & dynamisch
+
+Open Source Firewalls:
+
+pfSense
+
+OPNsense
+
+iptables, nftables
+
+VPN-Technologien:
+
+WireGuard
+
+IPSec
+
+DNS: Unbound, PowerDNS, DNSSEC
+
+Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+
+🔐 Cybersecurity
+Endpoint Security
+
+Patch-Management
+
+VPN & Zero Trust Architectures
+
+Bastion Hosts, SSH Hardening
+
+Server/Cluster Firewalling
+
+Storage & Backup Security
+
+Redundante & isolierte Netzwerkzonen
+
+Admin Tier-Konzepte, Zugriffskontrolle
+
+💾 Storage, Backup & Archiving
+SAN / NAS / DAS Setups
+
+Backup-Systeme:
+
+Veeam Backup & Replication
+
+rsync, restic, borg
+
+Archivsysteme:
+
+MailStore Server (IMAP/POP/Exchange)
+
+Dokumentenmanagementsysteme (DMS) mit Metadaten, Volltextsuche
+
+🖥️ Hardware & Embedded
+Server-Cluster, Workstations, NAS, USVs
+
+LTO-Bandlaufwerke, RAID-Controller
+
+Zeiterfassungsterminals
+
+Smartboards, Projektoren, Kameraüberwachung
+
+Peripherie: Multifunktionsdrucker, Plotter, Presenter
+
+Netzwerkkomponenten: Switches, Firewalls, APs
+
+ARM & Embedded Devices
+
+📡 Webserver & Self-Hosting
+Webserver: nginx, Apache, Caddy
+
+TLS-Zertifikate (ACME, Let’s Encrypt)
+
+Reverse Proxy, Load Balancing
+
+Dienste:
+
+Nextcloud
+
+Forgejo / Gitea
+
+Matrix / Synapse
+
+Jitsi Meet
+
+Private Bin, Miniflux, Pleroma
+
+📦 Deployment & Operating Systems
+PXE, Cloud-Init, Ignition, Butane
+
+Container-Deployment
+
+stateless Setup mit OverlayFS / Btrfs / Bcachefs
+
+Betriebssysteme:
+
+Arch Linux
+
+CachyOS
+
+Debian
+
+Void
+
+OpenBSD / FreeBSD
+

@@ -78,6 +78,8 @@ Echte System-Befehle:
 • cloud - Infrastructure architecture & deployment
 • development - Technology solutions & consulting
 • projects - Strategic R&D initiatives
+• hardskills - Technical expertise & competencies
+• softskills - Leadership roles & interdisciplinary strengths
 • legal - Corporate compliance & privacy policy
 
 Use 'cat <section>' to view detailed content.`,
@@ -88,6 +90,8 @@ Use 'cat <section>' to view detailed content.`,
 • cloud - Infrastruktur-Architektur & Deployment
 • development - Technologielösungen & Beratung
 • projects - Strategische F&E-Initiativen
+• hardskills - Technische Expertise & Kompetenzen
+• softskills - Führungsrollen & interdisziplinäre Stärken
 • legal - Unternehmens-Compliance & Datenschutzrichtlinie
 
 Verwenden Sie 'cat <bereich>', um detaillierte Inhalte anzuzeigen.`
@@ -575,6 +579,214 @@ Das Projekt demonstriert, wie SSI abstrakte Konzepte greifbar und benutzerfreund
 
 STRATEGISCHER WERT:
 Diese Projekte stellen sicher, dass ich, wenn ich Lösungen für Kunden architekturiere, tiefe, praktische Erfahrung sowohl mit grundlegenden Computing-Prinzipien als auch mit modernsten aufkommenden Technologien mitbringe. Diese Kombination aus Low-Level-Systemwissen und High-Level-Innovationsfähigkeiten ist im Beratungsbereich außergewöhnlich selten.`
+  },
+  hardskills: {
+    EN: `HARD SKILLS OVERVIEW - TECHNICAL EXPERTISE
+
+🧠 AI, DATA & AUTOMATION
+AI Integration:
+• RAG (Retrieval-Augmented Generation)
+• RASA (Open Source Conversational AI)
+• GPT-based Assistant Systems
+• Reporting & Testing
+• Predictive Analytics
+• Configuration & Analysis Scripts
+• Automation with GPO, Cron, systemd, shell
+
+☁️ CLOUD, KUBERNETES & VIRTUALIZATION
+• Kubernetes (K8s) Orchestration
+• Containers: Docker, Podman, systemd-nspawn
+• Proxmox VE Cluster
+• VMware vSphere
+• Hyper-V (technical administration)
+• CI/CD Pipelines (GitLab CI, Gitea Actions)
+• Infrastructure-as-Code (IaC)
+• Cloud & Hybrid Infrastructures
+
+🧱 LINUX & BSD SYSTEMS
+• Linux (Arch, Debian, Alpine, RHEL)
+• BSD (OpenBSD, FreeBSD): Routing, pf, Hardened Services
+• Init Systems: systemd, OpenRC
+• Network Integration & Headless Deployment
+• Shell Scripting (sh, bash, fish, dash)
+
+🌐 NETWORKING & FIREWALLS
+• Network Design: VLAN, DNS, DHCP, NAT, MTU, Subnetting
+• Routing Protocols, static & dynamic
+• Open Source Firewalls: pfSense, OPNsense, iptables, nftables
+• VPN Technologies: WireGuard, IPSec
+• DNS: Unbound, PowerDNS, DNSSEC
+• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+
+🔐 CYBERSECURITY
+• Endpoint Security
+• Patch Management
+• VPN & Zero Trust Architectures
+• Bastion Hosts, SSH Hardening
+• Server/Cluster Firewalling
+• Storage & Backup Security
+• Redundant & Isolated Network Zones
+• Admin Tier Concepts, Access Control
+
+💾 STORAGE, BACKUP & ARCHIVING
+• SAN / NAS / DAS Setups
+• Backup Systems: Veeam Backup & Replication, rsync, restic, borg
+• Archive Systems: MailStore Server (IMAP/POP/Exchange)
+• Document Management Systems (DMS) with Metadata, Full-text Search
+
+🖥️ HARDWARE & EMBEDDED
+• Server Clusters, Workstations, NAS, UPS
+• LTO Tape Drives, RAID Controllers
+• Time Tracking Terminals
+• Smartboards, Projectors, Camera Surveillance
+• Peripherals: Multifunction Printers, Plotters, Presenters
+• Network Components: Switches, Firewalls, APs
+• ARM & Embedded Devices
+
+📡 WEBSERVER & SELF-HOSTING
+• Web Servers: nginx, Apache, Caddy
+• TLS Certificates (ACME, Let's Encrypt)
+• Reverse Proxy, Load Balancing
+• Services: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet, Private Bin, Miniflux, Pleroma
+
+📦 DEPLOYMENT & OPERATING SYSTEMS
+• PXE, Cloud-Init, Ignition, Butane
+• Container Deployment
+• Stateless Setup with OverlayFS / Btrfs / Bcachefs
+• Operating Systems: Arch Linux, CachyOS, Debian, Void, OpenBSD/FreeBSD`,
+    DE: `HARD SKILLS ÜBERSICHT - TECHNISCHE EXPERTISE
+
+🧠 KI, DATEN & AUTOMATISIERUNG
+KI-Integration:
+• RAG (Retrieval-Augmented Generation)
+• RASA (Open Source Conversational AI)
+• GPT-basierte Assistenzsysteme
+• Reporting & Testing
+• Predictive Analytics
+• Konfigurations- & Analyse-Skripte
+• Automatisierung mit GPO, Cron, systemd, shell
+
+☁️ CLOUD, KUBERNETES & VIRTUALISIERUNG
+• Kubernetes (K8s) Orchestrierung
+• Container: Docker, Podman, systemd-nspawn
+• Proxmox VE Cluster
+• VMware vSphere
+• Hyper-V (nur technische Verwaltung)
+• CI/CD Pipelines (GitLab CI, Gitea Actions)
+• Infrastructure-as-Code (IaC)
+• Cloud- & Hybrid-Infrastrukturen
+
+🧱 LINUX & BSD SYSTEME
+• Linux (Arch, Debian, Alpine, RHEL)
+• BSD (OpenBSD, FreeBSD): Routing, pf, Hardened Services
+• init-Systeme: systemd, OpenRC
+• Netzwerkintegration & Headless Deployment
+• Shellscripting (sh, bash, fish, dash)
+
+🌐 NETZWERKE & FIREWALLS
+• Netzwerkdesign: VLAN, DNS, DHCP, NAT, MTU, Subnetting
+• Routingprotokolle, statisch & dynamisch
+• Open Source Firewalls: pfSense, OPNsense, iptables, nftables
+• VPN-Technologien: WireGuard, IPSec
+• DNS: Unbound, PowerDNS, DNSSEC
+• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+
+🔐 CYBERSECURITY
+• Endpoint Security
+• Patch-Management
+• VPN & Zero Trust Architectures
+• Bastion Hosts, SSH Hardening
+• Server/Cluster Firewalling
+• Storage & Backup Security
+• Redundante & isolierte Netzwerkzonen
+• Admin Tier-Konzepte, Zugriffskontrolle
+
+💾 STORAGE, BACKUP & ARCHIVIERUNG
+• SAN / NAS / DAS Setups
+• Backup-Systeme: Veeam Backup & Replication, rsync, restic, borg
+• Archivsysteme: MailStore Server (IMAP/POP/Exchange)
+• Dokumentenmanagementsysteme (DMS) mit Metadaten, Volltextsuche
+
+🖥️ HARDWARE & EMBEDDED
+• Server-Cluster, Workstations, NAS, USVs
+• LTO-Bandlaufwerke, RAID-Controller
+• Zeiterfassungsterminals
+• Smartboards, Projektoren, Kameraüberwachung
+• Peripherie: Multifunktionsdrucker, Plotter, Presenter
+• Netzwerkkomponenten: Switches, Firewalls, APs
+• ARM & Embedded Devices
+
+📡 WEBSERVER & SELF-HOSTING
+• Webserver: nginx, Apache, Caddy
+• TLS-Zertifikate (ACME, Let's Encrypt)
+• Reverse Proxy, Load Balancing
+• Dienste: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet, Private Bin, Miniflux, Pleroma
+
+📦 DEPLOYMENT & BETRIEBSSYSTEME
+• PXE, Cloud-Init, Ignition, Butane
+• Container-Deployment
+• stateless Setup mit OverlayFS / Btrfs / Bcachefs
+• Betriebssysteme: Arch Linux, CachyOS, Debian, Void, OpenBSD/FreeBSD`
+  },
+  softskills: {
+    EN: `SOFT SKILLS & LEADERSHIP ROLES
+
+🧑‍💼 EXECUTIVE & STRATEGIC LEADERSHIP
+• CEO – Maiwald Enterprises BV (since 2017)
+• CIO – IOP Global GmbH (2020)
+• CTO – IOP Ventures (2016)
+• Founding Executive in tech-driven ventures
+• Long-term entrepreneurial leadership across Europe
+
+🧩 ORGANIZATIONAL ROLES
+• Platform Architect (SaaS, PaaS, IaaS)
+• Product Developer with iterative, user-driven design philosophy
+• Project Leader for distributed, multi-stakeholder teams
+• Team Leader in agile, DevOps, and remote-first environments
+• Network Security Officer with strong focus on Zero Trust, compliance & hardening
+
+🌍 BLOCKCHAIN & DECENTRALIZATION
+• Cryptocurrency Founder
+• DAO Leader with a focus on governance, transparency & incentive systems
+• Blockchain Visionary:
+  - Network-State Design
+  - Web3 Infrastructure
+  - Decentralized Identity & Trustless Systems
+
+🧠 INTERDISCIPLINARY STRENGTHS
+• Strategic Thinker: bridging tech, product, and org
+• Vision-setting for long-term, open-source aligned ecosystems
+• High resilience and decision-making under uncertainty
+• Systems & protocol-level abstraction mindset`,
+    DE: `SOFT SKILLS & FÜHRUNGSROLLEN
+
+🧑‍💼 EXECUTIVE & STRATEGISCHE FÜHRUNG
+• CEO – Maiwald Enterprises BV (seit 2017)
+• CIO – IOP Global GmbH (2020)
+• CTO – IOP Ventures (2016)
+• Gründungsführungskraft in technologiegetriebenen Unternehmen
+• Langfristige unternehmerische Führung in Europa
+
+🧩 ORGANISATORISCHE ROLLEN
+• Plattform-Architekt (SaaS, PaaS, IaaS)
+• Produktentwickler mit iterativer, nutzerorientierter Designphilosophie
+• Projektleiter für verteilte, Multi-Stakeholder-Teams
+• Teamleiter in agilen, DevOps- und Remote-First-Umgebungen
+• Netzwerksicherheitsbeauftragter mit starkem Fokus auf Zero Trust, Compliance & Härtung
+
+🌍 BLOCKCHAIN & DEZENTRALISIERUNG
+• Kryptowährungs-Gründer
+• DAO-Leiter mit Fokus auf Governance, Transparenz & Anreizsysteme
+• Blockchain-Visionär:
+  - Network-State Design
+  - Web3-Infrastruktur
+  - Dezentrale Identität & Vertrauenslose Systeme
+
+🧠 INTERDISZIPLINÄRE STÄRKEN
+• Strategischer Denker: Brückenschlag zwischen Tech, Produkt und Organisation
+• Visionssetzung für langfristige, Open-Source-orientierte Ökosysteme
+• Hohe Belastbarkeit und Entscheidungsfindung unter Unsicherheit
+• System- und Protokoll-orientierte Abstraktionsdenkweise`
   },
   cloud: {
     EN: `CLOUD SOLUTIONS

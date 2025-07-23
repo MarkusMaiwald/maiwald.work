@@ -190,6 +190,12 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
       case 'about':
         response = content.about[currentLanguage];
         break;
+      case 'hardskills':
+        response = content.hardskills[currentLanguage];
+        break;
+      case 'softskills':
+        response = content.softskills[currentLanguage];
+        break;
       case 'contact':
         onOpenContact();
         response = content.contactOpening[currentLanguage];

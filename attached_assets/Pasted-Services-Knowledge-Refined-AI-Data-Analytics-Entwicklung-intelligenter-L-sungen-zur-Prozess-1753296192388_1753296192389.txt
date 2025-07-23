@@ -1,0 +1,96 @@
+Services & Knowledge (Refined)
+🧠 AI & Data Analytics
+Entwicklung intelligenter Lösungen zur Prozessoptimierung
+
+KI-Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
+
+Reporting, Testing, Predictive Analytics
+
+☁️ Cloud, Virtualization & Infrastructure
+Kubernetes (K8s) & Container-Orchestration
+
+Skalierbare Cloud- & Hybrid-Infrastruktur
+
+Proxmox, VMware vSphere, Hyper‑V
+
+Gitea, GitLab, CI/CD Deployment Pipelines
+
+Infrastructure-as-Code, Automatisierung
+
+🧱 Server, Linux & BSD Expertise
+Linux: Debian, Arch, Alpine, RHEL
+
+BSD: OpenBSD, FreeBSD (Routing, Firewalls, Hardened Services)
+
+Headless Server Deployments
+
+Systemd, OpenRC, CRON, System Monitoring
+
+Remote Access & Bastion Setups (e.g. SSH, Tailscale, WireGuard)
+
+🌐 Networking & Firewalls
+Netzwerkarchitektur: VLANs, Subnetting, DNS, DHCP, NAT
+
+Open Source Firewalls: pfSense, OPNsense, nftables, iptables
+
+Zero Trust Networking, VPN: WireGuard, IPSec
+
+Redundante Gateways, Failover-Strategien
+
+Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+
+🔐 Cybersecurity
+Endpoint Security, Patch-Management, VPN
+
+Server-Security: Firewalls, Bastion Hosts, Cluster-Failover
+
+Admin-Tier-Konzepte, Rechteverwaltung, Compliance Audits
+
+Physical Security: Alarmanlagen, redundante Serverräume
+
+Mail & DMS Security (MailStore, DMS Rechteverwaltung)
+
+🖥️ Hardware & System Lifecycle
+Planung, Aufbau, Wartung von:
+
+Servern, Clustern, Workstations, Netzwerkinfrastruktur
+
+Backup-Servern, Storage (SAN/NAS/DAS), USVs
+
+Sicherheitskomponenten, Klimatisierung, Zeiterfassungssystemen
+
+Lebenszyklusmanagement: Lifecycle 2–8 Jahre nach Gerätetyp
+
+📡 Webserver & Services
+Hosting & Betrieb von Webservern: nginx, Apache, Caddy
+
+Reverse Proxies, Load Balancing, SSL/TLS, ACME
+
+Selbstgehostete Services: Gitea, Forgejo, Nextcloud, Matrix, Jitsi
+
+📎 Dokumentation & Archivierung
+Dokumentenmanagementsysteme (DMS):
+
+Metadaten, Volltextsuche, Zugriffskontrolle, Prozessintegration
+
+Mail-Archivierung mit MailStore: Compliance & Schnittstellen
+
+Versionskontrolle, Rechte- & Compliance-Strukturen
+
+📦 Deployment & Automation
+Automatisierung von Setup, Wartung, Updates
+
+CI/CD mit GitLab, Gitea, shell/Nix-Skripten
+
+PXE, Cloud-Init, Ignition, Butane
+
+Container Deployment mit Docker, Podman, systemd-nspawn
+
+🧰 IT Management & Support
+ITIL-orientierte Supportlevels 0–4
+
+SLA-Design, Audits, Lizenz-Touren
+
+Strategische IT-Planung, Budgetierung, Technologietrends
+
+Monitoring, Reporting, Incident & Problem Management
