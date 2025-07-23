@@ -226,15 +226,12 @@ export function Desktop() {
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
-                          <TypewriterEffect 
-                            key={`manifesto-subtitle-${currentLanguage}`}
-                            text={currentLanguage === 'EN' 
+                          <div className="text-xl text-cyberpunk-electric-blue font-medium text-glow">
+                            {currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
-                            className="text-xl text-cyberpunk-electric-blue font-medium text-glow"
-                            speed={50}
-                          />
+                          </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 mb-16">
