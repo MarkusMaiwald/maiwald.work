@@ -39,8 +39,11 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
           STATUS: <span className="text-cyberpunk-acid-green">ONLINE</span>
         </div>
         <div 
-          className="nav-link text-xs font-mono interactive"
-          onClick={onLanguageToggle}
+          className="nav-link text-xs font-mono interactive cursor-pointer hover:text-cyberpunk-electric-blue transition-colors"
+          onClick={() => {
+            console.log('Language toggle clicked, current:', currentLanguage);
+            onLanguageToggle();
+          }}
         >
           LANG: {currentLanguage.toUpperCase()}
         </div>
