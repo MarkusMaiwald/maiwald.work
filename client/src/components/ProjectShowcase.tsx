@@ -41,7 +41,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       id: 'custom-os',
       name: 'Custom Operating System',
       category: 'SYSTEMS',
-      stack: ['Nim', 'Assembly', 'Kernel', 'UEFI'],
+      stack: ['Nim', 'Assembly', 'Kernel', 'UEFI', 'SystemD'],
       description: 'Ground-up OS development demonstrating deep systems architecture knowledge and forward-thinking design principles.',
       status: 'ACTIVE',
       impact: 'Core technology research advancing understanding of operating system fundamentals',
