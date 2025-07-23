@@ -208,15 +208,10 @@ export function CyberpunkWallpaper() {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10">
-      {/* Debug overlay - remove later */}
-      <div className="absolute top-4 left-4 text-cyberpunk-electric-blue text-xs font-mono z-50">
-        WALLPAPER ACTIVE | NODES: {nodes.length}
-      </div>
-      
       {/* Canvas for circuit traces */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-60"
+        className="absolute inset-0 w-full h-full opacity-30"
       />
       
       {/* Network nodes */}
@@ -232,36 +227,40 @@ export function CyberpunkWallpaper() {
             }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ 
-              opacity: hoveredNode === node.id || node.isActive ? 0.9 : 0.6,
-              scale: hoveredNode === node.id ? 1.5 : 1
+              opacity: hoveredNode === node.id ? 1 : 0.4,
+              scale: hoveredNode === node.id ? 1.2 : 1
             }}
             transition={{ duration: 0.3 }}
             onMouseEnter={() => handleNodeHover(node.id)}
             onMouseLeave={() => handleNodeHover(null)}
           >
             <div className="relative">
-              {/* Node glow */}
-              <div
-                className="absolute inset-0 rounded-full blur-md"
-                style={{
-                  backgroundColor: getNodeColor(node.type, hoveredNode === node.id, node.isActive),
-                  opacity: hoveredNode === node.id || node.isActive ? 0.6 : 0.1
-                }}
-              />
+              {/* Node glow - only on hover */}
+              {hoveredNode === node.id && (
+                <div
+                  className="absolute inset-0 rounded-full blur-md"
+                  style={{
+                    backgroundColor: getNodeColor(node.type, true, false),
+                    opacity: 0.8
+                  }}
+                />
+              )}
               
               {/* Node core */}
               <div
-                className="relative w-3 h-3 rounded-full border border-current"
+                className="relative w-1 h-1 rounded-full"
                 style={{
-                  color: getNodeColor(node.type, hoveredNode === node.id, node.isActive),
-                  backgroundColor: hoveredNode === node.id || node.isActive 
+                  backgroundColor: hoveredNode === node.id 
                     ? getNodeColor(node.type, true, false) 
-                    : 'transparent'
+                    : '#333333',
+                  boxShadow: hoveredNode === node.id 
+                    ? `0 0 8px ${getNodeColor(node.type, true, false)}` 
+                    : 'none'
                 }}
               />
               
               {/* Node label */}
-              {(hoveredNode === node.id || node.isActive) && (
+              {hoveredNode === node.id && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
