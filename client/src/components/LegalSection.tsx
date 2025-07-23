@@ -93,7 +93,8 @@ export function LegalSection({ currentLanguage }: LegalSectionProps) {
     }
   };
 
-  const content = legalContent[currentLanguage as keyof typeof legalContent];
+  const langKey = currentLanguage.toLowerCase() as 'en' | 'de';
+  const content = legalContent[langKey] || legalContent.en;
 
   return (
     <div className="max-w-6xl mx-auto">
