@@ -15,6 +15,7 @@ import { ScrollProgress } from './ScrollProgress';
 import { EasterEggTerminal } from './EasterEggTerminal';
 import { Calculator } from './Calculator';
 import { TextEditor } from './TextEditor';
+import { SkillsApp } from './SkillsApp';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 import { SystemMonitor } from './SystemMonitor';
 
@@ -30,6 +31,7 @@ export function Desktop() {
   const [currentScrollSection, setCurrentScrollSection] = useState(0);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
+  const [isSkillsOpen, setIsSkillsOpen] = useState(false);
   const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const terminalRef = useRef<TerminalRef>(null);
@@ -90,6 +92,10 @@ export function Desktop() {
 
   const handleTextEditorClick = () => {
     setIsTextEditorOpen(true);
+  };
+
+  const handleSkillsClick = () => {
+    setIsSkillsOpen(true);
   };
 
   const handleHelpClick = () => {
@@ -362,6 +368,15 @@ export function Desktop() {
                 )}
               </AnimatePresence>
 
+              <AnimatePresence>
+                {isSkillsOpen && (
+                  <SkillsApp
+                    isOpen={isSkillsOpen}
+                    onClose={() => setIsSkillsOpen(false)}
+                  />
+                )}
+              </AnimatePresence>
+
             </motion.div>
           )}
         </AnimatePresence>
@@ -388,6 +403,7 @@ export function Desktop() {
               }}
               onCalculatorClick={handleCalculatorClick}
               onTextEditorClick={handleTextEditorClick}
+              onSkillsClick={handleSkillsClick}
               currentLanguage={currentLanguage}
             />
           </div>

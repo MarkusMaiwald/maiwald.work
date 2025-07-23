@@ -9,10 +9,11 @@ interface DockProps {
   onHelpClick: () => void;
   onCalculatorClick: () => void;
   onTextEditorClick: () => void;
+  onSkillsClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, onSkillsClick, currentLanguage }: DockProps) {
   // Initialize audio on first render
   useEffect(() => {
     const initAudio = () => {
@@ -71,6 +72,13 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       icon: '⬣',
       color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
       action: () => onSectionClick('development')
+    },
+    {
+      id: 'skills',
+      title: 'SKILLS',
+      icon: '⟡',
+      color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
+      action: onSkillsClick
     },
     {
       id: 'calculator',
