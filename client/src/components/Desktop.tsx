@@ -27,6 +27,7 @@ export function Desktop() {
   const [currentScrollSection, setCurrentScrollSection] = useState(0);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
+  const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
   const terminalRef = useRef<TerminalRef>(null);
 
   const sections = ['NEURAL LINK', 'TERMINAL', 'PROJECTS', 'MANIFESTO'];
@@ -38,6 +39,14 @@ export function Desktop() {
       setShowRitual(false);
       setCurrentScrollSection(1);
     }
+
+    // Listen for ambient audio state changes
+    const handleAudioStateChange = (event: CustomEvent) => {
+      setIsAmbientAudioPlaying(event.detail.isPlaying);
+    };
+
+    window.addEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
+    return () => window.removeEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
   }, []);
 
   const handleTerminalClick = () => {
@@ -344,6 +353,42 @@ export function Desktop() {
             onTextEditorClick={handleTextEditorClick}
             currentLanguage={currentLanguage}
           />
+        )}
+
+        {/* Fixed UI Elements - Outside all containers for guaranteed visibility */}
+        {!showRitual && (
+          <>
+            {/* Ambient Audio Button */}
+            <button
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent('toggleAmbientAudio'));
+              }}
+              className="fixed bottom-20 right-4 z-[70] cyberpunk-button p-2 rounded-full"
+              aria-label="Toggle ambient audio"
+            >
+              {isAmbientAudioPlaying ? (
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              )}
+            </button>
+
+            {/* Easter Egg Terminal Button */}
+            <button
+              onClick={() => {
+                // Dispatch a custom event to trigger the easter egg terminal
+                window.dispatchEvent(new CustomEvent('openEasterEgg'));
+              }}
+              className="fixed bottom-4 right-16 z-[70] w-12 h-12 cyberpunk-button rounded-full flex items-center justify-center text-cyberpunk-electric-blue hover:text-cyberpunk-bg transition-all duration-300"
+              title="Open Easter Egg Terminal (or press ~)"
+            >
+              <span className="text-xl font-mono">~</span>
+            </button>
+          </>
         )}
       </div>
     </CyberpunkEffects>

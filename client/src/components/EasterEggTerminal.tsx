@@ -21,7 +21,7 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
   const [isProcessing, setIsProcessing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Listen for ~ key to toggle terminal
+  // Listen for ~ key to toggle terminal and custom event
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === '~' && !isVisible) {
@@ -33,8 +33,17 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
       }
     };
 
+    const handleOpenEasterEgg = () => {
+      setIsVisible(true);
+      setTimeout(() => inputRef.current?.focus(), 100);
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('openEasterEgg', handleOpenEasterEgg);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('openEasterEgg', handleOpenEasterEgg);
+    };
   }, [isVisible]);
 
   const commands = {
@@ -277,24 +286,7 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
         </motion.div>
       )}
 
-      {/* Toggle Button (always visible in bottom corner) */}
-      {!isVisible && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            setIsVisible(true);
-            setTimeout(() => inputRef.current?.focus(), 100);
-          }}
-          className="fixed bottom-4 right-16 z-[60] w-12 h-12 cyberpunk-button rounded-full flex items-center justify-center text-cyberpunk-electric-blue hover:text-cyberpunk-bg transition-all duration-300"
-          title="Open Easter Egg Terminal (or press ~)"
-        >
-          <span className="text-xl font-mono">~</span>
-        </motion.button>
-      )}
+
     </AnimatePresence>
   );
 }
