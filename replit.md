@@ -24,7 +24,8 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 ### Database Schema
 - **Users Table**: Basic user authentication (id, username, password)
 - **Contacts Table**: Contact form submissions (id, name, email, message, createdAt)
-- **ORM**: Drizzle ORM with Zod validation schemas
+- **Database**: SQLite (database.sqlite file in repository root)  
+- **ORM**: Drizzle ORM with better-sqlite3 driver and Zod validation schemas
 
 ## Key Components
 
@@ -69,9 +70,8 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ### Backend Dependencies
 - **express**: Web application framework
-- **drizzle-orm**: Type-safe ORM for PostgreSQL
-- **@neondatabase/serverless**: Serverless PostgreSQL driver
-- **connect-pg-simple**: PostgreSQL session store
+- **drizzle-orm**: Type-safe ORM for SQLite
+- **better-sqlite3**: High-performance SQLite driver
 - **zod**: Runtime type validation
 
 ### Development Dependencies
@@ -95,14 +95,15 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 - **Deployment**: Single Node.js process serving both frontend and API
 
 ### Environment Configuration
-- **DATABASE_URL**: PostgreSQL connection string (required)
 - **NODE_ENV**: Environment mode (development/production)
-- **Session Configuration**: Secure session management with PostgreSQL store
+- **Database**: SQLite file (database.sqlite) - automatically created on first run
+- **Session Management**: In-memory session store for development
 
 ## Changelog
 
 ```
 Changelog:
+- July 23, 2025. Converted from PostgreSQL to SQLite for local file-based data storage
 - July 07, 2025. Initial setup
 ```
 
