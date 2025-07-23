@@ -98,9 +98,19 @@ export function Desktop() {
 
   const handleScrollSectionChange = (index: number) => {
     setCurrentScrollSection(index);
-    if (index === 1) setCurrentView('terminal');
-    if (index === 2) setCurrentView('projects');
-    if (index === 3) setCurrentView('manifesto');
+    
+    // Handle navigation based on section index
+    if (index === 0) {
+      // Neural Link - show about section
+      setCurrentSection('about');
+      setIsInfoModalOpen(true);
+    } else if (index === 1) {
+      setCurrentView('terminal');
+    } else if (index === 2) {
+      setCurrentView('projects');  
+    } else if (index === 3) {
+      setCurrentView('manifesto');
+    }
   };
 
   return (
