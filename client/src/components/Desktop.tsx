@@ -263,19 +263,7 @@ export function Desktop() {
                 </AnimatePresence>
               </div>
 
-              {/* Dock */}
-              <Dock 
-                onTerminalClick={() => {
-                  setCurrentView('terminal');
-                  setCurrentScrollSection(1);
-                }}
-                onContactClick={handleContactClick}
-                onSectionClick={handleSectionClick}
-                onHelpClick={handleHelpClick}
-                onCalculatorClick={handleCalculatorClick}
-                onTextEditorClick={handleTextEditorClick}
-                currentLanguage={currentLanguage}
-              />
+
 
               {/* Contact Modal */}
               <ContactModal 
@@ -323,6 +311,22 @@ export function Desktop() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Dock - Fixed position outside scrolling content */}
+        {!showRitual && (
+          <Dock 
+            onTerminalClick={() => {
+              setCurrentView('terminal');
+              setCurrentScrollSection(1);
+            }}
+            onContactClick={handleContactClick}
+            onSectionClick={handleSectionClick}
+            onHelpClick={handleHelpClick}
+            onCalculatorClick={handleCalculatorClick}
+            onTextEditorClick={handleTextEditorClick}
+            currentLanguage={currentLanguage}
+          />
+        )}
       </div>
     </CyberpunkEffects>
   );
