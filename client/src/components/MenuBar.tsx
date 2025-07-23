@@ -9,6 +9,7 @@ interface MenuBarProps {
 
 export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
   const [currentTime, setCurrentTime] = useState('');
+  const [currentDate, setCurrentDate] = useState('');
 
   useEffect(() => {
     const updateTime = () => {
@@ -16,9 +17,16 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
       const timeString = now.toLocaleTimeString('en-US', { 
         hour12: false,
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const dateString = now.toLocaleDateString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric'
       });
       setCurrentTime(timeString);
+      setCurrentDate(dateString);
     };
 
     updateTime();
@@ -34,6 +42,17 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
           MARKUS.MAIWALD/SYSTEM
         </GlitchText>
       </div>
+      
+      {/* Center - Clock and Date */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 text-center">
+        <div className="text-xs font-mono text-cyberpunk-electric-blue text-glow">
+          {currentTime}
+        </div>
+        <div className="text-xs font-mono text-cyberpunk-text-dim -mt-1">
+          {currentDate}
+        </div>
+      </div>
+      
       <div className="flex items-center space-x-6">
         <div className="text-cyberpunk-text-dim text-xs font-mono">
           STATUS: <span className="text-cyberpunk-acid-green">ONLINE</span>
@@ -46,9 +65,6 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
           }}
         >
           LANG: {currentLanguage.toUpperCase()}
-        </div>
-        <div className="text-xs font-mono text-cyberpunk-electric-blue text-glow">
-          {currentTime}
         </div>
       </div>
     </div>
