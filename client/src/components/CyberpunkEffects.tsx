@@ -266,7 +266,7 @@ export function AmbientAudio() {
   return (
     <button
       onClick={toggleAudio}
-      className="fixed bottom-4 right-4 z-50 cyberpunk-button p-2 rounded-full"
+      className="fixed bottom-20 right-4 z-50 cyberpunk-button p-2 rounded-full"
       aria-label={isPlaying ? 'Stop ambient audio' : 'Start ambient audio'}
     >
       {isPlaying ? (
