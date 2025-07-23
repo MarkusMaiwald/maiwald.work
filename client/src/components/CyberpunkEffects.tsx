@@ -1,9 +1,40 @@
 import { useEffect, useState, useRef } from 'react';
 import { useAudio } from '../hooks/useAudio';
 
-// Custom cursor component - disabled for performance
+// Custom cursor component - simple cyberpunk circle
 export function CustomCursor() {
-  return null;
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const updateCursor = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    document.addEventListener('mousemove', updateCursor);
+    document.body.style.cursor = 'none'; // Hide default cursor
+
+    return () => {
+      document.removeEventListener('mousemove', updateCursor);
+      document.body.style.cursor = 'auto'; // Restore default cursor
+    };
+  }, []);
+
+  return (
+    <div
+      className="fixed pointer-events-none z-50"
+      style={{
+        left: position.x - 8,
+        top: position.y - 8,
+        width: '16px',
+        height: '16px',
+        border: '2px solid #00d4ff',
+        borderRadius: '50%',
+        backgroundColor: 'rgba(0, 212, 255, 0.2)',
+        boxShadow: '0 0 10px rgba(0, 212, 255, 0.5)',
+        transition: 'none'
+      }}
+    />
+  );
 }
 
 // Scan line effect
@@ -279,11 +310,12 @@ export function AmbientAudio() {
   return null;
 }
 
-// Main cyberpunk effects wrapper - performance optimized
+// Main cyberpunk effects wrapper - with simple cursor
 export function CyberpunkEffects({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative h-screen overflow-hidden">
       <ScanLine />
+      <CustomCursor />
       <AmbientAudio />
       {children}
     </div>
