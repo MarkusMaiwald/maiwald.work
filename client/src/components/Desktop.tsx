@@ -5,6 +5,7 @@ import { Terminal, TerminalRef } from './Terminal';
 import { Dock } from './Dock';
 import { ContactModal } from './ContactModal';
 import { InfoModal } from './InfoModal';
+import { CyberpunkEffects, GlitchText, TypewriterEffect } from './CyberpunkEffects';
 
 export function Desktop() {
   const { currentLanguage, toggleLanguage, setLanguage } = useLanguage();
@@ -43,14 +44,19 @@ export function Desktop() {
   };
 
   return (
-    <div className="font-system bg-gray-900 h-screen overflow-hidden">
-      {/* Desktop Wallpaper */}
-      <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat" 
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080')`
-        }}
-      />
+    <CyberpunkEffects>
+      <div className="font-system h-screen overflow-hidden" style={{ background: 'var(--cyberpunk-bg)' }}>
+        {/* Cyberpunk Background Effects */}
+        <div 
+          className="fixed inset-0" 
+          style={{
+            background: `
+              radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 75% 75%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
+              linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(18, 18, 18, 0.9) 100%)
+            `
+          }}
+        />
 
       {/* Menu Bar */}
       <MenuBar 
@@ -89,6 +95,7 @@ export function Desktop() {
         section={currentSection}
         currentLanguage={currentLanguage}
       />
-    </div>
+      </div>
+    </CyberpunkEffects>
   );
 }

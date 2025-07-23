@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Language } from '../hooks/useLanguage';
+import { GlitchText } from './CyberpunkEffects';
 
 interface MenuBarProps {
   currentLanguage: Language;
@@ -26,19 +27,26 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-7 bg-black bg-opacity-20 glass-effect z-60 flex items-center justify-between px-4 text-white text-sm">
+    <div className="fixed top-0 left-0 right-0 h-8 cyberpunk-nav z-60 flex items-center justify-between px-4 text-sm">
       <div className="flex items-center space-x-4">
-        <div className="font-bold">🍎</div>
-        <span>Terminal</span>
+        <div className="text-lg font-bold text-cyan-400">◊</div>
+        <GlitchText className="text-cyberpunk-electric-blue font-mono text-xs">
+          MAIWALD.WORK/SYSTEM
+        </GlitchText>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-6">
+        <div className="text-cyberpunk-text-dim text-xs font-mono">
+          STATUS: <span className="text-cyberpunk-acid-green">ONLINE</span>
+        </div>
         <div 
-          className="cursor-pointer hover:bg-white hover:bg-opacity-20 px-2 py-1 rounded"
+          className="nav-link text-xs font-mono interactive"
           onClick={onLanguageToggle}
         >
-          <span>{currentLanguage}</span>
+          LANG: {currentLanguage.toUpperCase()}
         </div>
-        <div className="text-xs">{currentTime}</div>
+        <div className="text-xs font-mono text-cyberpunk-electric-blue text-glow">
+          {currentTime}
+        </div>
       </div>
     </div>
   );
