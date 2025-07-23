@@ -207,19 +207,24 @@ export function CyberpunkWallpaper() {
   };
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0">
+    <div className="fixed inset-0 pointer-events-none z-10">
+      {/* Debug overlay - remove later */}
+      <div className="absolute top-4 left-4 text-cyberpunk-electric-blue text-xs font-mono z-50">
+        WALLPAPER ACTIVE | NODES: {nodes.length}
+      </div>
+      
       {/* Canvas for circuit traces */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-80"
+        className="absolute inset-0 w-full h-full opacity-60"
       />
       
       {/* Network nodes */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-20">
         {nodes.map(node => (
           <motion.div
             key={node.id}
-            className="absolute pointer-events-auto cursor-pointer"
+            className="absolute pointer-events-auto cursor-pointer z-30"
             style={{
               left: `${node.x}%`,
               top: `${node.y}%`,
@@ -227,8 +232,8 @@ export function CyberpunkWallpaper() {
             }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{ 
-              opacity: hoveredNode === node.id || node.isActive ? 0.8 : 0.3,
-              scale: hoveredNode === node.id ? 1.2 : 1
+              opacity: hoveredNode === node.id || node.isActive ? 0.9 : 0.6,
+              scale: hoveredNode === node.id ? 1.5 : 1
             }}
             transition={{ duration: 0.3 }}
             onMouseEnter={() => handleNodeHover(node.id)}
