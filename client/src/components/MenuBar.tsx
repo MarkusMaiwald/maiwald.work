@@ -38,9 +38,9 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
     <div className="fixed top-0 left-0 right-0 h-8 cyberpunk-nav z-60 flex items-center justify-between px-4 text-sm">
       <div className="flex items-center space-x-4">
         <div className="text-lg font-bold text-cyan-400">◊</div>
-        <GlitchText className="text-cyberpunk-electric-blue font-mono text-xs" enableHover={true}>
-          MARKUS.MAIWALD/SYSTEM
-        </GlitchText>
+        <div className="text-cyberpunk-text-dim text-xs font-mono">
+          system@maiwald.work
+        </div>
       </div>
       
       {/* Center - Clock and Date */}
