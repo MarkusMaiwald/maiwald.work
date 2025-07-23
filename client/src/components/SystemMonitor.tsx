@@ -34,6 +34,18 @@ export function SystemMonitor() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState<'overview' | 'processes' | 'network'>('overview');
 
+  // Handle ESC key to close monitor
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isVisible) {
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isVisible]);
+
   // Simulate real-time system metrics
   useEffect(() => {
     const updateMetrics = () => {
@@ -129,7 +141,7 @@ export function SystemMonitor() {
     return (
       <motion.button
         onClick={() => setIsVisible(true)}
-        className="fixed bottom-20 right-4 cyberpunk-button p-3 rounded-lg"
+        className="fixed bottom-20 left-4 cyberpunk-button p-3 rounded-lg"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -143,10 +155,10 @@ export function SystemMonitor() {
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, scale: 0.8, x: 50, y: 50 }}
+        initial={{ opacity: 0, scale: 0.8, x: -50, y: 50 }}
         animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-        exit={{ opacity: 0, scale: 0.8, x: 50, y: 50 }}
-        className="fixed bottom-4 right-4 z-50 w-96"
+        exit={{ opacity: 0, scale: 0.8, x: -50, y: 50 }}
+        className="fixed bottom-4 left-4 z-50 w-96"
       >
         <CyberpunkPanel className="p-4 max-h-[70vh] overflow-hidden">
           {/* Header */}
