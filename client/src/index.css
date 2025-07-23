@@ -66,6 +66,21 @@
   80% { transform: translate(2px, -2px); filter: hue-rotate(360deg); }
 }
 
+@keyframes subtle-quiver {
+  0%, 100% { 
+    transform: translate(0, 0);
+  }
+  25% { 
+    transform: translate(0.5px, 0);
+  }
+  50% { 
+    transform: translate(0, 0.5px);
+  }
+  75% { 
+    transform: translate(-0.5px, 0);
+  }
+}
+
 @keyframes neon-pulse {
   0%, 100% { 
     box-shadow: 0 0 5px var(--cyberpunk-electric-blue), 
@@ -133,11 +148,11 @@
 
 /* Cyberpunk Utility Classes */
 .glitch-text {
-  animation: glitch 0.3s ease-in-out infinite alternate;
+  animation: subtle-quiver 6s ease-in-out infinite alternate;
 }
 
 .glitch-text:hover {
-  animation-duration: 0.1s;
+  animation: glitch 0.2s ease-in-out infinite alternate;
 }
 
 .neon-glow {

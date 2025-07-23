@@ -102,11 +102,11 @@ export function GlitchText({ children, className = '', enableHover = false }: Gl
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (Math.random() < 0.02) { // 2% chance to auto-glitch (reduced)
+      if (Math.random() < 0.005) { // 0.5% chance to auto-glitch (very reduced)
         setIsGlitching(true);
-        setTimeout(() => setIsGlitching(false), 200);
+        setTimeout(() => setIsGlitching(false), 150);
       }
-    }, 5000);
+    }, 10000); // Every 10 seconds instead of 5
 
     return () => clearInterval(interval);
   }, []);
