@@ -227,7 +227,10 @@ export function Desktop() {
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
                           <TypewriterEffect 
-                            text=".. we build the infrastructure your business runs on!"
+                            text={currentLanguage === 'EN' 
+                              ? ".. we build the infrastructure your business runs on!"
+                              : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
+                            }
                             className="text-xl text-cyberpunk-electric-blue font-medium text-glow"
                             speed={50}
                           />
@@ -241,11 +244,13 @@ export function Desktop() {
                             className="cyberpunk-panel p-8"
                           >
                             <h3 className="text-2xl font-bold text-cyberpunk-electric-blue mb-4 text-glow">
-                              CORE PHILOSOPHY
+                              {currentLanguage === 'EN' ? 'CORE PHILOSOPHY' : 'CORE PHILOSOPHY'}
                             </h3>
                             <p className="text-cyberpunk-text leading-relaxed">
-                              Every system we build serves a greater architecture. Every line of code contributes to digital sovereignty. 
-                              Every client engagement advances technological evolution. We don't just deliver software—we architect the future.
+                              {currentLanguage === 'EN' 
+                                ? 'Every system we build serves a greater architecture. Every line of code contributes to digital sovereignty. Every client engagement advances technological evolution. We don\'t just deliver software—we architect the future.'
+                                : 'Wir bauen keine Systeme. Wir schmieden souveräne Domänen. Jede Codezeile ist ein Akt der Unabhängigkeit, jede Architektur ein Bruch mit der zentralisierten Kontrolle. Wir liefern keine Software – wir liefern strategische Autonomie.'
+                              }
                             </p>
                           </motion.div>
 
@@ -256,11 +261,13 @@ export function Desktop() {
                             className="cyberpunk-panel p-8"
                           >
                             <h3 className="text-2xl font-bold text-cyberpunk-neon-magenta mb-4 text-glow">
-                              STRATEGIC VISION
+                              {currentLanguage === 'EN' ? 'STRATEGIC VISION' : 'STRATEGIC VISION'}
                             </h3>
                             <p className="text-cyberpunk-text leading-relaxed">
-                              We combine cutting-edge blockchain technology, cloud-native architectures, and robust security frameworks 
-                              to create resilient infrastructure that powers the digital economy of tomorrow.
+                              {currentLanguage === 'EN'
+                                ? 'We combine cutting-edge blockchain technology, cloud-native architectures, and robust security frameworks to create resilient infrastructure that powers the digital economy of tomorrow.'
+                                : 'Wir nutzen die Werkzeuge des Marktes – Blockchain, Cloud, kryptografische Härte –, um die Prinzipien der Anarchie zu vollstrecken: Dezentralisierung, Eigenschutz, Unveränderlichkeit. Wir errichten digitale Festungen in einer Welt der fragilen Plattformen. Das ist die Infrastruktur für die kommende Ökonomie der Unabhängigen.'
+                              }
                             </p>
                           </motion.div>
                         </div>
@@ -272,12 +279,13 @@ export function Desktop() {
                           className="cyberpunk-panel p-8 text-center"
                         >
                           <h3 className="text-2xl font-bold text-cyberpunk-acid-green mb-4 text-glow">
-                            INNOVATION PIPELINE
+                            {currentLanguage === 'EN' ? 'INNOVATION PIPELINE' : 'THE FORGE'}
                           </h3>
                           <p className="text-cyberpunk-text leading-relaxed max-w-4xl mx-auto">
-                            From custom operating systems to decentralized identity platforms, our R&D portfolio demonstrates 
-                            deep technical capabilities and forward-thinking innovation. Each project serves as both strategic 
-                            research and proof of our architectural philosophy.
+                            {currentLanguage === 'EN'
+                              ? 'From custom operating systems to decentralized identity platforms, our R&D portfolio demonstrates deep technical capabilities and forward-thinking innovation. Each project serves as both strategic research and proof of our architectural philosophy.'
+                              : 'Von gehärteten Betriebssystemen bis zu dezentralen Identitäten, die niemand widerrufen kann: Unsere Projekte sind keine Forschung. Sie sind funktionierende Waffen im Kampf um digitale Souveränität und der Beweis, dass unsere Architektur nicht nur theoretisch, sondern auch im Feuer besteht.'
+                            }
                           </p>
                         </motion.div>
                       </div>
