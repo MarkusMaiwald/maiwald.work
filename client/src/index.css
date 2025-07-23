@@ -146,6 +146,14 @@
   100% { transform: translateY(100vh); }
 }
 
+@keyframes matrix-drift {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, -5px); }
+  50% { transform: translate(5px, -10px); }
+  75% { transform: translate(-3px, -7px); }
+  100% { transform: translate(0, 0); }
+}
+
 /* Cyberpunk Utility Classes */
 .glitch-text {
   animation: subtle-quiver 6s ease-in-out infinite alternate;
