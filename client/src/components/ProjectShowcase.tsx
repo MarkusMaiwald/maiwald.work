@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CyberpunkPanel, GlitchText, DataVisualization } from './CyberpunkEffects';
+import { CyberpunkPanel, GlitchText, DataVisualization, MatrixBackground, CyberpunkAudio } from './CyberpunkEffects';
 import { Language } from '../hooks/useLanguage';
 
 interface Project {
@@ -24,6 +24,35 @@ interface ProjectShowcaseProps {
 export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>(currentLanguage === 'EN' ? 'ALL' : 'ALLE');
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  // Mouse tracking for cyberpunk cursor in project modal
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      if (selectedProject) {
+        setCursorPosition({ x: event.clientX, y: event.clientY });
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener('mousemove', handleMouseMove);
+      return () => document.removeEventListener('mousemove', handleMouseMove);
+    }
+  }, [selectedProject]);
+
+  // ESC key functionality for project modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedProject) {
+        setSelectedProject(null);
+      }
+    };
+
+    if (selectedProject) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [selectedProject]);
 
   // Multilingual project content
   const getProjectContent = (currentLanguage: Language) => {
@@ -234,10 +263,21 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                   {/* Action Buttons */}
                   <div className="flex gap-1 md:gap-2 pt-2">
-                    <button className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1">
+                    <button 
+                      onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                      onClick={() => {
+                        CyberpunkAudio.playButtonClick();
+                        setSelectedProject(project.id);
+                      }}
+                      className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1"
+                    >
                       {content.detailsButton}
                     </button>
-                    <button className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1">
+                    <button 
+                      onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                      onClick={() => CyberpunkAudio.playButtonClick()}
+                      className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1"
+                    >
                       {content.manifestButton}
                     </button>
                   </div>
@@ -255,14 +295,42 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm p-4 overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
+            style={{ 
+              background: `
+                linear-gradient(135deg, #000514 0%, #001122 50%, #000f1e 100%),
+                radial-gradient(ellipse at center, rgba(0, 212, 255, 0.2) 0%, transparent 70%)
+              `,
+              cursor: 'none',
+              backdropFilter: 'blur(5px)'
+            }}
             onClick={() => setSelectedProject(null)}
           >
+            {/* Custom cyberpunk cursor for project modal */}
+            <div
+              className="fixed pointer-events-none z-[60]"
+              style={{
+                left: cursorPosition.x - 12,
+                top: cursorPosition.y - 12,
+                width: '24px',
+                height: '24px',
+                border: '3px solid #00d4ff',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(0, 212, 255, 0.3)',
+                boxShadow: '0 0 20px rgba(0, 212, 255, 0.8), inset 0 0 10px rgba(0, 212, 255, 0.5)',
+                transition: 'none'
+              }}
+            />
+            
+            {/* Matrix background */}
+            <div className="absolute inset-0 z-10">
+              <MatrixBackground />
+            </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+              className="w-full max-w-4xl max-h-[90vh] overflow-y-auto relative z-20"
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
@@ -291,7 +359,11 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                           </div>
                         </div>
                         <button
-                          onClick={() => setSelectedProject(null)}
+                          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                          onClick={() => {
+                            CyberpunkAudio.playButtonClick();
+                            setSelectedProject(null);
+                          }}
                           className="cyberpunk-button p-2 rounded flex-shrink-0 ml-2"
                         >
                           ✕
@@ -391,6 +463,8 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                               href="https://git.maiwald.work/NexusLabs/livecd-arch-nexus"
                               target="_blank"
                               rel="noopener noreferrer"
+                              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                              onClick={() => CyberpunkAudio.playButtonClick()}
                               className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
                             >
                               SOURCE CODE
@@ -406,6 +480,8 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                                 key={customer.name}
                                 href={customer.url}
                                 target="_blank"
+                                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                                onClick={() => CyberpunkAudio.playButtonClick()}
                                 rel="noopener noreferrer"
                                 className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
                               >
