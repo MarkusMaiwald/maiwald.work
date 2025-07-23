@@ -3,7 +3,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useToast } from '../hooks/use-toast';
 import { apiRequest } from '../lib/queryClient';
 import { Language } from '../hooks/useLanguage';
-import { MatrixBackground } from './CyberpunkEffects';
+import { MatrixBackground, CyberpunkAudio } from './CyberpunkEffects';
 
 interface ContactModalProps {
   isOpen: boolean;

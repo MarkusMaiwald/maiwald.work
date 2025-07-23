@@ -78,10 +78,12 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
         }}
       />
       
-      {/* Matrix background */}
-      <MatrixBackground />
+      {/* Matrix background with proper z-index */}
+      <div className="absolute inset-0 z-10">
+        <MatrixBackground />
+      </div>
       <div 
-        className="w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative"
+        className="w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative z-20"
         style={{
           background: 'linear-gradient(135deg, rgba(18, 18, 18, 0.98) 0%, rgba(26, 26, 26, 0.99) 50%, rgba(18, 18, 18, 0.98) 100%)',
           border: '3px solid #00d4ff',
@@ -156,7 +158,7 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
         </div>
 
         <div 
-          className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] relative z-10" 
+          className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] relative z-30" 
           style={{
             background: 'linear-gradient(180deg, rgba(18, 18, 18, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%)',
             backdropFilter: 'blur(10px)'
