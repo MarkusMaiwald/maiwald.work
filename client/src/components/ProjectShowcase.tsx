@@ -26,30 +26,6 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
   const projects: Project[] = [
     {
-      id: 'custom-os',
-      name: 'Custom Operating System',
-      category: 'SYSTEMS',
-      stack: ['Nim', 'Assembly', 'Kernel', 'UEFI'],
-      description: 'Ground-up OS development demonstrating deep systems architecture knowledge and forward-thinking design principles.',
-      status: 'ACTIVE',
-      impact: 'Core technology research advancing understanding of operating system fundamentals',
-      role: 'Lead Architect & Developer',
-      icon: '⬢',
-      color: 'cyberpunk-electric-blue'
-    },
-    {
-      id: 'ttrpg-platform',
-      name: 'Decentralized TTRPG Platform',
-      category: 'BLOCKCHAIN',
-      stack: ['React', 'Blockchain', 'SSI', 'DID', 'Smart Contracts'],
-      description: 'Revolutionary gaming platform integrating Self-Sovereign Identity and Decentralized Identifiers for next-gen user experience.',
-      status: 'R&D',
-      impact: 'Pioneering blockchain integration in gaming ecosystems',
-      role: 'Technical Lead & Product Architect',
-      icon: '⬡',
-      color: 'cyberpunk-acid-green'
-    },
-    {
       id: 'maiwald-enterprises',
       name: 'Maiwald Enterprises BV',
       category: 'ENTERPRISE',
@@ -62,6 +38,18 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       color: 'cyberpunk-neon-magenta'
     },
     {
+      id: 'custom-os',
+      name: 'Custom Operating System',
+      category: 'SYSTEMS',
+      stack: ['Nim', 'Assembly', 'Kernel', 'UEFI'],
+      description: 'Ground-up OS development demonstrating deep systems architecture knowledge and forward-thinking design principles.',
+      status: 'ACTIVE',
+      impact: 'Core technology research advancing understanding of operating system fundamentals',
+      role: 'Lead Architect & Developer',
+      icon: '⬢',
+      color: 'cyberpunk-electric-blue'
+    },
+    {
       id: 'cloud-infrastructure',
       name: 'Cloud-Native Infrastructure',
       category: 'INFRASTRUCTURE',
@@ -72,6 +60,18 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       role: 'Infrastructure Architect',
       icon: '◈',
       color: 'cyberpunk-neon-cyan'
+    },
+    {
+      id: 'ttrpg-platform',
+      name: 'Decentralized TTRPG Platform',
+      category: 'BLOCKCHAIN',
+      stack: ['React', 'Blockchain', 'SSI', 'DID', 'Smart Contracts'],
+      description: 'Revolutionary gaming platform integrating Self-Sovereign Identity and Decentralized Identifiers for next-gen user experience.',
+      status: 'R&D',
+      impact: 'Pioneering blockchain integration in gaming ecosystems',
+      role: 'Technical Lead & Product Architect',
+      icon: '⬡',
+      color: 'cyberpunk-acid-green'
     },
     {
       id: 'security-frameworks',
