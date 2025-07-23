@@ -105,7 +105,7 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 ```
 Changelog:
 - July 23, 2025. Integrated strategic brand positioning and professional narrative:
-  * Updated main headline to "Architecting Your Technological Advantage"
+  * Updated main headline to "Maiwald Enterprises BV" with tagline ".. we build the stuff your business runs on!"
   * Transformed portfolio content to position Markus as strategic technology architect
   * Added comprehensive sections: about, services, blockchain, projects, development
   * Enhanced personal projects (OS, TTRPG) as strategic R&D demonstrations

@@ -7,12 +7,12 @@ export interface ContentData {
 
 export const content: ContentData = {
   welcome: {
-    EN: "Architecting Your Technological Advantage",
-    DE: "Architektur Ihres technologischen Vorteils"
+    EN: "Maiwald Enterprises BV",
+    DE: "Maiwald Enterprises BV"
   },
   subtitle: {
-    EN: "Linux/BSD aficionado, platform architect, product developer, and crypto-anarchist.",
-    DE: "Linux-Enthusiast, Cloud-Architekt und Krypto-Anarchist."
+    EN: ".. we build the stuff your business runs on!",
+    DE: ".. wir bauen das Zeug, auf dem Ihr Unternehmen läuft!"
   },
   prompt: {
     EN: "Type in 'help', to start.",
