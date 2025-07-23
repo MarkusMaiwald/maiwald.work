@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from 'react';
 import { content } from '../data/content';
 import { Language } from './useLanguage';
+import { useFileSystem } from './useFileSystem';
 
 export interface TerminalLine {
   type: 'command' | 'output' | 'error';
@@ -14,6 +15,8 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [currentInput, setCurrentInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
+  
+  const fileSystem = useFileSystem(currentLanguage);
 
   const addLine = useCallback((type: TerminalLine['type'], content: string) => {
     setLines(prev => [...prev, { type, content, timestamp: Date.now() }]);
@@ -27,13 +30,13 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
     setHistory(prev => [...prev, trimmedCommand]);
     setHistoryIndex(-1);
 
-    // Add command to output
-    addLine('command', `markus@maiwald.work:~$ ${trimmedCommand}`);
+    // Add command to output with current prompt
+    addLine('command', `${fileSystem.getPrompt()} ${trimmedCommand}`);
 
     // Process command
-    const parts = trimmedCommand.toLowerCase().split(' ');
-    const cmd = parts[0];
-    const arg = parts[1];
+    const parts = trimmedCommand.split(' ');
+    const cmd = parts[0].toLowerCase();
+    const args = parts.slice(1);
 
     let response = '';
 
@@ -45,18 +48,70 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
         setLines([]);
         return;
       case 'ls':
-        response = content.ls[currentLanguage];
+        if (args.length > 0) {
+          const items = fileSystem.listDirectory(args[0]);
+          if (items.length === 0) {
+            response = `ls: cannot access '${args[0]}': No such file or directory`;
+          } else {
+            response = items.map(item => {
+              const prefix = item.type === 'directory' ? 'd' : '-';
+              const perms = item.permissions?.substring(1) || 'rw-r--r--';
+              const size = item.size?.toString().padStart(8) || '     4096';
+              const date = item.modified || '2025-01-23 10:00';
+              const name = item.type === 'directory' ? `\x1b[34m${item.name}\x1b[0m` : item.name;
+              return `${prefix}${perms} 1 markus markus ${size} ${date} ${name}`;
+            }).join('\n');
+          }
+        } else {
+          const items = fileSystem.listDirectory();
+          response = items.map(item => {
+            const prefix = item.type === 'directory' ? 'd' : '-';
+            const perms = item.permissions?.substring(1) || 'rw-r--r--';
+            const size = item.size?.toString().padStart(8) || '     4096';
+            const date = item.modified || '2025-01-23 10:00';
+            const name = item.type === 'directory' ? `\x1b[34m${item.name}\x1b[0m` : item.name;
+            return `${prefix}${perms} 1 markus markus ${size} ${date} ${name}`;
+          }).join('\n');
+        }
+        break;
+      case 'll':
+        const items = fileSystem.listDirectory();
+        response = 'total ' + items.length + '\n' + items.map(item => {
+          const perms = item.permissions || (item.type === 'directory' ? 'drwxr-xr-x' : '-rw-r--r--');
+          const size = item.size?.toString().padStart(8) || '     4096';
+          const date = item.modified || '2025-01-23 10:00';
+          const name = item.type === 'directory' ? `\x1b[34m${item.name}\x1b[0m` : item.name;
+          return `${perms} 1 markus markus ${size} ${date} ${name}`;
+        }).join('\n');
+        break;
+      case 'cd':
+        if (args.length === 0) {
+          fileSystem.changeDirectory('/home/markus');
+        } else {
+          const success = fileSystem.changeDirectory(args[0]);
+          if (!success) {
+            response = `cd: ${args[0]}: No such file or directory`;
+          }
+        }
+        break;
+      case 'pwd':
+        response = fileSystem.getCurrentPathString();
         break;
       case 'whoami':
         response = content.whoami[currentLanguage];
         break;
       case 'cat':
-        if (arg && content[arg]) {
-          response = content[arg][currentLanguage];
-        } else if (arg) {
-          response = `cat: ${arg}: No such file or directory`;
+        if (args.length === 0) {
+          response = 'cat: missing file operand';
         } else {
-          response = `${content.usage[currentLanguage]}: cat [section]`;
+          const fileContent = fileSystem.readFile(args[0]);
+          if (fileContent !== null) {
+            response = fileContent;
+          } else if (content[args[0]]) {
+            response = content[args[0]][currentLanguage];
+          } else {
+            response = `cat: ${args[0]}: No such file or directory`;
+          }
         }
         break;
       case 'projects':
@@ -82,7 +137,7 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
         response = content.contactOpening[currentLanguage];
         break;
       case 'lang':
-        if (arg === 'en' || arg === 'de') {
+        if (args[0] === 'en' || args[0] === 'de') {
           // This will be handled by the parent component
           response = content.languageChanged[currentLanguage];
         } else {
