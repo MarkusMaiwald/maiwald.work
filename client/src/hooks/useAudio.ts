@@ -65,6 +65,7 @@ export function useAudio() {
         const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
         setAudioContext(ctx);
         setIsInitialized(true);
+        console.log('Created new audio context, retrying sound...');
         // Retry after a brief delay
         setTimeout(() => createCracklingSound(duration, config), 50);
         return null;
@@ -73,6 +74,8 @@ export function useAudio() {
         return null;
       }
     }
+
+    console.log('Creating crackling sound with duration:', duration, 'config:', config);
 
     const { volume = 0.3, loop = false } = config;
     
