@@ -64,10 +64,12 @@ export function Desktop() {
   };
 
   const handleSectionClick = (section: string) => {
+    console.log('Section clicked:', section);
     if (section === 'projects') {
       setCurrentView('projects');
       setCurrentScrollSection(2);
     } else if (section === 'services') {
+      console.log('Setting view to manifesto');
       setCurrentView('manifesto');
       setCurrentScrollSection(3);
     } else {
@@ -226,12 +228,17 @@ export function Desktop() {
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
-                          <div className="text-xl text-cyberpunk-electric-blue font-medium text-glow">
+                          <div className="text-2xl text-cyberpunk-electric-blue font-bold text-glow mb-4" style={{
+                            textShadow: '0 0 20px var(--cyberpunk-electric-blue)',
+                            display: 'block',
+                            visibility: 'visible'
+                          }}>
                             {currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
                           </div>
+                          <div className="text-sm text-cyberpunk-text-dim">DEBUG: Current view = {currentView}</div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 mb-16">
