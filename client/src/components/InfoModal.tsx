@@ -38,9 +38,16 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
   if (!isOpen) return null;
 
   const sectionContent = content[section];
-  if (!sectionContent) return null;
+  if (!sectionContent) {
+    console.error(`Section content not found for: ${section}`);
+    return null;
+  }
 
   const displayContent = sectionContent[currentLanguage];
+  if (!displayContent) {
+    console.error(`Display content not found for section: ${section}, language: ${currentLanguage}`);
+    return null;
+  }
 
   return (
     <div 
@@ -70,37 +77,63 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
         }}
       />
       
-      {/* Matrix-style background pattern */}
-      <div className="absolute inset-0 opacity-30">
+      {/* Matrix-style background pattern - Enhanced */}
+      <div className="absolute inset-0 opacity-40">
         <div className="w-full h-full" style={{
           backgroundImage: `
-            radial-gradient(circle, rgba(0, 212, 255, 0.3) 1px, transparent 1px),
-            linear-gradient(45deg, rgba(0, 212, 255, 0.1) 25%, rgba(255, 0, 110, 0.1) 75%)
+            radial-gradient(circle, rgba(0, 212, 255, 0.4) 1px, transparent 1px),
+            linear-gradient(45deg, rgba(0, 212, 255, 0.15) 25%, rgba(255, 0, 110, 0.15) 75%),
+            linear-gradient(-45deg, rgba(57, 255, 20, 0.05) 25%, transparent 75%)
           `,
-          backgroundSize: '20px 20px, 100px 100px',
-          animation: 'matrix-drift 6s ease-in-out infinite'
+          backgroundSize: '15px 15px, 80px 80px, 120px 120px',
+          animation: 'matrix-drift 8s ease-in-out infinite'
         }} />
       </div>
       
-      {/* Additional cyberpunk wallpaper effect */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Cyberpunk grid wallpaper effect - Enhanced */}
+      <div className="absolute inset-0 opacity-15">
         <div className="w-full h-full" style={{
           background: `
             repeating-linear-gradient(
               0deg,
               transparent,
-              transparent 2px,
-              rgba(0, 212, 255, 0.03) 2px,
-              rgba(0, 212, 255, 0.03) 4px
+              transparent 1px,
+              rgba(0, 212, 255, 0.08) 1px,
+              rgba(0, 212, 255, 0.08) 3px
             ),
             repeating-linear-gradient(
               90deg,
               transparent,
-              transparent 2px,
-              rgba(255, 0, 110, 0.03) 2px,
-              rgba(255, 0, 110, 0.03) 4px
-            )
+              transparent 1px,
+              rgba(255, 0, 110, 0.06) 1px,
+              rgba(255, 0, 110, 0.06) 3px
+            ),
+            radial-gradient(ellipse at center, rgba(0, 212, 255, 0.02) 40%, transparent 70%)
           `
+        }} />
+      </div>
+      
+      {/* Animated scan lines */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div style={{
+          position: 'absolute',
+          top: '20%',
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: 'linear-gradient(90deg, transparent, #00d4ff, transparent)',
+          animation: 'scan-line 4s linear infinite',
+          animationDelay: '0s'
+        }} />
+        <div style={{
+          position: 'absolute',
+          top: '60%',
+          left: 0,
+          right: 0,
+          height: '1px',
+          background: 'linear-gradient(90deg, transparent, #ff006e, transparent)',
+          animation: 'scan-line 6s linear infinite',
+          animationDelay: '2s'
         }} />
       </div>
       <div 
