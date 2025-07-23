@@ -40,7 +40,8 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       customers: [
         { name: 'BC2IP', url: 'https://bc2ip.com' },
         { name: 'IOP Global', url: 'https://iop-global.com' },
-        { name: 'Group4IT', url: 'https://groupforit.de' }
+        { name: 'Group4IT', url: 'https://groupforit.de' },
+        { name: 'IT Qube', url: 'https://itqube.gmbh/' }
       ]
     },
     {
