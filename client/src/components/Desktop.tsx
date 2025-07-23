@@ -61,10 +61,16 @@ export function Desktop() {
   };
 
   const handleHelpClick = () => {
-    // Execute help command in terminal
-    if (terminalRef.current) {
-      terminalRef.current.executeCommand('help');
-    }
+    // Switch to terminal view and execute help command
+    setCurrentView('terminal');
+    setCurrentScrollSection(1);
+    
+    // Small delay to ensure terminal is visible before executing command
+    setTimeout(() => {
+      if (terminalRef.current) {
+        terminalRef.current.executeCommand('help');
+      }
+    }, 100);
   };
 
   const handleLanguageChange = (lang: typeof currentLanguage) => {
