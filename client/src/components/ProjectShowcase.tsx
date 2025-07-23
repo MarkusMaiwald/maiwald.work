@@ -107,7 +107,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
         <GlitchText className="text-4xl font-bold cyberpunk-heading mb-4">
           PROJECT PORTFOLIO
         </GlitchText>
-        <div className="text-cyberpunk-subheading">
+        <div className="text-white text-lg font-medium">
           Strategic R&D demonstrating deep technical capabilities
         </div>
       </div>

@@ -178,10 +178,10 @@ export function Desktop() {
                       <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
-                            THE MAIWALD MANIFESTO
+                            MAIWALD ENTERPRISES BV
                           </GlitchText>
                           <TypewriterEffect 
-                            text="Building the infrastructure your business runs on"
+                            text="We build the infrastructure your business runs on"
                             className="text-xl text-white font-medium"
                             speed={40}
                           />

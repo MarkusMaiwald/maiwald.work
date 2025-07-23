@@ -31,7 +31,7 @@ export function MenuBar({ currentLanguage, onLanguageToggle }: MenuBarProps) {
       <div className="flex items-center space-x-4">
         <div className="text-lg font-bold text-cyan-400">◊</div>
         <GlitchText className="text-cyberpunk-electric-blue font-mono text-xs" enableHover={true}>
-          MAIWALD.WORK/SYSTEM
+          MARKUS.MAIWALD/SYSTEM
         </GlitchText>
       </div>
       <div className="flex items-center space-x-6">

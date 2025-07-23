@@ -7,12 +7,12 @@ export interface ContentData {
 
 export const content: ContentData = {
   welcome: {
-    EN: "Maiwald Enterprises BV",
-    DE: "Maiwald Enterprises BV"
+    EN: "Markus Maiwald",
+    DE: "Markus Maiwald"
   },
   subtitle: {
-    EN: ".. we build the stuff your business runs on!",
-    DE: ".. wir bauen das Zeug, auf dem Ihr Unternehmen läuft!"
+    EN: "I build stuff",
+    DE: "Ich baue Zeug"
   },
   prompt: {
     EN: "Type in 'help', to start.",

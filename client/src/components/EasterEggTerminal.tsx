@@ -46,7 +46,8 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
       'Specialization: Infrastructure Architecture',
       'Clearance Level: ARCHITECT',
       '',
-      'Current Status: Building the future'
+      'Personal motto: I build stuff',
+      'Company motto: We build the infrastructure your business runs on'
     ],
     vision: [
       'LOADING VISION MANIFEST...',
