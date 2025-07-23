@@ -29,6 +29,10 @@ export const content: ContentData = {
 • contact - Open contact form
 • lang [en|de] - Change language
 
+Neural Link to Skills:
+• hardskills - Technical expertise & competencies
+• softskills - Leadership roles & interdisciplinary strengths
+
 Real system commands:
 • ping <host> - Network connectivity test
 • host <domain> - DNS lookup
@@ -45,6 +49,10 @@ Real system commands:
 • whoami - Informationen über Markus anzeigen
 • contact - Kontaktformular öffnen
 • lang [en|de] - Sprache ändern
+
+Neural Link zu Fähigkeiten:
+• hardskills - Technische Expertise & Kompetenzen
+• softskills - Führungsrollen & interdisziplinäre Stärken
 
 Echte System-Befehle:
 • ping <host> - Netzwerk-Konnektivitätstest

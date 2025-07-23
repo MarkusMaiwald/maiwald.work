@@ -104,7 +104,8 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
-- July 23, 2025. Complete portfolio enhancement with comprehensive services integration:
+- July 23, 2025. Complete portfolio enhancement with Neural Link navigation:
+  * ADDED: Neural Link section in help command directly linking to hardskills and softskills
   * IMPLEMENTED: Backend terminal service with secure command execution using Node.js child_process
   * ADDED: CyberpunkTerminal class with command validation, sanitization, and security restrictions
   * INTEGRATED: Real Linux commands (ls, ping, host, dig, whoami, uname, uptime, date, ps, df, etc.)
