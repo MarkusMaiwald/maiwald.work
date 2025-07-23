@@ -48,23 +48,24 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
       style={{ 
         background: `
           linear-gradient(135deg, #000514 0%, #001122 50%, #000f1e 100%),
-          radial-gradient(ellipse at center, rgba(0, 212, 255, 0.1) 0%, transparent 70%)
+          radial-gradient(ellipse at center, rgba(0, 212, 255, 0.2) 0%, transparent 70%)
         `,
-        cursor: 'none'
+        cursor: 'none',
+        backdropFilter: 'blur(5px)'
       }}
     >
       {/* Custom cyberpunk cursor for modal */}
       <div
-        className="fixed pointer-events-none z-50"
+        className="fixed pointer-events-none z-[60]"
         style={{
-          left: cursorPosition.x - 8,
-          top: cursorPosition.y - 8,
-          width: '16px',
-          height: '16px',
-          border: '2px solid #00d4ff',
+          left: cursorPosition.x - 12,
+          top: cursorPosition.y - 12,
+          width: '24px',
+          height: '24px',
+          border: '3px solid #00d4ff',
           borderRadius: '50%',
-          backgroundColor: 'rgba(0, 212, 255, 0.2)',
-          boxShadow: '0 0 10px rgba(0, 212, 255, 0.5)',
+          backgroundColor: 'rgba(0, 212, 255, 0.3)',
+          boxShadow: '0 0 20px rgba(0, 212, 255, 0.8), inset 0 0 10px rgba(0, 212, 255, 0.5)',
           transition: 'none'
         }}
       />
@@ -105,14 +106,16 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
       <div 
         className="w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative"
         style={{
-          background: 'linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(26, 26, 26, 0.98) 50%, rgba(18, 18, 18, 0.95) 100%)',
-          border: '2px solid #00d4ff',
+          background: 'linear-gradient(135deg, rgba(18, 18, 18, 0.98) 0%, rgba(26, 26, 26, 0.99) 50%, rgba(18, 18, 18, 0.98) 100%)',
+          border: '3px solid #00d4ff',
+          borderRadius: '8px',
           boxShadow: `
-            0 4px 20px rgba(0, 0, 0, 0.7),
-            inset 0 1px 0 rgba(0, 212, 255, 0.3),
-            0 0 30px rgba(0, 212, 255, 0.4)
+            0 8px 32px rgba(0, 0, 0, 0.8),
+            inset 0 2px 0 rgba(0, 212, 255, 0.4),
+            0 0 40px rgba(0, 212, 255, 0.6),
+            0 0 80px rgba(0, 212, 255, 0.3)
           `,
-          backdropFilter: 'blur(15px)'
+          backdropFilter: 'blur(20px)'
         }}
       >
         {/* Cyberpunk Header */}

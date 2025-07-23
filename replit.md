@@ -104,6 +104,13 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Enhanced InfoModal cyberpunk theming for all .dat files:
+  * Fixed missing cyberpunk theming in Blockchain.dat and Cloud.dat modals
+  * Enhanced modal background with layered gradients and backdrop blur effects
+  * Improved cursor tracking with larger, more visible cyberpunk cursor (24px with glow)
+  * Applied stronger border glow effects with multiple shadow layers
+  * Added matrix-style background patterns and grid wallpaper effects
+  * All .dat modals now display consistent cyberpunk aesthetic
 - July 23, 2025. Successfully fixed subtitle visibility and styling in Services/Manifesto section:
   * RESOLVED: Subtitle disappearing issue - now displays consistently and permanently
   * Applied elegant cyberpunk styling with electric blue (#00d4ff) glow and dual-layer text shadow
