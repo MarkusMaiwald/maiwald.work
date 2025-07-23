@@ -59,6 +59,24 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
           response = `${content.usage[currentLanguage]}: cat [section]`;
         }
         break;
+      case 'projects':
+        response = content.projects[currentLanguage];
+        break;
+      case 'blockchain':
+        response = content.blockchain[currentLanguage];
+        break;
+      case 'cloud':
+        response = content.cloud[currentLanguage];
+        break;
+      case 'services':
+        response = content.services[currentLanguage];
+        break;
+      case 'development':
+        response = content.development[currentLanguage];
+        break;
+      case 'about':
+        response = content.about[currentLanguage];
+        break;
       case 'contact':
         onOpenContact();
         response = content.contactOpening[currentLanguage];
