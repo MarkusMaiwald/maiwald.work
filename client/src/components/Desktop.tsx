@@ -181,7 +181,7 @@ export function Desktop() {
                           </GlitchText>
                           <TypewriterEffect 
                             text="Building the infrastructure your business runs on"
-                            className="text-xl cyberpunk-subheading"
+                            className="text-xl text-white font-medium"
                             speed={40}
                           />
                         </div>
