@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CyberpunkPanel, GlitchText, DataVisualization } from './CyberpunkEffects';
 import { Language } from '../hooks/useLanguage';
@@ -23,18 +23,43 @@ interface ProjectShowcaseProps {
 
 export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
-  const [filter, setFilter] = useState<string>('ALL');
+  const [filter, setFilter] = useState<string>(currentLanguage === 'EN' ? 'ALL' : 'ALLE');
 
-  const projects: Project[] = [
+  // Multilingual project content
+  const getProjectContent = (currentLanguage: Language) => {
+    const projectContent = {
+      EN: {
+        categories: ['ALL', 'ENTERPRISE', 'SYSTEMS', 'INFRASTRUCTURE', 'BLOCKCHAIN'],
+        filterLabel: 'Filter Projects',
+        detailsButton: 'DETAILS',
+        manifestButton: 'MANIFEST'
+      },
+      DE: {
+        categories: ['ALLE', 'UNTERNEHMEN', 'SYSTEME', 'INFRASTRUKTUR', 'BLOCKCHAIN'],
+        filterLabel: 'Projekte Filtern',
+        detailsButton: 'DETAILS',
+        manifestButton: 'MANIFEST'
+      }
+    };
+    return projectContent[currentLanguage];
+  };
+
+  const getProjects = (currentLanguage: Language): Project[] => [
     {
       id: 'maiwald-enterprises',
       name: 'Maiwald Enterprises BV',
-      category: 'ENTERPRISE',
-      stack: ['Strategic Consulting', 'Cloud Architecture', 'DevOps', 'Security'],
-      description: 'Strategic technology consulting firm specializing in foundational infrastructure and digital transformation.',
+      category: currentLanguage === 'EN' ? 'ENTERPRISE' : 'UNTERNEHMEN',
+      stack: currentLanguage === 'EN' 
+        ? ['Strategic Consulting', 'Cloud Architecture', 'DevOps', 'Security']
+        : ['Strategische Beratung', 'Cloud-Architektur', 'DevOps', 'Sicherheit'],
+      description: currentLanguage === 'EN'
+        ? 'Strategic technology consulting firm specializing in foundational infrastructure and digital transformation.'
+        : 'Strategisches Technologieberatungsunternehmen, spezialisiert auf grundlegende Infrastruktur und digitale Transformation.',
       status: 'PRODUCTION',
-      impact: 'Delivering enterprise-grade solutions and strategic technology guidance',
-      role: 'Founder & Strategic Architect',
+      impact: currentLanguage === 'EN'
+        ? 'Delivering enterprise-grade solutions and strategic technology guidance'
+        : 'Bereitstellung von Unternehmenslösungen und strategischer Technologieberatung',
+      role: currentLanguage === 'EN' ? 'Founder & Strategic Architect' : 'Gründer & Strategischer Architekt',
       icon: '◊',
       color: 'cyberpunk-neon-magenta',
       customers: [
@@ -47,55 +72,62 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
     {
       id: 'nexus-os',
       name: 'NexusOS',
-      category: 'SYSTEMS',
+      category: currentLanguage === 'EN' ? 'SYSTEMS' : 'SYSTEME',
       stack: ['Nim', 'Assembly', 'Kernel', 'UEFI', 'SystemD'],
-      description: 'Military-grade security and modularity. Fast boot. No bloat. Hardened kernel. Zero GNUs given.',
+      description: currentLanguage === 'EN'
+        ? 'Military-grade security and modularity. Fast boot. No bloat. Hardened kernel. Zero GNUs given.'
+        : 'Militärische Sicherheit und Modularität. Schneller Boot. Kein Bloat. Gehärteter Kernel. Null GNUs gegeben.',
       status: 'ACTIVE',
-      impact: 'Revolutionary OS architecture challenging conventional computing paradigms',
-      role: 'Lead Architect & Developer',
+      impact: currentLanguage === 'EN'
+        ? 'Revolutionary OS architecture challenging conventional computing paradigms'
+        : 'Revolutionäre OS-Architektur, die herkömmliche Computing-Paradigmen herausfordert',
+      role: currentLanguage === 'EN' ? 'Lead Architect & Developer' : 'Lead-Architekt & Entwickler',
       icon: '⬢',
       color: 'cyberpunk-electric-blue'
     },
     {
       id: 'cloud-infrastructure',
-      name: 'Cloud-Native Infrastructure',
-      category: 'INFRASTRUCTURE',
+      name: currentLanguage === 'EN' ? 'Cloud-Native Infrastructure' : 'Cloud-Native Infrastruktur',
+      category: currentLanguage === 'EN' ? 'INFRASTRUCTURE' : 'INFRASTRUKTUR',
       stack: ['Kubernetes', 'Docker', 'Terraform', 'AWS', 'GCP'],
-      description: 'Scalable cloud infrastructure solutions enabling rapid deployment and operational excellence.',
+      description: currentLanguage === 'EN'
+        ? 'Scalable cloud infrastructure solutions enabling rapid deployment and operational excellence.'
+        : 'Skalierbare Cloud-Infrastrukturlösungen für schnelle Bereitstellung und operative Exzellenz.',
       status: 'SCALING',
-      impact: 'Powering business-critical applications with 99.9% uptime',
-      role: 'Infrastructure Architect',
+      impact: currentLanguage === 'EN'
+        ? 'Powering business-critical applications with 99.9% uptime'
+        : 'Unterstützung geschäftskritischer Anwendungen mit 99,9% Verfügbarkeit',
+      role: currentLanguage === 'EN' ? 'Infrastructure Architect' : 'Infrastruktur-Architekt',
       icon: '◈',
       color: 'cyberpunk-neon-cyan'
     },
     {
       id: 'ttrpg-platform',
-      name: 'Decentralized TTRPG Platform',
+      name: currentLanguage === 'EN' ? 'Decentralized TTRPG Platform' : 'Dezentrale TTRPG-Plattform',
       category: 'BLOCKCHAIN',
       stack: ['React', 'Blockchain', 'SSI', 'DID', 'Smart Contracts'],
-      description: 'Revolutionary gaming platform integrating Self-Sovereign Identity and Decentralized Identifiers for next-gen user experience.',
+      description: currentLanguage === 'EN'
+        ? 'Revolutionary gaming platform integrating Self-Sovereign Identity and Decentralized Identifiers for next-gen user experience.'
+        : 'Revolutionäre Gaming-Plattform mit Self-Sovereign Identity und Dezentralen Identifikatoren für Next-Gen-Benutzererfahrung.',
       status: 'R&D',
-      impact: 'Pioneering blockchain integration in gaming ecosystems',
-      role: 'Technical Lead & Product Architect',
+      impact: currentLanguage === 'EN'
+        ? 'Pioneering blockchain integration in gaming ecosystems'
+        : 'Pionierarbeit bei der Blockchain-Integration in Gaming-Ökosystemen',
+      role: currentLanguage === 'EN' ? 'Technical Lead & Product Architect' : 'Technical Lead & Produkt-Architekt',
       icon: '⬡',
       color: 'cyberpunk-acid-green'
-    },
-    {
-      id: 'security-frameworks',
-      name: 'Security & Compliance Systems',
-      category: 'SECURITY',
-      stack: ['Zero Trust', 'IAM', 'Compliance', 'Audit', 'Monitoring'],
-      description: 'Comprehensive security frameworks ensuring data protection and regulatory compliance.',
-      status: 'PRODUCTION',
-      impact: 'Protecting sensitive data and ensuring regulatory compliance across industries',
-      role: 'Security Architect',
-      icon: '⬟',
-      color: 'cyberpunk-orange'
     }
   ];
 
-  const categories = ['ALL', 'SYSTEMS', 'BLOCKCHAIN', 'ENTERPRISE', 'INFRASTRUCTURE', 'SECURITY'];
-  const filteredProjects = filter === 'ALL' ? projects : projects.filter(p => p.category === filter);
+  const projects = getProjects(currentLanguage);
+  const content = getProjectContent(currentLanguage);
+
+  // Reset filter when language changes
+  useEffect(() => {
+    setFilter(content.categories[0]); // Reset to "ALL" or "ALLE"
+  }, [currentLanguage]);
+
+  const filteredProjects = filter === content.categories[0] ? projects : projects.filter((p: Project) => p.category === filter);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -112,16 +144,19 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       {/* Header */}
       <div className="text-center">
         <GlitchText className="text-4xl font-bold cyberpunk-heading mb-4">
-          PROJECT PORTFOLIO
+          {currentLanguage === 'EN' ? 'PROJECT PORTFOLIO' : 'PROJEKT PORTFOLIO'}
         </GlitchText>
         <div className="text-white text-lg font-medium">
-          Strategic R&D demonstrating deep technical capabilities
+          {currentLanguage === 'EN' 
+            ? 'Strategic R&D demonstrating deep technical capabilities'
+            : 'Strategische F&E zur Demonstration tiefer technischer Fähigkeiten'
+          }
         </div>
       </div>
 
       {/* Category Filter */}
       <div className="flex flex-wrap justify-center gap-2">
-        {categories.map((category) => (
+        {content.categories.map((category) => (
           <button
             key={category}
             onClick={() => setFilter(category)}
@@ -200,10 +235,10 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                   {/* Action Buttons */}
                   <div className="flex gap-1 md:gap-2 pt-2">
                     <button className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1">
-                      DETAILS
+                      {content.detailsButton}
                     </button>
                     <button className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1">
-                      MANIFEST
+                      {content.manifestButton}
                     </button>
                   </div>
                 </div>
@@ -231,7 +266,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
-                const project = projects.find(p => p.id === selectedProject);
+                const project = projects.find((p: Project) => p.id === selectedProject);
                 if (!project) return null;
 
                 return (
