@@ -3,6 +3,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useToast } from '../hooks/use-toast';
 import { apiRequest } from '../lib/queryClient';
 import { Language } from '../hooks/useLanguage';
+import { MatrixBackground } from './CyberpunkEffects';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -105,33 +106,33 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
     <div 
       className="fixed inset-0 flex items-center justify-center z-50" 
       style={{ 
-        background: 'linear-gradient(135deg, #000f1e 0%, #001829 100%)',
-        cursor: 'none' // Hide default cursor in modal
+        background: `
+          linear-gradient(135deg, #000514 0%, #001122 50%, #000f1e 100%),
+          radial-gradient(ellipse at center, rgba(0, 212, 255, 0.2) 0%, transparent 70%)
+        `,
+        cursor: 'none',
+        backdropFilter: 'blur(5px)'
       }}
     >
       {/* Custom cyberpunk cursor for modal */}
       <div
-        className="fixed pointer-events-none z-50"
+        className="fixed pointer-events-none z-[60]"
         style={{
-          left: cursorPosition.x - 8,
-          top: cursorPosition.y - 8,
-          width: '16px',
-          height: '16px',
-          border: '2px solid #00d4ff',
+          left: cursorPosition.x - 12,
+          top: cursorPosition.y - 12,
+          width: '24px',
+          height: '24px',
+          border: '3px solid #00d4ff',
           borderRadius: '50%',
-          backgroundColor: 'rgba(0, 212, 255, 0.2)',
-          boxShadow: '0 0 10px rgba(0, 212, 255, 0.5)',
+          backgroundColor: 'rgba(0, 212, 255, 0.3)',
+          boxShadow: '0 0 20px rgba(0, 212, 255, 0.8), inset 0 0 10px rgba(0, 212, 255, 0.5)',
           transition: 'none'
         }}
       />
       
-      {/* Matrix-style background pattern */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle, rgba(0, 212, 255, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '20px 20px',
-          animation: 'matrix-drift 8s linear infinite'
-        }} />
+      {/* Real Matrix Background - Same as homepage */}
+      <div className="absolute inset-0 opacity-60">
+        <MatrixBackground />
       </div>
       
       <div className="cyberpunk-panel w-full max-w-md mx-4 relative overflow-hidden">

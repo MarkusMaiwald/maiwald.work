@@ -369,8 +369,12 @@ export function Desktop() {
                 setCurrentView('terminal');
                 setIsTerminalVisible(true);
                 setIsInfoModalOpen(false);
+                setIsContactModalOpen(false);
               }}
-              onContactClick={() => setIsContactModalOpen(true)}
+              onContactClick={() => {
+                setIsContactModalOpen(true);
+                setIsInfoModalOpen(false);
+              }}
               onSectionClick={handleSectionClick}
               onHelpClick={() => {
                 setCurrentSection('about');
