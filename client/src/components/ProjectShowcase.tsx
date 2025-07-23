@@ -42,7 +42,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       name: 'NexusOS',
       category: 'SYSTEMS',
       stack: ['Nim', 'Assembly', 'Kernel', 'UEFI', 'SystemD'],
-      description: 'NexusOS is not software. It is a rebellion encoded. Decentralized. Deterministic. Unforgiving. This is not for users. This is for Operators.',
+      description: 'Military-grade security and modularity. Fast boot. No bloat. Hardened kernel. Zero GNUs given.',
       status: 'ACTIVE',
       impact: 'Revolutionary OS architecture challenging conventional computing paradigms',
       role: 'Lead Architect & Developer',
