@@ -78,26 +78,37 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
   const currentLabels = labels[currentLanguage];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-md mx-4 animate-fade-in">
-        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg">
-          <div className="flex items-center space-x-2">
-            <div 
-              className="w-3 h-3 bg-[var(--mac-red)] rounded-full cursor-pointer" 
-              onClick={onClose}
-            ></div>
-            <div className="w-3 h-3 bg-[var(--mac-yellow)] rounded-full"></div>
-            <div className="w-3 h-3 bg-[var(--mac-green)] rounded-full"></div>
+    <div className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="cyberpunk-panel w-full max-w-md mx-4 relative overflow-hidden">
+        {/* Cyberpunk Header */}
+        <div className="flex items-center justify-between p-4 border-b border-cyberpunk-border bg-cyberpunk-surface-light">
+          <div className="flex items-center space-x-3">
+            <div className="w-2 h-2 bg-cyberpunk-electric-blue rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-cyberpunk-neon-cyan rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="w-2 h-2 bg-cyberpunk-acid-green rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
-          <div className="text-sm font-medium text-gray-700">Contact</div>
-          <div className="w-16"></div>
+          <div className="text-sm font-mono font-bold text-cyberpunk-electric-blue">CONTACT.EXE</div>
+          <button
+            onClick={onClose}
+            className="text-cyberpunk-text-dim hover:text-cyberpunk-neon-magenta transition-colors font-mono"
+          >
+            [X]
+          </button>
         </div>
-        <div className="p-6">
-          <h3 className="text-lg font-bold mb-4">{currentLabels.title}</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {currentLabels.name}
+        
+        {/* Scan line effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="scan-line"></div>
+        </div>
+        
+        <div className="p-6 bg-cyberpunk-bg relative z-10">
+          <h3 className="text-lg font-bold mb-6 text-cyberpunk-electric-blue font-mono cyberpunk-heading">
+            {currentLabels.title.toUpperCase()}
+          </h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label className="block text-sm font-mono font-bold text-cyberpunk-text mb-2">
+                &gt; {currentLabels.name.toUpperCase()}
               </label>
               <input 
                 type="text" 
@@ -105,12 +116,13 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--mac-blue)]"
+                className="w-full px-4 py-3 bg-cyberpunk-surface-dark border border-cyberpunk-border rounded text-cyberpunk-text font-mono focus:outline-none focus:border-cyberpunk-electric-blue focus:shadow-lg focus:shadow-cyberpunk-electric-blue/20 transition-all"
+                placeholder="ENTER_NAME..."
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {currentLabels.email}
+            <div>
+              <label className="block text-sm font-mono font-bold text-cyberpunk-text mb-2">
+                &gt; {currentLabels.email.toUpperCase()}
               </label>
               <input 
                 type="email" 
@@ -118,12 +130,13 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--mac-blue)]"
+                className="w-full px-4 py-3 bg-cyberpunk-surface-dark border border-cyberpunk-border rounded text-cyberpunk-text font-mono focus:outline-none focus:border-cyberpunk-electric-blue focus:shadow-lg focus:shadow-cyberpunk-electric-blue/20 transition-all"
+                placeholder="USER@DOMAIN.COM"
               />
             </div>
-            <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {currentLabels.message}
+            <div>
+              <label className="block text-sm font-mono font-bold text-cyberpunk-text mb-2">
+                &gt; {currentLabels.message.toUpperCase()}
               </label>
               <textarea 
                 rows={4} 
@@ -131,17 +144,18 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--mac-blue)]"
+                className="w-full px-4 py-3 bg-cyberpunk-surface-dark border border-cyberpunk-border rounded text-cyberpunk-text font-mono focus:outline-none focus:border-cyberpunk-electric-blue focus:shadow-lg focus:shadow-cyberpunk-electric-blue/20 transition-all resize-none"
+                placeholder="TRANSMIT_MESSAGE..."
               ></textarea>
             </div>
             <button 
               type="submit" 
               disabled={contactMutation.isPending}
-              className="w-full bg-[var(--mac-blue)] text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors disabled:opacity-50"
+              className="w-full cyberpunk-button py-3 px-6 rounded font-mono font-bold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {contactMutation.isPending 
-                ? (currentLanguage === 'EN' ? 'Sending...' : 'Wird gesendet...') 
-                : currentLabels.send
+                ? (currentLanguage === 'EN' ? '[ TRANSMITTING... ]' : '[ ÜBERTRAGUNG... ]') 
+                : `[ ${currentLabels.send.toUpperCase()} ]`
               }
             </button>
           </form>
