@@ -38,13 +38,13 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       color: 'cyberpunk-neon-magenta'
     },
     {
-      id: 'custom-os',
-      name: 'Custom Operating System',
+      id: 'nexus-os',
+      name: 'NexusOS',
       category: 'SYSTEMS',
       stack: ['Nim', 'Assembly', 'Kernel', 'UEFI', 'SystemD'],
-      description: 'Ground-up OS development demonstrating deep systems architecture knowledge and forward-thinking design principles.',
+      description: 'NexusOS is not software. It is a rebellion encoded. Decentralized. Deterministic. Unforgiving. This is not for users. This is for Operators.',
       status: 'ACTIVE',
-      impact: 'Core technology research advancing understanding of operating system fundamentals',
+      impact: 'Revolutionary OS architecture challenging conventional computing paradigms',
       role: 'Lead Architect & Developer',
       icon: '⬢',
       color: 'cyberpunk-electric-blue'
@@ -261,19 +261,34 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                         <div className="space-y-4">
                           <DataVisualization>
                             <h4 className="text-lg font-bold text-cyberpunk-electric-blue mb-3">
-                              PROJECT SCOPE
+                              {project.id === 'nexus-os' ? 'MANIFESTO' : 'PROJECT SCOPE'}
                             </h4>
                             <p className="text-cyberpunk-text">
                               {project.description}
                             </p>
+                            {project.id === 'nexus-os' && (
+                              <div className="mt-4 p-4 bg-cyberpunk-surface-dark border border-cyberpunk-electric-blue rounded font-mono text-sm">
+                                <div className="text-cyberpunk-electric-blue mb-2">❯ decode ./code_is_manifesto</div>
+                                <div className="text-cyberpunk-text leading-relaxed">
+                                  NexusOS is not software.<br/>
+                                  It is a rebellion encoded.<br/>
+                                  Decentralized. Deterministic. Unforgiving.<br/>
+                                  This is not for users.<br/>
+                                  This is for Operators.
+                                </div>
+                              </div>
+                            )}
                           </DataVisualization>
 
                           <DataVisualization>
                             <h4 className="text-lg font-bold text-cyberpunk-neon-magenta mb-3">
-                              BUSINESS IMPACT
+                              {project.id === 'nexus-os' ? 'SOUL INJECTION' : 'BUSINESS IMPACT'}
                             </h4>
                             <p className="text-cyberpunk-text">
-                              {project.impact}
+                              {project.id === 'nexus-os' 
+                                ? 'Every line of code is an act of digital sovereignty. NexusOS embodies the philosophy that true computing freedom comes from understanding systems at their most fundamental level. Code is manifesto.'
+                                : project.impact
+                              }
                             </p>
                           </DataVisualization>
                         </div>

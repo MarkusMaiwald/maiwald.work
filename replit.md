@@ -120,9 +120,10 @@ Changelog:
   * Updated main headline to "Maiwald Enterprises BV" with tagline ".. we build the stuff your business runs on!"
   * Transformed portfolio content to position Markus as strategic technology architect
   * Added comprehensive sections: about, services, blockchain, projects, development
-  * Enhanced personal projects (OS, TTRPG) as strategic R&D demonstrations
+  * Enhanced personal projects (OS renamed to NexusOS, TTRPG) as strategic R&D demonstrations
   * Implemented Maiwald Enterprises BV service pillars framework
   * Updated terminal commands to support new content sections
+  * Added NexusOS manifesto: "rebellion encoded" with cryptic terminal-style presentation
 - July 23, 2025. Converted from PostgreSQL to SQLite for local file-based data storage
 - July 07, 2025. Initial setup
 ```
