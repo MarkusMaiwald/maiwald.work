@@ -321,11 +321,12 @@ export function Desktop() {
                 )}
               </AnimatePresence>
 
-              {/* System Monitor */}
-              <SystemMonitor />
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* System Monitor - Fixed position outside scrolling content */}
+        {!showRitual && <SystemMonitor />}
 
         {/* Dock - Fixed position outside scrolling content */}
         {!showRitual && (
