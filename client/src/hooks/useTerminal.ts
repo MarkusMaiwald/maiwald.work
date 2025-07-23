@@ -2,6 +2,7 @@ import { useState, useCallback, useRef } from 'react';
 import { content } from '../data/content';
 import { Language } from './useLanguage';
 import { useFileSystem } from './useFileSystem';
+import { apiRequest } from '../lib/queryClient';
 
 export interface TerminalLine {
   type: 'command' | 'output' | 'error';
@@ -22,7 +23,35 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
     setLines(prev => [...prev, { type, content, timestamp: Date.now() }]);
   }, []);
 
-  const processCommand = useCallback((command: string) => {
+  const executeRealCommand = useCallback(async (command: string) => {
+    try {
+      const response = await fetch('/api/terminal/execute', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ command })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        if (data.output) {
+          addLine('output', data.output);
+        }
+        if (data.error) {
+          addLine('error', data.error);
+        }
+        return true;
+      } else {
+        addLine('error', data.message || 'Command execution failed');
+        return false;
+      }
+    } catch (error: any) {
+      addLine('error', `Network error: ${error.message || 'Unknown error'}`);
+      return false;
+    }
+  }, [addLine]);
+
+  const processCommand = useCallback(async (command: string) => {
     const trimmedCommand = command.trim();
     if (!trimmedCommand) return;
 
@@ -37,6 +66,31 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
     const parts = trimmedCommand.split(' ');
     const cmd = parts[0].toLowerCase();
     const args = parts.slice(1);
+
+    // Real Linux commands - execute via backend (except for our file system commands)
+    const realCommands = [
+      'ping', 'host', 'dig', 'nslookup', 'curl', 'wget',
+      'whoami', 'uname', 'uptime', 'date',
+      'echo', 'head', 'tail', 'grep', 'find',
+      'ps', 'top', 'df', 'free', 'netstat', 'ss',
+      'traceroute', 'whois', 'finger', 'telnet'
+    ];
+
+    // Special handling for ls and pwd - use real commands instead of simulated
+    if (cmd === 'ls') {
+      await executeRealCommand(trimmedCommand);
+      return;
+    }
+
+    if (cmd === 'pwd') {
+      await executeRealCommand(trimmedCommand);
+      return;
+    }
+
+    if (realCommands.includes(cmd)) {
+      await executeRealCommand(trimmedCommand);
+      return;
+    }
 
     let response = '';
 
