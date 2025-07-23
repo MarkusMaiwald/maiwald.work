@@ -1,48 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { useAudio } from '../hooks/useAudio';
 
-// Custom cursor component
+// Custom cursor component - disabled for performance
 export function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-  const [isClicking, setIsClicking] = useState(false);
-
-  useEffect(() => {
-    const updateCursor = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleMouseDown = () => setIsClicking(true);
-    const handleMouseUp = () => setIsClicking(false);
-
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const isInteractive = target.closest('a, button, [role="button"], input, textarea, select, .interactive');
-      setIsHovering(!!isInteractive);
-    };
-
-    document.addEventListener('mousemove', updateCursor);
-    document.addEventListener('mousedown', handleMouseDown);
-    document.addEventListener('mouseup', handleMouseUp);
-    document.addEventListener('mouseover', handleMouseOver);
-
-    return () => {
-      document.removeEventListener('mousemove', updateCursor);
-      document.removeEventListener('mousedown', handleMouseDown);
-      document.removeEventListener('mouseup', handleMouseUp);
-      document.removeEventListener('mouseover', handleMouseOver);
-    };
-  }, []);
-
-  return (
-    <div
-      className={`custom-cursor ${isHovering ? 'hover' : ''} ${isClicking ? 'click' : ''}`}
-      style={{
-        left: position.x - 10,
-        top: position.y - 10,
-      }}
-    />
-  );
+  return null;
 }
 
 // Scan line effect
@@ -318,12 +279,11 @@ export function AmbientAudio() {
   return null;
 }
 
-// Main cyberpunk effects wrapper - lightweight version
+// Main cyberpunk effects wrapper - performance optimized
 export function CyberpunkEffects({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative h-screen overflow-hidden">
       <ScanLine />
-      <CustomCursor />
       <AmbientAudio />
       {children}
     </div>
