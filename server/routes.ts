@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 import nodemailer from "nodemailer";
+import { CyberpunkTerminal } from "./terminal";
 
 // Email configuration
 const createEmailTransporter = () => {
@@ -83,7 +84,56 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Terminal command execution
+  const terminal = CyberpunkTerminal.getInstance();
 
+  app.post("/api/terminal/execute", async (req, res) => {
+    try {
+      const { command } = req.body;
+      
+      if (!command || typeof command !== 'string') {
+        return res.status(400).json({ 
+          success: false, 
+          message: "Command is required and must be a string" 
+        });
+      }
+
+      const result = await terminal.executeCommand(command);
+      
+      res.json({
+        success: true,
+        output: result.output,
+        error: result.error,
+        exitCode: result.exitCode,
+        duration: result.duration,
+        cwd: terminal.getCurrentDirectory()
+      });
+    } catch (error) {
+      console.error('Terminal execution error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Terminal execution failed",
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.get("/api/terminal/info", async (req, res) => {
+    try {
+      const systemInfo = await terminal.getSystemInfo();
+      res.json({
+        success: true,
+        systemInfo,
+        cwd: terminal.getCurrentDirectory()
+      });
+    } catch (error) {
+      console.error('Terminal info error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to get terminal info" 
+      });
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;
