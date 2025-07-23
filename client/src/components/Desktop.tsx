@@ -227,6 +227,7 @@ export function Desktop() {
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
                           <TypewriterEffect 
+                            key={`manifesto-subtitle-${currentLanguage}`}
                             text={currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
