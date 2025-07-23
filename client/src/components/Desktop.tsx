@@ -293,15 +293,6 @@ export function Desktop() {
                 currentLanguage={currentLanguage}
               />
 
-              {/* Easter Egg Terminal */}
-              <EasterEggTerminal 
-                currentLanguage={currentLanguage}
-                onProjectsReveal={() => {
-                  setCurrentView('projects');
-                  setCurrentScrollSection(2);
-                }}
-              />
-
               {/* Desktop Applications */}
               <AnimatePresence>
                 {isCalculatorOpen && (
@@ -327,6 +318,17 @@ export function Desktop() {
 
         {/* System Monitor - Fixed position outside scrolling content */}
         {!showRitual && <SystemMonitor />}
+
+        {/* Easter Egg Terminal - Fixed position outside scrolling content */}
+        {!showRitual && (
+          <EasterEggTerminal 
+            currentLanguage={currentLanguage}
+            onProjectsReveal={() => {
+              setCurrentView('projects');
+              setCurrentScrollSection(2);
+            }}
+          />
+        )}
 
         {/* Dock - Fixed position outside scrolling content */}
         {!showRitual && (
