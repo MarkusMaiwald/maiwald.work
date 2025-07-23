@@ -54,12 +54,12 @@ export const content: ContentData = {
   },
   whoami: {
     EN: `Markus Maiwald
-Email: group4it@terminal.local
+Email: markus@maiwald.work
 Role: Infrastructure Architect & Crypto-Anarchist
 Location: Germany
 Specialties: Linux, Cloud Architecture, Decentralized Systems`,
     DE: `Markus Maiwald
-Email: group4it@terminal.local
+Email: markus@maiwald.work
 Rolle: Infrastruktur-Architekt & Krypto-Anarchist
 Standort: Deutschland
 Spezialgebiete: Linux, Cloud-Architektur, Dezentrale Systeme`

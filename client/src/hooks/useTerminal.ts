@@ -28,7 +28,7 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
     setHistoryIndex(-1);
 
     // Add command to output
-    addLine('command', `group4it@terminal:~$ ${trimmedCommand}`);
+    addLine('command', `markus@maiwald.work:~$ ${trimmedCommand}`);
 
     // Process command
     const parts = trimmedCommand.toLowerCase().split(' ');

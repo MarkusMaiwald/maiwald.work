@@ -80,7 +80,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
             
             {/* Initial Prompt */}
             <div className="flex items-center">
-              <span className="text-blue-400">group4it@terminal:~$</span>
+              <span className="text-blue-400">markus@maiwald.work:~$</span>
               <span className="ml-2 text-white">{content.prompt[currentLanguage]}</span>
             </div>
             
@@ -100,7 +100,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
           
           {/* Command Input */}
           <div className="flex items-center mt-2">
-            <span className="text-blue-400 terminal-text">group4it@terminal:~$</span>
+            <span className="text-blue-400 terminal-text">markus@maiwald.work:~$</span>
             <input 
               ref={inputRef}
               type="text" 
