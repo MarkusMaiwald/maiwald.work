@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Minimize2, Brain, Users } from 'lucide-react';
 import { content } from '../data/content';
 import { useLanguage } from '../hooks/useLanguage';
-// Note: Audio hooks will be integrated later if needed
-// import { useCyberpunkAudio } from '../hooks/useCyberpunkAudio';
+import { MatrixBackground } from './CyberpunkEffects';
 
 interface SkillsAppProps {
   isOpen: boolean;
@@ -14,9 +13,26 @@ interface SkillsAppProps {
 export const SkillsApp: React.FC<SkillsAppProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState<'hardskills' | 'softskills'>('hardskills');
   const { currentLanguage } = useLanguage();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
   // Audio functionality placeholder
   const playHover = () => {};
   const playClick = () => {};
+
+  // Mouse tracking for custom cursor
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -69,15 +85,34 @@ export const SkillsApp: React.FC<SkillsAppProps> = ({ isOpen, onClose }) => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        style={{ cursor: 'none' }}
       >
+        {/* Matrix Background */}
+        <MatrixBackground />
+        
+        {/* Custom Cursor */}
+        <div
+          className="fixed pointer-events-none z-[60]"
+          style={{
+            left: mousePosition.x - 10,
+            top: mousePosition.y - 10,
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(0, 212, 255, 0.8) 0%, rgba(0, 212, 255, 0.3) 50%, transparent 100%)',
+            boxShadow: '0 0 20px rgba(0, 212, 255, 0.6)',
+            transform: 'translate(-50%, -50%)',
+          }}
+        />
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-gray-900/95 border border-cyan-500/30 rounded-lg shadow-2xl w-full max-w-4xl h-[80vh] flex flex-col overflow-hidden"
+          className="bg-gray-900/95 border border-cyan-500/30 rounded-lg shadow-2xl w-full max-w-4xl h-[80vh] flex flex-col overflow-hidden relative z-[55]"
           style={{
             background: 'linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%)',
             boxShadow: '0 0 50px rgba(6, 182, 212, 0.3)',
+            cursor: 'auto',
           }}
         >
           {/* Title Bar */}
