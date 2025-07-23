@@ -3,6 +3,52 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import nodemailer from "nodemailer";
+
+// Email configuration
+const createEmailTransporter = () => {
+  const gmailUser = process.env.GMAIL_USER;
+  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+  
+  if (!gmailUser || !gmailAppPassword) {
+    console.warn('Gmail credentials not configured. Email notifications will be disabled.');
+    return null;
+  }
+
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: gmailUser,
+      pass: gmailAppPassword
+    }
+  });
+};
+
+const sendContactNotification = async (contactData: { name: string; email: string; message: string }) => {
+  const transporter = createEmailTransporter();
+  if (!transporter) return;
+
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: process.env.NOTIFICATION_EMAIL || process.env.GMAIL_USER,
+    subject: `New Contact Form Submission from ${contactData.name}`,
+    html: `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${contactData.name}</p>
+      <p><strong>Email:</strong> ${contactData.email}</p>
+      <p><strong>Message:</strong></p>
+      <p>${contactData.message.replace(/\n/g, '<br>')}</p>
+      <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+    `
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log('Contact notification email sent successfully');
+  } catch (error) {
+    console.error('Failed to send contact notification email:', error);
+  }
+};
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -10,11 +56,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertContactSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
+      
+      // Send email notification (non-blocking)
+      sendContactNotification(validatedData).catch(error => {
+        console.error('Email notification failed:', error);
+      });
+      
       res.json({ success: true, message: "Contact form submitted successfully", id: contact.id });
     } catch (error) {
       if (error instanceof z.ZodError) {
         res.status(400).json({ success: false, message: "Invalid form data", errors: error.errors });
       } else {
+        console.error('Contact form error:', error);
         res.status(500).json({ success: false, message: "Internal server error" });
       }
     }
