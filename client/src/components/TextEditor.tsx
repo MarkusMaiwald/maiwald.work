@@ -57,6 +57,17 @@ Start typing to create your digital manifest...`,
     }
   }, [activeFileId]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   const updateFileContent = (content: string) => {
     setFiles(prev => prev.map(file => 
       file.id === activeFileId 
