@@ -313,58 +313,96 @@ Meine praktische Entwicklung mit Decentralized Identifiers und AI im TTRPG-Proje
 Meine persönlichen Projekte stellen sicher, dass die strategische Beratung, die ich anbiete, auf realer Implementierungserfahrung basiert. Ich rede nicht nur über die Zukunft der Technologie; ich baue sie aktiv auf.`
   },
   blockchain: {
-    EN: `BLOCKCHAIN & WEB3 SOLUTIONS
+    EN: `BLOCKCHAIN & WEB3 SOLUTIONS - CO-FOUNDER & ADVISOR
 
-DECENTRALIZED APPLICATION ARCHITECTURE
-• Full-stack DApp development on Ethereum, Polygon, Solana
-• Smart contract security audits and optimization
-• Layer 2 scaling solutions and cross-chain bridges
-• Decentralized storage integration (IPFS, Arweave)
+PROVEN TRACK RECORD IN BLOCKCHAIN INNOVATION
+Co-founder and advisor of several groundbreaking crypto projects:
+• Internet of People (IoP) - Decentralized identity and social networking protocol
+• PIVX - Privacy-focused cryptocurrency with governance innovation
+• Hydraledger - Custom Layer1 blockchain architecture
+  Live Network: explorer.hydraledger.tech
 
-SELF-SOVEREIGN IDENTITY (SSI) & DIDs
-• Decentralized Identifier (DID) implementation
-• Verifiable Credentials systems
-• Zero-knowledge proof integration
-• Identity interoperability across platforms
+LAYER1 BLOCKCHAIN DEVELOPMENT
+• Custom blockchain architecture and consensus mechanisms
+• Protocol design and economic modeling
+• Network security and validator infrastructure
+• Cross-chain interoperability solutions
 
-TOKENOMICS & ECOSYSTEM DESIGN
-• Token utility and distribution modeling
-• DAO governance structure design
-• NFT marketplace and platform development
-• DeFi protocol architecture
+ENTERPRISE BLOCKCHAIN SERVICES
+From Development to Infrastructure and Advisory:
 
-PRACTICAL INNOVATION
-Through my TTRPG project, I'm actively developing real-world applications of SSI/DID technology, creating portable character identities that demonstrate the power of user-owned data. This isn't theoretical work—it's a living laboratory for the future of digital identity.
-
-The abstract concept of "owning your data" becomes the concrete, relatable idea of "truly owning your character." Players can take their verified achievements from one game world to another, all without central authorities.
-
-This hands-on experience with cutting-edge Web3 technologies ensures that my client solutions are grounded in practical, battle-tested implementations rather than just theoretical frameworks.`,
-    DE: `BLOCKCHAIN & WEB3-LÖSUNGEN
-
-DEZENTRALE ANWENDUNGSARCHITEKTUR
-• Full-Stack-DApp-Entwicklung auf Ethereum, Polygon, Solana
-• Smart-Contract-Sicherheitsaudits und -Optimierung
-• Layer-2-Skalierungslösungen und Cross-Chain-Bridges
-• Integration dezentraler Speicher (IPFS, Arweave)
+SMART CONTRACT & DAPP DEVELOPMENT
+• Multi-chain smart contract architecture (Ethereum, Polygon, Solana)
+• DeFi protocol development and tokenomics design
+• NFT marketplace and gaming integration
+• Cross-chain bridge development and security audits
 
 SELF-SOVEREIGN IDENTITY (SSI) & DIDs
-• Decentralized Identifier (DID) Implementierung
-• Verifiable Credentials Systeme
-• Zero-Knowledge-Proof-Integration
-• Identitätsinteroperabilität über Plattformen hinweg
+• Decentralized Identifier (DID) implementation and integration
+• Verifiable Credentials architecture for enterprise use cases
+• Identity wallet development and user experience design
+• Privacy-preserving authentication systems
 
-TOKENOMICS & ÖKOSYSTEM-DESIGN
-• Token-Utility- und Verteilungsmodellierung
-• DAO-Governance-Strukturdesign
-• NFT-Marktplatz- und Plattformentwicklung
-• DeFi-Protokoll-Architektur
+BLOCKCHAIN INFRASTRUCTURE & CONSULTING
+• Node deployment and validator network setup
+• Blockchain security audits and penetration testing
+• Regulatory compliance and legal framework guidance
+• Technical due diligence for blockchain investments
 
-PRAKTISCHE INNOVATION
-Durch mein TTRPG-Projekt entwickle ich aktiv reale Anwendungen der SSI/DID-Technologie und schaffe tragbare Charakteridentitäten, die die Macht benutzereigener Daten demonstrieren. Das ist keine theoretische Arbeit—es ist ein lebendiges Labor für die Zukunft der digitalen Identität.
+PRIVACY & SCALABILITY SOLUTIONS
+• Zero-knowledge proof implementation (zk-SNARKs, zk-STARKs)
+• Layer 2 scaling solutions and state channels
+• Privacy-preserving transaction mechanisms
+• Mixnet and anonymity network integration
 
-Das abstrakte Konzept des "Besitzens Ihrer Daten" wird zur konkreten, nachvollziehbaren Idee des "wahren Besitzens Ihres Charakters." Spieler können ihre verifizierten Errungenschaften von einer Spielwelt zur anderen mitnehmen, alles ohne zentrale Autoritäten.
+Whether you need technical blockchain development, strategic advisory, or complete infrastructure deployment, we deliver enterprise-grade solutions backed by years of hands-on experience building and scaling decentralized networks.
 
-Diese praktische Erfahrung mit modernsten Web3-Technologien stellt sicher, dass meine Kundenlösungen auf praktischen, kampferprobten Implementierungen basieren und nicht nur auf theoretischen Frameworks.`
+Contact: markus@maiwald.work for blockchain consulting and development partnerships.`,
+    DE: `BLOCKCHAIN & WEB3-LÖSUNGEN - MITGRÜNDER & BERATER
+
+BEWÄHRTE ERFOLGSBILANZ IN BLOCKCHAIN-INNOVATION
+Mitgründer und Berater mehrerer bahnbrechender Krypto-Projekte:
+• Internet of People (IoP) - Dezentrales Identitäts- und Social-Networking-Protokoll
+• PIVX - Datenschutzfokussierte Kryptowährung mit Governance-Innovation
+• Hydraledger - Maßgeschneiderte Layer1-Blockchain-Architektur
+  Live-Netzwerk: explorer.hydraledger.tech
+
+LAYER1-BLOCKCHAIN-ENTWICKLUNG
+• Maßgeschneiderte Blockchain-Architektur und Konsensus-Mechanismen
+• Protokoll-Design und wirtschaftliche Modellierung
+• Netzwerksicherheit und Validator-Infrastruktur
+• Cross-Chain-Interoperabilitätslösungen
+
+ENTERPRISE BLOCKCHAIN-DIENSTLEISTUNGEN
+Von der Entwicklung bis zur Infrastruktur und Beratung:
+
+SMART CONTRACT & DAPP-ENTWICKLUNG
+• Multi-Chain Smart Contract-Architektur (Ethereum, Polygon, Solana)
+• DeFi-Protokoll-Entwicklung und Tokenomics-Design
+• NFT-Marktplatz und Gaming-Integration
+• Cross-Chain-Bridge-Entwicklung und Sicherheitsaudits
+
+SELF-SOVEREIGN IDENTITY (SSI) & DIDs
+• Decentralized Identifier (DID) Implementierung und Integration
+• Verifiable Credentials-Architektur für Unternehmensanwendungen
+• Identity-Wallet-Entwicklung und Benutzererfahrungsdesign
+• Datenschutzwahrende Authentifizierungssysteme
+
+BLOCKCHAIN-INFRASTRUKTUR & BERATUNG
+• Node-Deployment und Validator-Netzwerk-Setup
+• Blockchain-Sicherheitsaudits und Penetrationstests
+• Regulatory Compliance und rechtliche Rahmenberatung
+• Technische Due Diligence für Blockchain-Investitionen
+
+DATENSCHUTZ & SKALIERUNGSLÖSUNGEN
+• Zero-Knowledge-Proof-Implementierung (zk-SNARKs, zk-STARKs)
+• Layer-2-Skalierungslösungen und State-Channels
+• Datenschutzwahrende Transaktionsmechanismen
+• Mixnet- und Anonymitätsnetzwerk-Integration
+
+Ob Sie technische Blockchain-Entwicklung, strategische Beratung oder komplette Infrastruktur-Deployment benötigen - wir liefern Enterprise-Grade-Lösungen, unterstützt durch jahrelange praktische Erfahrung im Aufbau und der Skalierung dezentraler Netzwerke.
+
+Kontakt: markus@maiwald.work für Blockchain-Beratung und Entwicklungspartnerschaften.`
   },
   projects: {
     EN: `PERSONAL R&D PROJECTS - BUILDING THE FUTURE
