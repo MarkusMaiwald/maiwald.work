@@ -268,6 +268,7 @@ export function Desktop() {
 
               {/* Info Modal */}
               <InfoModal 
+                key={`${currentSection}-${currentLanguage}`}
                 isOpen={isInfoModalOpen}
                 onClose={() => setIsInfoModalOpen(false)}
                 section={currentSection}
