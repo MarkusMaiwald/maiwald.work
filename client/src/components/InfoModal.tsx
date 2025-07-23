@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
-import { MatrixBackground, CyberpunkAudio } from './CyberpunkEffects';
+import { MatrixBackground, CyberpunkAudio, CustomCursor } from './CyberpunkEffects';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -78,70 +78,8 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
         }}
       />
       
-      {/* Matrix-style background pattern - Enhanced */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="w-full h-full" style={{
-          backgroundImage: `
-            radial-gradient(circle, rgba(0, 212, 255, 0.4) 1px, transparent 1px),
-            linear-gradient(45deg, rgba(0, 212, 255, 0.15) 25%, rgba(255, 0, 110, 0.15) 75%),
-            linear-gradient(-45deg, rgba(57, 255, 20, 0.05) 25%, transparent 75%)
-          `,
-          backgroundSize: '15px 15px, 80px 80px, 120px 120px',
-          animation: 'matrix-drift 8s ease-in-out infinite'
-        }} />
-      </div>
-      
-      {/* Cyberpunk grid wallpaper effect - Enhanced */}
-      <div className="absolute inset-0 opacity-15">
-        <div className="w-full h-full" style={{
-          background: `
-            repeating-linear-gradient(
-              0deg,
-              transparent,
-              transparent 1px,
-              rgba(0, 212, 255, 0.08) 1px,
-              rgba(0, 212, 255, 0.08) 3px
-            ),
-            repeating-linear-gradient(
-              90deg,
-              transparent,
-              transparent 1px,
-              rgba(255, 0, 110, 0.06) 1px,
-              rgba(255, 0, 110, 0.06) 3px
-            ),
-            radial-gradient(ellipse at center, rgba(0, 212, 255, 0.02) 40%, transparent 70%)
-          `
-        }} />
-      </div>
-      
-      {/* Real Matrix Background - Same as homepage */}
-      <div className="absolute inset-0 opacity-60">
-        <MatrixBackground />
-      </div>
-
-      {/* Animated scan lines */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div style={{
-          position: 'absolute',
-          top: '20%',
-          left: 0,
-          right: 0,
-          height: '1px',
-          background: 'linear-gradient(90deg, transparent, #00d4ff, transparent)',
-          animation: 'scan-line 4s linear infinite',
-          animationDelay: '0s'
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: '60%',
-          left: 0,
-          right: 0,
-          height: '1px',
-          background: 'linear-gradient(90deg, transparent, #ff006e, transparent)',
-          animation: 'scan-line 6s linear infinite',
-          animationDelay: '2s'
-        }} />
-      </div>
+      {/* Matrix background */}
+      <MatrixBackground />
       <div 
         className="w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative"
         style={{

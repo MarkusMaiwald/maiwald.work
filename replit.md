@@ -104,6 +104,13 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Enhanced modal immersion with Matrix background, custom cursor, and ESC functionality:
+  * FIXED: Matrix background now displays consistently across all modals (InfoModal subpages)
+  * FIXED: Custom cyberpunk cursor (electric blue circle) now works in all modal views
+  * ENHANCED: ESC key functionality confirmed working in both InfoModal and ContactModal
+  * Integrated MatrixBackground component into InfoModal for authentic cyberpunk experience
+  * Custom cursor tracking with real-time mouse position updates in modal overlays
+  * Complete modal immersion: Matrix rain, custom cursor, ESC key, and audio effects
 - July 23, 2025. Universal cyberpunk audio system implementation:
   * Created CyberpunkAudio class with Web Audio API for synthetic cyberpunk sound generation
   * Added hover sounds (800Hz->400Hz square wave with high-pass filter, 80ms duration)
