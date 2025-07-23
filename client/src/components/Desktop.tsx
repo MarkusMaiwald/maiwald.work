@@ -66,12 +66,17 @@ export function Desktop() {
   };
 
   const handleSectionClick = (section: string) => {
+    // Always close contact modal when switching sections
+    setIsContactModalOpen(false);
+    
     if (section === 'projects') {
       setCurrentView('projects');
       setCurrentScrollSection(2);
+      setIsInfoModalOpen(false);
     } else if (section === 'services') {
-      setCurrentView('manifesto');
-      setCurrentScrollSection(3);
+      // Services should open InfoModal, not manifesto view
+      setCurrentSection('services');
+      setIsInfoModalOpen(true);
     } else {
       // Open InfoModal for blockchain, cloud, development, and other sections
       setCurrentSection(section);
@@ -379,6 +384,7 @@ export function Desktop() {
               onHelpClick={() => {
                 setCurrentSection('about');
                 setIsInfoModalOpen(true);
+                setIsContactModalOpen(false);
               }}
               onCalculatorClick={handleCalculatorClick}
               onTextEditorClick={handleTextEditorClick}

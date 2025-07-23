@@ -104,14 +104,14 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
-- July 23, 2025. Enhanced InfoModal cyberpunk theming with Matrix rain background:
-  * Fixed missing cyberpunk theming in Blockchain.dat, Cloud.dat, and Development.dat modals
-  * Added authentic Matrix rain effect with falling binary digits (0s and 1s)
-  * Enhanced modal background with layered gradients and backdrop blur effects
-  * Improved cursor tracking with larger, more visible cyberpunk cursor (24px with glow)
-  * Applied stronger border glow effects with multiple shadow layers
-  * Fixed duplicate dock components and ensured dock visibility over modals (z-index 100)
-  * All .dat modals now display consistent cyberpunk aesthetic with Matrix background
+- July 23, 2025. Complete modal theming and dock interaction fixes:
+  * Added authentic Canvas-based Matrix rain background to all modals (InfoModal and ContactModal)
+  * Enhanced cyberpunk cursor tracking in ContactModal (24px with stronger glow effects)
+  * Fixed critical dock interaction issue - all dock buttons now work after opening any modal
+  * Corrected Services dock button to open InfoModal instead of routing to manifesto view
+  * Implemented proper modal state management - modals close when switching between dock buttons
+  * Fixed Terminal dock button to close both Contact and Info modals when clicked
+  * All modals now have consistent Matrix background effect matching homepage design
 - July 23, 2025. Successfully fixed subtitle visibility and styling in Services/Manifesto section:
   * RESOLVED: Subtitle disappearing issue - now displays consistently and permanently
   * Applied elegant cyberpunk styling with electric blue (#00d4ff) glow and dual-layer text shadow
