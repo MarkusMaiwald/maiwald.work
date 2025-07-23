@@ -58,7 +58,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
             <div className="w-3 h-3 rounded-full" style={{ background: 'var(--cyberpunk-acid-green)' }}></div>
           </div>
           <GlitchText className="text-sm font-mono cyberpunk-heading">
-            TERMINAL.EXE — BASH — 120×40
+            TERMINAL.EXE — BASH — 110×50
           </GlitchText>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 border border-cyberpunk-electric-blue rounded opacity-60"></div>
@@ -68,7 +68,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
         
         {/* Terminal Content */}
         <div 
-          className="terminal-text p-6 rounded-b-lg h-96 overflow-y-auto interactive"
+          className="terminal-text p-6 rounded-b-lg h-[32rem] overflow-y-auto interactive"
           style={{ 
             background: 'var(--cyberpunk-surface)',
             color: 'var(--cyberpunk-text)'

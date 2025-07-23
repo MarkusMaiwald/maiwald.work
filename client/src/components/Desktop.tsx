@@ -320,6 +320,9 @@ export function Desktop() {
                   />
                 )}
               </AnimatePresence>
+
+              {/* System Monitor */}
+              <SystemMonitor />
             </motion.div>
           )}
         </AnimatePresence>
