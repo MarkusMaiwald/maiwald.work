@@ -493,12 +493,6 @@ AWS SERVICES
 • API Gateway, CloudFront, Route 53
 • IAM, Cognito, Secrets Manager
 
-AZURE SERVICES
-• Virtual Machines, Blob Storage, SQL Database
-• Azure Kubernetes Service (AKS)
-• Azure Active Directory, Key Vault
-• Azure DevOps, ARM Templates
-
 GOOGLE CLOUD PLATFORM
 • Compute Engine, Cloud Storage, Cloud SQL
 • Google Kubernetes Engine (GKE)
@@ -517,12 +511,6 @@ AWS-DIENSTE
 • EKS, ECS, Fargate für Container-Workloads
 • API Gateway, CloudFront, Route 53
 • IAM, Cognito, Secrets Manager
-
-AZURE-DIENSTE
-• Virtual Machines, Blob Storage, SQL Database
-• Azure Kubernetes Service (AKS)
-• Azure Active Directory, Key Vault
-• Azure DevOps, ARM Templates
 
 GOOGLE CLOUD PLATFORM
 • Compute Engine, Cloud Storage, Cloud SQL

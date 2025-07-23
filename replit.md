@@ -104,6 +104,14 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Desktop applications and file system simulation:
+  * Created Calculator application with full arithmetic functionality and cyberpunk styling
+  * Built TextEditor with multi-tab support, file operations, and clipboard integration
+  * Added both applications to dock with custom icons (≡ for calc, ⌨ for editor)
+  * Integrated file system simulation with Unix commands (ls, cd, pwd, cat, ll)
+  * Applications support ESC key closing and window controls (minimize, close)
+  * File system contains realistic directory structure with portfolio content
+  * Removed Azure Services section from Cloud content per user request
 - July 23, 2025. Comprehensive cyberpunk interface transformation:
   * Implemented full dark cyberpunk theme with #121212 backgrounds and electric blue/neon magenta accents
   * Added Framer Motion animations and interactive motion effects throughout interface
