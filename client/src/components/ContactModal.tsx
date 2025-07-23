@@ -16,6 +16,7 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
     email: '',
     message: ''
   });
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const { toast } = useToast();
 
   useEffect(() => {
@@ -25,9 +26,19 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
       }
     };
 
+    const handleMouseMove = (event: MouseEvent) => {
+      if (isOpen) {
+        setCursorPosition({ x: event.clientX, y: event.clientY });
+      }
+    };
+
     if (isOpen) {
       document.addEventListener('keydown', handleEscKey);
-      return () => document.removeEventListener('keydown', handleEscKey);
+      document.addEventListener('mousemove', handleMouseMove);
+      return () => {
+        document.removeEventListener('keydown', handleEscKey);
+        document.removeEventListener('mousemove', handleMouseMove);
+      };
     }
   }, [isOpen, onClose]);
 
@@ -91,7 +102,38 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
   const currentLabels = labels[currentLanguage];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50">
+    <div 
+      className="fixed inset-0 flex items-center justify-center z-50" 
+      style={{ 
+        background: 'linear-gradient(135deg, #000f1e 0%, #001829 100%)',
+        cursor: 'none' // Hide default cursor in modal
+      }}
+    >
+      {/* Custom cyberpunk cursor for modal */}
+      <div
+        className="fixed pointer-events-none z-50"
+        style={{
+          left: cursorPosition.x - 8,
+          top: cursorPosition.y - 8,
+          width: '16px',
+          height: '16px',
+          border: '2px solid #00d4ff',
+          borderRadius: '50%',
+          backgroundColor: 'rgba(0, 212, 255, 0.2)',
+          boxShadow: '0 0 10px rgba(0, 212, 255, 0.5)',
+          transition: 'none'
+        }}
+      />
+      
+      {/* Matrix-style background pattern */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="w-full h-full" style={{
+          backgroundImage: `radial-gradient(circle, rgba(0, 212, 255, 0.1) 1px, transparent 1px)`,
+          backgroundSize: '20px 20px',
+          animation: 'matrix-drift 8s linear infinite'
+        }} />
+      </div>
+      
       <div className="cyberpunk-panel w-full max-w-md mx-4 relative overflow-hidden">
         {/* Cyberpunk Header */}
         <div className="flex items-center justify-between p-4 border-b border-cyberpunk-border bg-cyberpunk-surface-light">
