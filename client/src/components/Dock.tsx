@@ -6,10 +6,12 @@ interface DockProps {
   onContactClick: () => void;
   onSectionClick: (section: string) => void;
   onHelpClick: () => void;
+  onCalculatorClick: () => void;
+  onTextEditorClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, currentLanguage }: DockProps) {
   const apps = [
     {
       id: 'terminal',
@@ -59,6 +61,20 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       icon: '⬣',
       color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
       action: () => onSectionClick('development')
+    },
+    {
+      id: 'calculator',
+      title: 'CALC',
+      icon: '≡',
+      color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
+      action: onCalculatorClick
+    },
+    {
+      id: 'text-editor',
+      title: 'EDITOR',
+      icon: '⌨',
+      color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
+      action: onTextEditorClick
     },
     {
       id: 'help',

@@ -12,6 +12,8 @@ import { ProjectShowcase } from './ProjectShowcase';
 import { ParticleField } from './ParticleField';
 import { ScrollProgress } from './ScrollProgress';
 import { EasterEggTerminal } from './EasterEggTerminal';
+import { Calculator } from './Calculator';
+import { TextEditor } from './TextEditor';
 
 export function Desktop() {
   const { currentLanguage, toggleLanguage, setLanguage } = useLanguage();
@@ -21,6 +23,8 @@ export function Desktop() {
   const [showRitual, setShowRitual] = useState(true);
   const [currentView, setCurrentView] = useState<'terminal' | 'projects' | 'manifesto'>('terminal');
   const [currentScrollSection, setCurrentScrollSection] = useState(0);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
   const terminalRef = useRef<TerminalRef>(null);
 
   const sections = ['NEURAL LINK', 'TERMINAL', 'PROJECTS', 'MANIFESTO'];
@@ -58,6 +62,14 @@ export function Desktop() {
       setCurrentSection(section);
       setIsInfoModalOpen(true);
     }
+  };
+
+  const handleCalculatorClick = () => {
+    setIsCalculatorOpen(true);
+  };
+
+  const handleTextEditorClick = () => {
+    setIsTextEditorOpen(true);
   };
 
   const handleHelpClick = () => {
@@ -256,6 +268,8 @@ export function Desktop() {
                 onContactClick={handleContactClick}
                 onSectionClick={handleSectionClick}
                 onHelpClick={handleHelpClick}
+                onCalculatorClick={handleCalculatorClick}
+                onTextEditorClick={handleTextEditorClick}
                 currentLanguage={currentLanguage}
               />
 
@@ -283,6 +297,25 @@ export function Desktop() {
                   setCurrentScrollSection(2);
                 }}
               />
+
+              {/* Desktop Applications */}
+              <AnimatePresence>
+                {isCalculatorOpen && (
+                  <Calculator
+                    onClose={() => setIsCalculatorOpen(false)}
+                    onMinimize={() => setIsCalculatorOpen(false)}
+                  />
+                )}
+              </AnimatePresence>
+
+              <AnimatePresence>
+                {isTextEditorOpen && (
+                  <TextEditor
+                    onClose={() => setIsTextEditorOpen(false)}
+                    onMinimize={() => setIsTextEditorOpen(false)}
+                  />
+                )}
+              </AnimatePresence>
             </motion.div>
           )}
         </AnimatePresence>

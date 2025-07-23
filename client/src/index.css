@@ -191,6 +191,12 @@
   pointer-events: none;
 }
 
+@keyframes scan-line {
+  0% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.1; }
+}
+
 .data-stream {
   position: fixed;
   width: 2px;
