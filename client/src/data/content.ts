@@ -167,99 +167,149 @@ ZERTIFIZIERUNGEN
 • CISSP - Certified Information Systems Security Professional`
   },
   services: {
-    EN: `MAIWALD ENTERPRISES BV - SERVICE PILLARS
+    EN: `MAIWALD ENTERPRISES BV - COMPREHENSIVE SERVICE PORTFOLIO
 
-Maiwald Enterprises BV is not a software development agency; we are a strategic technology partner for organizations with ambitious goals. We specialize in architecting and delivering bespoke solutions for your most complex challenges in blockchain, cloud, and custom systems.
+.. we build the infrastructure your business runs on!
 
-Our expertise is focused on three interconnected pillars of modern technology:
+Maiwald Enterprises BV is your strategic technology partner for complex infrastructure challenges. We deliver enterprise-grade solutions across the complete technology spectrum, from AI integration to hardware lifecycle management.
 
-BLOCKCHAIN & WEB3 SOLUTIONS
-Core Offerings:
-• Decentralized Application (DApp) Architecture
-• Smart Contract Design, Audit & Deployment
-• Tokenomics & Ecosystem Strategy
-• Self-Sovereign Identity (SSI/DID) Integration
+🧠 AI & DATA ANALYTICS
+• Development of intelligent solutions for process optimization
+• AI Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
+• Reporting, Testing, Predictive Analytics
+• Custom AI assistants and automation systems
 
-Strategic Client Value:
-• Future-proof your business with decentralized models
-• Enhance security, transparency, and user trust
-• Create novel revenue streams and engagement mechanics
-• Empower your users with true data ownership
+☁️ CLOUD, VIRTUALIZATION & INFRASTRUCTURE
+• Kubernetes (K8s) & Container Orchestration
+• Scalable Cloud & Hybrid Infrastructure
+• Proxmox, VMware vSphere, Hyper-V
+• GitLab, Gitea, CI/CD Deployment Pipelines
+• Infrastructure-as-Code, Automation
 
-CLOUD & INFRASTRUCTURE ARCHITECTURE
-Core Offerings:
-• Scalable & Resilient Cloud-Native Design (AWS, Azure, GCP)
-• DevOps & CI/CD Pipeline Automation
-• Infrastructure-as-Code (IaC) Implementation
-• Multi-Cloud & Hybrid Cloud Strategy
+🧱 SERVER, LINUX & BSD EXPERTISE
+• Linux: Debian, Arch, Alpine, RHEL
+• BSD: OpenBSD, FreeBSD (Routing, Firewalls, Hardened Services)
+• Headless Server Deployments
+• Systemd, OpenRC, CRON, System Monitoring
+• Remote Access & Bastion Setups (SSH, Tailscale, WireGuard)
 
-Strategic Client Value:
-• Achieve mission-critical reliability and 99.99%+ uptime
-• Drastically reduce operational overhead and TCO
-• Accelerate your time-to-market for new products
-• Build a secure, observable, and maintainable foundation
+🌐 NETWORKING & FIREWALLS
+• Network Architecture: VLANs, Subnetting, DNS, DHCP, NAT
+• Open Source Firewalls: pfSense, OPNsense, nftables, iptables
+• Zero Trust Networking, VPN: WireGuard, IPSec
+• Redundant Gateways, Failover Strategies
+• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
 
-CUSTOM SOFTWARE & SYSTEMS INTEGRATION
-Core Offerings:
-• High-Performance Backend System Development
-• Complex API Design & Management
-• Legacy System Modernization & Migration
-• Proof-of-Concept & MVP Prototyping
+🔐 CYBERSECURITY
+• Endpoint Security, Patch Management, VPN
+• Server Security: Firewalls, Bastion Hosts, Cluster Failover
+• Admin Tier Concepts, Access Control, Compliance Audits
+• Physical Security: Alarm Systems, Redundant Server Rooms
+• Mail & DMS Security (MailStore, DMS Access Control)
 
-Strategic Client Value:
-• Gain durable competitive advantage with proprietary technology
-• Unlock value by integrating disparate data and systems
-• De-risk innovation by rapidly validating business concepts
-• Build the exact tool you need, without compromise
+🖥️ HARDWARE & SYSTEM LIFECYCLE
+Planning, Setup, Maintenance of:
+• Servers, Clusters, Workstations, Network Infrastructure
+• Backup Servers, Storage (SAN/NAS/DAS), UPS
+• Security Components, Climate Control, Time Tracking Systems
+• Lifecycle Management: 2-8 year cycles by device type
+
+📡 WEBSERVER & SERVICES
+• Hosting & Operation of Web Servers: nginx, Apache, Caddy
+• Reverse Proxies, Load Balancing, SSL/TLS, ACME
+• Self-Hosted Services: Gitea, Forgejo, Nextcloud, Matrix, Jitsi
+
+📎 DOCUMENTATION & ARCHIVING
+• Document Management Systems (DMS):
+  Metadata, Full-text Search, Access Control, Process Integration
+• Mail Archiving with MailStore: Compliance & Interfaces
+• Version Control, Rights & Compliance Structures
+
+📦 DEPLOYMENT & AUTOMATION
+• Automation of Setup, Maintenance, Updates
+• CI/CD with GitLab, Gitea, shell/Nix scripts
+• PXE, Cloud-Init, Ignition, Butane
+• Container Deployment with Docker, Podman, systemd-nspawn
+
+🧰 IT MANAGEMENT & SUPPORT
+• ITIL-oriented Support Levels 0-4
+• SLA Design, Audits, License Tours
+• Strategic IT Planning, Budgeting, Technology Trends
+• Monitoring, Reporting, Incident & Problem Management
 
 OPERATIONAL MODEL: GLOBAL TALENT, LOCAL STRATEGY
 We are a 100% remote, globally distributed team of senior specialists. This allows us to assemble the perfect, bespoke team for your specific project, ensuring you work with the absolute best talent in every required discipline.
 
 Contact: markus@maiwald.work for strategic technology partnership discussions.`,
-    DE: `MAIWALD ENTERPRISES BV - DIENSTLEISTUNGSSÄULEN
+    DE: `MAIWALD ENTERPRISES BV - UMFASSENDES DIENSTLEISTUNGSPORTFOLIO
 
-Maiwald Enterprises BV ist keine Softwareentwicklungsagentur; wir sind ein strategischer Technologiepartner für Organisationen mit ehrgeizigen Zielen. Wir spezialisieren uns auf die Architektur und Bereitstellung maßgeschneiderter Lösungen für Ihre komplexesten Herausforderungen in Blockchain, Cloud und benutzerdefinierten Systemen.
+.. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!
 
-Unsere Expertise konzentriert sich auf drei miteinander verbundene Säulen moderner Technologie:
+Maiwald Enterprises BV ist Ihr strategischer Technologiepartner für komplexe Infrastruktur-Herausforderungen. Wir liefern Enterprise-Grade-Lösungen über das komplette Technologiespektrum, von KI-Integration bis Hardware-Lifecycle-Management.
 
-BLOCKCHAIN & WEB3-LÖSUNGEN
-Kernangebote:
-• Dezentrale Anwendungsarchitektur (DApp)
-• Smart Contract Design, Audit & Deployment
-• Tokenomics & Ökosystem-Strategie
-• Self-Sovereign Identity (SSI/DID) Integration
+🧠 KI & DATENANALYTIK
+• Entwicklung intelligenter Lösungen zur Prozessoptimierung
+• KI-Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
+• Reporting, Testing, Predictive Analytics
+• Benutzerdefinierte KI-Assistenten und Automatisierungssysteme
 
-Strategischer Kundenwert:
-• Zukunftssicherung Ihres Unternehmens mit dezentralen Modellen
-• Verbesserung von Sicherheit, Transparenz und Benutzervertrauen
-• Schaffung neuartiger Einnahmequellen und Engagement-Mechaniken
-• Stärkung Ihrer Benutzer mit echter Dateneigentümerschaft
+☁️ CLOUD, VIRTUALISIERUNG & INFRASTRUKTUR
+• Kubernetes (K8s) & Container-Orchestrierung
+• Skalierbare Cloud- & Hybrid-Infrastruktur
+• Proxmox, VMware vSphere, Hyper-V
+• GitLab, Gitea, CI/CD-Deployment-Pipelines
+• Infrastructure-as-Code, Automatisierung
 
-CLOUD & INFRASTRUKTUR-ARCHITEKTUR
-Kernangebote:
-• Skalierbare & belastbare Cloud-Native-Designs (AWS, Azure, GCP)
-• DevOps & CI/CD-Pipeline-Automatisierung
-• Infrastructure-as-Code (IaC) Implementierung
-• Multi-Cloud & Hybrid-Cloud-Strategie
+🧱 SERVER, LINUX & BSD-EXPERTISE
+• Linux: Debian, Arch, Alpine, RHEL
+• BSD: OpenBSD, FreeBSD (Routing, Firewalls, Hardened Services)
+• Headless Server-Deployments
+• Systemd, OpenRC, CRON, System-Monitoring
+• Remote-Zugriff & Bastion-Setups (SSH, Tailscale, WireGuard)
 
-Strategischer Kundenwert:
-• Erreichen missionskritischer Zuverlässigkeit und 99,99%+ Uptime
-• Drastische Reduzierung des Betriebsaufwands und der TCO
-• Beschleunigung der Markteinführungszeit für neue Produkte
-• Aufbau einer sicheren, beobachtbaren und wartbaren Grundlage
+🌐 NETZWERKE & FIREWALLS
+• Netzwerkarchitektur: VLANs, Subnetting, DNS, DHCP, NAT
+• Open Source Firewalls: pfSense, OPNsense, nftables, iptables
+• Zero Trust Networking, VPN: WireGuard, IPSec
+• Redundante Gateways, Failover-Strategien
+• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
 
-INDIVIDUELLE SOFTWARE & SYSTEMINTEGRATION
-Kernangebote:
-• Hochleistungs-Backend-Systementwicklung
-• Komplexes API-Design & -Management
-• Legacy-System-Modernisierung & -Migration
-• Proof-of-Concept & MVP-Prototyping
+🔐 CYBERSECURITY
+• Endpoint Security, Patch-Management, VPN
+• Server-Security: Firewalls, Bastion Hosts, Cluster-Failover
+• Admin-Tier-Konzepte, Zugriffskontrolle, Compliance-Audits
+• Physical Security: Alarmanlagen, redundante Serverräume
+• Mail & DMS Security (MailStore, DMS-Rechteverwaltung)
 
-Strategischer Kundenwert:
-• Dauerhafter Wettbewerbsvorteil durch proprietäre Technologie
-• Wertschöpfung durch Integration disparater Daten und Systeme
-• Risikominimierung durch schnelle Validierung von Geschäftskonzepten
-• Aufbau des exakten Tools, das Sie benötigen, ohne Kompromisse
+🖥️ HARDWARE & SYSTEM-LIFECYCLE
+Planung, Aufbau, Wartung von:
+• Servern, Clustern, Workstations, Netzwerkinfrastruktur
+• Backup-Servern, Storage (SAN/NAS/DAS), USVs
+• Sicherheitskomponenten, Klimatisierung, Zeiterfassungssystemen
+• Lifecycle-Management: 2-8 Jahre Zyklen nach Gerätetyp
+
+📡 WEBSERVER & SERVICES
+• Hosting & Betrieb von Webservern: nginx, Apache, Caddy
+• Reverse Proxies, Load Balancing, SSL/TLS, ACME
+• Selbstgehostete Services: Gitea, Forgejo, Nextcloud, Matrix, Jitsi
+
+📎 DOKUMENTATION & ARCHIVIERUNG
+• Dokumentenmanagementsysteme (DMS):
+  Metadaten, Volltextsuche, Zugriffskontrolle, Prozessintegration
+• Mail-Archivierung mit MailStore: Compliance & Schnittstellen
+• Versionskontrolle, Rechte- & Compliance-Strukturen
+
+📦 DEPLOYMENT & AUTOMATISIERUNG
+• Automatisierung von Setup, Wartung, Updates
+• CI/CD mit GitLab, Gitea, shell/Nix-Skripten
+• PXE, Cloud-Init, Ignition, Butane
+• Container-Deployment mit Docker, Podman, systemd-nspawn
+
+🧰 IT-MANAGEMENT & SUPPORT
+• ITIL-orientierte Support-Level 0-4
+• SLA-Design, Audits, Lizenz-Touren
+• Strategische IT-Planung, Budgetierung, Technologietrends
+• Monitoring, Reporting, Incident & Problem Management
 
 BETRIEBSMODELL: GLOBALES TALENT, LOKALE STRATEGIE
 Wir sind ein 100% remote, global verteiltes Team von Senior-Spezialisten. Dies ermöglicht es uns, das perfekte, maßgeschneiderte Team für Ihr spezifisches Projekt zusammenzustellen.
