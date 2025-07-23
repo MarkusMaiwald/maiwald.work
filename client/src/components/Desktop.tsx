@@ -15,6 +15,7 @@ import { EasterEggTerminal } from './EasterEggTerminal';
 import { Calculator } from './Calculator';
 import { TextEditor } from './TextEditor';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
+import { SystemMonitor } from './SystemMonitor';
 
 export function Desktop() {
   const { currentLanguage, toggleLanguage, setLanguage } = useLanguage();
