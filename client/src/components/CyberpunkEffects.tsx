@@ -1,6 +1,110 @@
 import { useEffect, useState, useRef } from 'react';
 import { useAudio } from '../hooks/useAudio';
 
+// Cyberpunk Audio Effects
+export class CyberpunkAudio {
+  private static audioContext: AudioContext | null = null;
+  
+  private static getAudioContext(): AudioContext {
+    if (!this.audioContext) {
+      this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    }
+    return this.audioContext;
+  }
+
+  // Generate cyberpunk hover click sound
+  static playHoverClick() {
+    try {
+      const ctx = this.getAudioContext();
+      const oscillator = ctx.createOscillator();
+      const gainNode = ctx.createGain();
+      const filter = ctx.createBiquadFilter();
+
+      // Create sharp, digital click sound
+      oscillator.type = 'square';
+      oscillator.frequency.setValueAtTime(800, ctx.currentTime);
+      oscillator.frequency.exponentialRampToValueAtTime(400, ctx.currentTime + 0.05);
+
+      // High-pass filter for crisp digital sound
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(200, ctx.currentTime);
+      filter.Q.setValueAtTime(5, ctx.currentTime);
+
+      // Sharp attack, quick decay
+      gainNode.gain.setValueAtTime(0, ctx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.15, ctx.currentTime + 0.01);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.08);
+
+      // Connect nodes
+      oscillator.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(ctx.destination);
+
+      // Play sound
+      oscillator.start(ctx.currentTime);
+      oscillator.stop(ctx.currentTime + 0.08);
+    } catch (error) {
+      console.log('Audio hover effect failed:', error);
+    }
+  }
+
+  // Generate cyberpunk button click sound
+  static playButtonClick() {
+    try {
+      const ctx = this.getAudioContext();
+      const oscillator1 = ctx.createOscillator();
+      const oscillator2 = ctx.createOscillator();
+      const gainNode = ctx.createGain();
+      const filter = ctx.createBiquadFilter();
+
+      // Dual oscillator for richer sound
+      oscillator1.type = 'square';
+      oscillator1.frequency.setValueAtTime(1200, ctx.currentTime);
+      oscillator1.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.1);
+
+      oscillator2.type = 'sawtooth';
+      oscillator2.frequency.setValueAtTime(300, ctx.currentTime);
+      oscillator2.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.15);
+
+      // Band-pass filter for cyberpunk character
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(800, ctx.currentTime);
+      filter.Q.setValueAtTime(3, ctx.currentTime);
+
+      // Sharp attack with longer decay
+      gainNode.gain.setValueAtTime(0, ctx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.25, ctx.currentTime + 0.02);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+
+      // Connect nodes
+      oscillator1.connect(filter);
+      oscillator2.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(ctx.destination);
+
+      // Play sound
+      oscillator1.start(ctx.currentTime);
+      oscillator2.start(ctx.currentTime);
+      oscillator1.stop(ctx.currentTime + 0.2);
+      oscillator2.stop(ctx.currentTime + 0.2);
+    } catch (error) {
+      console.log('Audio click effect failed:', error);
+    }
+  }
+
+  // Initialize audio context on first user interaction
+  static initializeAudio() {
+    try {
+      const ctx = this.getAudioContext();
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+    } catch (error) {
+      console.log('Audio initialization failed:', error);
+    }
+  }
+}
+
 // Custom cursor component - simple cyberpunk circle
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });

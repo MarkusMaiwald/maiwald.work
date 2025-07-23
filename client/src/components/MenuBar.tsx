@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Language } from '../hooks/useLanguage';
+import { CyberpunkAudio } from './CyberpunkEffects';
 import { GlitchText } from './CyberpunkEffects';
 
 interface MenuBarProps {
@@ -41,7 +42,11 @@ export function MenuBar({ currentLanguage, onLanguageToggle, onContactClick }: M
         <div className="text-lg font-bold text-cyan-400">◊</div>
         <div 
           className="text-cyberpunk-text-dim hover:text-cyberpunk-electric-blue text-xs font-mono cursor-pointer transition-colors interactive"
-          onClick={onContactClick}
+          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+          onClick={() => {
+            CyberpunkAudio.playButtonClick();
+            onContactClick();
+          }}
         >
           markus@maiwald.work
         </div>
@@ -63,7 +68,9 @@ export function MenuBar({ currentLanguage, onLanguageToggle, onContactClick }: M
         </div>
         <div 
           className="nav-link text-xs font-mono interactive cursor-pointer hover:text-cyberpunk-electric-blue transition-colors"
+          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
           onClick={() => {
+            CyberpunkAudio.playButtonClick();
             console.log('Language toggle clicked, current:', currentLanguage);
             onLanguageToggle();
           }}

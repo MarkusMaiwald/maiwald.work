@@ -2,7 +2,7 @@ import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { useTerminal } from '../hooks/useTerminal';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
-import { CyberpunkPanel, GlitchText, TypewriterEffect } from './CyberpunkEffects';
+import { CyberpunkPanel, GlitchText, TypewriterEffect, CyberpunkAudio } from './CyberpunkEffects';
 
 interface TerminalProps {
   currentLanguage: Language;

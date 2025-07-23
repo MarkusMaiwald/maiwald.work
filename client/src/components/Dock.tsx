@@ -1,5 +1,6 @@
 import { Language } from '../hooks/useLanguage';
-import { CyberpunkPanel } from './CyberpunkEffects';
+import { CyberpunkPanel, CyberpunkAudio } from './CyberpunkEffects';
+import { useEffect } from 'react';
 
 interface DockProps {
   onTerminalClick: () => void;
@@ -12,6 +13,15 @@ interface DockProps {
 }
 
 export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, currentLanguage }: DockProps) {
+  // Initialize audio on first render
+  useEffect(() => {
+    const initAudio = () => {
+      CyberpunkAudio.initializeAudio();
+      document.removeEventListener('click', initAudio);
+    };
+    document.addEventListener('click', initAudio, { once: true });
+    return () => document.removeEventListener('click', initAudio);
+  }, []);
   const apps = [
     {
       id: 'terminal',
@@ -94,7 +104,11 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
             key={app.id}
             className="dock-icon cursor-pointer"
             title={app.title}
-            onClick={app.action}
+            onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+            onClick={() => {
+              CyberpunkAudio.playButtonClick();
+              app.action();
+            }}
           >
               <div className={`w-14 h-14 bg-gradient-to-br ${app.color} rounded-lg flex items-center justify-center text-2xl font-bold border border-transparent hover:border-current transition-all duration-300 cyberpunk-button`}>
                 {app.icon}
