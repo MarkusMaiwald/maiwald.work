@@ -215,10 +215,10 @@ export function Desktop() {
                   {currentView === 'manifesto' && (
                     <motion.div
                       key="manifesto"
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -50 }}
-                      transition={{ duration: 0.5 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
                       className="px-8 py-16 min-h-screen"
                     >
                       <div className="max-w-6xl mx-auto">
@@ -226,16 +226,17 @@ export function Desktop() {
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
-                          <div className="text-2xl font-bold mb-8" style={{
-                            color: '#00d4ff',
-                            textShadow: '0 0 20px #00d4ff, 0 0 40px #00d4ff',
-                            animation: 'text-glow 2s ease-in-out infinite alternate'
+                          <h2 className="text-2xl font-bold mb-8 text-cyberpunk-electric-blue" style={{
+                            textShadow: '0 0 20px #00d4ff',
+                            display: 'block',
+                            opacity: 1,
+                            visibility: 'visible'
                           }}>
                             {currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
-                          </div>
+                          </h2>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 mb-16">
