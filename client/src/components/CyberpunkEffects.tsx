@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useAudio } from '../hooks/useAudio';
 
 // Custom cursor component
 export function CustomCursor() {
@@ -242,11 +243,24 @@ export function DataVisualization({ children, className = '' }: DataVizProps) {
 // Ambient audio component
 export function AmbientAudio() {
   const [isPlaying, setIsPlaying] = useState(false);
+  const { createAmbientHum, stopAllAudio, isInitialized } = useAudio();
+  const [ambientNode, setAmbientNode] = useState<GainNode | null>(null);
 
   const toggleAudio = () => {
-    setIsPlaying(!isPlaying);
-    // In a real implementation, you would control actual audio here
-    console.log(isPlaying ? 'Stopping ambient audio' : 'Starting ambient audio');
+    if (!isInitialized) return;
+
+    if (isPlaying) {
+      setIsPlaying(false);
+      if (ambientNode) {
+        ambientNode.gain.setValueAtTime(0, ambientNode.context.currentTime);
+      }
+      stopAllAudio();
+      setAmbientNode(null);
+    } else {
+      setIsPlaying(true);
+      const node = createAmbientHum({ volume: 0.15, loop: true });
+      setAmbientNode(node);
+    }
   };
 
   return (

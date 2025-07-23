@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CyberpunkPanel, GlitchText, TypewriterEffect } from './CyberpunkEffects';
 import { Language } from '../hooks/useLanguage';
+import { useAudio } from '../hooks/useAudio';
 
 interface TerminalRitualProps {
   currentLanguage: Language;
@@ -18,6 +19,16 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
   const [commands, setCommands] = useState<CommandOutput[]>([]);
   const [currentCommand, setCurrentCommand] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const { createCracklingSound, isInitialized } = useAudio();
+  const [audioTriggered, setAudioTriggered] = useState(false);
+
+  // Trigger audio on first user interaction if not already playing
+  const handleInteraction = () => {
+    if (isInitialized && !audioTriggered) {
+      createCracklingSound(4000, { volume: 0.4 });
+      setAudioTriggered(true);
+    }
+  };
 
   const ritualSequence = [
     {
@@ -85,6 +96,12 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
   ];
 
   useEffect(() => {
+    // Play crackling connection sound when starting (if audio is initialized)
+    if (currentCommand === 0 && isInitialized && !audioTriggered) {
+      createCracklingSound(4000, { volume: 0.4 });
+      setAudioTriggered(true);
+    }
+
     if (currentCommand < ritualSequence.length) {
       const timer = setTimeout(() => {
         const newCommand = {
@@ -107,7 +124,7 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
       }, 2000);
       return () => clearTimeout(timer);
     }
-  }, [currentCommand, isComplete, onComplete]);
+  }, [currentCommand, isComplete, onComplete, isInitialized, createCracklingSound]);
 
   return (
     <motion.div
@@ -115,6 +132,7 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-95"
+      onClick={handleInteraction}
     >
       <CyberpunkPanel className="w-full max-w-4xl mx-4 p-8 max-h-[80vh] overflow-y-auto">
         <div className="space-y-4">
@@ -126,6 +144,11 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
             <div className="text-cyberpunk-text-dim text-sm mt-2">
               Establishing secure connection to maiwald.work
             </div>
+            {!audioTriggered && (
+              <div className="text-cyberpunk-acid-green text-xs mt-2 animate-pulse">
+                Click anywhere to enable audio experience
+              </div>
+            )}
           </div>
 
           {/* Command Output */}
