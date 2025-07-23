@@ -115,6 +115,38 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       color: 'cyberpunk-electric-blue'
     },
     {
+      id: 'nimpak',
+      name: 'NimPak',
+      category: currentLanguage === 'EN' ? 'SYSTEMS' : 'SYSTEME',
+      stack: ['Nim', 'Cryptography', 'Security', 'Package Management'],
+      description: currentLanguage === 'EN'
+        ? 'Next-Generation Package Manager and System Management Tool for NexusOS. Zero-trust verification with atomic rollbacks.'
+        : 'Next-Generation Paketmanager und System-Management-Tool für NexusOS. Zero-Trust-Verifikation mit atomaren Rollbacks.',
+      status: 'R&D',
+      impact: currentLanguage === 'EN'
+        ? 'Revolutionary package management with cryptographic security and immutable system states'
+        : 'Revolutionäre Paketverwaltung mit kryptographischer Sicherheit und unveränderlichen Systemzuständen',
+      role: currentLanguage === 'EN' ? 'Lead Developer & Security Architect' : 'Lead-Entwickler & Sicherheitsarchitekt',
+      icon: '◉',
+      color: 'cyberpunk-neon-magenta'
+    },
+    {
+      id: 'nexus-build-toolkit',
+      name: currentLanguage === 'EN' ? 'Nexus Build Toolkit' : 'Nexus Build Toolkit',
+      category: currentLanguage === 'EN' ? 'SYSTEMS' : 'SYSTEME',
+      stack: ['LLVM', 'Compiler', 'Static Analysis', 'Security', 'Cross-Platform'],
+      description: currentLanguage === 'EN'
+        ? 'Core system compiler and building toolkit for NexusOS. Advanced LLVM-based compilation with security-first optimization.'
+        : 'Kernsystem-Compiler und Building-Toolkit für NexusOS. Fortgeschrittene LLVM-basierte Kompilierung mit sicherheitsorientierter Optimierung.',
+      status: 'R&D',
+      impact: currentLanguage === 'EN'
+        ? 'Advanced compilation infrastructure for secure, optimized system components'
+        : 'Fortgeschrittene Kompilierungsinfrastruktur für sichere, optimierte Systemkomponenten',
+      role: currentLanguage === 'EN' ? 'Compiler Engineer & System Architect' : 'Compiler-Ingenieur & Systemarchitekt',
+      icon: '⬟',
+      color: 'cyberpunk-acid-green'
+    },
+    {
       id: 'cloud-infrastructure',
       name: currentLanguage === 'EN' ? 'Cloud-Native Infrastructure' : 'Cloud-Native Infrastruktur',
       category: currentLanguage === 'EN' ? 'INFRASTRUCTURE' : 'INFRASTRUKTUR',

@@ -447,8 +447,10 @@ Kontakt: markus@maiwald.work für Blockchain-Beratung und Entwicklungspartnersch
   projects: {
     EN: `PERSONAL R&D PROJECTS - BUILDING THE FUTURE
 
-CUSTOM OPERATING SYSTEM & PACKAGE MANAGER
-Repository: git.maiwald.work
+NEXUSOS: MILITARY-GRADE OPERATING SYSTEM
+Repository: git.maiwald.work/NexusLabs/livecd-arch-nexus
+
+Military-grade security and modularity. Fast boot. No bloat. Hardened kernel. Zero GNUs given.
 
 This foundational project represents my commitment to understanding technology from the kernel up. Building an operating system from scratch provides unparalleled insight into:
 
@@ -456,7 +458,31 @@ This foundational project represents my commitment to understanding technology f
 • Security architecture from first principles  
 • Resource management and memory allocation
 • Hardware abstraction and driver development
-• Package management and dependency resolution
+• Military-grade security hardening and modularity
+
+NIMPAK: NEXT-GENERATION PACKAGE MANAGER
+Repository: git.maiwald.work/NexusLabs/NimPak
+
+Next-Generation Package Manager and System Management Tool for NexusOS. Revolutionary approach to dependency resolution, security verification, and system state management.
+
+Key innovations:
+• Zero-trust package verification with cryptographic signatures
+• Immutable system states with atomic rollback capabilities
+• Advanced dependency conflict resolution algorithms
+• Parallel installation with lockless operations
+• Integration with NexusOS security model
+
+NEXUS BUILD TOOLKIT: CORE SYSTEM COMPILER
+Repository: git.maiwald.work/NexusLabs/Nexus-Build-Toolkit
+
+The Nexus Build Toolkit is the core system compiler and System Building Toolkit for NexusOS. Advanced compilation infrastructure for building secure, optimized system components.
+
+Features:
+• Custom LLVM-based compilation pipeline
+• Security-first code generation and optimization
+• Cross-platform system component building
+• Integration with NexusOS kernel and runtime
+• Advanced static analysis and security verification
 
 This deep, structural knowledge directly informs every cloud architecture decision I make for clients. When I design scalable systems, I understand exactly what's happening at every layer of the stack.
 
@@ -486,8 +512,10 @@ STRATEGIC VALUE:
 These projects ensure that when I architect solutions for clients, I bring deep, hands-on experience with both foundational computing principles and cutting-edge emerging technologies. This combination of low-level systems knowledge and high-level innovation capabilities is exceptionally rare in the consulting space.`,
     DE: `PERSÖNLICHE F&E-PROJEKTE - DIE ZUKUNFT AUFBAUEN
 
-BENUTZERDEFINIERTES BETRIEBSSYSTEM & PAKETMANAGER
-Repository: git.maiwald.work
+NEXUSOS: MILITÄRISCHES BETRIEBSSYSTEM
+Repository: git.maiwald.work/NexusLabs/livecd-arch-nexus
+
+Militärische Sicherheit und Modularität. Schneller Boot. Kein Ballast. Gehärteter Kernel. Null GNUs gegeben.
 
 Dieses grundlegende Projekt repräsentiert mein Engagement, Technologie vom Kernel aufwärts zu verstehen. Der Aufbau eines Betriebssystems von Grund auf bietet unvergleichliche Einblicke in:
 
@@ -495,7 +523,31 @@ Dieses grundlegende Projekt repräsentiert mein Engagement, Technologie vom Kern
 • Sicherheitsarchitektur aus ersten Prinzipien
 • Ressourcenverwaltung und Speicherzuweisung
 • Hardware-Abstraktion und Treiberentwicklung
-• Paketverwaltung und Abhängigkeitsauflösung
+• Militärische Sicherheitshärtung und Modularität
+
+NIMPAK: NEXT-GENERATION PAKETMANAGER
+Repository: git.maiwald.work/NexusLabs/NimPak
+
+Next-Generation Paketmanager und System-Management-Tool für NexusOS. Revolutionärer Ansatz für Abhängigkeitsauflösung, Sicherheitsverifikation und Systemzustandsverwaltung.
+
+Schlüsselinnovationen:
+• Zero-Trust-Paketverifikation mit kryptographischen Signaturen
+• Unveränderliche Systemzustände mit atomaren Rollback-Fähigkeiten
+• Fortgeschrittene Abhängigkeitskonflikt-Auflösungsalgorithmen
+• Parallele Installation mit sperrenfreien Operationen
+• Integration mit NexusOS-Sicherheitsmodell
+
+NEXUS BUILD TOOLKIT: KERNSYSTEM-COMPILER
+Repository: git.maiwald.work/NexusLabs/Nexus-Build-Toolkit
+
+Das Nexus Build Toolkit ist der Kernsystem-Compiler und System-Building-Toolkit für NexusOS. Fortgeschrittene Kompilierungsinfrastruktur für den Bau sicherer, optimierter Systemkomponenten.
+
+Features:
+• Benutzerdefinierte LLVM-basierte Kompilierungs-Pipeline
+• Sicherheitsorientierte Code-Generierung und Optimierung
+• Plattformübergreifender Systemkomponenten-Bau
+• Integration mit NexusOS-Kernel und Runtime
+• Fortgeschrittene statische Analyse und Sicherheitsverifikation
 
 Dieses tiefe, strukturelle Wissen informiert direkt jede Cloud-Architekturentscheidung, die ich für Kunden treffe. Wenn ich skalierbare Systeme entwerfe, verstehe ich genau, was auf jeder Schicht des Stacks passiert.
 

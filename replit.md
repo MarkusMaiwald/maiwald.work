@@ -114,6 +114,8 @@ Changelog:
   * UPDATED: Help system with clear distinction between portfolio commands and real system commands
   * TESTED: ls command shows real filesystem, ping works with external hosts, host command resolves DNS
   * RESEARCHED: term.js and Xterm.js libraries for potential future terminal emulator upgrades
+  * INTEGRATED: Two additional flagship projects - NimPak (package manager) and Nexus Build Toolkit (compiler)
+  * ENHANCED: Projects section now showcases complete NexusLabs ecosystem with authentic Git repository URLs
   * Professional directory structure: config→infrastructure-blueprints, projects→active-projects, services→strategic-consulting
 - July 23, 2025. Enhanced modal immersion with Matrix background, custom cursor, and ESC functionality:
   * FIXED: Matrix background now displays consistently across all modals (InfoModal subpages)
