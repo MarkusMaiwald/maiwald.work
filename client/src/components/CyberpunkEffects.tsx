@@ -211,11 +211,15 @@ interface CyberpunkPanelProps {
   children: React.ReactNode;
   className?: string;
   interactive?: boolean;
+  onClick?: () => void;
 }
 
-export function CyberpunkPanel({ children, className = '', interactive = false }: CyberpunkPanelProps) {
+export function CyberpunkPanel({ children, className = '', interactive = false, onClick }: CyberpunkPanelProps) {
   return (
-    <div className={`cyberpunk-panel ${interactive ? 'interactive-panel' : ''} ${className}`}>
+    <div 
+      className={`cyberpunk-panel ${interactive ? 'interactive-panel' : ''} ${className} ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={onClick}
+    >
       {children}
     </div>
   );

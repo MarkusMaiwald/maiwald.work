@@ -85,7 +85,7 @@ export function Desktop() {
 
   return (
     <CyberpunkEffects>
-      <div className="font-system h-screen overflow-hidden relative" style={{ background: 'var(--cyberpunk-bg)' }}>
+      <div className="font-system h-screen overflow-auto relative" style={{ background: 'var(--cyberpunk-bg)' }}>
         {/* Particle Field Background */}
         <ParticleField />
         
@@ -160,7 +160,7 @@ export function Desktop() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -50 }}
                       transition={{ duration: 0.5 }}
-                      className="px-8 py-16"
+                      className="px-8 py-16 min-h-screen"
                     >
                       <ProjectShowcase currentLanguage={currentLanguage} />
                     </motion.div>
@@ -173,7 +173,7 @@ export function Desktop() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -50 }}
                       transition={{ duration: 0.5 }}
-                      className="px-8 py-16"
+                      className="px-8 py-16 min-h-screen"
                     >
                       <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
