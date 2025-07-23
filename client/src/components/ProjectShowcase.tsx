@@ -336,21 +336,21 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                             >
                               SOURCE CODE
                             </a>
-                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-                              TECHNICAL DEEP-DIVE
-                            </button>
+                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
+                              CURRENTLY IN STEALTH-MODE
+                            </div>
                           </>
                         ) : (
                           <>
-                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-                              VIEW LIVE DEMO
-                            </button>
-                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-                              SOURCE CODE
-                            </button>
-                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
-                              TECHNICAL DEEP-DIVE
-                            </button>
+                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
+                              CURRENTLY IN STEALTH-MODE
+                            </div>
+                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
+                              CURRENTLY IN STEALTH-MODE
+                            </div>
+                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
+                              CURRENTLY IN STEALTH-MODE
+                            </div>
                           </>
                         )}
                       </div>
