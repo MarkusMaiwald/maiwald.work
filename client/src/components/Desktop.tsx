@@ -361,6 +361,28 @@ export function Desktop() {
           )}
         </AnimatePresence>
 
+        {/* Dock - Always visible, even with modals open */}
+        {!showRitual && (
+          <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-[100]">
+            <Dock
+              onTerminalClick={() => {
+                setCurrentView('terminal');
+                setIsTerminalVisible(true);
+                setIsInfoModalOpen(false);
+              }}
+              onContactClick={() => setIsContactModalOpen(true)}
+              onSectionClick={handleSectionClick}
+              onHelpClick={() => {
+                setCurrentSection('about');
+                setIsInfoModalOpen(true);
+              }}
+              onCalculatorClick={handleCalculatorClick}
+              onTextEditorClick={handleTextEditorClick}
+              currentLanguage={currentLanguage}
+            />
+          </div>
+        )}
+
         {/* System Monitor - Fixed position outside scrolling content */}
         {!showRitual && <SystemMonitor />}
 
@@ -375,22 +397,7 @@ export function Desktop() {
           />
         )}
 
-        {/* Dock - Fixed position outside scrolling content */}
-        {!showRitual && (
-          <Dock 
-            onTerminalClick={() => {
-              setCurrentView('terminal');
-              setCurrentScrollSection(1);
-              setIsTerminalVisible(true);
-            }}
-            onContactClick={handleContactClick}
-            onSectionClick={handleSectionClick}
-            onHelpClick={handleHelpClick}
-            onCalculatorClick={handleCalculatorClick}
-            onTextEditorClick={handleTextEditorClick}
-            currentLanguage={currentLanguage}
-          />
-        )}
+
 
         {/* Fixed UI Elements - Outside all containers for guaranteed visibility */}
         {!showRitual && (
