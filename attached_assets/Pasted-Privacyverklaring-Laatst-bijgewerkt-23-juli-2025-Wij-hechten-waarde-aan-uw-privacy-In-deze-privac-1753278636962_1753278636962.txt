@@ -1,0 +1,41 @@
+Privacyverklaring
+Laatst bijgewerkt: 23 juli 2025
+
+Wij hechten waarde aan uw privacy. In deze privacyverklaring leggen we uit welke persoonsgegevens wij verwerken wanneer u onze website bezoekt en gebruikt.
+
+1. Geen Gebruik van Cookies
+Deze website maakt geen gebruik van cookies of vergelijkbare trackingtechnologieën.
+
+2. Verwerking van Gegevens in Serverlogbestanden
+
+Welke gegevens verwerken wij?
+Onze webhostingprovider verzamelt en slaat automatisch informatie op in zogenaamde serverlogbestanden, die uw browser automatisch aan ons doorgeeft. Dit omvat het IP-adres van de bezoeker.
+
+Waarom verwerken wij deze gegevens (rechtsgrond)?
+De verwerking van deze gegevens is noodzakelijk voor de technische werking van de website. De rechtsgrondslag hiervoor is ons gerechtvaardigd belang bij het garanderen van de veiligheid en functionaliteit van onze website, in overeenstemming met art. 6, lid 1, onder f) van de Algemene Verordening Gegevensbescherming (AVG).
+
+Hoe lang bewaren wij deze gegevens?
+De IP-adressen in de serverlogbestanden worden na [aantal dagen invullen, bv. 7] dagen automatisch geanonimiseerd of verwijderd.
+
+3. Contactformulier
+
+Welke gegevens verwerken wij?
+Wanneer u ons contactformulier gebruikt, verwerken wij de gegevens die u vrijwillig invult, zoals uw naam, e-mailadres en de inhoud van uw bericht.
+
+Waarom verwerken wij deze gegevens (rechtsgrond)?
+De verwerking van deze gegevens is noodzakelijk om uw aanvraag te kunnen beantwoorden. De rechtsgrondslag hiervoor is de uitvoering van precontractuele maatregelen op uw verzoek (art. 6, lid 1, onder b) van de AVG) en/of ons gerechtvaardigd belang om efficiënt met u te kunnen communiceren (art. 6, lid 1, onder f) van de AVG).
+
+Hoe lang bewaren wij deze gegevens?
+De via het contactformulier verzonden gegevens worden bewaard totdat uw aanvraag volledig is afgehandeld. Daarna worden ze verwijderd, tenzij er een wettelijke bewaarplicht van toepassing is (bijvoorbeeld voor zakelijke correspondentie die onder fiscale bewaartermijnen valt).
+
+Gegevensoverdracht
+Om de veiligheid van uw gegevens tijdens de overdracht te beschermen, wordt de verbinding met deze website versleuteld middels SSL/TLS.
+
+4. Uw Rechten
+U heeft het recht op inzage, rectificatie, verwijdering van uw gegevens, beperking van de verwerking en het recht op bezwaar tegen de verwerking. Om gebruik te maken van uw rechten kunt u contact met ons opnemen.
+
+5. Contactpersoon voor Gegevensbescherming
+Voor vragen over gegevensbescherming kunt u contact opnemen met:
+
+Markus Maiwald
+markus@maiwald.work
