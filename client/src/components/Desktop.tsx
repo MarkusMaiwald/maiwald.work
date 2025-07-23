@@ -28,6 +28,7 @@ export function Desktop() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
   const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
+  const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const terminalRef = useRef<TerminalRef>(null);
 
   const sections = ['NEURAL LINK', 'TERMINAL', 'PROJECTS', 'MANIFESTO'];
@@ -180,7 +181,7 @@ export function Desktop() {
               {/* Dynamic Content */}
               <div className="pt-8 h-full overflow-y-auto pb-24">
                 <AnimatePresence mode="wait">
-                  {currentView === 'terminal' && (
+                  {currentView === 'terminal' && isTerminalVisible && (
                     <motion.div
                       key="terminal"
                       initial={{ opacity: 0, y: 50 }}
@@ -192,7 +193,8 @@ export function Desktop() {
                         ref={terminalRef}
                         currentLanguage={currentLanguage}
                         onOpenContact={handleContactClick}
-                        onLanguageChange={handleLanguageChange}
+                        onLanguageChange={setLanguage}
+                        onClose={() => setIsTerminalVisible(false)}
                       />
                     </motion.div>
                   )}
@@ -345,6 +347,7 @@ export function Desktop() {
             onTerminalClick={() => {
               setCurrentView('terminal');
               setCurrentScrollSection(1);
+              setIsTerminalVisible(true);
             }}
             onContactClick={handleContactClick}
             onSectionClick={handleSectionClick}

@@ -8,13 +8,14 @@ interface TerminalProps {
   currentLanguage: Language;
   onOpenContact: () => void;
   onLanguageChange: (lang: Language) => void;
+  onClose?: () => void;
 }
 
 export interface TerminalRef {
   executeCommand: (command: string) => void;
 }
 
-export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange }, ref) => {
+export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose }, ref) => {
   const { 
     lines, 
     currentInput, 
@@ -61,6 +62,15 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
             TERMINAL.EXE — BASH — 110×50
           </GlitchText>
           <div className="flex items-center space-x-2">
+            {onClose && (
+              <button
+                onClick={onClose}
+                className="w-4 h-4 bg-cyberpunk-neon-magenta rounded opacity-60 hover:opacity-100 transition-opacity duration-200 flex items-center justify-center text-xs font-bold"
+                title="Close Terminal"
+              >
+                ×
+              </button>
+            )}
             <div className="w-4 h-4 border border-cyberpunk-electric-blue rounded opacity-60"></div>
             <div className="w-4 h-4 bg-cyberpunk-electric-blue rounded opacity-60"></div>
           </div>
