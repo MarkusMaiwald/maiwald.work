@@ -42,6 +42,14 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
   }, [lines]);
 
   const handleTerminalKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      if (onClose) {
+        onClose();
+      }
+      return;
+    }
+    
     const result = handleKeyDown(e);
     if (result?.changeLanguage) {
       onLanguageChange(result.changeLanguage);
@@ -53,7 +61,11 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
       <CyberpunkPanel className="rounded-lg shadow-2xl animate-fade-in interactive">
         {/* Cyberpunk Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-cyberpunk-surface-dark via-cyberpunk-surface to-cyberpunk-surface-dark border-b border-cyberpunk-border">
-          <div className="flex items-center space-x-3">
+          <div 
+            className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity duration-200 p-2 -m-2 rounded"
+            onClick={onClose}
+            title="Close Terminal"
+          >
             <div className="w-3 h-3 rounded-full neon-glow" style={{ background: 'var(--cyberpunk-neon-magenta)' }}></div>
             <div className="w-3 h-3 rounded-full" style={{ background: 'var(--cyberpunk-electric-blue)' }}></div>
             <div className="w-3 h-3 rounded-full" style={{ background: 'var(--cyberpunk-acid-green)' }}></div>
