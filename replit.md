@@ -104,6 +104,14 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 23, 2025. Performance optimization and Matrix background implementation:
+  * Replaced resource-intensive particle effects with lightweight blue Matrix rain
+  * Created authentic Matrix background with falling binary digits (0s and 1s) in blue
+  * Optimized Canvas-based animation with proper z-indexing and opacity
+  * Added terminal close button functionality with cyberpunk styling
+  * Terminal can be closed with × button and reopened via dock icon
+  * Improved audio initialization logging system for better debugging
+  * Performance significantly improved while maintaining cyberpunk aesthetic
 - July 23, 2025. Desktop applications and file system simulation:
   * Created Calculator application with full arithmetic functionality and cyberpunk styling
   * Built TextEditor with multi-tab support, file operations, and clipboard integration
