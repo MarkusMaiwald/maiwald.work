@@ -30,6 +30,7 @@ export function Desktop() {
     const hasSeenRitual = localStorage.getItem('maiwald_ritual_seen');
     if (hasSeenRitual) {
       setShowRitual(false);
+      setCurrentScrollSection(1);
     }
   }, []);
 

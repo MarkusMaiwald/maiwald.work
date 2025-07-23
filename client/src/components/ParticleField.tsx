@@ -40,7 +40,7 @@ export function ParticleField() {
     });
 
     // Create initial particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 20; i++) {
       particlesRef.current.push(createParticle());
     }
 
@@ -86,8 +86,8 @@ export function ParticleField() {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
-            const connectionOpacity = Math.max(0, (100 - distance) / 100) * opacity * 0.3;
+          if (distance < 80) {
+            const connectionOpacity = Math.max(0, (80 - distance) / 80) * opacity * 0.2;
             ctx.save();
             ctx.globalAlpha = connectionOpacity;
             ctx.strokeStyle = '#00d4ff';
