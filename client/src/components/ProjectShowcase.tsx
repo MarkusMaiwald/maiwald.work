@@ -326,15 +326,33 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                       {/* Actions */}
                       <div className="flex gap-4 pt-6 border-t border-cyberpunk-border">
-                        <button className="cyberpunk-button px-6 py-3 rounded-lg">
-                          VIEW LIVE DEMO
-                        </button>
-                        <button className="cyberpunk-button px-6 py-3 rounded-lg">
-                          SOURCE CODE
-                        </button>
-                        <button className="cyberpunk-button px-6 py-3 rounded-lg">
-                          TECHNICAL DEEP-DIVE
-                        </button>
+                        {project.id === 'nexus-os' ? (
+                          <>
+                            <a 
+                              href="https://git.maiwald.work/NexusLabs/livecd-arch-nexus"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="cyberpunk-button px-6 py-3 rounded-lg"
+                            >
+                              SOURCE CODE
+                            </a>
+                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                              TECHNICAL DEEP-DIVE
+                            </button>
+                          </>
+                        ) : (
+                          <>
+                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                              VIEW LIVE DEMO
+                            </button>
+                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                              SOURCE CODE
+                            </button>
+                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                              TECHNICAL DEEP-DIVE
+                            </button>
+                          </>
+                        )}
                       </div>
                     </div>
                   </CyberpunkPanel>
