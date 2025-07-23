@@ -130,7 +130,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       </div>
 
       {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <AnimatePresence>
           {filteredProjects.map((project) => (
             <motion.div
@@ -146,11 +146,11 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                 className="h-full interactive cursor-pointer"
                 onClick={() => setSelectedProject(project.id)}
               >
-                <div className="p-6 space-y-4">
+                <div className="p-4 md:p-6 space-y-3 md:space-y-4">
                   {/* Project Header */}
                   <div className="flex items-start justify-between">
                     <div 
-                      className={`text-3xl text-${project.color}`}
+                      className={`text-2xl md:text-3xl text-${project.color}`}
                       style={{ color: `var(--${project.color})` }}
                     >
                       {project.icon}
@@ -162,13 +162,13 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                   {/* Project Info */}
                   <div>
-                    <h3 className="text-lg font-bold cyberpunk-heading mb-2">
+                    <h3 className="text-base md:text-lg font-bold cyberpunk-heading mb-2">
                       {project.name}
                     </h3>
-                    <div className="text-sm text-cyberpunk-text-dim mb-3">
+                    <div className="text-xs md:text-sm text-cyberpunk-text-dim mb-2 md:mb-3">
                       {project.category}
                     </div>
-                    <p className="text-sm text-cyberpunk-text leading-relaxed">
+                    <p className="text-xs md:text-sm text-cyberpunk-text leading-relaxed line-clamp-3">
                       {project.description}
                     </p>
                   </div>
@@ -191,11 +191,11 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-2 pt-2">
-                    <button className="cyberpunk-button text-xs px-3 py-1 rounded">
+                  <div className="flex gap-1 md:gap-2 pt-2">
+                    <button className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1">
                       DETAILS
                     </button>
-                    <button className="cyberpunk-button text-xs px-3 py-1 rounded">
+                    <button className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1">
                       MANIFEST
                     </button>
                   </div>
@@ -213,14 +213,14 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm p-4 overflow-y-auto"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="max-w-4xl mx-4"
+              className="w-full max-w-4xl max-h-[90vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {(() => {
@@ -228,46 +228,46 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                 if (!project) return null;
 
                 return (
-                  <CyberpunkPanel className="p-8">
-                    <div className="space-y-6">
+                  <CyberpunkPanel className="p-4 md:p-8">
+                    <div className="space-y-4 md:space-y-6">
                       {/* Header */}
-                      <div className="flex items-start justify-between border-b border-cyberpunk-border pb-6">
-                        <div className="flex items-center space-x-4">
+                      <div className="flex items-start justify-between border-b border-cyberpunk-border pb-4 md:pb-6">
+                        <div className="flex items-center space-x-2 md:space-x-4 flex-1 min-w-0">
                           <div 
-                            className={`text-4xl text-${project.color}`}
+                            className={`text-2xl md:text-4xl text-${project.color} flex-shrink-0`}
                             style={{ color: `var(--${project.color})` }}
                           >
                             {project.icon}
                           </div>
-                          <div>
-                            <GlitchText className="text-2xl font-bold cyberpunk-heading">
+                          <div className="min-w-0 flex-1">
+                            <GlitchText className="text-lg md:text-2xl font-bold cyberpunk-heading truncate">
                               {project.name}
                             </GlitchText>
-                            <div className="text-cyberpunk-text-dim">
+                            <div className="text-cyberpunk-text-dim text-sm md:text-base">
                               {project.category} • {project.role}
                             </div>
                           </div>
                         </div>
                         <button
                           onClick={() => setSelectedProject(null)}
-                          className="cyberpunk-button p-2 rounded"
+                          className="cyberpunk-button p-2 rounded flex-shrink-0 ml-2"
                         >
                           ✕
                         </button>
                       </div>
 
                       {/* Content */}
-                      <div className="grid md:grid-cols-2 gap-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
                         <div className="space-y-4">
                           <DataVisualization>
-                            <h4 className="text-lg font-bold text-cyberpunk-electric-blue mb-3">
+                            <h4 className="text-base md:text-lg font-bold text-cyberpunk-electric-blue mb-2 md:mb-3">
                               {project.id === 'nexus-os' ? 'MANIFESTO' : 'PROJECT SCOPE'}
                             </h4>
-                            <p className="text-cyberpunk-text">
+                            <p className="text-cyberpunk-text text-sm md:text-base">
                               {project.description}
                             </p>
                             {project.id === 'nexus-os' && (
-                              <div className="mt-4 p-4 bg-cyberpunk-surface-dark border border-cyberpunk-electric-blue rounded font-mono text-sm">
+                              <div className="mt-3 md:mt-4 p-3 md:p-4 bg-cyberpunk-surface-dark border border-cyberpunk-electric-blue rounded font-mono text-xs md:text-sm">
                                 <div className="text-cyberpunk-electric-blue mb-2">❯ decode ./code_is_manifesto</div>
                                 <div className="text-cyberpunk-text leading-relaxed">
                                   NexusOS is not software.<br/>
@@ -281,10 +281,10 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                           </DataVisualization>
 
                           <DataVisualization>
-                            <h4 className="text-lg font-bold text-cyberpunk-neon-magenta mb-3">
+                            <h4 className="text-base md:text-lg font-bold text-cyberpunk-neon-magenta mb-2 md:mb-3">
                               {project.id === 'nexus-os' ? 'SOUL INJECTION' : 'BUSINESS IMPACT'}
                             </h4>
-                            <p className="text-cyberpunk-text">
+                            <p className="text-cyberpunk-text text-sm md:text-base">
                               {project.id === 'nexus-os' 
                                 ? 'Every line of code is an act of digital sovereignty. NexusOS embodies the philosophy that true computing freedom comes from understanding systems at their most fundamental level. Code is manifesto.'
                                 : project.impact
@@ -295,14 +295,14 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                         <div className="space-y-4">
                           <DataVisualization>
-                            <h4 className="text-lg font-bold text-cyberpunk-acid-green mb-3">
+                            <h4 className="text-base md:text-lg font-bold text-cyberpunk-acid-green mb-2 md:mb-3">
                               TECHNOLOGY STACK
                             </h4>
                             <div className="flex flex-wrap gap-2">
                               {project.stack.map((tech) => (
                                 <span
                                   key={tech}
-                                  className="px-3 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text text-sm"
+                                  className="px-2 md:px-3 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text text-xs md:text-sm"
                                 >
                                   {tech}
                                 </span>
@@ -311,13 +311,13 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                           </DataVisualization>
 
                           <DataVisualization>
-                            <h4 className="text-lg font-bold text-cyberpunk-neon-cyan mb-3">
+                            <h4 className="text-base md:text-lg font-bold text-cyberpunk-neon-cyan mb-2 md:mb-3">
                               PROJECT STATUS
                             </h4>
-                            <div className={`text-xl font-bold ${getStatusColor(project.status)}`}>
+                            <div className={`text-lg md:text-xl font-bold ${getStatusColor(project.status)}`}>
                               {project.status}
                             </div>
-                            <div className="text-cyberpunk-text-dim text-sm mt-1">
+                            <div className="text-cyberpunk-text-dim text-xs md:text-sm mt-1">
                               Role: {project.role}
                             </div>
                           </DataVisualization>
@@ -325,30 +325,30 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-4 pt-6 border-t border-cyberpunk-border">
+                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-4 md:pt-6 border-t border-cyberpunk-border">
                         {project.id === 'nexus-os' ? (
                           <>
                             <a 
                               href="https://git.maiwald.work/NexusLabs/livecd-arch-nexus"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="cyberpunk-button px-6 py-3 rounded-lg"
+                              className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
                             >
                               SOURCE CODE
                             </a>
-                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
                               TECHNICAL DEEP-DIVE
                             </button>
                           </>
                         ) : (
                           <>
-                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
                               VIEW LIVE DEMO
                             </button>
-                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
                               SOURCE CODE
                             </button>
-                            <button className="cyberpunk-button px-6 py-3 rounded-lg">
+                            <button className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base">
                               TECHNICAL DEEP-DIVE
                             </button>
                           </>
