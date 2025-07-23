@@ -285,7 +285,7 @@ export function AmbientAudio() {
 // Main cyberpunk effects wrapper
 export function CyberpunkEffects({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative h-screen overflow-hidden">
       <MatrixBackground />
       <ScanLine />
       <DataStreams />

@@ -116,7 +116,7 @@ export function Desktop() {
 
   return (
     <CyberpunkEffects>
-      <div className="font-system h-screen overflow-auto relative" style={{ background: 'var(--cyberpunk-bg)' }}>
+      <div className="font-system h-screen overflow-hidden relative" style={{ background: 'var(--cyberpunk-bg)' }}>
         {/* Cyberpunk Wallpaper */}
         <CyberpunkWallpaper />
         
@@ -169,7 +169,7 @@ export function Desktop() {
               />
 
               {/* Dynamic Content */}
-              <div className="pt-8">
+              <div className="pt-8 h-full overflow-y-auto pb-24">
                 <AnimatePresence mode="wait">
                   {currentView === 'terminal' && (
                     <motion.div
