@@ -43,9 +43,35 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
         </div>
 
         <div className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] bg-cyberpunk-bg relative z-10">
-          <pre className="whitespace-pre-wrap text-sm text-cyberpunk-text font-mono leading-relaxed">
-            {displayContent}
-          </pre>
+          <div className="whitespace-pre-wrap text-sm text-cyberpunk-text font-mono leading-relaxed">
+            {displayContent.split('\n').map((line, index) => {
+              // Check if line contains a URL
+              const urlRegex = /(https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
+              const parts = line.split(urlRegex);
+              
+              return (
+                <div key={index}>
+                  {parts.map((part, partIndex) => {
+                    if (urlRegex.test(part)) {
+                      const url = part.startsWith('http') ? part : `https://${part}`;
+                      return (
+                        <a
+                          key={partIndex}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyberpunk-electric-blue hover:text-cyberpunk-neon-cyan underline cursor-pointer transition-colors"
+                        >
+                          {part}
+                        </a>
+                      );
+                    }
+                    return part;
+                  })}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
