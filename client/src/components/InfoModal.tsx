@@ -17,22 +17,33 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
   const displayContent = sectionContent[currentLanguage];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden animate-fade-in">
-        <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg">
-          <div className="flex items-center space-x-2">
-            <div 
-              className="w-3 h-3 bg-[var(--mac-red)] rounded-full cursor-pointer" 
-              onClick={onClose}
-            ></div>
-            <div className="w-3 h-3 bg-[var(--mac-yellow)] rounded-full"></div>
-            <div className="w-3 h-3 bg-[var(--mac-green)] rounded-full"></div>
+    <div className="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50">
+      <div className="cyberpunk-panel w-full max-w-2xl mx-4 max-h-[80vh] overflow-hidden relative">
+        {/* Cyberpunk Header */}
+        <div className="flex items-center justify-between p-4 border-b border-cyberpunk-border bg-cyberpunk-surface-light">
+          <div className="flex items-center space-x-3">
+            <div className="w-2 h-2 bg-cyberpunk-electric-blue rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-cyberpunk-neon-cyan rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="w-2 h-2 bg-cyberpunk-acid-green rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
-          <div className="text-sm font-medium text-gray-700 capitalize">{section}</div>
-          <div className="w-16"></div>
+          <div className="text-sm font-mono font-bold text-cyberpunk-electric-blue uppercase">
+            {section}.DAT
+          </div>
+          <button
+            onClick={onClose}
+            className="text-cyberpunk-text-dim hover:text-cyberpunk-neon-magenta transition-colors font-mono"
+          >
+            [X]
+          </button>
         </div>
-        <div className="p-6 overflow-y-auto max-h-[calc(80vh-60px)]">
-          <pre className="whitespace-pre-wrap text-sm text-gray-800 font-mono leading-relaxed">
+
+        {/* Scan line effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="scan-line"></div>
+        </div>
+
+        <div className="p-6 overflow-y-auto max-h-[calc(80vh-120px)] bg-cyberpunk-bg relative z-10">
+          <pre className="whitespace-pre-wrap text-sm text-cyberpunk-text font-mono leading-relaxed">
             {displayContent}
           </pre>
         </div>
