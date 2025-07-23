@@ -118,6 +118,7 @@ export function Desktop() {
       setIsInfoModalOpen(true);
     } else if (index === 1) {
       setCurrentView('terminal');
+      setIsTerminalVisible(true); // Ensure terminal is visible when navigating to it
     } else if (index === 2) {
       setCurrentView('projects');  
     } else if (index === 3) {
@@ -190,7 +191,10 @@ export function Desktop() {
                         currentLanguage={currentLanguage}
                         onOpenContact={handleContactClick}
                         onLanguageChange={setLanguage}
-                        onClose={() => setIsTerminalVisible(false)}
+                        onClose={() => {
+                          setIsTerminalVisible(false);
+                          setCurrentScrollSection(0); // Reset navigation to Neural Link when terminal is closed
+                        }}
                       />
                     </motion.div>
                   )}
