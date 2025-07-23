@@ -14,6 +14,7 @@ interface Project {
   role: string;
   icon: string;
   color: string;
+  customers?: { name: string; url: string }[];
 }
 
 interface ProjectShowcaseProps {
@@ -35,7 +36,12 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       impact: 'Delivering enterprise-grade solutions and strategic technology guidance',
       role: 'Founder & Strategic Architect',
       icon: '◊',
-      color: 'cyberpunk-neon-magenta'
+      color: 'cyberpunk-neon-magenta',
+      customers: [
+        { name: 'BC2IP', url: 'https://bc2ip.com' },
+        { name: 'IOP Global', url: 'https://iop-global.com' },
+        { name: 'Group4IT', url: 'https://groupforit.de' }
+      ]
     },
     {
       id: 'nexus-os',
@@ -282,14 +288,31 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                           <DataVisualization>
                             <h4 className="text-base md:text-lg font-bold text-cyberpunk-neon-magenta mb-2 md:mb-3">
-                              {project.id === 'nexus-os' ? 'SOUL INJECTION' : 'BUSINESS IMPACT'}
+                              {project.id === 'nexus-os' ? 'SOUL INJECTION' : project.id === 'maiwald-enterprises' ? 'CLIENT PORTFOLIO' : 'BUSINESS IMPACT'}
                             </h4>
                             <p className="text-cyberpunk-text text-sm md:text-base">
                               {project.id === 'nexus-os' 
                                 ? 'Every line of code is an act of digital sovereignty. NexusOS embodies the philosophy that true computing freedom comes from understanding systems at their most fundamental level. Code is manifesto.'
+                                : project.id === 'maiwald-enterprises'
+                                ? 'Trusted by industry leaders for strategic technology consulting and enterprise infrastructure solutions. Building the foundations that power business-critical operations.'
                                 : project.impact
                               }
                             </p>
+                            {project.id === 'maiwald-enterprises' && project.customers && (
+                              <div className="mt-3 md:mt-4">
+                                <div className="text-cyberpunk-electric-blue text-sm font-mono mb-2">ACTIVE CLIENTS:</div>
+                                <div className="flex flex-wrap gap-2">
+                                  {project.customers.map((customer) => (
+                                    <span
+                                      key={customer.name}
+                                      className="px-2 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text text-xs"
+                                    >
+                                      {customer.name}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
                           </DataVisualization>
                         </div>
 
@@ -339,6 +362,20 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                             <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
                               CURRENTLY IN STEALTH-MODE
                             </div>
+                          </>
+                        ) : project.id === 'maiwald-enterprises' ? (
+                          <>
+                            {project.customers?.map((customer) => (
+                              <a
+                                key={customer.name}
+                                href={customer.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
+                              >
+                                {customer.name}
+                              </a>
+                            ))}
                           </>
                         ) : (
                           <>
