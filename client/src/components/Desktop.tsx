@@ -64,12 +64,10 @@ export function Desktop() {
   };
 
   const handleSectionClick = (section: string) => {
-    console.log('Section clicked:', section);
     if (section === 'projects') {
       setCurrentView('projects');
       setCurrentScrollSection(2);
     } else if (section === 'services') {
-      console.log('Setting view to manifesto');
       setCurrentView('manifesto');
       setCurrentScrollSection(3);
     } else {
@@ -228,25 +226,15 @@ export function Desktop() {
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
-                          <div 
-                            className="bg-red-500 p-4 text-white text-2xl font-bold border border-white"
-                            style={{
-                              position: 'relative',
-                              zIndex: 1000,
-                              display: 'block !important',
-                              visibility: 'visible !important',
-                              color: '#00d4ff !important',
-                              textShadow: '0 0 20px #00d4ff',
-                              backgroundColor: 'rgba(255, 0, 0, 0.5)'
-                            }}
-                          >
-                            SUBTITLE TEST: {currentLanguage === 'EN' 
+                          <div className="text-2xl font-bold mb-8" style={{
+                            color: '#00d4ff',
+                            textShadow: '0 0 20px #00d4ff, 0 0 40px #00d4ff',
+                            animation: 'text-glow 2s ease-in-out infinite alternate'
+                          }}>
+                            {currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
-                          </div>
-                          <div className="text-sm text-cyberpunk-text-dim bg-yellow-500 p-2">
-                            DEBUG: View={currentView}, Language={currentLanguage}
                           </div>
                         </div>
 
