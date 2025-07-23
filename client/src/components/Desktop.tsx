@@ -228,17 +228,26 @@ export function Desktop() {
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
                             MAIWALD ENTERPRISES BV
                           </GlitchText>
-                          <div className="text-2xl text-cyberpunk-electric-blue font-bold text-glow mb-4" style={{
-                            textShadow: '0 0 20px var(--cyberpunk-electric-blue)',
-                            display: 'block',
-                            visibility: 'visible'
-                          }}>
-                            {currentLanguage === 'EN' 
+                          <div 
+                            className="bg-red-500 p-4 text-white text-2xl font-bold border border-white"
+                            style={{
+                              position: 'relative',
+                              zIndex: 1000,
+                              display: 'block !important',
+                              visibility: 'visible !important',
+                              color: '#00d4ff !important',
+                              textShadow: '0 0 20px #00d4ff',
+                              backgroundColor: 'rgba(255, 0, 0, 0.5)'
+                            }}
+                          >
+                            SUBTITLE TEST: {currentLanguage === 'EN' 
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
                           </div>
-                          <div className="text-sm text-cyberpunk-text-dim">DEBUG: Current view = {currentView}</div>
+                          <div className="text-sm text-cyberpunk-text-dim bg-yellow-500 p-2">
+                            DEBUG: View={currentView}, Language={currentLanguage}
+                          </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 mb-16">
