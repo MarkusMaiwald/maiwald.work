@@ -44,6 +44,9 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage, onOpenCha
     console.error(`Section content not found for: ${section}`);
     return null;
   }
+  
+  // Debug logging
+  console.log('InfoModal opened with section:', section, 'onOpenChatbot:', !!onOpenChatbot);
 
   const displayContent = sectionContent[currentLanguage];
   if (!displayContent) {
@@ -200,41 +203,44 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage, onOpenCha
             })}
           </div>
           
-          {/* Chat with AI Button */}
-          {onOpenChatbot && (
-            <div className="mt-6 pt-4 border-t border-cyberpunk-electric-blue/30">
-              <button
-                onClick={() => {
-                  CyberpunkAudio.playButtonClick();
+          {/* Chat with AI Button - Always show for testing */}
+          <div className="mt-6 pt-4 border-t border-cyberpunk-electric-blue/30">
+            <button
+              onClick={() => {
+                CyberpunkAudio.playButtonClick();
+                if (onOpenChatbot) {
                   onOpenChatbot();
                   onClose();
-                }}
-                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-                className="w-full px-4 py-3 font-mono text-sm font-bold uppercase transition-all duration-300 hover:scale-105"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 255, 0.2) 100%)',
-                  border: '2px solid #00d4ff',
-                  borderRadius: '4px',
-                  color: '#00d4ff',
-                  textShadow: '0 0 10px #00d4ff',
-                  boxShadow: `
-                    0 4px 15px rgba(0, 212, 255, 0.3),
-                    inset 0 1px 0 rgba(0, 212, 255, 0.4)
-                  `
-                }}
-              >
-                <span className="flex items-center justify-center space-x-2">
-                  <span>🤖</span>
-                  <span>
-                    {currentLanguage === 'EN' 
-                      ? 'Chat with my AI' 
-                      : 'Mit meiner KI chatten'
-                    }
-                  </span>
+                } else {
+                  console.log('onOpenChatbot not provided!');
+                }
+              }}
+              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+              className="w-full px-4 py-3 font-mono text-sm font-bold uppercase transition-all duration-300 hover:scale-105"
+              style={{
+                background: onOpenChatbot 
+                  ? 'linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 255, 0.2) 100%)'
+                  : 'linear-gradient(135deg, rgba(255, 0, 110, 0.1) 0%, rgba(255, 0, 110, 0.2) 100%)',
+                border: onOpenChatbot ? '2px solid #00d4ff' : '2px solid #ff006e',
+                borderRadius: '4px',
+                color: onOpenChatbot ? '#00d4ff' : '#ff006e',
+                textShadow: onOpenChatbot ? '0 0 10px #00d4ff' : '0 0 10px #ff006e',
+                boxShadow: onOpenChatbot 
+                  ? `0 4px 15px rgba(0, 212, 255, 0.3), inset 0 1px 0 rgba(0, 212, 255, 0.4)`
+                  : `0 4px 15px rgba(255, 0, 110, 0.3), inset 0 1px 0 rgba(255, 0, 110, 0.4)`
+              }}
+            >
+              <span className="flex items-center justify-center space-x-2">
+                <span>🤖</span>
+                <span>
+                  {onOpenChatbot 
+                    ? (currentLanguage === 'EN' ? 'Chat with my AI' : 'Mit meiner KI chatten')
+                    : (currentLanguage === 'EN' ? 'Chat (Debug: No Handler)' : 'Chat (Debug: Kein Handler)')
+                  }
                 </span>
-              </button>
-            </div>
-          )}
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
