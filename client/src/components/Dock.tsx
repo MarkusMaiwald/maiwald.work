@@ -28,56 +28,56 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
     {
       id: 'terminal',
       title: 'TERMINAL',
-      icon: '◊',
+      icon: '💻',
       color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
       action: onTerminalClick
     },
     {
       id: 'contact',
       title: 'CONTACT',
-      icon: '⟐',
+      icon: '📧',
       color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
       action: onContactClick
     },
     {
       id: 'services',
       title: 'SERVICES',
-      icon: '⬢',
+      icon: '🛠️',
       color: 'from-cyberpunk-surface via-cyberpunk-purple to-cyberpunk-surface text-cyberpunk-purple',
       action: () => onSectionClick('services')
     },
     {
       id: 'blockchain',
       title: 'BLOCKCHAIN',
-      icon: '⬡',
+      icon: '🔗',
       color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
       action: () => onSectionClick('blockchain')
     },
     {
       id: 'cloud',
       title: 'CLOUD',
-      icon: '◈',
+      icon: '☁️',
       color: 'from-cyberpunk-surface via-cyberpunk-neon-cyan to-cyberpunk-surface text-cyberpunk-neon-cyan',
       action: () => onSectionClick('cloud')
     },
     {
       id: 'projects',
       title: 'PROJECTS',
-      icon: '⬟',
+      icon: '📁',
       color: 'from-cyberpunk-surface via-cyberpunk-orange to-cyberpunk-surface text-cyberpunk-orange',
       action: () => onSectionClick('projects')
     },
     {
       id: 'development',
       title: 'DEV',
-      icon: '⬣',
+      icon: '⚡',
       color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
       action: () => onSectionClick('development')
     },
     {
       id: 'skills',
       title: 'SKILLS',
-      icon: '⟡',
+      icon: '🎯',
       color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
       action: onSkillsClick
     },
@@ -91,21 +91,21 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
     {
       id: 'calculator',
       title: 'CALC',
-      icon: '≡',
+      icon: '🔢',
       color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
       action: onCalculatorClick
     },
     {
       id: 'text-editor',
       title: 'EDITOR',
-      icon: '⌨',
+      icon: '📝',
       color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
       action: onTextEditorClick
     },
     {
       id: 'help',
       title: 'HELP',
-      icon: '?',
+      icon: '❓',
       color: 'from-cyberpunk-surface via-cyberpunk-text-dim to-cyberpunk-surface text-cyberpunk-text-dim',
       action: onHelpClick
     }
