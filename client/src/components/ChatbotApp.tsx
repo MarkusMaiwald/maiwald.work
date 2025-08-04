@@ -108,8 +108,8 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
       const errorResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: currentLanguage === 'EN'
-          ? 'I apologize, but I encountered an error. Please try again or visit chat.maiwald.work for the full experience.'
-          : 'Entschuldigung, aber es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder besuchen Sie chat.maiwald.work für die vollständige Erfahrung.',
+          ? 'I apologize, but I encountered an error. Please try again or visit http://chat.maiwald.work for the full experience.'
+          : 'Entschuldigung, aber es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder besuchen Sie http://chat.maiwald.work für die vollständige Erfahrung.',
         sender: 'bot',
         timestamp: new Date()
       };
