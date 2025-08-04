@@ -210,6 +210,7 @@ export function Desktop() {
                         currentLanguage={currentLanguage}
                         onOpenContact={handleContactClick}
                         onLanguageChange={setLanguage}
+                        onOpenChatbot={() => setIsChatbotOpen(true)}
                         onClose={() => {
                           setIsTerminalVisible(false);
                           setCurrentScrollSection(0); // Reset navigation to Neural Link when terminal is closed
@@ -353,6 +354,7 @@ export function Desktop() {
                 onClose={() => setIsInfoModalOpen(false)}
                 section={currentSection}
                 currentLanguage={currentLanguage}
+                onOpenChatbot={() => setIsChatbotOpen(true)}
               />
 
               {/* Desktop Applications */}

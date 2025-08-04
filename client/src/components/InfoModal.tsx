@@ -8,9 +8,10 @@ interface InfoModalProps {
   onClose: () => void;
   section: string;
   currentLanguage: Language;
+  onOpenChatbot?: () => void;
 }
 
-export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoModalProps) {
+export function InfoModal({ isOpen, onClose, section, currentLanguage, onOpenChatbot }: InfoModalProps) {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -198,6 +199,42 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage }: InfoMod
               );
             })}
           </div>
+          
+          {/* Chat with AI Button */}
+          {onOpenChatbot && (
+            <div className="mt-6 pt-4 border-t border-cyberpunk-electric-blue/30">
+              <button
+                onClick={() => {
+                  CyberpunkAudio.playButtonClick();
+                  onOpenChatbot();
+                  onClose();
+                }}
+                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                className="w-full px-4 py-3 font-mono text-sm font-bold uppercase transition-all duration-300 hover:scale-105"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 255, 255, 0.2) 100%)',
+                  border: '2px solid #00d4ff',
+                  borderRadius: '4px',
+                  color: '#00d4ff',
+                  textShadow: '0 0 10px #00d4ff',
+                  boxShadow: `
+                    0 4px 15px rgba(0, 212, 255, 0.3),
+                    inset 0 1px 0 rgba(0, 212, 255, 0.4)
+                  `
+                }}
+              >
+                <span className="flex items-center justify-center space-x-2">
+                  <span>🤖</span>
+                  <span>
+                    {currentLanguage === 'EN' 
+                      ? 'Chat with my AI' 
+                      : 'Mit meiner KI chatten'
+                    }
+                  </span>
+                </span>
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

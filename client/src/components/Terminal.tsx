@@ -9,13 +9,14 @@ interface TerminalProps {
   onOpenContact: () => void;
   onLanguageChange: (lang: Language) => void;
   onClose?: () => void;
+  onOpenChatbot?: () => void;
 }
 
 export interface TerminalRef {
   executeCommand: (command: string) => void;
 }
 
-export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose }, ref) => {
+export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot }, ref) => {
   const { 
     lines, 
     currentInput, 
@@ -24,7 +25,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
     focusInput, 
     inputRef,
     processCommand 
-  } = useTerminal(currentLanguage, onOpenContact);
+  } = useTerminal(currentLanguage, onOpenContact, onOpenChatbot);
   
   const outputRef = useRef<HTMLDivElement>(null);
 

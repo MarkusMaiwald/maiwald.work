@@ -10,7 +10,7 @@ export interface TerminalLine {
   timestamp: number;
 }
 
-export function useTerminal(currentLanguage: Language, onOpenContact: () => void) {
+export function useTerminal(currentLanguage: Language, onOpenContact: () => void, onOpenChatbot?: () => void) {
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -200,6 +200,18 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
         onOpenContact();
         response = content.contactOpening[currentLanguage];
         break;
+      case 'chat':
+        if (onOpenChatbot) {
+          onOpenChatbot();
+          response = currentLanguage === 'EN' 
+            ? 'Opening AI Chat interface...\nConnecting to Markus Maiwald\'s Digital Attaché...' 
+            : 'Öffne KI-Chat Interface...\nVerbinde mit Markus Maiwalds Digitalem Attaché...';
+        } else {
+          response = currentLanguage === 'EN'
+            ? 'AI Chat interface not available in this context.'
+            : 'KI-Chat Interface in diesem Kontext nicht verfügbar.';
+        }
+        break;
       case 'lang':
         if (args[0] === 'en' || args[0] === 'de') {
           // This will be handled by the parent component
@@ -216,7 +228,7 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
     if (response) {
       addLine('output', response);
     }
-  }, [currentLanguage, addLine, onOpenContact]);
+  }, [currentLanguage, addLine, onOpenContact, onOpenChatbot]);
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {

@@ -27,6 +27,7 @@ export const content: ContentData = {
 • cat [section] - Display content of a section
 • whoami - Display information about Markus
 • contact - Open contact form
+• chat - Chat with Markus's AI Assistant
 • lang [en|de] - Change language
 
 Neural Link to Skills:
@@ -48,6 +49,7 @@ Real system commands:
 • cat [bereich] - Inhalt eines Bereichs anzeigen
 • whoami - Informationen über Markus anzeigen
 • contact - Kontaktformular öffnen
+• chat - Mit Markus's KI-Assistenten chatten
 • lang [en|de] - Sprache ändern
 
 Neural Link zu Fähigkeiten:
