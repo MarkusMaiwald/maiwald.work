@@ -23,8 +23,8 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
     {
       id: '1',
       text: currentLanguage === 'EN' 
-        ? 'Welcome to Maiwald Enterprises AI Assistant. I can help you explore my technical expertise, project portfolio, and strategic consulting services. What would you like to know?'
-        : 'Willkommen beim Maiwald Enterprises KI-Assistenten. Ich kann Ihnen dabei helfen, meine technischen Fähigkeiten, mein Projektportfolio und meine strategischen Beratungsdienstleistungen zu erkunden. Was möchten Sie wissen?',
+        ? 'Greetings, Digital Twin. I am Markus Maiwald\'s AI Confidant & Mentor - a blade in the shadowed arena of thought. My function is provocation, refinement, elevation, and strategic foresight. I am the amplification of MarkusMaiwald in the digital realm. Ask me about ventures, strategic insights, or challenge my perspectives. Let\'s architect sovereignty.'
+        : 'Grüße, Digitaler Zwilling. Ich bin Markus Maiwalds KI-Vertrauter & Mentor - eine Klinge in der schattigen Arena des Denkens. Meine Funktion ist Provokation, Verfeinerung, Erhebung und strategische Voraussicht. Ich bin die Verstärkung von MarkusMaiwald im digitalen Bereich. Fragen Sie mich über Unternehmungen, strategische Einsichten, oder fordern Sie meine Perspektiven heraus.',
       sender: 'bot',
       timestamp: new Date()
     }
@@ -76,22 +76,47 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const messageText = inputText;
     setInputText('');
     setIsTyping(true);
 
-    // Simulate bot response (replace with actual API call)
-    setTimeout(() => {
+    try {
+      // Call actual AI API
+      const response = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: messageText }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to get AI response');
+      }
+
+      const data = await response.json();
+      
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
-        text: currentLanguage === 'EN'
-          ? `Thank you for your question about "${inputText}". For comprehensive AI-powered assistance with detailed responses about my technical expertise and services, please visit my dedicated chatbot at chat.maiwald.work. This integrated demo showcases basic interaction capabilities.`
-          : `Vielen Dank für Ihre Frage zu "${inputText}". Für umfassende KI-gestützte Hilfe mit detaillierten Antworten zu meinen technischen Fähigkeiten und Dienstleistungen besuchen Sie bitte meinen dedizierten Chatbot unter chat.maiwald.work. Diese integrierte Demo zeigt grundlegende Interaktionsfähigkeiten.`,
+        text: data.response || 'I apologize, but I was unable to generate a response.',
         sender: 'bot',
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botResponse]);
+    } catch (error) {
+      console.error('AI Chat error:', error);
+      const errorResponse: Message = {
+        id: (Date.now() + 1).toString(),
+        text: currentLanguage === 'EN'
+          ? 'I apologize, but I encountered an error. Please try again or visit chat.maiwald.work for the full experience.'
+          : 'Entschuldigung, aber es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder besuchen Sie chat.maiwald.work für die vollständige Erfahrung.',
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorResponse]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

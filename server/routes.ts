@@ -5,6 +5,7 @@ import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
 import nodemailer from "nodemailer";
 import { CyberpunkTerminal } from "./terminal";
+import { generateAIResponse } from './ai';
 
 // Email configuration
 const createEmailTransporter = () => {
@@ -131,6 +132,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ 
         success: false, 
         message: "Failed to get terminal info" 
+      });
+    }
+  });
+
+  // AI Chat endpoint
+  app.post("/api/ai/chat", async (req, res) => {
+    try {
+      const { message } = req.body;
+      
+      if (!message || typeof message !== 'string') {
+        return res.status(400).json({ 
+          success: false, 
+          message: "Message is required and must be a string" 
+        });
+      }
+
+      const response = await generateAIResponse(message);
+      
+      res.json({
+        success: true,
+        response
+      });
+    } catch (error) {
+      console.error('AI Chat error:', error);
+      res.status(500).json({ 
+        success: false, 
+        message: "Failed to generate AI response",
+        error: error instanceof Error ? error.message : 'Unknown error'
       });
     }
   });
