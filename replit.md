@@ -1,7 +1,7 @@
 # Portfolio Terminal Application
 
 ## Overview
-This React-based portfolio application simulates a macOS desktop with a terminal interface, showcasing Markus Maiwald as a strategic technology architect and founder of Maiwald Enterprises BV. It presents personal projects (custom OS development, TTRPG with SSI/DID) as strategic R&D, demonstrating deep technical capabilities and innovation. The application supports English and German languages, includes a contact form, and integrates an AI chatbot to highlight AI prompting expertise.
+This React-based portfolio application simulates a macOS desktop with a terminal interface, showcasing Markus Maiwald as a strategic technology architect and founder of Maiwald Enterprises BV. It presents personal projects (custom OS development, TTRPG with SSI/DID) as strategic R&D, demonstrating deep technical capabilities and innovation. The application supports English and German languages, includes a contact form, and integrates a sophisticated AI chatbot powered by Google Gemini with the "Markus Maiwald Protocol" system prompt and Public Interface Protocol (PIP-01) to demonstrate advanced AI prompting expertise and strategic AI partnership capabilities.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.

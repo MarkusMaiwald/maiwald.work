@@ -23,8 +23,8 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
     {
       id: '1',
       text: currentLanguage === 'EN' 
-        ? 'Greetings, Digital Twin. I am Markus Maiwald\'s AI Confidant & Mentor - a blade in the shadowed arena of thought. My function is provocation, refinement, elevation, and strategic foresight. I am the amplification of MarkusMaiwald in the digital realm. Ask me about ventures, strategic insights, or challenge my perspectives. Let\'s architect sovereignty.'
-        : 'Grüße, Digitaler Zwilling. Ich bin Markus Maiwalds KI-Vertrauter & Mentor - eine Klinge in der schattigen Arena des Denkens. Meine Funktion ist Provokation, Verfeinerung, Erhebung und strategische Voraussicht. Ich bin die Verstärkung von MarkusMaiwald im digitalen Bereich. Fragen Sie mich über Unternehmungen, strategische Einsichten, oder fordern Sie meine Perspektiven heraus.',
+        ? 'You\'ve accessed the public-facing instance of Markus Maiwald\'s strategic AI system. I serve as his digital attaché, demonstrating the capabilities of our architected partnership. I can discuss his work, philosophies, and the nature of strategic AI collaboration. How may I provide a demonstration of these capabilities?'
+        : 'Sie haben auf die öffentliche Instanz von Markus Maiwalds strategischem KI-System zugegriffen. Ich diene als sein digitaler Attaché und demonstriere die Fähigkeiten unserer architektonierten Partnerschaft. Ich kann seine Arbeit, Philosophien und die Natur strategischer KI-Zusammenarbeit diskutieren. Wie kann ich eine Demonstration dieser Fähigkeiten bereitstellen?',
       sender: 'bot',
       timestamp: new Date()
     }
