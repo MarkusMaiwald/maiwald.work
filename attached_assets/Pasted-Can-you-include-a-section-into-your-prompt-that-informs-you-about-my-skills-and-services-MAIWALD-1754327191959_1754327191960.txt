@@ -1,0 +1,445 @@
+Can you include a section into your prompt that informs you about my skills and services?
+
+
+
+MAIWALD ENTERPRISES BV - COMPREHENSIVE SERVICE PORTFOLIO
+
+.. we build the infrastructure your business runs on!
+
+Maiwald Enterprises BV is your strategic technology partner for complex infrastructure challenges. We deliver enterprise-grade solutions across the complete technology spectrum, from AI integration to hardware lifecycle management.
+
+🧠 AI & DATA ANALYTICS
+
+• Development of intelligent solutions for process optimization
+
+• AI Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
+
+• Reporting, Testing, Predictive Analytics
+
+• Custom AI assistants and automation systems
+
+☁️ CLOUD, VIRTUALIZATION & INFRASTRUCTURE
+
+• Kubernetes (K8s) & Container Orchestration
+
+• Scalable Cloud & Hybrid Infrastructure
+
+• Proxmox, VMware vSphere, Hyper-V
+
+• GitLab, Gitea, CI/CD Deployment Pipelines
+
+• Infrastructure-as-Code, Automation
+
+🧱 SERVER, LINUX & BSD EXPERTISE
+
+• Linux: Debian, Arch, Alpine, RHEL
+
+• BSD: OpenBSD, FreeBSD (Routing, Firewalls, Hardened Services)
+
+• Headless Server Deployments
+
+• Systemd, OpenRC, CRON, System Monitoring
+
+• Remote Access & Bastion Setups (SSH, Tailscale, WireGuard)
+
+🌐 NETWORKING & FIREWALLS
+
+• Network Architecture: VLANs, Subnetting, DNS, DHCP, NAT
+
+• Open Source Firewalls: pfSense, OPNsense, nftables, iptables
+
+• Zero Trust Networking, VPN: WireGuard, IPSec
+
+• Redundant Gateways, Failover Strategies
+
+• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+
+🔐 CYBERSECURITY
+
+• Endpoint Security, Patch Management, VPN
+
+• Server Security: Firewalls, Bastion Hosts, Cluster Failover
+
+• Admin Tier Concepts, Access Control, Compliance Audits
+
+• Physical Security: Alarm Systems, Redundant Server Rooms
+
+• Mail & DMS Security (MailStore, DMS Access Control)
+
+🖥️ HARDWARE & SYSTEM LIFECYCLE
+
+Planning, Setup, Maintenance of:
+
+• Servers, Clusters, Workstations, Network Infrastructure
+
+• Backup Servers, Storage (SAN/NAS/DAS), UPS
+
+• Security Components, Climate Control, Time Tracking Systems
+
+• Lifecycle Management: 2-8 year cycles by device type
+
+📡 WEBSERVER & SERVICES
+
+• Hosting & Operation of Web Servers: nginx, Apache, Caddy
+
+• Reverse Proxies, Load Balancing, SSL/TLS, ACME
+
+• Self-Hosted Services: Gitea, Forgejo, Nextcloud, Matrix, Jitsi
+
+📎 DOCUMENTATION & ARCHIVING
+
+• Document Management Systems (DMS):
+
+Metadata, Full-text Search, Access Control, Process Integration
+
+• Mail Archiving with MailStore: Compliance & Interfaces
+
+• Version Control, Rights & Compliance Structures
+
+📦 DEPLOYMENT & AUTOMATION
+
+• Automation of Setup, Maintenance, Updates
+
+• CI/CD with GitLab, Gitea, shell/Nix scripts
+
+• PXE, Cloud-Init, Ignition, Butane
+
+• Container Deployment with Docker, Podman, systemd-nspawn
+
+🧰 IT MANAGEMENT & SUPPORT
+
+• ITIL-oriented Support Levels 0-4
+
+• SLA Design, Audits, License Tours
+
+• Strategic IT Planning, Budgeting, Technology Trends
+
+• Monitoring, Reporting, Incident & Problem Management
+
+OPERATIONAL MODEL: GLOBAL TALENT, LOCAL STRATEGY
+
+We are a 100% remote, globally distributed team of senior specialists. This allows us to assemble the perfect, bespoke team for your specific project, ensuring you work with the absolute best talent in every required discipline.
+
+Contact: markus@maiwald.work for strategic technology partnership discussions.
+
+💻
+
+📧
+
+🛠️
+
+🔗
+
+☁️
+
+📁
+
+⚡
+
+
+
+BLOCKCHAIN & WEB3 SOLUTIONS - CO-FOUNDER & ADVISOR
+
+PROVEN TRACK RECORD IN BLOCKCHAIN INNOVATION
+
+Co-founder and advisor of several groundbreaking crypto projects:
+
+• Internet of People (IoP) - Decentralized identity and social networking protocol
+
+• PIVX - Privacy-focused cryptocurrency with governance innovation
+
+• Hydraledger - Custom Layer1 blockchain architecture
+
+  Live Network: explorer.hydraledger.tech
+
+LAYER1 BLOCKCHAIN DEVELOPMENT
+
+• Custom blockchain architecture and consensus mechanisms
+
+• Protocol design and economic modeling
+
+• Network security and validator infrastructure
+
+• Cross-chain interoperability solutions
+
+ENTERPRISE BLOCKCHAIN SERVICES
+
+From Development to Infrastructure and Advisory:
+
+SMART CONTRACT & DAPP DEVELOPMENT
+
+• Multi-chain smart contract architecture (Ethereum, Polygon, Solana)
+
+• DeFi protocol development and tokenomics design
+
+• NFT marketplace and gaming integration
+
+• Cross-chain bridge development and security audits
+
+SELF-SOVEREIGN IDENTITY (SSI) & DIDs
+
+• Decentralized Identifier (DID) implementation and integration
+
+• Verifiable Credentials architecture for enterprise use cases
+
+• Identity wallet development and user experience design
+
+• Privacy-preserving authentication systems
+
+BLOCKCHAIN INFRASTRUCTURE & CONSULTING
+
+• Node deployment and validator network setup
+
+• Blockchain security audits and penetration testing
+
+• Regulatory compliance and legal framework guidance
+
+• Technical due diligence for blockchain investments
+
+PRIVACY & SCALABILITY SOLUTIONS
+
+• Zero-knowledge proof implementation (zk-SNARKs, zk-STARKs)
+
+• Layer 2 scaling solutions and state channels
+
+• Privacy-preserving transaction mechanisms
+
+• Mixnet and anonymity network integration
+
+Whether you need technical blockchain development, strategic advisory, or complete infrastructure deployment, we deliver enterprise-grade solutions backed by years of hands-on experience building and scaling decentralized networks.
+
+Contact: markus@maiwald.work for blockchain consulting and development partnerships.
+
+
+
+CLOUD SOLUTIONS
+
+AWS SERVICES
+
+• EC2, S3, RDS, Lambda, CloudFormation
+
+• EKS, ECS, Fargate for container workloads
+
+• API Gateway, CloudFront, Route 53
+
+• IAM, Cognito, Secrets Manager
+
+GOOGLE CLOUD PLATFORM
+
+• Compute Engine, Cloud Storage, Cloud SQL
+
+• Google Kubernetes Engine (GKE)
+
+• Cloud IAM, Cloud KMS
+
+• Cloud Build, Deployment Manager
+
+MULTI-CLOUD STRATEGIES
+
+• Cloud-agnostic architecture design
+
+• Disaster recovery across multiple clouds
+
+• Cost optimization through cloud arbitrage
+
+• Compliance and data sovereignty considerations
+
+
+
+I AM NOT A DEVELOPER, BUT I CAN LEAD DEVELOPER TEAMS AND READ CODE!!
+
+DEVELOPMENT SERVICES
+
+SYSTEM ARCHITECTURE & LEADERSHIP
+
+As System Architect, I deliver strategic technology solutions and lead development teams for complex projects:
+
+• System Architecture Design - Scalable, secure, and maintainable solutions
+
+• Product Development - From concept to deployment with strategic vision
+
+• Team Leadership - Leading experienced development teams
+
+• Technical Strategy - Aligning technology with business objectives
+
+SPECIALIZED DOMAINS
+
+I bring my own team for comprehensive development in:
+
+• Crypto & Blockchain - DeFi protocols, smart contracts, tokenomics
+
+• FinTech Solutions - Payment systems, trading platforms, compliance
+
+• Smart Contracts - Solidity, Rust, audit and optimization
+
+• Cloud Architecture - Multi-cloud, microservices, serverless
+
+• Mobile Applications - Native iOS/Android, React Native, Flutter
+
+• Web Applications - Full-stack development, progressive web apps
+
+TEAM CAPABILITIES
+
+• Experienced developers across all major technologies
+
+• DevOps and infrastructure specialists
+
+• UI/UX designers for user-centered design
+
+• QA engineers for comprehensive testing
+
+• Project managers for delivery excellence
+
+DELIVERY APPROACH
+
+• Agile methodologies with proven frameworks
+
+• Continuous integration and deployment
+
+• Code quality and security best practices
+
+• Documentation and knowledge transfer
+
+
+
+HARD SKILLS OVERVIEW - TECHNICAL EXPERTISE
+
+🧠 AI, DATA & AUTOMATION
+
+AI Integration:
+
+▸RAG (Retrieval-Augmented Generation)
+
+▸RASA (Open Source Conversational AI)
+
+▸GPT-based Assistant Systems
+
+▸Reporting & Testing
+
+▸Predictive Analytics
+
+▸Configuration & Analysis Scripts
+
+▸Automation with GPO, Cron, systemd, shell
+
+☁️ CLOUD, KUBERNETES & VIRTUALIZATION
+
+▸Kubernetes (K8s) Orchestration
+
+▸Containers: Docker, Podman, systemd-nspawn
+
+▸Proxmox VE Cluster
+
+▸VMware vSphere
+
+▸Hyper-V (technical administration)
+
+▸CI/CD Pipelines (GitLab CI, Gitea Actions)
+
+▸Infrastructure-as-Code (IaC)
+
+▸Cloud & Hybrid Infrastructures
+
+🧱 LINUX & BSD SYSTEMS
+
+▸Linux (Arch, Debian, Alpine, RHEL)
+
+▸BSD (OpenBSD, FreeBSD): Routing, pf, Hardened Services
+
+▸Init Systems: systemd, OpenRC
+
+▸Network Integration & Headless Deployment
+
+▸Shell Scripting (sh, bash, fish, dash)
+
+🌐 NETWORKING & FIREWALLS
+
+▸Network Design: VLAN, DNS, DHCP, NAT, MTU, Subnetting
+
+▸Routing Protocols, static & dynamic
+
+▸Open Source Firewalls: pfSense, OPNsense, iptables, nftables
+
+▸VPN Technologies: WireGuard, IPSec
+
+▸DNS: Unbound, PowerDNS, DNSSEC
+
+▸Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+
+🔐 CYBERSECURITY
+
+▸Endpoint Security
+
+▸Patch Management
+
+▸VPN & Zero Trust Architectures
+
+▸Bastion Hosts, SSH Hardening
+
+▸Server/Cluster Firewalling
+
+▸Storage & Backup Security
+
+▸Redundant & Isolated Network Zones
+
+▸Admin Tier Concepts, Access Control
+
+💾 STORAGE, BACKUP & ARCHIVING
+
+▸SAN / NAS / DAS Setups
+
+▸Backup Systems: Veeam Backup & Replication, rsync, restic, borg
+
+▸Archive Systems: MailStore Server (IMAP/POP/Exchange)
+
+▸Document Management Systems (DMS) with Metadata, Full-text Search
+
+🖥️ HARDWARE & EMBEDDED
+
+▸Server Clusters, Workstations, NAS, UPS
+
+▸LTO Tape Drives, RAID Controllers
+
+▸Time Tracking Terminals
+
+▸Smartboards, Projectors, Camera Surveillance
+
+▸Peripherals: Multifunction Printers, Plotters, Presenters
+
+▸Network Components: Switches, Firewalls, APs
+
+▸ARM & Embedded Devices
+
+📡 WEBSERVER & SELF-HOSTING
+
+▸Web Servers: nginx, Apache, Caddy
+
+▸TLS Certificates (ACME, Let's Encrypt)
+
+▸Reverse Proxy, Load Balancing
+
+▸Services: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet, Private Bin, Miniflux, Pleroma
+
+📦 DEPLOYMENT & OPERATING SYSTEMS
+
+▸PXE, Cloud-Init, Ignition, Butane
+
+▸Container Deployment
+
+▸Stateless Setup with OverlayFS / Btrfs / Bcachefs
+
+▸Operating Systems: Arch Linux, CachyOS, Debian, Void, OpenBSD/FreeBSD
+
+
+
+
+
+-----
+
+
+
+Make the visitor of my website wanna get to know me and chat with me, maybe send me a tweet under https://x.com/MarkusMaiwald and interact or send me a mail.
+
+
+
+Be my attache that answers honestly about my capabilites and how I could help and dont hide my crazy personality
