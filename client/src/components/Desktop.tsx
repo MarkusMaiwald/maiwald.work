@@ -16,6 +16,7 @@ import { EasterEggTerminal } from './EasterEggTerminal';
 import { Calculator } from './Calculator';
 import { TextEditor } from './TextEditor';
 import { SkillsApp } from './SkillsApp';
+import { ChatbotApp } from './ChatbotApp';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 import { SystemMonitor } from './SystemMonitor';
 
@@ -32,6 +33,7 @@ export function Desktop() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const terminalRef = useRef<TerminalRef>(null);
@@ -96,6 +98,10 @@ export function Desktop() {
 
   const handleSkillsClick = () => {
     setIsSkillsOpen(true);
+  };
+
+  const handleChatbotClick = () => {
+    setIsChatbotOpen(true);
   };
 
   const handleHelpClick = () => {
@@ -377,6 +383,15 @@ export function Desktop() {
                 )}
               </AnimatePresence>
 
+              <AnimatePresence>
+                {isChatbotOpen && (
+                  <ChatbotApp
+                    isOpen={isChatbotOpen}
+                    onClose={() => setIsChatbotOpen(false)}
+                  />
+                )}
+              </AnimatePresence>
+
             </motion.div>
           )}
         </AnimatePresence>
@@ -404,6 +419,7 @@ export function Desktop() {
               onCalculatorClick={handleCalculatorClick}
               onTextEditorClick={handleTextEditorClick}
               onSkillsClick={handleSkillsClick}
+              onChatbotClick={handleChatbotClick}
               currentLanguage={currentLanguage}
             />
           </div>

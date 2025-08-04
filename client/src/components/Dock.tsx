@@ -10,10 +10,11 @@ interface DockProps {
   onCalculatorClick: () => void;
   onTextEditorClick: () => void;
   onSkillsClick: () => void;
+  onChatbotClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, onSkillsClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, onSkillsClick, onChatbotClick, currentLanguage }: DockProps) {
   // Initialize audio on first render
   useEffect(() => {
     const initAudio = () => {
@@ -79,6 +80,13 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       icon: '⟡',
       color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
       action: onSkillsClick
+    },
+    {
+      id: 'chatbot',
+      title: 'AI CHAT',
+      icon: '🤖',
+      color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
+      action: onChatbotClick
     },
     {
       id: 'calculator',

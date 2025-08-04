@@ -35,6 +35,7 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 - **Terminal**: Interactive terminal component with command processing
 - **Dock**: Bottom dock with application icons and interactions
 - **ContactModal**: Modal dialog for contact form submissions
+- **ChatbotApp**: AI chatbot interface showcasing AI prompting expertise
 
 ### Terminal System
 - **Command Processing**: Supports Unix-like commands (help, ls, cat, clear, etc.)
@@ -104,6 +105,12 @@ This is a React-based portfolio application that simulates a macOS desktop envir
 
 ```
 Changelog:
+- July 24, 2025. AI Chatbot Integration showcasing AI prompting expertise:
+  * ADDED: Dedicated AI Chat application in dock showcasing AI prompting skills
+  * INTEGRATED: Interactive chatbot interface with Matrix background and cyberpunk theming
+  * LINKED: Direct connection to external full-featured chatbot at chat.maiwald.work
+  * ENHANCED: Portfolio now demonstrates both technical skills and AI prompting capabilities
+  * CREATED: Demo chatbot with typing indicators, message history, and responsive design
 - July 23, 2025. Complete portfolio enhancement with Neural Link navigation and Skills dock integration:
   * ADDED: Neural Link section in help command directly linking to hardskills and softskills
   * CREATED: Dedicated Skills application in dock combining hardskills and softskills in tabbed interface
