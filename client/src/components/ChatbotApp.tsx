@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Minimize2, Send, Bot, User, ExternalLink } from 'lucide-react';
+import { marked } from 'marked';
 import { useLanguage } from '../hooks/useLanguage';
 import { MatrixBackground } from './CyberpunkEffects';
 
@@ -15,6 +16,81 @@ interface Message {
   sender: 'user' | 'bot';
   timestamp: Date;
 }
+
+// Configure marked for safe HTML parsing
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+});
+
+// Function to parse markdown and create structured content
+const parseMarkdownToStructuredContent = (text: string) => {
+  try {
+    // Convert markdown to HTML
+    const html = marked(text);
+    
+    // Parse HTML and create structured JSX
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    const elements: React.ReactNode[] = [];
+    let elementKey = 0;
+    
+    const processNode = (node: Node): React.ReactNode => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        return node.textContent;
+      }
+      
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        const element = node as Element;
+        const children = Array.from(element.childNodes).map(child => processNode(child)).filter(Boolean);
+        
+        switch (element.tagName.toLowerCase()) {
+          case 'h1':
+          case 'h2':
+          case 'h3':
+            return <h3 key={elementKey++} className="text-cyan-200 font-bold text-base mb-2 mt-4 first:mt-0">{children}</h3>;
+          case 'p':
+            return <p key={elementKey++} className="mb-3 leading-relaxed last:mb-0">{children}</p>;
+          case 'strong':
+            return <strong key={elementKey++} className="text-cyan-200 font-bold">{children}</strong>;
+          case 'em':
+            return <em key={elementKey++} className="text-cyan-300 italic">{children}</em>;
+          case 'ul':
+            return <ul key={elementKey++} className="mb-3">{children}</ul>;
+          case 'li':
+            return (
+              <div key={elementKey++} className="flex items-start mb-1 ml-2">
+                <span className="text-cyan-400 mr-2 flex-shrink-0">•</span>
+                <span className="leading-relaxed">{children}</span>
+              </div>
+            );
+          case 'code':
+            return <code key={elementKey++} className="bg-gray-800 text-cyan-300 px-1 rounded text-sm">{children}</code>;
+          default:
+            return <span key={elementKey++}>{children}</span>;
+        }
+      }
+      
+      return null;
+    };
+    
+    Array.from(doc.body.childNodes).forEach(node => {
+      const processed = processNode(node);
+      if (processed) elements.push(processed);
+    });
+    
+    return elements;
+  } catch (error) {
+    console.error('Markdown parsing error:', error);
+    // Fallback to plain text parsing
+    return text.split('\n\n').map((paragraph, index) => (
+      <p key={index} className="mb-3 leading-relaxed last:mb-0">
+        {paragraph.trim()}
+      </p>
+    ));
+  }
+};
 
 export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
   const { currentLanguage } = useLanguage();
@@ -236,43 +312,7 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
                     )}
                     <div className="flex-1">
                       <div className="text-sm leading-relaxed formatted-message">
-                        {message.text.split('\n\n').map((paragraph, pIndex) => {
-                          if (paragraph.trim() === '') return null;
-                          
-                          // Check if it's a bullet point section
-                          if (paragraph.includes('•') || paragraph.includes('-')) {
-                            const lines = paragraph.split('\n');
-                            return (
-                              <div key={pIndex} className="mb-3">
-                                {lines.map((line, lIndex) => {
-                                  const trimmedLine = line.trim();
-                                  if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
-                                    return (
-                                      <div key={lIndex} className="flex items-start mb-1 ml-2">
-                                        <span className="text-cyan-400 mr-2 flex-shrink-0">•</span>
-                                        <span className="leading-relaxed">{trimmedLine.substring(1).trim()}</span>
-                                      </div>
-                                    );
-                                  } else if (trimmedLine && !trimmedLine.startsWith('•') && !trimmedLine.startsWith('-')) {
-                                    return (
-                                      <div key={lIndex} className="font-bold text-cyan-200 mb-2 mt-3 first:mt-0">
-                                        {trimmedLine}
-                                      </div>
-                                    );
-                                  }
-                                  return null;
-                                })}
-                              </div>
-                            );
-                          } else {
-                            // Regular paragraph
-                            return (
-                              <p key={pIndex} className="mb-3 leading-relaxed last:mb-0">
-                                {paragraph.trim()}
-                              </p>
-                            );
-                          }
-                        })}
+                        {parseMarkdownToStructuredContent(message.text)}
                       </div>
                       <span className="text-xs text-gray-400 mt-1 block">
                         {message.timestamp.toLocaleTimeString()}
