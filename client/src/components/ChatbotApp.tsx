@@ -26,8 +26,8 @@ marked.setOptions({
 // Function to parse markdown and create structured content
 const parseMarkdownToStructuredContent = (text: string) => {
   try {
-    // Convert markdown to HTML
-    const html = marked(text);
+    // Convert markdown to HTML - marked.parse is synchronous
+    const html = marked.parse(text);
     
     // Parse HTML and create structured JSX
     const parser = new DOMParser();
