@@ -235,7 +235,45 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
                       <User size={16} className="text-cyan-400 mt-1 flex-shrink-0" />
                     )}
                     <div className="flex-1">
-                      <p className="text-sm leading-relaxed">{message.text}</p>
+                      <div className="text-sm leading-relaxed formatted-message">
+                        {message.text.split('\n\n').map((paragraph, pIndex) => {
+                          if (paragraph.trim() === '') return null;
+                          
+                          // Check if it's a bullet point section
+                          if (paragraph.includes('•') || paragraph.includes('-')) {
+                            const lines = paragraph.split('\n');
+                            return (
+                              <div key={pIndex} className="mb-3">
+                                {lines.map((line, lIndex) => {
+                                  const trimmedLine = line.trim();
+                                  if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
+                                    return (
+                                      <div key={lIndex} className="flex items-start mb-1 ml-2">
+                                        <span className="text-cyan-400 mr-2 flex-shrink-0">•</span>
+                                        <span className="leading-relaxed">{trimmedLine.substring(1).trim()}</span>
+                                      </div>
+                                    );
+                                  } else if (trimmedLine && !trimmedLine.startsWith('•') && !trimmedLine.startsWith('-')) {
+                                    return (
+                                      <div key={lIndex} className="font-bold text-cyan-200 mb-2 mt-3 first:mt-0">
+                                        {trimmedLine}
+                                      </div>
+                                    );
+                                  }
+                                  return null;
+                                })}
+                              </div>
+                            );
+                          } else {
+                            // Regular paragraph
+                            return (
+                              <p key={pIndex} className="mb-3 leading-relaxed last:mb-0">
+                                {paragraph.trim()}
+                              </p>
+                            );
+                          }
+                        })}
+                      </div>
                       <span className="text-xs text-gray-400 mt-1 block">
                         {message.timestamp.toLocaleTimeString()}
                       </span>

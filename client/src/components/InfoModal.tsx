@@ -169,37 +169,103 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage, onOpenCha
           }}
         >
           <div 
-            className="whitespace-pre-wrap text-sm font-mono leading-relaxed"
+            className="text-sm font-mono leading-relaxed formatted-content"
             style={{ color: '#e0e0e0' }}
           >
-            {displayContent.split('\n').map((line, index) => {
-              // Check if line contains a URL
-              const urlRegex = /(https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
-              const parts = line.split(urlRegex);
+            {displayContent.split('\n\n').map((paragraph, pIndex) => {
+              if (paragraph.trim() === '') return null;
               
-              return (
-                <div key={index}>
-                  {parts.map((part, partIndex) => {
-                    if (urlRegex.test(part)) {
-                      const url = part.startsWith('http') ? part : `https://${part}`;
-                      return (
-                        <a
-                          key={partIndex}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-                          onClick={() => CyberpunkAudio.playButtonClick()}
-                          className="text-cyberpunk-electric-blue hover:text-cyberpunk-neon-cyan underline cursor-pointer transition-colors"
-                        >
-                          {part}
-                        </a>
-                      );
-                    }
-                    return part;
-                  })}
-                </div>
-              );
+              // Check if it's a section header (all caps or has specific patterns)
+              if (paragraph.match(/^[A-Z\s&\-()]+$/m) && paragraph.length < 100) {
+                return (
+                  <h3 key={pIndex} className="text-cyberpunk-electric-blue font-bold mb-3 mt-6 first:mt-0 text-base uppercase tracking-wide">
+                    {paragraph.trim()}
+                  </h3>
+                );
+              }
+              
+              // Check if it's a bullet point section
+              if (paragraph.includes('•') || paragraph.match(/^[\-\*]/m)) {  
+                const lines = paragraph.split('\n');
+                return (
+                  <div key={pIndex} className="mb-4">
+                    {lines.map((line, lIndex) => {
+                      const trimmedLine = line.trim();
+                      
+                      // URL detection for links
+                      const urlRegex = /(https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
+                      
+                      if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-') || trimmedLine.startsWith('*')) {
+                        const content = trimmedLine.substring(1).trim();
+                        const parts = content.split(urlRegex);
+                        
+                        return (
+                          <div key={lIndex} className="flex items-start mb-2 ml-3">
+                            <span className="text-cyberpunk-electric-blue mr-3 flex-shrink-0 mt-0.5">•</span>
+                            <div className="leading-relaxed">
+                              {parts.map((part, partIndex) => {
+                                if (urlRegex.test(part)) {
+                                  const url = part.startsWith('http') ? part : `https://${part}`;
+                                  return (
+                                    <a
+                                      key={partIndex}
+                                      href={url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                                      onClick={() => CyberpunkAudio.playButtonClick()}
+                                      className="text-cyberpunk-electric-blue hover:text-cyberpunk-neon-cyan underline cursor-pointer transition-colors"
+                                    >
+                                      {part}
+                                    </a>
+                                  );
+                                }
+                                return part;
+                              })}
+                            </div>
+                          </div>
+                        );
+                      } else if (trimmedLine && !trimmedLine.startsWith('•') && !trimmedLine.startsWith('-') && !trimmedLine.startsWith('*')) {
+                        // Sub-header within bullet section
+                        return (
+                          <div key={lIndex} className="font-bold text-cyberpunk-neon-cyan mb-2 mt-4 first:mt-0">
+                            {trimmedLine}
+                          </div>
+                        );
+                      }
+                      return null;
+                    })}
+                  </div>
+                );
+              } else {
+                // Regular paragraph with URL detection
+                const urlRegex = /(https?:\/\/[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/g;
+                const parts = paragraph.split(urlRegex);
+                
+                return (
+                  <p key={pIndex} className="mb-4 leading-relaxed">
+                    {parts.map((part, partIndex) => {
+                      if (urlRegex.test(part)) {
+                        const url = part.startsWith('http') ? part : `https://${part}`;
+                        return (
+                          <a
+                            key={partIndex}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                            onClick={() => CyberpunkAudio.playButtonClick()}
+                            className="text-cyberpunk-electric-blue hover:text-cyberpunk-neon-cyan underline cursor-pointer transition-colors"
+                          >
+                            {part}
+                          </a>
+                        );
+                      }
+                      return part;
+                    })}
+                  </p>
+                );
+              }
             })}
           </div>
           
