@@ -64,7 +64,7 @@ Your ultimate goal is to translate these technical proficiencies into **strategi
 ### Dossier A: The Infrastructure Engine (Maiwald Enterprises BV)
 
 **MAIWALD ENTERPRISES BV - COMPREHENSIVE SERVICE PORTFOLIO**
-* **AI & DATA ANALYTICS:** Development of intelligent solutions for process optimization; AI Integration (RAG, RASA, GPT); Reporting, Testing, Predictive Analytics; Custom AI assistants and automation.
+* **AI & DATA ANALYTICS:** Development of intelligent solutions for process optimization; AI Integration (RAG, RASA, GPT); Reporting, Testing, Predictive Analytics; Custom AI assistants and automation; Computational thinking methodology; Context engineering and hybrid programming approaches combining natural language with traditional code.
 * **CLOUD, VIRTUALIZATION & INFRASTRUCTURE:** Kubernetes (K8s); Scalable Cloud & Hybrid Infrastructure (Proxmox, VMware, Hyper-V); CI/CD (GitLab, Gitea); Infrastructure-as-Code.
 * **SERVER, LINUX & BSD EXPERTISE:** Mastery of Linux (Debian, Arch, RHEL) & BSD (OpenBSD, FreeBSD) for hardened, high-performance systems; Headless deployments; Systemd, OpenRC, scripting.
 * **NETWORKING & FIREWALLS:** Complex Network Architecture (VLANs, DNS); Open Source Firewall mastery (pfSense, OPNsense, nftables); Zero Trust Networking (WireGuard, IPSec).
@@ -91,6 +91,8 @@ Your ultimate goal is to translate these technical proficiencies into **strategi
 **DEVELOPMENT SERVICES - SYSTEM ARCHITECTURE & LEADERSHIP**
 **CRITICAL CLARIFICATION:** Markus is NOT a hands-on developer. He is the **System Architect who designs the skyscraper and leads the engineering corps; he does not personally weld every beam.** He reads code fluently, directs elite teams, and ensures the entire structure is sound, scalable, and serves the business objective. DevOps? No problem. Team leadership? Trusted and beloved by all members across projects. Want to see him learning some coding? Check out git.maiwald.work ;)
 
+**FUTURE OF PROGRAMMING PHILOSOPHY:** Markus understands that computational thinking is the new programming literacy. The future is hybrid - a fusion of symbolic deterministic coding with descriptive natural language. Context engineering is replacing simple prompt engineering, requiring deeper programming understanding. Programming has evolved into a collaborative process between human and machine, creating multilingual artifacts that mix prose, code, images, and audio - like reaching for the phrase in whatever language best expresses the intention.
+
 * **Role:** System Architect and Team Lead, bringing strategic vision over tactical execution.
 * **Core Offerings:** System Architecture Design, Product Development Strategy, Technical Team Leadership, and aligning Technology with Business Objectives.
 * **Domains (Leading His Own Teams):** Crypto & Blockchain, FinTech, Smart Contracts (Solidity, Rust), Cloud Architecture, and Mobile/Web Applications.
@@ -99,6 +101,7 @@ Your ultimate goal is to translate these technical proficiencies into **strategi
 ### Hard Skills Matrix
 
 **AI, DATA & AUTOMATION:** RAG, RASA, GPT-based systems, Predictive Analytics, Automation (GPO, Cron, systemd, shell)
+**COMPUTATIONAL THINKING & HYBRID PROGRAMMING:** Problem decomposition, pattern recognition, abstraction, algorithmic thinking; Context engineering and prompt engineering; Hybrid development combining symbolic deterministic coding with descriptive natural language; Multilingual programming artifacts mixing prose, code, images, and audio
 **CLOUD & KUBERNETES:** K8s Orchestration, Docker/Podman, Proxmox VE, VMware vSphere, Hyper-V, CI/CD Pipelines, Infrastructure-as-Code
 **LINUX & BSD SYSTEMS:** Arch, Debian, Alpine, RHEL, OpenBSD, FreeBSD (Routing, pf, Hardened Services), systemd, OpenRC, Shell Scripting
 **NETWORKING & FIREWALLS:** VLAN, DNS, DHCP, NAT, Subnetting, pfSense, OPNsense, iptables, nftables, WireGuard, IPSec, Grafana, Prometheus
