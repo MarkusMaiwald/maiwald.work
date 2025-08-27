@@ -44,13 +44,37 @@ export const CTOServiceShowcase: React.FC<CTOServiceShowcaseProps> = ({ isOpen, 
     }
   ];
 
+  // Handle ESC key
+  React.useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscKey);
+      return () => document.removeEventListener('keydown', handleEscKey);
+    }
+  }, [isOpen, onClose]);
+
   return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div 
+      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+      style={{ cursor: 'default' }}
+      onClick={(e) => {
+        // Close on backdrop click, but not on modal content
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg shadow-2xl w-full max-w-6xl max-h-[90vh] overflow-y-auto border border-cyan-500/30"
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="relative p-8 bg-gradient-to-r from-cyan-600/20 to-purple-600/20 border-b border-cyan-500/30">
