@@ -4,8 +4,9 @@ import { X, Minus, Save, FolderOpen, FileText, Copy, Scissors, Clipboard } from 
 import { CyberpunkPanel, GlitchText } from './CyberpunkEffects';
 
 interface TextEditorProps {
+  isOpen: boolean;
   onClose: () => void;
-  onMinimize: () => void;
+  currentLanguage?: any;
 }
 
 interface FileTab {
@@ -15,7 +16,8 @@ interface FileTab {
   modified: boolean;
 }
 
-export function TextEditor({ onClose, onMinimize }: TextEditorProps) {
+export function TextEditor({ isOpen, onClose, currentLanguage }: TextEditorProps) {
+  if (!isOpen) return null;
   const [files, setFiles] = useState<FileTab[]>([
     {
       id: 'welcome',
@@ -176,13 +178,15 @@ Start typing to create your digital manifest...`,
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 50 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.8, y: 50 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-16 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-4xl mx-auto px-4"
-    >
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.8, y: 50 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="w-full max-w-4xl mx-auto"
+        style={{ cursor: 'default' }}
+      >
       <CyberpunkPanel className="h-[600px] shadow-2xl flex flex-col">
         {/* Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-cyberpunk-surface-dark via-cyberpunk-surface to-cyberpunk-surface-dark border-b border-cyberpunk-border">
@@ -194,7 +198,7 @@ Start typing to create your digital manifest...`,
           </div>
           <div className="flex items-center space-x-2">
             <button
-              onClick={onMinimize}
+              onClick={() => console.log('minimize')}
               className="w-6 h-6 rounded bg-cyberpunk-surface-dark hover:bg-yellow-500 transition-colors flex items-center justify-center"
             >
               <Minus size={12} className="text-cyberpunk-text" />
@@ -346,6 +350,7 @@ Start typing to create your digital manifest...`,
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyberpunk-electric-blue to-transparent opacity-50"></div>
         </div>
       </CyberpunkPanel>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
