@@ -95,10 +95,10 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
               </div>
               <div className="mt-4">
                 <GlitchText className="text-3xl font-bold cyberpunk-heading">
-                  MAIWALD ENTERPRISES BV
+                  MARKUS MAIWALD
                 </GlitchText>
                 <div className="text-lg text-cyberpunk-electric-blue text-glow mt-2">
-                  {content.welcome[currentLanguage]}
+                  MAIWALD ENTERPRISES BV
                 </div>
                 <div className="text-sm text-cyberpunk-text-dim mt-1 cyberpunk-subheading">
                   {content.subtitle[currentLanguage]}
