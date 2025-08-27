@@ -285,11 +285,25 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
                   className="w-full h-full rounded-full object-cover border border-cyan-400/50"
                 />
               </div>
-              <div>
-                <h3 className="text-cyan-400 font-semibold">Maiwald Enterprises AI</h3>
-                <p className="text-gray-400 text-sm">
-                  {currentLanguage === 'EN' ? 'Showcasing AI Prompting Excellence' : 'KI-Prompting-Exzellenz präsentieren'}
-                </p>
+              <div className="flex-1">
+                <button
+                  onClick={() => {
+                    // Dispatch event to open CTO service modal
+                    const event = new CustomEvent('openCTOService');
+                    window.dispatchEvent(event);
+                  }}
+                  className="text-left w-full group"
+                >
+                  <h3 className="text-cyan-400 font-semibold group-hover:text-cyan-300 transition-colors">
+                    Maiwald Enterprises AI
+                  </h3>
+                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                    {currentLanguage === 'EN' 
+                      ? 'Showcasing AI Prompting Excellence → Click for CTO Service' 
+                      : 'KI-Prompting-Exzellenz präsentieren → Klicken für CTO Service'
+                    }
+                  </p>
+                </button>
               </div>
             </div>
           </div>
