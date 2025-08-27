@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
 import { MatrixBackground, CyberpunkAudio, CustomCursor } from './CyberpunkEffects';
+import markusPhoto from '@assets/Markus_Maiwald_2iextb2iextb2iex_1756293542998.png';
 
 interface InfoModalProps {
   isOpen: boolean;
@@ -168,6 +169,26 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage, onOpenCha
             backdropFilter: 'blur(10px)'
           }}
         >
+          {/* Add photo for about section */}
+          {section === 'about' && (
+            <div className="flex items-start justify-between gap-6 mb-6">
+              <div className="flex-1">
+                <h2 className="text-cyberpunk-electric-blue font-bold text-lg uppercase tracking-wide mb-4">
+                  About Markus Maiwald
+                </h2>
+              </div>
+              <div className="flex-shrink-0">
+                <div className="w-32 h-32 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 p-1">
+                  <img 
+                    src={markusPhoto}
+                    alt="Markus Maiwald - Strategic Technology Architect"
+                    className="w-full h-full rounded object-cover border border-cyan-400/50"
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           <div 
             className="text-sm font-mono leading-relaxed formatted-content"
             style={{ color: '#e0e0e0' }}

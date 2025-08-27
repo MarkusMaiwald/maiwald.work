@@ -4,6 +4,7 @@ import { useToast } from '../hooks/use-toast';
 import { apiRequest } from '../lib/queryClient';
 import { Language } from '../hooks/useLanguage';
 import { MatrixBackground, CyberpunkAudio } from './CyberpunkEffects';
+import markusPhoto from '@assets/Markus_Maiwald_2iextb2iextb2iex_1756293542998.png';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -162,9 +163,28 @@ export function ContactModal({ isOpen, onClose, currentLanguage }: ContactModalP
         </div>
         
         <div className="p-6 bg-cyberpunk-bg relative z-10">
-          <h3 className="text-lg font-bold mb-6 text-cyberpunk-electric-blue font-mono cyberpunk-heading">
-            {currentLabels.title.toUpperCase()}
-          </h3>
+          <div className="flex items-start justify-between gap-4 mb-6">
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-cyberpunk-electric-blue font-mono cyberpunk-heading">
+                {currentLabels.title.toUpperCase()}
+              </h3>
+              <p className="text-sm text-cyberpunk-text-dim font-mono mt-2">
+                {currentLanguage === 'EN' 
+                  ? 'DIRECT LINE TO MARKUS MAIWALD' 
+                  : 'DIREKTE VERBINDUNG ZU MARKUS MAIWALD'
+                }
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="w-16 h-16 rounded bg-gradient-to-br from-cyan-400 to-cyan-600 p-0.5">
+                <img 
+                  src={markusPhoto}
+                  alt="Markus Maiwald - Contact"
+                  className="w-full h-full rounded object-cover border border-cyan-400/50"
+                />
+              </div>
+            </div>
+          </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="block text-sm font-mono font-bold text-cyberpunk-text mb-2">

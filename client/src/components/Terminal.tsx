@@ -3,6 +3,7 @@ import { useTerminal } from '../hooks/useTerminal';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
 import { CyberpunkPanel, GlitchText, TypewriterEffect, CyberpunkAudio } from './CyberpunkEffects';
+import markusPhoto from '@assets/Markus_Maiwald_2iextb2iextb2iex_1756293542998.png';
 
 interface TerminalProps {
   currentLanguage: Language;
@@ -93,15 +94,26 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
               <div className="text-cyberpunk-acid-green text-glow">
                 <TypewriterEffect text={`SYSTEM INITIALIZED ${new Date().toISOString()}`} speed={30} />
               </div>
-              <div className="mt-4">
-                <GlitchText className="text-3xl font-bold cyberpunk-heading">
-                  MARKUS MAIWALD
-                </GlitchText>
-                <div className="text-lg text-cyberpunk-electric-blue text-glow mt-2">
-                  MAIWALD ENTERPRISES BV
+              <div className="mt-4 flex items-start justify-between gap-6">
+                <div className="flex-1">
+                  <GlitchText className="text-3xl font-bold cyberpunk-heading">
+                    MARKUS MAIWALD
+                  </GlitchText>
+                  <div className="text-lg text-cyberpunk-electric-blue text-glow mt-2">
+                    MAIWALD ENTERPRISES BV
+                  </div>
+                  <div className="text-sm text-cyberpunk-text-dim mt-1 cyberpunk-subheading">
+                    {content.subtitle[currentLanguage]}
+                  </div>
                 </div>
-                <div className="text-sm text-cyberpunk-text-dim mt-1 cyberpunk-subheading">
-                  {content.subtitle[currentLanguage]}
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 p-1">
+                    <img 
+                      src={markusPhoto}
+                      alt="Markus Maiwald - Strategic Technology Architect"
+                      className="w-full h-full rounded object-cover border border-cyan-400/50"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
