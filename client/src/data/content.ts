@@ -235,6 +235,27 @@ CORE SERVICES INCLUDED
 
 Maiwald Enterprises BV is your strategic technology partner for complex infrastructure challenges. We deliver enterprise-grade solutions across the complete technology spectrum.
 
+I. CORE COMPETENCIES: INFRASTRUCTURE, VIRTUALIZATION & CLOUD
+(Connecting directly to infrastructure solutions, virtualization, server, storage & backup)
+
+VIRTUALIZATION PLATFORMS:
+• Proxmox VE: Deep expertise in designing and managing high-availability clusters, including Ceph, ZFS storage and live migration
+• VMware vSphere & Microsoft Hyper-V: Solid administration and management skills, ideal for integration into existing customer environments
+
+SYSTEM & SERVER MANAGEMENT (Linux/BSD):
+• Expert knowledge in administration, hardening and performance optimization of Linux servers (Debian, Arch, RHEL) and BSD systems (OpenBSD, FreeBSD)
+• I build custom Linux variants as a hobby project
+• Seamless integration into existing Windows networks (Active Directory, file shares, etc.)
+
+CLOUD & HYBRID INFRASTRUCTURES:
+• Architecture and management of solutions on AWS and Google Cloud Platform (GCP)
+• Design of hybrid scenarios connecting on-premise infrastructure with cloud resources
+• Expertise in Infrastructure-as-Code (IaC) for automation and standardization of deployments (Terraform, Kubernetes)
+
+STORAGE & BACKUP SOLUTIONS:
+• Planning and implementation of high-performance modern storage systems (ZFS, NVMe-over-TCP) as well as traditional SAN/NAS
+• Development of multi-tier backup concepts with tools like Restic, Borg, traditional solutions like Veeam and classic tape systems (LTO)
+
 🧠 AI & DATA ANALYTICS
 • Development of intelligent solutions for process optimization
 • AI Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
@@ -355,6 +376,27 @@ KERNSERVICES ENTHALTEN
 • Sicherheits- und Compliance-Strategieplanung
 • Anbieter-Bewertung und Technologie-Stack-Entscheidungen
 • Technische Due Diligence und Risikobewertung
+
+I. KERNKOMPETENZEN: INFRASTRUKTUR, VIRTUALISIERUNG & CLOUD
+(Knüpft an deren Hauptgeschäft an: "Infrastrukturlösungen", "Virtualisierung", "Server, Storage & Backup")
+
+VIRTUALISIERUNGSPLATTFORMEN:
+• Proxmox VE: Tiefgehende Expertise in Design und Verwaltung von hochverfügbaren Clustern, inklusive Ceph, ZFS-Storage und Live-Migration
+• VMware vSphere & Microsoft Hyper-V: Solide Kenntnisse in der Administration und im Management, ideal für die Integration in bestehende Kundenumgebungen
+
+SYSTEM- & SERVER-MANAGEMENT (Linux/BSD):
+• Expertenwissen in Administration, Härtung und Performance-Optimierung von Linux-Servern (Debian, Arch, RHEL) und BSD-Systemen (OpenBSD, FreeBSD)
+• Ich baue eigene LINUX-Varianten als Hobby
+• Nahtlose Integration in bestehende Windows-Netzwerke (Active Directory, Fileshares, etc.)
+
+CLOUD & HYBRIDE INFRASTRUKTUREN:
+• Architektur und Management von Lösungen auf AWS und Google Cloud Platform (GCP)
+• Konzeption von hybriden Szenarien, die On-Premise-Infrastruktur mit Cloud-Ressourcen verbinden
+• Expertise in Infrastructure-as-Code (IaC) zur Automatisierung und Standardisierung von Deployments (Terraform, Kubernetes)
+
+STORAGE & BACKUP-LÖSUNGEN:
+• Planung und Implementierung von hoch performanten modernen Storage-Systemen (ZFS, NVMe-over-TCP) aber auch klassischen SAN/NAS
+• Entwicklung mehrstufiger Backup-Konzepte mit Tools wie Restic, Borg, klassischen wie Veeam und traditionellen Bandsystemen (LTO)
 
 Kontakt für maßgeschneiderte Lösungen: markus@maiwald.work`
   },
