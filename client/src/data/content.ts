@@ -1003,7 +1003,13 @@ Geschäftswert:
 • Strategic Thinker: bridging tech, product, and org
 • Vision-setting for long-term, open-source aligned ecosystems
 • High resilience and decision-making under uncertainty
-• Systems & protocol-level abstraction mindset`,
+• Systems & protocol-level abstraction mindset
+
+💼 CUSTOMER VALUE PROPOSITION
+• Perfect Complement: Filling gaps for clients with heterogeneous networks or specific Linux/Open-Source requirements. Quick adaptation to new complex problems
+• Innovation Input: Bringing modern, cost-effective and high-performance alternatives (Proxmox, OPNsense, ZFS) that can strategically expand existing portfolios
+• High Learning Readiness & Adaptability: Broad technological foundation and 20+ years experience enable rapid onboarding to new systems and specific customer portfolio requirements
+• Expert Status: Solution provider capable of serving niche and expert requirements at the highest level`,
     DE: `SOFT SKILLS & FÜHRUNGSROLLEN
 
 🧑‍💼 EXECUTIVE & STRATEGISCHE FÜHRUNG
@@ -1032,7 +1038,13 @@ Geschäftswert:
 • Strategischer Denker: Brückenschlag zwischen Tech, Produkt und Organisation
 • Visionssetzung für langfristige, Open-Source-orientierte Ökosysteme
 • Hohe Belastbarkeit und Entscheidungsfindung unter Unsicherheit
-• System- und Protokoll-orientierte Abstraktionsdenkweise`
+• System- und Protokoll-orientierte Abstraktionsdenkweise
+
+💼 MEHRWERT FÜR DEN KUNDEN
+• Perfekte Ergänzung: Schließe die Lücke bei Kunden mit heterogenen Netzwerken oder spezifischen Anforderungen an Linux/Open-Source-Lösungen. Schnelle Einarbeitung in neue komplexe Probleme
+• Innovations-Input: Bringe moderne, kosteneffiziente und hochperformante Alternativen (Proxmox, OPNsense, ZFS) ein, die das bestehende Portfolio strategisch erweitern können
+• Hohe Lernbereitschaft & Adaptivität: Breite technologische Basis und über 20 Jahre Erfahrung ermöglichen schnelle Einarbeitung in neue Systeme und spezifische Anforderungen jeden Kunden-Portfolios
+• Expertenstatus: Lösungsanbieter, der auch Nischen- und Expertenanforderungen auf höchstem Niveau bedienen kann`
   },
   cloud: {
     EN: `CLOUD SOLUTIONS
