@@ -281,6 +281,19 @@ AUTOMATION & SCRIPTING:
 DOCUMENTATION & KNOWLEDGE MANAGEMENT:
 • Creation of detailed technical documentation as the foundation for stable and traceable operations
 
+IV. STRATEGIC STRENGTHS & PROJECT MANAGEMENT
+
+TECHNICAL STRATEGY CONSULTING & DESIGN:
+• Comprehensive consulting from requirements analysis to final solution architecture. Expert in Open-Source with interfaces to Microsoft/Apple systems: I build the stuff your servers run on
+• Technology evaluation with focus on investment security, scalability and TCO (Total Cost of Ownership)
+
+PROJECT MANAGEMENT & TEAM LEADERSHIP:
+• Management of IT infrastructure projects using proven methodologies
+• Leadership of technical teams and coordination of external service providers
+
+SERVICE & SUPPORT (3RD-LEVEL):
+• Analytical and structured approach to solving complex technical problems as escalation instance for the support team
+
 🧠 AI & DATA ANALYTICS
 • Development of intelligent solutions for process optimization
 • AI Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
@@ -447,6 +460,19 @@ AUTOMATISIERUNG & SKRIPTING:
 
 DOKUMENTATION & WISSENSMANAGEMENT:
 • Erstellung detaillierter technischer Dokumentationen als Grundlage für einen stabilen und nachvollziehbaren Betrieb
+
+IV. STRATEGISCHE STÄRKEN & PROJEKTMANAGEMENT
+
+TECHNISCHE STRATEGIEBERATUNG & KONZEPTION:
+• Ganzheitliche Beratung von der Anforderungsanalyse bis zur finalen Lösungsarchitektur. Experte in Open-Source mit der Schnittstelle zu Microsoft/Apple Systemen: I build the stuff your servers run on
+• Evaluierung von Technologien mit Fokus auf Investitionssicherheit, Skalierbarkeit und TCO (Total Cost of Ownership)
+
+PROJEKTLEITUNG & TEAMFÜHRUNG:
+• Management von IT-Infrastrukturprojekten nach bewährten Methoden
+• Führung von technischen Teams und Koordination von externen Dienstleistern
+
+SERVICE & SUPPORT (3RD-LEVEL):
+• Analytische und strukturierte Herangehensweise bei der Lösung komplexer technischer Probleme als Eskalationsinstanz für das Support-Team
 
 Kontakt für maßgeschneiderte Lösungen: markus@maiwald.work`
   },
