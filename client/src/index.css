@@ -481,6 +481,24 @@ a, button, [role="button"], input, textarea, select {
   cursor: none;
 }
 
+/* Modal Cursor Override - Show cursor in modals */
+.cto-modal,
+.cto-modal *,
+.cto-modal a,
+.cto-modal button,
+.cto-modal [role="button"],
+.cto-modal input,
+.cto-modal textarea,
+.cto-modal select {
+  cursor: auto !important;
+}
+
+.cto-modal button:hover,
+.cto-modal a:hover,
+.cto-modal [role="button"]:hover {
+  cursor: pointer !important;
+}
+
 .custom-cursor {
   position: fixed;
   width: 20px;

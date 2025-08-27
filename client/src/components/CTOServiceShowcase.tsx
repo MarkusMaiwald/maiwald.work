@@ -60,8 +60,7 @@ export const CTOServiceShowcase: React.FC<CTOServiceShowcaseProps> = ({ isOpen, 
 
   return (
     <div 
-      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
-      style={{ cursor: 'default' }}
+      className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto cto-modal"
       onClick={(e) => {
         // Close on backdrop click, but not on modal content
         if (e.target === e.currentTarget) {
