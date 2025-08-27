@@ -4,6 +4,7 @@ import { X, Minimize2, Send, Bot, User, ExternalLink } from 'lucide-react';
 import { marked } from 'marked';
 import { useLanguage } from '../hooks/useLanguage';
 import { MatrixBackground } from './CyberpunkEffects';
+import markusPhoto from '@assets/Markus_Maiwald_2iextb2iextb2iex_1756293542998.png';
 
 interface ChatbotAppProps {
   isOpen: boolean;
@@ -277,8 +278,12 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
           {/* Chat Header */}
           <div className="p-4 border-b border-cyan-500/20 bg-gray-800/30">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center">
-                <Bot size={20} className="text-white" />
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 p-0.5">
+                <img 
+                  src={markusPhoto}
+                  alt="Markus Maiwald - AI Strategic Consultant"
+                  className="w-full h-full rounded-full object-cover border border-cyan-400/50"
+                />
               </div>
               <div>
                 <h3 className="text-cyan-400 font-semibold">Maiwald Enterprises AI</h3>
@@ -305,7 +310,13 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
                 >
                   <div className="flex items-start space-x-2">
                     {message.sender === 'bot' && (
-                      <Bot size={16} className="text-cyan-400 mt-1 flex-shrink-0" />
+                      <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 p-0.5 mt-1 flex-shrink-0">
+                        <img 
+                          src={markusPhoto}
+                          alt="Markus Maiwald AI"
+                          className="w-full h-full rounded-full object-cover"
+                        />
+                      </div>
                     )}
                     {message.sender === 'user' && (
                       <User size={16} className="text-cyan-400 mt-1 flex-shrink-0" />
@@ -327,7 +338,13 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
               <div className="flex justify-start">
                 <div className="bg-gray-700/50 text-gray-200 border border-gray-600/30 rounded-lg p-3 max-w-[70%]">
                   <div className="flex items-center space-x-2">
-                    <Bot size={16} className="text-cyan-400" />
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 p-0.5 flex-shrink-0">
+                      <img 
+                        src={markusPhoto}
+                        alt="Markus Maiwald AI"
+                        className="w-full h-full rounded-full object-cover"
+                      />
+                    </div>
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"></div>
                       <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
