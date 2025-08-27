@@ -12,13 +12,14 @@ interface TerminalProps {
   onClose?: () => void;
   onOpenChatbot?: () => void;
   onOpenCTOService?: () => void;
+  onOpenAbout?: () => void;
 }
 
 export interface TerminalRef {
   executeCommand: (command: string) => void;
 }
 
-export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot, onOpenCTOService }, ref) => {
+export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot, onOpenCTOService, onOpenAbout }, ref) => {
   const { 
     lines, 
     currentInput, 
@@ -107,13 +108,17 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
                   </div>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 p-1">
+                  <button
+                    onClick={() => onOpenAbout && onOpenAbout()}
+                    className="w-24 h-24 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 p-1 hover:from-cyan-300 hover:to-cyan-500 transition-all duration-300 hover:scale-105 group"
+                    title="Click to view About Markus Maiwald"
+                  >
                     <img 
                       src={markusPhoto}
                       alt="Markus Maiwald - Strategic Technology Architect"
-                      className="w-full h-full rounded object-cover border border-cyan-400/50"
+                      className="w-full h-full rounded object-cover border border-cyan-400/50 group-hover:border-cyan-300/70 transition-all duration-300"
                     />
-                  </div>
+                  </button>
                 </div>
               </div>
             </div>

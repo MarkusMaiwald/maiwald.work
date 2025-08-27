@@ -85,6 +85,11 @@ export function Desktop() {
     setIsContactModalOpen(true);
   };
 
+  const handleAboutClick = () => {
+    setCurrentSection('about');
+    setIsInfoModalOpen(true);
+  };
+
   const handleSectionClick = (section: string) => {
     // Always close contact modal when switching sections
     setIsContactModalOpen(false);
@@ -228,6 +233,7 @@ export function Desktop() {
                         onLanguageChange={setLanguage}
                         onOpenChatbot={() => setIsChatbotOpen(true)}
                         onOpenCTOService={() => setIsCTOServiceOpen(true)}
+                        onOpenAbout={handleAboutClick}
                         onClose={() => {
                           setIsTerminalVisible(false);
                           setCurrentScrollSection(0); // Reset navigation to Neural Link when terminal is closed
