@@ -270,6 +270,17 @@ NETWORK DESIGN & MANAGEMENT:
 ENDPOINT & SERVER HARDENING:
 • Systematic hardening of server operating systems and services to minimize attack surfaces, as a complement to endpoint solutions like UniFi, Juniper, Dell, HP
 
+III. SYSTEM MANAGEMENT, MONITORING & AUTOMATION
+
+CENTRALIZED MONITORING:
+• Experience with established monitoring solutions like Nagios as well as modern stacks like Grafana, Prometheus and Zabbix for proactive monitoring of the entire IT landscape
+
+AUTOMATION & SCRIPTING:
+• Efficiency improvement through automation of routine tasks, updates and deployments using shell scripting, systemd and CI/CD pipelines (GitLab, Forgejo)
+
+DOCUMENTATION & KNOWLEDGE MANAGEMENT:
+• Creation of detailed technical documentation as the foundation for stable and traceable operations
+
 🧠 AI & DATA ANALYTICS
 • Development of intelligent solutions for process optimization
 • AI Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
@@ -425,6 +436,17 @@ NETZWERK-KONZEPTION & -MANAGEMENT:
 
 ENDPOINT & SERVER HARDENING:
 • Systematische Härtung von Server-Betriebssystemen und Diensten zur Minimierung von Angriffsflächen, als Ergänzung zu Endpoint-Lösungen wie UniFi, Juniper, Dell, HP
+
+III. SYSTEMMANAGEMENT, MONITORING & AUTOMATISIERUNG
+
+ZENTRALES MONITORING:
+• Erfahrung mit etablierten Monitoring-Lösungen wie Nagios sowie modernen Stacks wie Grafana, Prometheus und Zabbix zur proaktiven Überwachung der gesamten IT-Landschaft
+
+AUTOMATISIERUNG & SKRIPTING:
+• Effizienzsteigerung durch die Automatisierung von Routineaufgaben, Updates und Deployments mittels Shell-Skripting, systemd und CI/CD-Pipelines (GitLab, Forgejo)
+
+DOKUMENTATION & WISSENSMANAGEMENT:
+• Erstellung detaillierter technischer Dokumentationen als Grundlage für einen stabilen und nachvollziehbaren Betrieb
 
 Kontakt für maßgeschneiderte Lösungen: markus@maiwald.work`
   },
