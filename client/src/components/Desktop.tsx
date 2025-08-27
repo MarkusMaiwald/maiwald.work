@@ -497,6 +497,7 @@ export function Desktop() {
         onClose={() => setIsInfoModalOpen(false)}
         currentLanguage={currentLanguage}
         section={currentSection}
+        onOpenChatbot={() => setIsChatbotOpen(true)}
       />
 
       <Calculator
