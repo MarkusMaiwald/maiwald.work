@@ -9,9 +9,9 @@ interface CTOServiceShowcaseProps {
 }
 
 export const CTOServiceShowcase: React.FC<CTOServiceShowcaseProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
+  if (!isOpen) return <></>;
 
-  const benefits = [
+  const benefits = React.useMemo(() => [
     {
       icon: Target,
       title: 'Personal Task Board',
@@ -42,7 +42,7 @@ export const CTOServiceShowcase: React.FC<CTOServiceShowcaseProps> = ({ isOpen, 
       title: 'Full IP Ownership',
       description: 'You own 100% of source materials and intellectual property.'
     }
-  ];
+  ], []);
 
   // Handle ESC key
   React.useEffect(() => {

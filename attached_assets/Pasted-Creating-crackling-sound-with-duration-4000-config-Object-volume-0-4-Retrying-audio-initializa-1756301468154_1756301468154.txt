@@ -1,0 +1,32 @@
+Creating crackling sound with duration: 4000 config: 
+Object {volume: 0.4}
+Retrying audio initialization...
+Warning: Internal React error: Expected static flag was missing. Please notify the React team.
+    at CTOServiceShowcase (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/src/components/CTOServiceShowcase.tsx:22:38)
+    at div
+    at CyberpunkEffects (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/src/components/CyberpunkEffects.tsx:377:36)
+    at Desktop (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/src/components/Desktop.tsx:40:60)
+    at Home
+    at Route (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8d1b312f:323:16)
+    at Switch (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8d1b312f:379:17)
+    at Router
+    at Provider (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-RMEW2FXP.js?v=8d1b312f:72:15)
+    at TooltipProvider (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=8d1b312f:2247:5)
+    at QueryClientProvider (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=8d1b312f:2805:3)
+    at App
+at CTOServiceShowcase (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/src/components/CTOServiceShowcase.tsx:22:38)
+at div
+at CyberpunkEffects (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/src/components/CyberpunkEffects.tsx:377:36)
+at Desktop (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/src/components/Desktop.tsx:40:60)
+at Home
+at Route (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8d1b312f:323:16)
+at Switch (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=8d1b312f:379:17)
+at Router
+at Provider (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-RMEW2FXP.js?v=8d1b312f:72:15)
+at TooltipProvider (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=8d1b312f:2247:5)
+at QueryClientProvider (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=8d1b312f:2805:3)
+at App
+at t.value (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://6ab0a4b3-b632-4c26-bb49-0204d02ded79-00-2ny4bf2l5bwet.riker.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400
