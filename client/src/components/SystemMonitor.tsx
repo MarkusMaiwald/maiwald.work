@@ -154,12 +154,23 @@ export function SystemMonitor() {
 
   return (
     <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, x: -50, y: 50 }}
-        animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
-        exit={{ opacity: 0, scale: 0.8, x: -50, y: 50 }}
-        className="fixed bottom-4 left-4 z-50 w-96"
+      <div 
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        style={{ cursor: 'default' }}
+        onClick={(e) => {
+          // Close on backdrop click, but not on modal content
+          if (e.target === e.currentTarget) {
+            setIsVisible(false);
+          }
+        }}
       >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: -50, y: 50 }}
+          animate={{ opacity: 1, scale: 1, x: 0, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, x: -50, y: 50 }}
+          className="w-full max-w-lg"
+          onClick={(e) => e.stopPropagation()}
+        >
         <CyberpunkPanel className="p-4 max-h-[70vh] overflow-hidden">
           {/* Header */}
           <div className="flex justify-between items-center mb-4 border-b border-cyberpunk-border pb-2">
@@ -298,7 +309,8 @@ export function SystemMonitor() {
             )}
           </div>
         </CyberpunkPanel>
-      </motion.div>
+        </motion.div>
+      </div>
     </AnimatePresence>
   );
 }

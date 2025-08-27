@@ -195,12 +195,23 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 50 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 50 }}
-          className="fixed bottom-8 right-8 z-50 w-96 max-h-96"
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          style={{ cursor: 'default' }}
+          onClick={(e) => {
+            // Close on backdrop click, but not on modal content
+            if (e.target === e.currentTarget) {
+              setIsVisible(false);
+            }
+          }}
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 50 }}
+            className="w-full max-w-md"
+            onClick={(e) => e.stopPropagation()}
+          >
           <CyberpunkPanel className="interactive">
             <div className="p-4">
               {/* Terminal Header */}
@@ -283,10 +294,9 @@ export function EasterEggTerminal({ currentLanguage, onProjectsReveal }: EasterE
               </div>
             </div>
           </CyberpunkPanel>
-        </motion.div>
+          </motion.div>
+        </div>
       )}
-
-
     </AnimatePresence>
   );
 }
