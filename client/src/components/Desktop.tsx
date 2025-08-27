@@ -55,8 +55,22 @@ export function Desktop() {
       setIsAmbientAudioPlaying(event.detail.isPlaying);
     };
 
+    // Listen for custom events
+    const handleOpenContact = () => setIsContactModalOpen(true);
+    const handleOpenChatbot = () => setIsChatbotOpen(true);
+    const handleOpenCTOService = () => setIsCTOServiceOpen(true);
+
     window.addEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
-    return () => window.removeEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
+    window.addEventListener('openContact', handleOpenContact);
+    window.addEventListener('openChatbot', handleOpenChatbot);
+    window.addEventListener('openCTOService', handleOpenCTOService);
+    
+    return () => {
+      window.removeEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
+      window.removeEventListener('openContact', handleOpenContact);
+      window.removeEventListener('openChatbot', handleOpenChatbot);
+      window.removeEventListener('openCTOService', handleOpenCTOService);
+    };
   }, []);
 
   const handleTerminalClick = () => {

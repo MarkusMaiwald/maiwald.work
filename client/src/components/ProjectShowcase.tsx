@@ -410,7 +410,18 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                               {project.id === 'nexus-os' ? 'MANIFESTO' : project.id === 'maiwald-enterprises' ? 'CTO/CIO/CSO AS A SERVICE' : 'PROJECT SCOPE'}
                             </h4>
                             {project.id === 'maiwald-enterprises' ? (
-                              <div className="space-y-3">
+                              <div 
+                                className="space-y-3 cursor-pointer hover:bg-cyberpunk-surface-light/20 p-3 rounded-lg transition-all duration-300 border border-transparent hover:border-cyberpunk-electric-blue/30"
+                                onClick={() => {
+                                  CyberpunkAudio.playButtonClick();
+                                  // Close project modal and open CTO modal
+                                  setSelectedProject(null);
+                                  const event = new CustomEvent('openCTOService');
+                                  window.dispatchEvent(event);
+                                }}
+                                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                                title="Click to open detailed CTO service information"
+                              >
                                 <div className="text-cyberpunk-neon-cyan text-lg md:text-xl font-bold">
                                   €1,400/month | 20-30 hours guaranteed
                                 </div>
@@ -432,6 +443,9 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                                       {benefit}
                                     </div>
                                   ))}
+                                </div>
+                                <div className="text-xs text-cyberpunk-text-dim text-center mt-3 pt-2 border-t border-cyberpunk-border">
+                                  💡 Click for detailed CTO service information
                                 </div>
                               </div>
                             ) : (
