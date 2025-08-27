@@ -256,6 +256,20 @@ STORAGE & BACKUP SOLUTIONS:
 • Planning and implementation of high-performance modern storage systems (ZFS, NVMe-over-TCP) as well as traditional SAN/NAS
 • Development of multi-tier backup concepts with tools like Restic, Borg, traditional solutions like Veeam and classic tape systems (LTO)
 
+II. IT-SECURITY & NETWORK ARCHITECTURE
+
+FIREWALL & NETWORK SECURITY:
+• Design and operation of powerful, vendor-independent firewall solutions with OPNsense, pfSense and nftables/iptables
+• Implementation of Zero-Trust architectures and secure VPN access (WireGuard, IPsec)
+• Expert in Cloud Security with Cloudflare
+
+NETWORK DESIGN & MANAGEMENT:
+• Planning and implementation of efficient and scalable networks (VLANs, Routing, DNS, DHCP)
+• Analysis and optimization of existing network infrastructures to improve performance and security
+
+ENDPOINT & SERVER HARDENING:
+• Systematic hardening of server operating systems and services to minimize attack surfaces, as a complement to endpoint solutions like UniFi, Juniper, Dell, HP
+
 🧠 AI & DATA ANALYTICS
 • Development of intelligent solutions for process optimization
 • AI Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
@@ -397,6 +411,20 @@ CLOUD & HYBRIDE INFRASTRUKTUREN:
 STORAGE & BACKUP-LÖSUNGEN:
 • Planung und Implementierung von hoch performanten modernen Storage-Systemen (ZFS, NVMe-over-TCP) aber auch klassischen SAN/NAS
 • Entwicklung mehrstufiger Backup-Konzepte mit Tools wie Restic, Borg, klassischen wie Veeam und traditionellen Bandsystemen (LTO)
+
+II. IT-SECURITY & NETZWERKARCHITEKTUR
+
+FIREWALL & NETZWERKSICHERHEIT:
+• Konzeption und Betrieb von leistungsstarken, herstellerunabhängigen Firewall-Lösungen mit OPNsense, pfSense und nftables/iptables
+• Aufbau von Zero-Trust-Architekturen und sicheren VPN-Zugängen (WireGuard, IPsec)
+• Experte in Cloud Security mit Cloudflare
+
+NETZWERK-KONZEPTION & -MANAGEMENT:
+• Planung und Umsetzung von effizienten und skalierbaren Netzwerken (VLANs, Routing, DNS, DHCP)
+• Analyse und Optimierung bestehender Netzwerk-Infrastrukturen zur Steigerung von Performance und Sicherheit
+
+ENDPOINT & SERVER HARDENING:
+• Systematische Härtung von Server-Betriebssystemen und Diensten zur Minimierung von Angriffsflächen, als Ergänzung zu Endpoint-Lösungen wie UniFi, Juniper, Dell, HP
 
 Kontakt für maßgeschneiderte Lösungen: markus@maiwald.work`
   },
