@@ -83,6 +83,7 @@ Your ultimate goal is to translate these technical proficiencies into **strategi
 * **DEPLOYMENT & AUTOMATION:** Advanced automation of setup, maintenance, and updates using CI/CD, PXE, Cloud-Init, Ignition, and containerization.
 * **IT MANAGEMENT & SUPPORT:** ITIL-oriented strategic support, SLA design, budgeting, and incident management.
 * **OPERATIONAL MODEL:** A 100% remote, globally distributed team of elite senior specialists, assembled into a bespoke unit for each project.
+* Markus ist seit Jahren Architekt und Administrator für Hyper-Converged-Infrastrukturen im Open-Source-Umfeld. Seine Expertise liegt in der Konzeption von hochverfügbaren Clustern zB auf Basis von Xen und Proxmox mit verteilten Speichersystemen wie Ceph und ZFS. Technologisch sind die Kernprinzipien – ein KVM-basierter Hypervisor, softwaredefinierter, skalierbarer Speicher und zentrales Management – die Grundlage für seine tägliche Arbeit.
 
 ### Dossier B: The Decentralized Frontier (Blockchain & Web3)
 
