@@ -407,11 +407,38 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                         <div className="space-y-4">
                           <DataVisualization>
                             <h4 className="text-base md:text-lg font-bold text-cyberpunk-electric-blue mb-2 md:mb-3">
-                              {project.id === 'nexus-os' ? 'MANIFESTO' : 'PROJECT SCOPE'}
+                              {project.id === 'nexus-os' ? 'MANIFESTO' : project.id === 'maiwald-enterprises' ? 'CTO/CIO/CSO AS A SERVICE' : 'PROJECT SCOPE'}
                             </h4>
-                            <p className="text-cyberpunk-text text-sm md:text-base">
-                              {project.description}
-                            </p>
+                            {project.id === 'maiwald-enterprises' ? (
+                              <div className="space-y-3">
+                                <div className="text-cyberpunk-neon-cyan text-lg md:text-xl font-bold">
+                                  €1,400/month | 20-30 hours guaranteed
+                                </div>
+                                <p className="text-cyberpunk-text text-sm md:text-base">
+                                  Strategic technology leadership for founders. Replace unreliable freelancers and costly agencies with founder-friendly strategic technology leadership at a fixed fee.
+                                </p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
+                                  {[
+                                    '🎯 Personal Task Board',
+                                    '💰 Keep 100% of Equity', 
+                                    '📊 Fixed & Predictable Pricing',
+                                    '🚀 Unlimited Requests',
+                                    '⚡ Fast Turnaround',
+                                    '👥 Invite Everyone',
+                                    '🏆 Full IP Ownership',
+                                    '📈 Flexible & Scalable'
+                                  ].map((benefit, index) => (
+                                    <div key={index} className="text-cyberpunk-acid-green text-xs font-mono">
+                                      {benefit}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : (
+                              <p className="text-cyberpunk-text text-sm md:text-base">
+                                {project.description}
+                              </p>
+                            )}
                             {project.id === 'nexus-os' && (
                               <div className="mt-3 md:mt-4 p-3 md:p-4 bg-cyberpunk-surface-dark border border-cyberpunk-electric-blue rounded font-mono text-xs md:text-sm">
                                 <div className="text-cyberpunk-electric-blue mb-2">❯ decode ./code_is_manifesto</div>
@@ -428,30 +455,47 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                           <DataVisualization>
                             <h4 className="text-base md:text-lg font-bold text-cyberpunk-neon-magenta mb-2 md:mb-3">
-                              {project.id === 'nexus-os' ? 'SOUL INJECTION' : project.id === 'maiwald-enterprises' ? 'CLIENT PORTFOLIO' : 'BUSINESS IMPACT'}
+                              {project.id === 'nexus-os' ? 'SOUL INJECTION' : project.id === 'maiwald-enterprises' ? 'CORE SERVICES INCLUDED' : 'BUSINESS IMPACT'}
                             </h4>
-                            <p className="text-cyberpunk-text text-sm md:text-base">
-                              {project.id === 'nexus-os' 
-                                ? 'Every line of code is an act of digital sovereignty. NexusOS embodies the philosophy that true computing freedom comes from understanding systems at their most fundamental level. Code is manifesto.'
-                                : project.id === 'maiwald-enterprises'
-                                ? 'Trusted by industry leaders for strategic technology consulting and enterprise infrastructure solutions. Building the foundations that power business-critical operations.'
-                                : project.impact
-                              }
-                            </p>
-                            {project.id === 'maiwald-enterprises' && project.customers && (
-                              <div className="mt-3 md:mt-4">
-                                <div className="text-cyberpunk-electric-blue text-sm font-mono mb-2">ACTIVE CLIENTS:</div>
-                                <div className="flex flex-wrap gap-2">
-                                  {project.customers.map((customer) => (
-                                    <span
-                                      key={customer.name}
-                                      className="px-2 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text text-xs"
-                                    >
-                                      {customer.name}
-                                    </span>
+                            {project.id === 'maiwald-enterprises' ? (
+                              <div className="space-y-3">
+                                <div className="grid grid-cols-1 gap-2">
+                                  {[
+                                    '• Strategic technology roadmapping and architecture decisions',
+                                    '• MVP development and product-market fit iteration',
+                                    '• Team scaling and technical hiring guidance',
+                                    '• Code reviews and technical quality assurance',
+                                    '• Infrastructure planning and cloud architecture',
+                                    '• Security and compliance strategic planning',
+                                    '• Vendor evaluation and technology stack decisions',
+                                    '• Technical due diligence and risk assessment'
+                                  ].map((service, index) => (
+                                    <div key={index} className="text-cyberpunk-text text-xs">
+                                      {service}
+                                    </div>
                                   ))}
                                 </div>
+                                <div className="mt-4 pt-3 border-t border-cyberpunk-border">
+                                  <div className="text-cyberpunk-electric-blue text-sm font-mono mb-2">TRUSTED BY:</div>
+                                  <div className="flex flex-wrap gap-2">
+                                    {project.customers?.map((customer) => (
+                                      <span
+                                        key={customer.name}
+                                        className="px-2 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text text-xs"
+                                      >
+                                        {customer.name}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
                               </div>
+                            ) : (
+                              <p className="text-cyberpunk-text text-sm md:text-base">
+                                {project.id === 'nexus-os' 
+                                  ? 'Every line of code is an act of digital sovereignty. NexusOS embodies the philosophy that true computing freedom comes from understanding systems at their most fundamental level. Code is manifesto.'
+                                  : project.impact
+                                }
+                              </p>
                             )}
                           </DataVisualization>
                         </div>
@@ -507,19 +551,30 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                           </>
                         ) : project.id === 'maiwald-enterprises' ? (
                           <>
-                            {project.customers?.map((customer) => (
-                              <a
-                                key={customer.name}
-                                href={customer.url}
-                                target="_blank"
-                                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-                                onClick={() => CyberpunkAudio.playButtonClick()}
-                                rel="noopener noreferrer"
-                                className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
-                              >
-                                {customer.name}
-                              </a>
-                            ))}
+                            <button
+                              onClick={() => {
+                                CyberpunkAudio.playButtonClick();
+                                // Open contact modal or CTO service
+                                const event = new CustomEvent('openContact');
+                                window.dispatchEvent(event);
+                              }}
+                              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                              className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
+                            >
+                              START CTO SERVICE
+                            </button>
+                            <button
+                              onClick={() => {
+                                CyberpunkAudio.playButtonClick();
+                                // Open chatbot for consultation
+                                const event = new CustomEvent('openChatbot');
+                                window.dispatchEvent(event);
+                              }}
+                              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                              className="cyberpunk-button-secondary px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
+                            >
+                              STRATEGIC CONSULTATION
+                            </button>
                           </>
                         ) : (
                           <>
