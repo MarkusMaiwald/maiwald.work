@@ -10,7 +10,7 @@ export interface TerminalLine {
   timestamp: number;
 }
 
-export function useTerminal(currentLanguage: Language, onOpenContact: () => void, onOpenChatbot?: () => void) {
+export function useTerminal(currentLanguage: Language, onOpenContact: () => void, onOpenChatbot?: () => void, onOpenCTOService?: () => void) {
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -183,6 +183,16 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
         break;
       case 'services':
         response = content.services[currentLanguage];
+        break;
+      case 'cto':
+        if (onOpenCTOService) {
+          onOpenCTOService();
+          response = currentLanguage === 'EN' 
+            ? 'Opening CTO/CIO/CSO as a Service showcase...\nStrategic Technology Leadership for Founders' 
+            : 'Öffne CTO/CIO/CSO als Service Präsentation...\nStrategische Technologieführung für Gründer';
+        } else {
+          response = content.services[currentLanguage];
+        }
         break;
       case 'development':
         response = content.development[currentLanguage];

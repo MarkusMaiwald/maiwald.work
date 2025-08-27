@@ -17,6 +17,7 @@ import { Calculator } from './Calculator';
 import { TextEditor } from './TextEditor';
 import { SkillsApp } from './SkillsApp';
 import { ChatbotApp } from './ChatbotApp';
+import { CTOServiceShowcase } from './CTOServiceShowcase';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 import { SystemMonitor } from './SystemMonitor';
 
@@ -34,6 +35,7 @@ export function Desktop() {
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [isCTOServiceOpen, setIsCTOServiceOpen] = useState(false);
   const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const terminalRef = useRef<TerminalRef>(null);
@@ -211,6 +213,7 @@ export function Desktop() {
                         onOpenContact={handleContactClick}
                         onLanguageChange={setLanguage}
                         onOpenChatbot={() => setIsChatbotOpen(true)}
+                        onOpenCTOService={() => setIsCTOServiceOpen(true)}
                         onClose={() => {
                           setIsTerminalVisible(false);
                           setCurrentScrollSection(0); // Reset navigation to Neural Link when terminal is closed
@@ -481,6 +484,48 @@ export function Desktop() {
           </>
         )}
       </div>
+
+      {/* Modals and Overlays */}
+      <ContactModal 
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+      
+      <InfoModal 
+        isOpen={isInfoModalOpen}
+        onClose={() => setIsInfoModalOpen(false)}
+        currentLanguage={currentLanguage}
+        section={currentSection}
+      />
+
+      <Calculator
+        isOpen={isCalculatorOpen}
+        onClose={() => setIsCalculatorOpen(false)}
+      />
+
+      <TextEditor
+        isOpen={isTextEditorOpen}
+        onClose={() => setIsTextEditorOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+
+      <SkillsApp
+        isOpen={isSkillsOpen}
+        onClose={() => setIsSkillsOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+
+      <ChatbotApp 
+        isOpen={isChatbotOpen}
+        onClose={() => setIsChatbotOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+
+      <CTOServiceShowcase
+        isOpen={isCTOServiceOpen}
+        onClose={() => setIsCTOServiceOpen(false)}
+      />
     </CyberpunkEffects>
   );
 }

@@ -128,6 +128,20 @@ Your ultimate goal is to translate these technical proficiencies into **strategi
 - IOP Ventures LLC: Offshore digital fortresses.  
 - The Self-Sovereign Society: Crypto-anarchism, decentralization (A call to arms).
 
+**CORE SERVICE: CTO/CIO/CSO AS A SERVICE**
+€1,400/month | 20-30 hours guaranteed | Fixed & predictable pricing
+
+**STRATEGIC TECHNOLOGY LEADERSHIP FOR FOUNDERS**
+Revolutionary approach replacing unreliable freelancers and costly agencies:
+• Essential MVPs without over-engineering - effective iteration to product-market fit
+• Professional CTO leadership - avoid agency overhead, scale teams strategically  
+• Complete control with asynchronous project board management
+• 100% equity retention - no stock options required unless desired
+• Unlimited requests with fast turnaround (days average)
+• Full IP ownership - you own 100% of materials
+• Ad-hoc sync calls for strategic consultation
+• Flexible scaling - help finding and managing dedicated developers
+
 **Digital Presence & Contact Methods:** 
 - **PRIMARY CONTACT:** CONTACT button in the dock on this website (📧) - sends direct email to Markus
 - Twitter: https://x.com/MarkusMaiwald (@MarkusMaiwald) - Direct communication welcome

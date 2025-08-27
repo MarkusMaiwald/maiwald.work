@@ -26,6 +26,7 @@ export const content: ContentData = {
 • ls - List directory contents (real filesystem)
 • cat [section] - Display content of a section
 • whoami - Display information about Markus
+• cto - CTO/CIO/CSO as a Service (€1,400/month)
 • contact - Open contact form
 • chat - Chat with Markus's AI Assistant
 • lang [en|de] - Change language
@@ -48,6 +49,7 @@ Real system commands:
 • ls - Verzeichnisinhalt auflisten (echtes Dateisystem)
 • cat [bereich] - Inhalt eines Bereichs anzeigen
 • whoami - Informationen über Markus anzeigen
+• cto - CTO/CIO/CSO als Service (€1.400/Monat)
 • contact - Kontaktformular öffnen
 • chat - Mit Markus's KI-Assistenten chatten
 • lang [en|de] - Sprache ändern
@@ -177,11 +179,61 @@ ZERTIFIZIERUNGEN
 • CISSP - Certified Information Systems Security Professional`
   },
   services: {
-    EN: `MAIWALD ENTERPRISES BV - COMPREHENSIVE SERVICE PORTFOLIO
+    EN: `CTO/CIO/CSO AS A SERVICE - STRATEGIC TECHNOLOGY LEADERSHIP
+€1,400/month | 20-30 hours guaranteed | Fixed & predictable pricing
 
-.. we build the infrastructure your business runs on!
+HOW IT WORKS - A BETTER WORKFLOW
+Replace unreliable freelancers and costly agencies with founder-friendly strategic technology leadership at a fixed fee.
 
-Maiwald Enterprises BV is your strategic technology partner for complex infrastructure challenges. We deliver enterprise-grade solutions across the complete technology spectrum, from AI integration to hardware lifecycle management.
+ESSENTIAL MVPS FOR FOUNDERS
+No more over-engineered products. We'll help you build an effective MVP and iterate to product-market fit, reducing capital and time risk.
+
+PROFESSIONAL CTO LEADERSHIP
+Avoid paying for unnecessary agency overhead or managing freelancers. We'll help you scale your team when it's time, manage the process, and lead the technical vision for you.
+
+YOU'RE IN CONTROL
+Effortlessly manage your project board asynchronously. Keep track of active, queued, and completed tasks with complete transparency.
+
+MEMBERSHIP BENEFITS - SO GOOD YOU'LL NEVER NEED TO LOOK ELSEWHERE
+
+🎯 PERSONAL TASK BOARD
+Add and track your active, queued, and completed tasks with utmost convenience.
+
+💰 KEEP 100% OF EQUITY
+No need to part with equity or stock options, unless you really want to.
+
+📊 FIXED & PREDICTABLE PRICING
+No surprises! Extend your runway with a fixed monthly price for strategic technology leadership.
+
+🚀 UNLIMITED REQUESTS
+Add as many requests to your board as you want. We'll handle them as they come in.
+
+⚡ FAST TURNAROUND
+Get tasks completed in just a few days on average. We'll iterate until you're satisfied.
+
+👥 INVITE EVERYONE
+Add your team to submit requests and track progress collaboratively.
+
+🏆 FULL IP OWNERSHIP
+You own 100% of source materials and intellectual property. We work for you.
+
+📞 AD-HOC SYNC CALLS
+Direct access to strategic consultation, brainstorming, demos, and planning sessions.
+
+📈 FLEXIBLE & SCALABLE
+When it's time to grow - we'll help you find, onboard, and manage dedicated skilled developers.
+
+CORE SERVICES INCLUDED
+• Strategic technology roadmapping and architecture decisions
+• MVP development and product-market fit iteration  
+• Team scaling and technical hiring guidance
+• Code reviews and technical quality assurance
+• Infrastructure planning and cloud architecture
+• Security and compliance strategic planning
+• Vendor evaluation and technology stack decisions
+• Technical due diligence and risk assessment
+
+Maiwald Enterprises BV is your strategic technology partner for complex infrastructure challenges. We deliver enterprise-grade solutions across the complete technology spectrum.
 
 🧠 AI & DATA ANALYTICS
 • Development of intelligent solutions for process optimization
@@ -251,80 +303,60 @@ OPERATIONAL MODEL: GLOBAL TALENT, LOCAL STRATEGY
 We are a 100% remote, globally distributed team of senior specialists. This allows us to assemble the perfect, bespoke team for your specific project, ensuring you work with the absolute best talent in every required discipline.
 
 Contact: markus@maiwald.work for strategic technology partnership discussions.`,
-    DE: `MAIWALD ENTERPRISES BV - UMFASSENDES DIENSTLEISTUNGSPORTFOLIO
+    DE: `CTO/CIO/CSO ALS SERVICE - STRATEGISCHE TECHNOLOGIEFÜHRUNG
+1.400€/Monat | 20-30 Stunden garantiert | Feste & vorhersagbare Preise
 
-.. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!
+Ersetzen Sie unzuverlässige Freelancer und teure Agenturen durch gründerfreundliche strategische Technologieführung zu einem festen Preis.
 
-Maiwald Enterprises BV ist Ihr strategischer Technologiepartner für komplexe Infrastruktur-Herausforderungen. Wir liefern Enterprise-Grade-Lösungen über das komplette Technologiespektrum, von KI-Integration bis Hardware-Lifecycle-Management.
+WESENTLICHE MVPS FÜR GRÜNDER
+Keine überentwickelten Produkte mehr. Wir helfen Ihnen, ein effektives MVP zu entwickeln und bis zur Produkt-Markt-Passung zu iterieren, wodurch Kapital- und Zeitrisiken reduziert werden.
 
-🧠 KI & DATENANALYTIK
-• Entwicklung intelligenter Lösungen zur Prozessoptimierung
-• KI-Integration: RAG (Retrieval-Augmented Generation), RASA, GPT
-• Reporting, Testing, Predictive Analytics
-• Benutzerdefinierte KI-Assistenten und Automatisierungssysteme
+PROFESSIONELLE CTO-FÜHRUNG
+Vermeiden Sie unnötige Agentur-Overhead-Kosten oder Freelancer-Management. Wir helfen Ihnen beim Skalieren Ihres Teams und leiten die technische Vision für Sie.
 
-☁️ CLOUD, VIRTUALISIERUNG & INFRASTRUKTUR
-• Kubernetes (K8s) & Container-Orchestrierung
-• Skalierbare Cloud- & Hybrid-Infrastruktur
-• Proxmox, VMware vSphere, Hyper-V
-• GitLab, Gitea, CI/CD-Deployment-Pipelines
-• Infrastructure-as-Code, Automatisierung
+SIE HABEN DIE KONTROLLE
+Verwalten Sie Ihr Projektboard mühelos asynchron. Behalten Sie den Überblick über aktive, wartende und abgeschlossene Aufgaben mit vollständiger Transparenz.
 
-🧱 SERVER, LINUX & BSD-EXPERTISE
-• Linux: Debian, Arch, Alpine, RHEL
-• BSD: OpenBSD, FreeBSD (Routing, Firewalls, Hardened Services)
-• Headless Server-Deployments
-• Systemd, OpenRC, CRON, System-Monitoring
-• Remote-Zugriff & Bastion-Setups (SSH, Tailscale, WireGuard)
+MITGLIEDSCHAFTSVORTEILE - SO GUT, DASS SIE NIE WOANDERS SUCHEN MÜSSEN
 
-🌐 NETZWERKE & FIREWALLS
-• Netzwerkarchitektur: VLANs, Subnetting, DNS, DHCP, NAT
-• Open Source Firewalls: pfSense, OPNsense, nftables, iptables
-• Zero Trust Networking, VPN: WireGuard, IPSec
-• Redundante Gateways, Failover-Strategien
-• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+🎯 PERSÖNLICHES TASK BOARD
+Fügen Sie Ihre aktiven, wartenden und abgeschlossenen Aufgaben hinzu und verfolgen Sie sie bequem.
 
-🔐 CYBERSECURITY
-• Endpoint Security, Patch-Management, VPN
-• Server-Security: Firewalls, Bastion Hosts, Cluster-Failover
-• Admin-Tier-Konzepte, Zugriffskontrolle, Compliance-Audits
-• Physical Security: Alarmanlagen, redundante Serverräume
-• Mail & DMS Security (MailStore, DMS-Rechteverwaltung)
+💰 BEHALTEN SIE 100% DER ANTEILE
+Keine Notwendigkeit, Anteile oder Aktienoptionen abzugeben, es sei denn, Sie möchten es wirklich.
 
-🖥️ HARDWARE & SYSTEM-LIFECYCLE
-Planung, Aufbau, Wartung von:
-• Servern, Clustern, Workstations, Netzwerkinfrastruktur
-• Backup-Servern, Storage (SAN/NAS/DAS), USVs
-• Sicherheitskomponenten, Klimatisierung, Zeiterfassungssystemen
-• Lifecycle-Management: 2-8 Jahre Zyklen nach Gerätetyp
+📊 FESTE & VORHERSAGBARE PREISE
+Keine Überraschungen! Verlängern Sie Ihre Runway mit einem festen monatlichen Preis für strategische Technologieführung.
 
-📡 WEBSERVER & SERVICES
-• Hosting & Betrieb von Webservern: nginx, Apache, Caddy
-• Reverse Proxies, Load Balancing, SSL/TLS, ACME
-• Selbstgehostete Services: Gitea, Forgejo, Nextcloud, Matrix, Jitsi
+🚀 UNBEGRENZTE ANFRAGEN
+Fügen Sie so viele Anfragen zu Ihrem Board hinzu, wie Sie möchten. Wir bearbeiten sie nach Eingang.
 
-📎 DOKUMENTATION & ARCHIVIERUNG
-• Dokumentenmanagementsysteme (DMS):
-  Metadaten, Volltextsuche, Zugriffskontrolle, Prozessintegration
-• Mail-Archivierung mit MailStore: Compliance & Schnittstellen
-• Versionskontrolle, Rechte- & Compliance-Strukturen
+⚡ SCHNELLE BEARBEITUNGSZEIT
+Lassen Sie Aufgaben im Durchschnitt in wenigen Tagen erledigen. Wir iterieren, bis Sie zufrieden sind.
 
-📦 DEPLOYMENT & AUTOMATISIERUNG
-• Automatisierung von Setup, Wartung, Updates
-• CI/CD mit GitLab, Gitea, shell/Nix-Skripten
-• PXE, Cloud-Init, Ignition, Butane
-• Container-Deployment mit Docker, Podman, systemd-nspawn
+👥 ALLE EINLADEN
+Fügen Sie Ihr Team hinzu, um Anfragen zu stellen und den Fortschritt gemeinsam zu verfolgen.
 
-🧰 IT-MANAGEMENT & SUPPORT
-• ITIL-orientierte Support-Level 0-4
-• SLA-Design, Audits, Lizenz-Touren
-• Strategische IT-Planung, Budgetierung, Technologietrends
-• Monitoring, Reporting, Incident & Problem Management
+🏆 VOLLSTÄNDIGES IP-EIGENTUM
+Sie besitzen 100% der Quellmaterialien und des geistigen Eigentums. Wir arbeiten für Sie.
 
-BETRIEBSMODELL: GLOBALES TALENT, LOKALE STRATEGIE
-Wir sind ein 100% remote, global verteiltes Team von Senior-Spezialisten. Dies ermöglicht es uns, das perfekte, maßgeschneiderte Team für Ihr spezifisches Projekt zusammenzustellen.
+📞 AD-HOC-SYNC-CALLS
+Direkter Zugang zu strategischer Beratung, Brainstorming, Demos und Planungssitzungen.
 
-Kontakt: markus@maiwald.work für strategische Technologie-Partnerschaftsgespräche.`
+📈 FLEXIBEL & SKALIERBAR
+Wenn es Zeit zum Wachsen ist - wir helfen Ihnen, qualifizierte Entwickler zu finden, einzuarbeiten und zu verwalten.
+
+KERNSERVICES ENTHALTEN
+• Strategische Technologie-Roadmapping und Architektur-Entscheidungen
+• MVP-Entwicklung und Produkt-Markt-Fit-Iteration
+• Team-Skalierung und technische Einstellungsberatung  
+• Code-Reviews und technische Qualitätssicherung
+• Infrastruktur-Planung und Cloud-Architektur
+• Sicherheits- und Compliance-Strategieplanung
+• Anbieter-Bewertung und Technologie-Stack-Entscheidungen
+• Technische Due Diligence und Risikobewertung
+
+Kontakt für maßgeschneiderte Lösungen: markus@maiwald.work`
   },
   security: {
     EN: `SECURITY EXPERTISE
