@@ -4,11 +4,12 @@ import { X, Minus } from 'lucide-react';
 import { CyberpunkPanel, GlitchText, CyberpunkAudio } from './CyberpunkEffects';
 
 interface CalculatorProps {
+  isOpen: boolean;
   onClose: () => void;
-  onMinimize: () => void;
 }
 
-export function Calculator({ onClose, onMinimize }: CalculatorProps) {
+export function Calculator({ isOpen, onClose }: CalculatorProps) {
+  if (!isOpen) return null;
   const [display, setDisplay] = useState('0');
   const [previousValue, setPreviousValue] = useState<number | null>(null);
   const [operation, setOperation] = useState<string | null>(null);
@@ -129,13 +130,15 @@ export function Calculator({ onClose, onMinimize }: CalculatorProps) {
   );
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 50 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      exit={{ opacity: 0, scale: 0.8, y: 50 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"
-    >
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.8, y: 50 }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="w-full max-w-sm"
+        style={{ cursor: 'default' }}
+      >
       <CyberpunkPanel className="w-80 shadow-2xl">
         {/* Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-cyberpunk-surface-dark via-cyberpunk-surface to-cyberpunk-surface-dark border-b border-cyberpunk-border">
@@ -150,7 +153,7 @@ export function Calculator({ onClose, onMinimize }: CalculatorProps) {
               onMouseEnter={() => CyberpunkAudio.playHoverClick()}
               onClick={() => {
                 CyberpunkAudio.playButtonClick();
-                onMinimize();
+                console.log('minimize');
               }}
               className="w-6 h-6 rounded bg-cyberpunk-surface-dark hover:bg-yellow-500 transition-colors flex items-center justify-center"
             >
@@ -216,6 +219,7 @@ export function Calculator({ onClose, onMinimize }: CalculatorProps) {
           <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyberpunk-neon-magenta to-transparent opacity-50"></div>
         </div>
       </CyberpunkPanel>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
