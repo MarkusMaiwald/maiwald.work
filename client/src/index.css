@@ -365,7 +365,11 @@ button,
 .chatbot-app, 
 .chatbot-app *, 
 .system-monitor, 
-.system-monitor * {
+.system-monitor *,
+[data-system-monitor],
+[data-system-monitor] *,
+.cyberpunk-panel,
+.cyberpunk-panel * {
   cursor: auto !important;
 }
 

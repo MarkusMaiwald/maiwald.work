@@ -116,7 +116,7 @@ export function CustomCursor() {
       
       // Check if cursor is over interactive elements
       const target = e.target as Element;
-      const isInteractive = target.closest('button, [role="button"], .dock-icon, [role="dialog"], .modal-overlay, .calculator, .text-editor, .skills-app, .chatbot-app, .system-monitor');
+      const isInteractive = target.closest('button, [role="button"], .dock-icon, [role="dialog"], .modal-overlay, .calculator, .text-editor, .skills-app, .chatbot-app, .system-monitor, [data-system-monitor], .cyberpunk-panel');
       setIsOverInteractive(!!isInteractive);
       
       // Only hide cursor when NOT over interactive elements
