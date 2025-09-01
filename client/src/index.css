@@ -278,6 +278,7 @@
     0 0 20px rgba(0, 212, 255, 0.1);
   backdrop-filter: blur(10px);
   position: relative;
+  cursor: auto !important;
 }
 
 .cyberpunk-panel::before {
@@ -314,6 +315,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer !important;
 }
 
 .cyberpunk-button::before {
@@ -342,6 +344,35 @@
 
 .cyberpunk-button:active {
   transform: translateY(0);
+}
+
+/* Cursor visibility fixes */
+.dock-icon, 
+button, 
+[role="button"], 
+[role="dialog"], 
+[role="dialog"] *, 
+.modal-overlay, 
+.modal-overlay *, 
+.modal-content, 
+.modal-content *, 
+.calculator, 
+.calculator *, 
+.text-editor, 
+.text-editor *, 
+.skills-app, 
+.skills-app *, 
+.chatbot-app, 
+.chatbot-app *, 
+.system-monitor, 
+.system-monitor * {
+  cursor: auto !important;
+}
+
+.dock-icon:hover,
+button:hover,
+[role="button"]:hover {
+  cursor: pointer !important;
 }
 
 /* Navigation */

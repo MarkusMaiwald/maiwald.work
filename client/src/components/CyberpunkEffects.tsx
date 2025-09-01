@@ -108,20 +108,37 @@ export class CyberpunkAudio {
 // Custom cursor component - simple cyberpunk circle
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isOverInteractive, setIsOverInteractive] = useState(false);
 
   useEffect(() => {
     const updateCursor = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      
+      // Check if cursor is over interactive elements
+      const target = e.target as Element;
+      const isInteractive = target.closest('button, [role="button"], .dock-icon, [role="dialog"], .modal-overlay, .calculator, .text-editor, .skills-app, .chatbot-app, .system-monitor');
+      setIsOverInteractive(!!isInteractive);
+      
+      // Only hide cursor when NOT over interactive elements
+      if (isInteractive) {
+        document.body.style.cursor = 'auto';
+      } else {
+        document.body.style.cursor = 'none';
+      }
     };
 
     document.addEventListener('mousemove', updateCursor);
-    document.body.style.cursor = 'none'; // Hide default cursor
 
     return () => {
       document.removeEventListener('mousemove', updateCursor);
       document.body.style.cursor = 'auto'; // Restore default cursor
     };
   }, []);
+
+  // Don't show custom cursor over interactive elements
+  if (isOverInteractive) {
+    return null;
+  }
 
   return (
     <div
