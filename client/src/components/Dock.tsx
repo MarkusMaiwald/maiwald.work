@@ -47,13 +47,6 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       action: () => onSectionClick('services')
     },
     {
-      id: 'blockchain',
-      title: 'BLOCKCHAIN',
-      icon: '🔗',
-      color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
-      action: () => onSectionClick('blockchain')
-    },
-    {
       id: 'cloud',
       title: 'CLOUD',
       icon: '☁️',
@@ -87,6 +80,13 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       icon: '🤖',
       color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
       action: onChatbotClick
+    },
+    {
+      id: 'blockchain',
+      title: 'BLOCKCHAIN',
+      icon: '🔗',
+      color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
+      action: () => onSectionClick('blockchain')
     },
     {
       id: 'calculator',
