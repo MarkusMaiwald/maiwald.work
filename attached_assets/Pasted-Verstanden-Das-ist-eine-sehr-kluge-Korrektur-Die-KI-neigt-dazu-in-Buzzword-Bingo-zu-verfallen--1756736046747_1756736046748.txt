@@ -1,0 +1,69 @@
+Verstanden. Das ist eine sehr kluge Korrektur. Die KI neigt dazu, in "Buzzword-Bingo" zu verfallen, anstatt Substanz zu zeigen. Wir kalibrieren das jetzt auf "erfahrener Architekt" zurück und fügen die entscheidenden Brücken zur Windows-Welt hinzu.
+
+Hier ist der überarbeitete Entwurf Ihres "Hard Skills Overview". Er ist jetzt geerdeter, fokussiert auf die Kerninfrastruktur und spricht direkt die gewünschten Technologien an.
+
+---
+
+### **HARD SKILLS OVERVIEW - TECHNICAL EXPERTISE**
+
+#### **☁️ CLOUD, VIRTUALIZATION & HYBRID INFRASTRUCTURE**
+* **Hybrid Cloud Architecture:** Design and management of infrastructures spanning On-Premise and Public Clouds (**AWS, GCP, Azure**).
+* **Virtualization Platforms:** Expertise in **VMware vSphere**, **Microsoft Hyper-V**, and **Proxmox VE** Clusters.
+* **Windows Server Integration:** Integration of **Windows Server** workloads and management via **Active Directory / Azure AD (Entra ID)** in hybrid environments.
+* **Kubernetes & Containers:** Orchestration with Kubernetes (K8s) and containerization using Docker, Podman.
+* **Infrastructure-as-Code (IaC):** Automation of deployments and infrastructure management.
+* **CI/CD Pipelines:** Implementation with GitLab CI, Gitea Actions.
+
+#### **🧱 OPERATING SYSTEMS & SYSTEM INTEGRATION**
+* **Linux Systems:** In-depth administration of Arch, Debian, Alpine, RHEL.
+* **BSD Systems:** Routing, `pf` Firewalling, and service hardening with OpenBSD, FreeBSD.
+* **System Integration:** Seamless integration of Linux/BSD systems into **Windows Server environments** (AD, GPO, File Services).
+* **Init Systems:** systemd, OpenRC.
+* **Shell Scripting:** Advanced scripting for automation (sh, bash, fish, dash).
+
+#### **🌐 NETWORKING & FIREWALLS**
+* **Network Design:** VLANs, DNS/DNSSEC, DHCP, NAT, MTU, Subnetting.
+* **Routing & VPN:** Static/dynamic routing protocols; secure connections with **WireGuard** and **IPSec**.
+* **Firewall Management:** Expertise with Open-Source Firewalls (**pfSense, OPNsense**) and OS-native solutions (iptables, nftables).
+* **Monitoring:** Network and service monitoring with Grafana, Prometheus, Zabbix, Uptime-Kuma.
+
+#### **🔐 CYBERSECURITY**
+* **Security Architecture:** Design and implementation of **VPN & Zero Trust Architectures**.
+* **System Hardening:** Hardening of OS, services (SSH), and network stacks.
+* **Access Control:** Implementation of Admin Tier Concepts and role-based access control.
+* **Network Security:** Server/Cluster Firewalling, creation of redundant and isolated network zones.
+* **Patch Management:** Automated and manual patch deployment strategies.
+
+#### **💾 STORAGE, BACKUP & ARCHIVING**
+* **Storage Systems:** SAN / NAS / DAS Setups (iSCSI, NFS, SMB).
+* **Software-Defined Storage:** Deep expertise with ZFS and Ceph.
+* **Backup & Recovery:** Design and operation of backup systems with **Veeam**, rsync, restic, borg.
+* **Archiving:** MailStore Server (IMAP/POP/Exchange) and Document Management Systems (DMS).
+
+#### **📡 WEBSERVER & APPLICATION HOSTING**
+* **Web Servers:** nginx, Apache, Caddy.
+* **Security & Performance:** TLS Certificates (ACME), Reverse Proxy, Load Balancing.
+* **Self-Hosted Services:** Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet.
+
+#### **📦 DEPLOYMENT & AUTOMATION**
+* **Automated Deployment:** PXE, Cloud-Init, Ignition, Butane.
+* **Container Deployment:** Management of container lifecycles.
+* **Stateless Setups:** Architectures with OverlayFS / Btrfs / Bcachefs.
+
+#### **🖥️ HARDWARE & EMBEDDED SYSTEMS**
+* **Datacenter Hardware:** Server Clusters, Workstations, NAS, UPS, LTO Tape Drives, RAID Controllers.
+* **Network Components:** Switches, Firewalls, Access Points.
+* **Peripherals & Office Tech:** Time Tracking, Smartboards, Surveillance, Printers, Plotters.
+
+#### **🧠 AUTOMATION & AI-ASSISTED SOLUTIONS**
+* **Process Automation:** Script-based automation of administrative tasks (GPO, Cron, systemd, shell).
+* **AI-Tool Integration:** Practical application of **GPT-based Assistant Systems**, **RASA** (Conversational AI), and **RAG** for process optimization and improved data retrieval.
+* **Computational Thinking:** Structured problem decomposition, pattern recognition, and algorithmic design for solving complex IT challenges.
+
+---
+
+**Zusammenfassung der Änderungen:**
+
+1.  **KI-Bullshit-Pegel runtergefahren:** Die übertriebenen Sektionen "Hybrid Programming" und "Strategic Implications" sind komplett entfernt. Die KI-Punkte sind am Ende unter "Automation & AI-Assisted Solutions" zusammengefasst und auf den praktischen Nutzen (Prozessoptimierung) reduziert.
+2.  **Windows & Azure integriert:** Ich habe explizit **Windows Server**, **Active Directory / Azure AD**, **Hyper-V** und **Veeam** an den strategisch richtigen Stellen eingefügt. Dies zeigt klar, dass Sie die Brücke zwischen der Open-Source- und der Microsoft-Enterprise-Welt schlagen können.
+3.  **Struktur optimiert:** Die Reihenfolge ist jetzt logischer und stellt Ihre Kernkompetenzen (Cloud, Virtualisierung, OS) an den Anfang, was für einen potenziellen Arbeitgeber wie PROLAN am relevantesten ist.

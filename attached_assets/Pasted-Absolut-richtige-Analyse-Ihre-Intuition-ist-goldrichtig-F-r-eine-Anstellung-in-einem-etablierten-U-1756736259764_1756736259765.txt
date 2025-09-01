@@ -1,0 +1,42 @@
+Absolut richtige Analyse. Ihre Intuition ist goldrichtig. Für eine Anstellung in einem etablierten Unternehmen, selbst in einer leitenden Position, kann die Betonung von C-Level-Rollen und sehr abstrakten Konzepten abschreckend wirken. Es erweckt den Eindruck, man sei nicht bereit, sich ins Team zu integrieren oder "die Ärmel hochzukrempeln".
+
+Wir überarbeiten das komplett. Wir ersetzen die Titel durch die **dahinterliegenden Fähigkeiten** und übersetzen alles in einen konkreten Mehrwert für ein Unternehmen wie PROLAN. Das Ziel: Sie als erfahrenen **Architekten, Projektleiter und strategischen Problemlöser** zu positionieren, der auch unternehmerisch denken kann.
+
+Hier ist der überarbeitete Entwurf:
+
+---
+
+### **FÜHRUNGSKOMPETENZEN & ARBEITSWEISE**
+
+#### **🧑‍💼 TEAM- & PROJEKTFÜHRUNG**
+* **Technische Projektleitung:** Planung, Steuerung und erfolgreicher Abschluss komplexer Infrastruktur- und Softwareprojekte, auch mit verteilten, internationalen Teams.
+* **Teamführung & Mentoring:** Leitung und Weiterentwicklung von agilen Operations- und Entwicklerteams (DevOps-Kultur).
+* **Stakeholder-Management:** Klare Kommunikation und Koordination zwischen technischen Teams, Management und externen Kunden.
+* **Budget- & Ressourcenplanung:** Verantwortung für die Planung und Einhaltung von Projektbudgets.
+
+#### **🧩 ARCHITEKTUR- & ORGANISATIONSROLLEN**
+* **Plattform-Architekt (SaaS, PaaS, IaaS):** Entwurf von robusten, skalierbaren und sicheren Systemlandschaften.
+* **Lösungsarchitekt:** Übersetzung von Geschäftsanforderungen in konkrete, technische Lösungskonzepte.
+* **Security Officer (faktisch):** Konzeption und Umsetzung von Zero-Trust-Architekturen, Härtungsmaßnahmen und Compliance-Richtlinien.
+* **Produktentwicklung:** Begleitung des gesamten Produktlebenszyklus von der Idee bis zum Betrieb.
+
+#### **🧠 STRATEGISCHE & ANALYTISCHE STÄRKEN**
+* **Strategisches Denken:** Fähigkeit, die Brücke zwischen übergeordneten Geschäftszielen und der technischen Umsetzung zu schlagen.
+* **Hohe Problemlösungskompetenz:** Systematische Analyse und Lösungsfindung, auch bei unklaren Anforderungen und unter hohem Druck.
+* **Abstraktionsfähigkeit:** Schnelles Erfassen komplexer Systeme und Protokolle, um Schwachstellen und Optimierungspotenziale zu identifizieren.
+* **Innovations-Scouting:** Evaluierung neuer Technologien (z.B. im Bereich Blockchain, Dezentralisierung) auf ihre praktische Anwendbarkeit und ihren Geschäftsnutzen.
+
+#### **💼 UNTERNEHMERISCHE ERFAHRUNG**
+* **Unternehmerisches Handeln:** Langjährige Erfahrung im Aufbau und in der Führung eigener Technologieunternehmen, was ein tiefes Verständnis für kaufmännische Zusammenhänge, Kundenbindung und Marktanforderungen mit sich bringt.
+
+---
+
+**Warum dieser Aufbau besser funktioniert:**
+
+1.  **Keine abschreckenden Titel:** Die Rollen CEO, CIO, CTO sind verschwunden. Stattdessen steht da, was Sie in diesen Rollen *getan* haben: Projekte geleitet, Teams entwickelt, Budgets verantwortet.
+2.  **Konkret und greifbar:** Begriffe wie "Team- & Projektführung" oder "Lösungsarchitekt" sind für Personaler und Abteilungsleiter sofort verständlich und relevant.
+3.  **Blockchain eingeordnet:** Das Thema ist jetzt unter "Innovations-Scouting" als Beispiel für Ihre Fähigkeit aufgeführt, über den Tellerrand zu schauen – nicht als dominante Eigenschaft.
+4.  **Unternehmerische Erfahrung als Stärke:** Der letzte Punkt rahmt Ihre CEO-Erfahrung positiv ein. Er sagt: "Ich bin nicht nur Techniker, ich verstehe auch das Geschäft und die Kundenseite." Das ist ein riesiger Mehrwert.
+5.  **"Bullshit-Pegel" massiv gesenkt:** Die überladenen Konzepte sind durch praxisnahe Beschreibungen ersetzt.
+
+Dieser Abschnitt präsentiert Sie als extrem erfahrenen, vielseitigen und strategisch denkenden Senior-Experten, der sofort einen Mehrwert für das Unternehmen schaffen kann.

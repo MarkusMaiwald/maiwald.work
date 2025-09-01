@@ -793,252 +793,166 @@ Diese Projekte stellen sicher, dass ich, wenn ich Lösungen für Kunden architek
   hardskills: {
     EN: `HARD SKILLS OVERVIEW - TECHNICAL EXPERTISE
 
-🧠 AI, DATA & AUTOMATION
-AI Integration:
-• RAG (Retrieval-Augmented Generation)
-• RASA (Open Source Conversational AI)
-• GPT-based Assistant Systems
-• Reporting & Testing
-• Predictive Analytics
-• Configuration & Analysis Scripts
-• Automation with GPO, Cron, systemd, shell
+☁️ CLOUD, VIRTUALIZATION & HYBRID INFRASTRUCTURE
+• Hybrid Cloud Architecture: Design and management of infrastructures spanning On-Premise and Public Clouds (AWS, GCP, Azure)
+• Virtualization Platforms: Expertise in VMware vSphere, Microsoft Hyper-V, and Proxmox VE Clusters
+• Windows Server Integration: Integration of Windows Server workloads and management via Active Directory / Azure AD (Entra ID) in hybrid environments
+• Kubernetes & Containers: Orchestration with Kubernetes (K8s) and containerization using Docker, Podman
+• Infrastructure-as-Code (IaC): Automation of deployments and infrastructure management
+• CI/CD Pipelines: Implementation with GitLab CI, Gitea Actions
 
-🧩 COMPUTATIONAL THINKING & HYBRID PROGRAMMING
-The Future of Development:
-• Computational Thinking: Problem decomposition, pattern recognition, abstraction, algorithmic design
-• Context Engineering: Advanced prompt engineering for AI systems
-• Hybrid Development: Fusion of symbolic deterministic coding with descriptive natural language
-• Multilingual Programming: Artifacts mixing prose, code, images, and audio
-• Human-AI Collaboration: Programming as collaborative process between human and machine
-• Abstraction Evolution: Logic interweaving traditional code with natural language interfaces
-
-💡 STRATEGIC IMPLICATIONS OF HYBRID PROGRAMMING
-Business Value:
-• Accelerated Development: Combining human intuition with AI capabilities
-• Enhanced Team Collaboration: Bridge between technical and non-technical stakeholders
-• Reduced Development Friction: Natural language reduces cognitive load
-• Future-Proof Architecture: Preparing for the next evolution of programming
-• Competitive Advantage: Early adoption of emerging paradigms
-• Quality Assurance: AI-assisted code review and optimization
-
-☁️ CLOUD, KUBERNETES & VIRTUALIZATION
-• Kubernetes (K8s) Orchestration
-• Containers: Docker, Podman, systemd-nspawn
-• Proxmox VE Cluster
-• VMware vSphere
-• Hyper-V (technical administration)
-• CI/CD Pipelines (GitLab CI, Gitea Actions)
-• Infrastructure-as-Code (IaC)
-• Cloud & Hybrid Infrastructures
-
-🧱 LINUX & BSD SYSTEMS
-• Linux (Arch, Debian, Alpine, RHEL)
-• BSD (OpenBSD, FreeBSD): Routing, pf, Hardened Services
+🧱 OPERATING SYSTEMS & SYSTEM INTEGRATION
+• Linux Systems: In-depth administration of Arch, Debian, Alpine, RHEL
+• BSD Systems: Routing, pf Firewalling, and service hardening with OpenBSD, FreeBSD
+• System Integration: Seamless integration of Linux/BSD systems into Windows Server environments (AD, GPO, File Services)
 • Init Systems: systemd, OpenRC
-• Network Integration & Headless Deployment
-• Shell Scripting (sh, bash, fish, dash)
+• Shell Scripting: Advanced scripting for automation (sh, bash, fish, dash)
 
 🌐 NETWORKING & FIREWALLS
-• Network Design: VLAN, DNS, DHCP, NAT, MTU, Subnetting
-• Routing Protocols, static & dynamic
-• Open Source Firewalls: pfSense, OPNsense, iptables, nftables
-• VPN Technologies: WireGuard, IPSec
-• DNS: Unbound, PowerDNS, DNSSEC
-• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+• Network Design: VLANs, DNS/DNSSEC, DHCP, NAT, MTU, Subnetting
+• Routing & VPN: Static/dynamic routing protocols; secure connections with WireGuard and IPSec
+• Firewall Management: Expertise with Open-Source Firewalls (pfSense, OPNsense) and OS-native solutions (iptables, nftables)
+• Monitoring: Network and service monitoring with Grafana, Prometheus, Zabbix, Uptime-Kuma
 
 🔐 CYBERSECURITY
-• Endpoint Security
-• Patch Management
-• VPN & Zero Trust Architectures
-• Bastion Hosts, SSH Hardening
-• Server/Cluster Firewalling
-• Storage & Backup Security
-• Redundant & Isolated Network Zones
-• Admin Tier Concepts, Access Control
+• Security Architecture: Design and implementation of VPN & Zero Trust Architectures
+• System Hardening: Hardening of OS, services (SSH), and network stacks
+• Access Control: Implementation of Admin Tier Concepts and role-based access control
+• Network Security: Server/Cluster Firewalling, creation of redundant and isolated network zones
+• Patch Management: Automated and manual patch deployment strategies
 
 💾 STORAGE, BACKUP & ARCHIVING
-• SAN / NAS / DAS Setups
-• Backup Systems: Veeam Backup & Replication, rsync, restic, borg
-• Archive Systems: MailStore Server (IMAP/POP/Exchange)
-• Document Management Systems (DMS) with Metadata, Full-text Search
+• Storage Systems: SAN / NAS / DAS Setups (iSCSI, NFS, SMB)
+• Software-Defined Storage: Deep expertise with ZFS and Ceph
+• Backup & Recovery: Design and operation of backup systems with Veeam, rsync, restic, borg
+• Archiving: MailStore Server (IMAP/POP/Exchange) and Document Management Systems (DMS)
 
-🖥️ HARDWARE & EMBEDDED
-• Server Clusters, Workstations, NAS, UPS
-• LTO Tape Drives, RAID Controllers
-• Time Tracking Terminals
-• Smartboards, Projectors, Camera Surveillance
-• Peripherals: Multifunction Printers, Plotters, Presenters
-• Network Components: Switches, Firewalls, APs
-• ARM & Embedded Devices
-
-📡 WEBSERVER & SELF-HOSTING
+📡 WEBSERVER & APPLICATION HOSTING
 • Web Servers: nginx, Apache, Caddy
-• TLS Certificates (ACME, Let's Encrypt)
-• Reverse Proxy, Load Balancing
-• Services: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet, Private Bin, Miniflux, Pleroma
+• Security & Performance: TLS Certificates (ACME), Reverse Proxy, Load Balancing
+• Self-Hosted Services: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet
 
-📦 DEPLOYMENT & OPERATING SYSTEMS
-• PXE, Cloud-Init, Ignition, Butane
-• Container Deployment
-• Stateless Setup with OverlayFS / Btrfs / Bcachefs
-• Operating Systems: Arch Linux, CachyOS, Debian, Void, OpenBSD/FreeBSD`,
+📦 DEPLOYMENT & AUTOMATION
+• Automated Deployment: PXE, Cloud-Init, Ignition, Butane
+• Container Deployment: Management of container lifecycles
+• Stateless Setups: Architectures with OverlayFS / Btrfs / Bcachefs
+
+🖥️ HARDWARE & EMBEDDED SYSTEMS
+• Datacenter Hardware: Server Clusters, Workstations, NAS, UPS, LTO Tape Drives, RAID Controllers
+• Network Components: Switches, Firewalls, Access Points
+• Peripherals & Office Tech: Time Tracking, Smartboards, Surveillance, Printers, Plotters
+
+🧠 AUTOMATION & AI-ASSISTED SOLUTIONS
+• Process Automation: Script-based automation of administrative tasks (GPO, Cron, systemd, shell)
+• AI-Tool Integration: Practical application of GPT-based Assistant Systems, RASA (Conversational AI), and RAG for process optimization and improved data retrieval
+• Computational Thinking: Structured problem decomposition, pattern recognition, and algorithmic design for solving complex IT challenges`,
     DE: `HARD SKILLS ÜBERSICHT - TECHNISCHE EXPERTISE
 
-🧠 KI, DATEN & AUTOMATISIERUNG
-KI-Integration:
-• RAG (Retrieval-Augmented Generation)
-• RASA (Open Source Conversational AI)
-• GPT-basierte Assistenzsysteme
-• Reporting & Testing
-• Predictive Analytics
-• Konfigurations- & Analyse-Skripte
-• Automatisierung mit GPO, Cron, systemd, shell
+☁️ CLOUD, VIRTUALISIERUNG & HYBRID-INFRASTRUKTUR
+• Hybrid Cloud Architektur: Design und Management von Infrastrukturen, die On-Premise und Public Clouds (AWS, GCP, Azure) umspannen
+• Virtualisierungsplattformen: Expertise in VMware vSphere, Microsoft Hyper-V und Proxmox VE Clustern
+• Windows Server Integration: Integration von Windows Server Workloads und Management über Active Directory / Azure AD (Entra ID) in hybriden Umgebungen
+• Kubernetes & Container: Orchestrierung mit Kubernetes (K8s) und Containerisierung mit Docker, Podman
+• Infrastructure-as-Code (IaC): Automatisierung von Deployments und Infrastruktur-Management
+• CI/CD Pipelines: Implementierung mit GitLab CI, Gitea Actions
 
-🧩 COMPUTATIONAL THINKING & HYBRID PROGRAMMING
-Die Zukunft der Entwicklung:
-• Computational Thinking: Problemzerlegung, Mustererkennung, Abstraktion, algorithmisches Design
-• Context Engineering: Erweiterte Prompt-Engineering für KI-Systeme
-• Hybrid-Entwicklung: Fusion aus symbolischem deterministischem Code mit deskriptiver natürlicher Sprache
-• Mehrsprachige Programmierung: Artefakte die Prosa, Code, Bilder und Audio kombinieren
-• Mensch-KI-Zusammenarbeit: Programmierung als kollaborativer Prozess zwischen Mensch und Maschine
-• Abstraktionsevolution: Logik die traditionellen Code mit natürlichen Sprachschnittstellen verwebt
-
-💡 STRATEGISCHE IMPLIKATIONEN DER HYBRID-PROGRAMMIERUNG
-Geschäftswert:
-• Beschleunigte Entwicklung: Kombination menschlicher Intuition mit KI-Fähigkeiten
-• Verbesserte Teamzusammenarbeit: Brücke zwischen technischen und nicht-technischen Stakeholdern
-• Reduzierte Entwicklungsreibung: Natürliche Sprache reduziert kognitive Belastung
-• Zukunftssichere Architektur: Vorbereitung auf die nächste Evolution der Programmierung
-• Wettbewerbsvorteil: Frühe Annahme aufkommender Paradigmen
-• Qualitätssicherung: KI-unterstützte Code-Review und Optimierung
-
-☁️ CLOUD, KUBERNETES & VIRTUALISIERUNG
-• Kubernetes (K8s) Orchestrierung
-• Container: Docker, Podman, systemd-nspawn
-• Proxmox VE Cluster
-• VMware vSphere
-• Hyper-V (nur technische Verwaltung)
-• CI/CD Pipelines (GitLab CI, Gitea Actions)
-• Infrastructure-as-Code (IaC)
-• Cloud- & Hybrid-Infrastrukturen
-
-🧱 LINUX & BSD SYSTEME
-• Linux (Arch, Debian, Alpine, RHEL)
-• BSD (OpenBSD, FreeBSD): Routing, pf, Hardened Services
-• init-Systeme: systemd, OpenRC
-• Netzwerkintegration & Headless Deployment
-• Shellscripting (sh, bash, fish, dash)
+🧱 BETRIEBSSYSTEME & SYSTEMINTEGRATION
+• Linux-Systeme: Tiefgreifende Administration von Arch, Debian, Alpine, RHEL
+• BSD-Systeme: Routing, pf Firewalling und Service-Härtung mit OpenBSD, FreeBSD
+• Systemintegration: Nahtlose Integration von Linux/BSD-Systemen in Windows Server Umgebungen (AD, GPO, File Services)
+• Init-Systeme: systemd, OpenRC
+• Shell-Scripting: Erweiterte Skripting für Automatisierung (sh, bash, fish, dash)
 
 🌐 NETZWERKE & FIREWALLS
-• Netzwerkdesign: VLAN, DNS, DHCP, NAT, MTU, Subnetting
-• Routingprotokolle, statisch & dynamisch
-• Open Source Firewalls: pfSense, OPNsense, iptables, nftables
-• VPN-Technologien: WireGuard, IPSec
-• DNS: Unbound, PowerDNS, DNSSEC
-• Monitoring: Grafana, Prometheus, Zabbix, Uptime-Kuma
+• Netzwerk-Design: VLANs, DNS/DNSSEC, DHCP, NAT, MTU, Subnetting
+• Routing & VPN: Statische/dynamische Routing-Protokolle; sichere Verbindungen mit WireGuard und IPSec
+• Firewall-Management: Expertise mit Open-Source Firewalls (pfSense, OPNsense) und OS-nativen Lösungen (iptables, nftables)
+• Monitoring: Netzwerk- und Service-Monitoring mit Grafana, Prometheus, Zabbix, Uptime-Kuma
 
 🔐 CYBERSECURITY
-• Endpoint Security
-• Patch-Management
-• VPN & Zero Trust Architectures
-• Bastion Hosts, SSH Hardening
-• Server/Cluster Firewalling
-• Storage & Backup Security
-• Redundante & isolierte Netzwerkzonen
-• Admin Tier-Konzepte, Zugriffskontrolle
+• Sicherheitsarchitektur: Design und Implementierung von VPN & Zero Trust Architekturen
+• System-Härtung: Härtung von OS, Services (SSH) und Netzwerk-Stacks
+• Zugriffskontrolle: Implementierung von Admin Tier Konzepten und rollenbasierter Zugriffskontrolle
+• Netzwerksicherheit: Server/Cluster Firewalling, Erstellung redundanter und isolierter Netzwerkzonen
+• Patch-Management: Automatisierte und manuelle Patch-Deployment-Strategien
 
 💾 STORAGE, BACKUP & ARCHIVIERUNG
-• SAN / NAS / DAS Setups
-• Backup-Systeme: Veeam Backup & Replication, rsync, restic, borg
-• Archivsysteme: MailStore Server (IMAP/POP/Exchange)
-• Dokumentenmanagementsysteme (DMS) mit Metadaten, Volltextsuche
+• Storage-Systeme: SAN / NAS / DAS Setups (iSCSI, NFS, SMB)
+• Software-Defined Storage: Tiefe Expertise mit ZFS und Ceph
+• Backup & Recovery: Design und Betrieb von Backup-Systemen mit Veeam, rsync, restic, borg
+• Archivierung: MailStore Server (IMAP/POP/Exchange) und Dokumentenmanagementsysteme (DMS)
 
-🖥️ HARDWARE & EMBEDDED
-• Server-Cluster, Workstations, NAS, USVs
-• LTO-Bandlaufwerke, RAID-Controller
-• Zeiterfassungsterminals
-• Smartboards, Projektoren, Kameraüberwachung
-• Peripherie: Multifunktionsdrucker, Plotter, Presenter
-• Netzwerkkomponenten: Switches, Firewalls, APs
-• ARM & Embedded Devices
-
-📡 WEBSERVER & SELF-HOSTING
+📡 WEBSERVER & APPLICATION HOSTING
 • Webserver: nginx, Apache, Caddy
-• TLS-Zertifikate (ACME, Let's Encrypt)
-• Reverse Proxy, Load Balancing
-• Dienste: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet, Private Bin, Miniflux, Pleroma
+• Sicherheit & Performance: TLS-Zertifikate (ACME), Reverse Proxy, Load Balancing
+• Self-Hosted Services: Nextcloud, Forgejo/Gitea, Matrix/Synapse, Jitsi Meet
 
-📦 DEPLOYMENT & BETRIEBSSYSTEME
-• PXE, Cloud-Init, Ignition, Butane
-• Container-Deployment
-• stateless Setup mit OverlayFS / Btrfs / Bcachefs
-• Betriebssysteme: Arch Linux, CachyOS, Debian, Void, OpenBSD/FreeBSD`
+📦 DEPLOYMENT & AUTOMATISIERUNG
+• Automatisiertes Deployment: PXE, Cloud-Init, Ignition, Butane
+• Container-Deployment: Management von Container-Lebenszyklen
+• Stateless Setups: Architekturen mit OverlayFS / Btrfs / Bcachefs
+
+🖥️ HARDWARE & EMBEDDED SYSTEME
+• Rechenzentrum-Hardware: Server-Cluster, Workstations, NAS, USV, LTO-Bandlaufwerke, RAID-Controller
+• Netzwerkkomponenten: Switches, Firewalls, Access Points
+• Peripherie & Bürotechnik: Zeiterfassung, Smartboards, Überwachung, Drucker, Plotter
+
+🧠 AUTOMATISIERUNG & KI-UNTERSTÜTZTE LÖSUNGEN
+• Prozessautomatisierung: Skript-basierte Automatisierung administrativer Aufgaben (GPO, Cron, systemd, shell)
+• KI-Tool-Integration: Praktische Anwendung von GPT-basierten Assistenzsystemen, RASA (Conversational AI) und RAG für Prozessoptimierung und verbesserte Datenretrieval
+• Computational Thinking: Strukturierte Problemzerlegung, Mustererkennung und algorithmisches Design zur Lösung komplexer IT-Herausforderungen`
   },
   softskills: {
-    EN: `SOFT SKILLS & LEADERSHIP ROLES
+    EN: `LEADERSHIP COMPETENCIES & WORKING APPROACH
 
-🧑‍💼 EXECUTIVE & STRATEGIC LEADERSHIP
-• CEO – Maiwald Enterprises BV (since 2017)
-• CIO – IOP Global GmbH (2020)
-• CTO – IOP Ventures (2016)
-• Founding Executive in tech-driven ventures
-• Long-term entrepreneurial leadership across Europe
+🧑‍💼 TEAM & PROJECT LEADERSHIP
+• Technical Project Management: Planning, steering and successful completion of complex infrastructure and software projects, including with distributed, international teams
+• Team Leadership & Mentoring: Leading and developing agile operations and development teams (DevOps culture)
+• Stakeholder Management: Clear communication and coordination between technical teams, management and external customers
+• Budget & Resource Planning: Responsibility for planning and maintaining project budgets
 
-🧩 ORGANIZATIONAL ROLES
-• Platform Architect (SaaS, PaaS, IaaS)
-• Product Developer with iterative, user-driven design philosophy
-• Project Leader for distributed, multi-stakeholder teams
-• Team Leader in agile, DevOps, and remote-first environments
-• Network Security Officer with strong focus on Zero Trust, compliance & hardening
+🧩 ARCHITECTURE & ORGANIZATIONAL ROLES
+• Platform Architect (SaaS, PaaS, IaaS): Design of robust, scalable and secure system landscapes
+• Solution Architect: Translation of business requirements into concrete, technical solution concepts
+• Security Officer (de facto): Conception and implementation of Zero-Trust architectures, hardening measures and compliance guidelines
+• Product Development: Guidance through the entire product lifecycle from idea to operation
 
-🌍 BLOCKCHAIN & DECENTRALIZATION
-• Cryptocurrency Founder
-• DAO Leader with a focus on governance, transparency & incentive systems
-• Blockchain Visionary:
-  - Network-State Design
-  - Web3 Infrastructure
-  - Decentralized Identity & Trustless Systems
+🧠 STRATEGIC & ANALYTICAL STRENGTHS
+• Strategic Thinking: Ability to bridge the gap between overarching business goals and technical implementation
+• High Problem-Solving Competency: Systematic analysis and solution finding, even with unclear requirements and under high pressure
+• Abstraction Capability: Quick understanding of complex systems and protocols to identify weaknesses and optimization potential
+• Innovation Scouting: Evaluation of new technologies (e.g. in blockchain, decentralization) for their practical applicability and business value
 
-🧠 INTERDISCIPLINARY STRENGTHS
-• Strategic Thinker: bridging tech, product, and org
-• Vision-setting for long-term, open-source aligned ecosystems
-• High resilience and decision-making under uncertainty
-• Systems & protocol-level abstraction mindset
+💼 ENTREPRENEURIAL EXPERIENCE
+• Entrepreneurial Action: Long-standing experience in building and leading own technology companies, bringing deep understanding of commercial relationships, customer retention and market requirements
 
 💼 CUSTOMER VALUE PROPOSITION
 • Perfect Complement: Filling gaps for clients with heterogeneous networks or specific Linux/Open-Source requirements. Quick adaptation to new complex problems
 • Innovation Input: Bringing modern, cost-effective and high-performance alternatives (Proxmox, OPNsense, ZFS) that can strategically expand existing portfolios
 • High Learning Readiness & Adaptability: Broad technological foundation and 20+ years experience enable rapid onboarding to new systems and specific customer portfolio requirements
 • Expert Status: Solution provider capable of serving niche and expert requirements at the highest level`,
-    DE: `SOFT SKILLS & FÜHRUNGSROLLEN
+    DE: `FÜHRUNGSKOMPETENZEN & ARBEITSWEISE
 
-🧑‍💼 EXECUTIVE & STRATEGISCHE FÜHRUNG
-• CEO – Maiwald Enterprises BV (seit 2017)
-• CIO – IOP Global GmbH (2020)
-• CTO – IOP Ventures (2016)
-• Gründungsführungskraft in technologiegetriebenen Unternehmen
-• Langfristige unternehmerische Führung in Europa
+🧑‍💼 TEAM- & PROJEKTFÜHRUNG
+• Technische Projektleitung: Planung, Steuerung und erfolgreicher Abschluss komplexer Infrastruktur- und Softwareprojekte, auch mit verteilten, internationalen Teams
+• Teamführung & Mentoring: Leitung und Weiterentwicklung von agilen Operations- und Entwicklerteams (DevOps-Kultur)
+• Stakeholder-Management: Klare Kommunikation und Koordination zwischen technischen Teams, Management und externen Kunden
+• Budget- & Ressourcenplanung: Verantwortung für die Planung und Einhaltung von Projektbudgets
 
-🧩 ORGANISATORISCHE ROLLEN
-• Plattform-Architekt (SaaS, PaaS, IaaS)
-• Produktentwickler mit iterativer, nutzerorientierter Designphilosophie
-• Projektleiter für verteilte, Multi-Stakeholder-Teams
-• Teamleiter in agilen, DevOps- und Remote-First-Umgebungen
-• Netzwerksicherheitsbeauftragter mit starkem Fokus auf Zero Trust, Compliance & Härtung
+🧩 ARCHITEKTUR- & ORGANISATIONSROLLEN
+• Plattform-Architekt (SaaS, PaaS, IaaS): Entwurf von robusten, skalierbaren und sicheren Systemlandschaften
+• Lösungsarchitekt: Übersetzung von Geschäftsanforderungen in konkrete, technische Lösungskonzepte
+• Security Officer (faktisch): Konzeption und Umsetzung von Zero-Trust-Architekturen, Härtungsmaßnahmen und Compliance-Richtlinien
+• Produktentwicklung: Begleitung des gesamten Produktlebenszyklus von der Idee bis zum Betrieb
 
-🌍 BLOCKCHAIN & DEZENTRALISIERUNG
-• Kryptowährungs-Gründer
-• DAO-Leiter mit Fokus auf Governance, Transparenz & Anreizsysteme
-• Blockchain-Visionär:
-  - Network-State Design
-  - Web3-Infrastruktur
-  - Dezentrale Identität & Vertrauenslose Systeme
+🧠 STRATEGISCHE & ANALYTISCHE STÄRKEN
+• Strategisches Denken: Fähigkeit, die Brücke zwischen übergeordneten Geschäftszielen und der technischen Umsetzung zu schlagen
+• Hohe Problemlösungskompetenz: Systematische Analyse und Lösungsfindung, auch bei unklaren Anforderungen und unter hohem Druck
+• Abstraktionsfähigkeit: Schnelles Erfassen komplexer Systeme und Protokolle, um Schwachstellen und Optimierungspotenziale zu identifizieren
+• Innovations-Scouting: Evaluierung neuer Technologien (z.B. im Bereich Blockchain, Dezentralisierung) auf ihre praktische Anwendbarkeit und ihren Geschäftsnutzen
 
-🧠 INTERDISZIPLINÄRE STÄRKEN
-• Strategischer Denker: Brückenschlag zwischen Tech, Produkt und Organisation
-• Visionssetzung für langfristige, Open-Source-orientierte Ökosysteme
-• Hohe Belastbarkeit und Entscheidungsfindung unter Unsicherheit
-• System- und Protokoll-orientierte Abstraktionsdenkweise
+💼 UNTERNEHMERISCHE ERFAHRUNG
+• Unternehmerisches Handeln: Langjährige Erfahrung im Aufbau und in der Führung eigener Technologieunternehmen, was ein tiefes Verständnis für kaufmännische Zusammenhänge, Kundenbindung und Marktanforderungen mit sich bringt
 
 💼 MEHRWERT FÜR DEN KUNDEN
 • Perfekte Ergänzung: Schließe die Lücke bei Kunden mit heterogenen Netzwerken oder spezifischen Anforderungen an Linux/Open-Source-Lösungen. Schnelle Einarbeitung in neue komplexe Probleme
