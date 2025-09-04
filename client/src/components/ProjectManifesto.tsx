@@ -11,38 +11,38 @@ export function ProjectManifesto({ currentLanguage }: ProjectManifestoProps) {
 
   const manifestoContent = {
     en: {
-      title: "THE MAIWALD MANIFESTO",
-      subtitle: "Building the Infrastructure of Tomorrow",
+      title: "MANIFESTO",
+      subtitle: "Architect for Autonomy",
       sections: [
         {
-          title: "STRATEGIC VISION",
-          content: "Every line of code, every architecture decision, every technology choice serves a greater purpose: creating robust, scalable infrastructure that powers the digital economy."
+          title: "Our Premise: The Default is Dependency",
+          content: "The modern digital landscape is built on a lie: the promise of empowerment through platforms you don't own. This is not empowerment; it's a leash. Your data, your operations, your digital existence are tethered to centralized systems that can—and will—fail, change rules, or be compromised.\n\nWe don't see this as an inconvenience. We see it as a critical design flaw and a strategic liability. Dependency is a bug, not a feature."
         },
         {
-          title: "TECHNICAL PHILOSOPHY", 
-          content: "We don't just build applications—we architect ecosystems. Our approach combines cutting-edge blockchain technology, cloud-native architectures, and robust security frameworks."
+          title: "Our Principle: Architect for Autonomy", 
+          content: "Our response is not to build a better cage, but to engineer its irrelevance. We build systems where sovereignty is the core protocol.\n\nWe wield technology—blockchain, cryptography, decentralized infrastructure—not as ends in themselves, but as the raw physics for a new architecture. An architecture where trust is embedded in code, not in policies. Where resilience is a mathematical certainty, not a service-level agreement.\n\nThe goal is ruthlessly simple: to give you unconditional control over the systems you depend on."
         },
         {
-          title: "INNOVATION PIPELINE",
-          content: "From custom operating systems to decentralized identity platforms, our R&D portfolio demonstrates deep technical capabilities and forward-thinking innovation."
+          title: "Our Proof: Code is Consequence",
+          content: "Philosophy is cheap. Proof is in the running code and the unbreakable infrastructure.\n\nWe don't sell visions or roadmaps; we deliver operational systems. From immutable operating systems for hostile environments to self-sovereign identities that cannot be revoked, our work is the tangible application of our principles. We build digital fortresses and sovereign tools for individuals and businesses who understand that in the coming economy, autonomy is the ultimate asset.\n\nWe build for those who refuse to be tools themselves."
         }
       ]
     },
     de: {
-      title: "DAS MAIWALD MANIFESTO",
-      subtitle: "Die Infrastruktur von Morgen bauen",
+      title: "MANIFESTO",
+      subtitle: "Architektur für Autonomie",
       sections: [
         {
-          title: "STRATEGISCHE VISION",
-          content: "Jede Codezeile, jede Architekturentscheidung, jede Technologiewahl dient einem höheren Zweck: robuste, skalierbare Infrastruktur zu schaffen, die die digitale Wirtschaft antreibt."
+          title: "Unsere Prämisse: Abhängigkeit ist Standard",
+          content: "Die moderne digitale Landschaft basiert auf einer Lüge: dem Versprechen der Ermächtigung durch Plattformen, die Ihnen nicht gehören. Das ist keine Ermächtigung; es ist eine Leine. Ihre Daten, Ihre Operationen, Ihre digitale Existenz sind an zentralisierte Systeme gebunden, die versagen, Regeln ändern oder kompromittiert werden können—und werden.\n\nWir sehen das nicht als Unannehmlichkeit. Wir sehen es als kritischen Design-Fehler und strategisches Risiko. Abhängigkeit ist ein Bug, kein Feature."
         },
         {
-          title: "TECHNISCHE PHILOSOPHIE",
-          content: "Wir bauen nicht nur Anwendungen—wir entwerfen Ökosysteme. Unser Ansatz kombiniert modernste Blockchain-Technologie, Cloud-native Architekturen und robuste Sicherheits-Frameworks."
+          title: "Unser Prinzip: Architektur für Autonomie",
+          content: "Unsere Antwort ist nicht, einen besseren Käfig zu bauen, sondern seine Irrelevanz zu entwickeln. Wir bauen Systeme, in denen Souveränität das Kernprotokoll ist.\n\nWir nutzen Technologie—Blockchain, Kryptographie, dezentrale Infrastruktur—nicht als Selbstzweck, sondern als rohe Physik für eine neue Architektur. Eine Architektur, in der Vertrauen in Code eingebettet ist, nicht in Richtlinien. Wo Widerstandsfähigkeit eine mathematische Gewissheit ist, kein Service-Level-Agreement.\n\nDas Ziel ist gnadenlos einfach: Ihnen bedingungslose Kontrolle über die Systeme zu geben, von denen Sie abhängen."
         },
         {
-          title: "INNOVATION PIPELINE", 
-          content: "Von benutzerdefinierten Betriebssystemen bis hin zu dezentralen Identitätsplattformen demonstriert unser F&E-Portfolio tiefe technische Fähigkeiten und zukunftsorientierte Innovation."
+          title: "Unser Beweis: Code ist Konsequenz",
+          content: "Philosophie ist billig. Der Beweis liegt im laufenden Code und der unzerbrechlichen Infrastruktur.\n\nWir verkaufen keine Visionen oder Roadmaps; wir liefern operative Systeme. Von unveränderlichen Betriebssystemen für feindliche Umgebungen bis hin zu selbst-souveränen Identitäten, die nicht widerrufen werden können—unsere Arbeit ist die greifbare Anwendung unserer Prinzipien. Wir bauen digitale Festungen und souveräne Werkzeuge für Individuen und Unternehmen, die verstehen, dass in der kommenden Wirtschaft Autonomie das ultimative Asset ist.\n\nWir bauen für diejenigen, die sich weigern, selbst Werkzeuge zu sein."
         }
       ]
     }
