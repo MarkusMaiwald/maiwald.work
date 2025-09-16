@@ -180,7 +180,7 @@ ZERTIFIZIERUNGEN
   },
   services: {
     EN: `CTO/CIO/CSO AS A SERVICE - STRATEGIC TECHNOLOGY LEADERSHIP
-€1,400/month | 20-30 hours guaranteed | Fixed & predictable pricing
+€1,600/month | 20 hours guaranteed | Fixed & predictable pricing
 
 HOW IT WORKS - A BETTER WORKFLOW
 Replace unreliable freelancers and costly agencies with founder-friendly strategic technology leadership at a fixed fee.
@@ -363,7 +363,7 @@ We are a 100% remote, globally distributed team of senior specialists. This allo
 
 Contact: markus@maiwald.work for strategic technology partnership discussions.`,
     DE: `CTO/CIO/CSO ALS SERVICE - STRATEGISCHE TECHNOLOGIEFÜHRUNG
-1.400€/Monat | 20-30 Stunden garantiert | Feste & vorhersagbare Preise
+1.600€/Monat | 20 Stunden garantiert | Feste & vorhersagbare Preise
 
 Ersetzen Sie unzuverlässige Freelancer und teure Agenturen durch gründerfreundliche strategische Technologieführung zu einem festen Preis.
 

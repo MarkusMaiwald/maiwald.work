@@ -98,10 +98,10 @@ export const CTOServiceShowcase: React.FC<CTOServiceShowcaseProps> = ({ isOpen, 
                 CTO/CIO/CSO as a Service
               </h1>
               <div className="text-2xl lg:text-3xl text-cyan-400 font-semibold mb-2">
-                €1,400/month
+                €1,600/month
               </div>
               <div className="text-gray-300 text-lg">
-                20-30 hours guaranteed | Fixed & predictable pricing
+                20 hours guaranteed | Fixed & predictable pricing
               </div>
               <div className="text-gray-400 mt-2">
                 Strategic Technology Leadership for Founders
