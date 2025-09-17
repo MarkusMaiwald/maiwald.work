@@ -26,7 +26,7 @@ export const content: ContentData = {
 • ls - List directory contents (real filesystem)
 • cat [section] - Display content of a section
 • whoami - Display information about Markus
-• cto - CTO/CIO/CSO as a Service (€1,400/month)
+• cto - CTO/CIO/CSO as a Service (€1,600/month)
 • contact - Open contact form
 • chat - Chat with Markus's AI Assistant
 • lang [en|de] - Change language
@@ -49,7 +49,7 @@ Real system commands:
 • ls - Verzeichnisinhalt auflisten (echtes Dateisystem)
 • cat [bereich] - Inhalt eines Bereichs anzeigen
 • whoami - Informationen über Markus anzeigen
-• cto - CTO/CIO/CSO als Service (€1.400/Monat)
+• cto - CTO/CIO/CSO als Service (€1,600/Monat)
 • contact - Kontaktformular öffnen
 • chat - Mit Markus's KI-Assistenten chatten
 • lang [en|de] - Sprache ändern
