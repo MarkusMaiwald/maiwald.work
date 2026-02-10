@@ -1,12 +1,14 @@
 import type { D1Database } from '@cloudflare/workers-types';
 import { z } from 'zod';
-import { SignJWT } from 'jose';
 
 export interface Env {
   DB: D1Database;
   JWT_SECRET: string;
   RESEND_API_KEY: string;
   NOTIFICATION_EMAIL: string;
+  ASSETS: {
+    fetch: (request: Request) => Promise<Response>;
+  };
 }
 
 // Typed D1 Helper
@@ -137,7 +139,8 @@ export default {
     } else if (pathname === '/api/contact' && request.method === 'POST') {
       response = await handleContact(request, env);
     } else {
-      return new Response('Not Found', { status: 404 });
+      // Serve static assets
+      return env.ASSETS.fetch(request);
     }
 
     // Add CORS headers
