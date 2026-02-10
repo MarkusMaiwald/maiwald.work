@@ -1,0 +1,12 @@
+name = "maiwald-work"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+
+[site]
+bucket = "./dist"
+
+# Note: This is a full-stack app with Express backend
+# Cloudflare Pages works best with static sites or Pages Functions
+# For full Express compatibility, consider Cloudflare Workers or a hybrid approach
