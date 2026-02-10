@@ -17,4 +17,6 @@ bucket = "./dist"
 
 # Environment Variables (secrets should be set via wrangler secret)
 [vars]
-# JWT_SECRET will be set via: wrangler secret put JWT_SECRET
+# JWT_SECRET: wrangler secret put JWT_SECRET
+# RESEND_API_KEY: wrangler secret put RESEND_API_KEY
+# NOTIFICATION_EMAIL: wrangler secret put NOTIFICATION_EMAIL
