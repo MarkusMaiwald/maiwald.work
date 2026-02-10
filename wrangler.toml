@@ -1,5 +1,4 @@
 name = "maiwald-work"
-main = "./functions/[[path]].ts"
 compatibility_date = "2024-01-01"
 
 # D1 Database Binding
