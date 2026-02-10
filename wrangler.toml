@@ -3,8 +3,9 @@ main = "./src/index.ts"
 compatibility_date = "2024-01-01"
 
 # Static Assets
-[[assets]]
+[assets]
 directory = "./dist/public"
+binding = "ASSETS"
 
 # D1 Database Binding
 [[d1_databases]]
