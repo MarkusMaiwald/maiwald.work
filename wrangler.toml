@@ -1,4 +1,5 @@
 name = "maiwald-work"
+main = "./functions/[[path]].ts"
 compatibility_date = "2024-01-01"
 
 # D1 Database Binding
@@ -14,15 +15,6 @@ command = "npm run build"
 [site]
 bucket = "./dist"
 
-# Functions Directory
-[functions]
-directory = "./functions"
-
 # Environment Variables (secrets should be set via wrangler secret)
 [vars]
 # JWT_SECRET will be set via: wrangler secret put JWT_SECRET
-
-# Routes
-[[routes]]
-pattern = "/api/*"
-custom_domain = true
