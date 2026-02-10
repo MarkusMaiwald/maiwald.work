@@ -1,7 +1,6 @@
 import type { D1Database } from '@cloudflare/workers-types';
 import { z } from 'zod';
-import bcrypt from 'bcryptjs';
-import { SignJWT, jwtVerify } from 'jose';
+import { SignJWT } from 'jose';
 
 export interface Env {
   DB: D1Database;
@@ -92,88 +91,6 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   }
 }
 
-// Auth Handlers
-const loginSchema = z.object({
-  username: z.string().min(3).max(50),
-  password: z.string().min(8),
-});
-
-async function handleLogin(request: Request, env: Env): Promise<Response> {
-  try {
-    const body = await request.json();
-    const { username, password } = loginSchema.parse(body);
-
-    const user = await queryFirst<{ id: number; username: string; password: string; email: string | null }>(
-      env.DB,
-      'SELECT id, username, password, email FROM users WHERE username = ?',
-      [username]
-    );
-
-    if (!user || !await bcrypt.compare(password, user.password)) {
-      return jsonResponse({ success: false, error: 'Invalid credentials' }, 401);
-    }
-
-    const encoder = new TextEncoder();
-    const token = await new SignJWT({ userId: user.id, username: user.username, email: user.email })
-      .setProtectedHeader({ alg: 'HS256' })
-      .setIssuedAt()
-      .setExpirationTime('24h')
-      .sign(encoder.encode(env.JWT_SECRET));
-
-    return jsonResponse({
-      success: true,
-      message: 'Login successful',
-      user: { id: user.id, username: user.username, email: user.email },
-      token,
-    }, 200, {
-      'Set-Cookie': `token=${token}; HttpOnly; Secure; SameSite=Strict; Max-Age=86400; Path=/`,
-    });
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return jsonResponse({ success: false, error: 'Validation failed', details: error.errors }, 400);
-    }
-    return jsonResponse({ success: false, error: 'Internal server error' }, 500);
-  }
-}
-
-async function handleRegister(request: Request, env: Env): Promise<Response> {
-  try {
-    const body = await request.json();
-    const { username, password, email } = loginSchema.extend({ email: z.string().email().optional() }).parse(body);
-
-    const existing = await queryFirst(env.DB, 'SELECT id FROM users WHERE username = ?', [username]);
-    if (existing) {
-      return jsonResponse({ success: false, error: 'Username already exists' }, 409);
-    }
-
-    const hashed = await bcrypt.hash(password, 10);
-    await execute(env.DB, 'INSERT INTO users (username, password, email) VALUES (?, ?, ?)', [username, hashed, email || null]);
-
-    return jsonResponse({ success: true, message: 'User registered successfully' }, 201);
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return jsonResponse({ success: false, error: 'Validation failed', details: error.errors }, 400);
-    }
-    return jsonResponse({ success: false, error: 'Internal server error' }, 500);
-  }
-}
-
-// Static file serving
-async function serveStatic(request: Request): Promise<Response> {
-  const url = new URL(request.url);
-  let path = url.pathname;
-  
-  if (path === '/') path = '/index.html';
-  
-  // Try to fetch from static assets
-  const response = await fetch(new URL(path, 'https://static.maiwald.work'));
-  
-  if (response.ok) return response;
-  
-  // Fallback to index.html for SPA routing
-  return fetch(new URL('/index.html', 'https://static.maiwald.work'));
-}
-
 // Helper functions
 function jsonResponse(data: unknown, status = 200, headers: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(data), {
@@ -219,13 +136,8 @@ export default {
       response = await handleHealth(env);
     } else if (pathname === '/api/contact' && request.method === 'POST') {
       response = await handleContact(request, env);
-    } else if (pathname === '/api/auth/login' && request.method === 'POST') {
-      response = await handleLogin(request, env);
-    } else if (pathname === '/api/auth/register' && request.method === 'POST') {
-      response = await handleRegister(request, env);
     } else {
-      // For now, return 404 for static files (need KV or R2 for assets)
-      return new Response('Not Found - Static files require KV/R2 setup', { status: 404 });
+      return new Response('Not Found', { status: 404 });
     }
 
     // Add CORS headers
