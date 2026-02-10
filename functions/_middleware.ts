@@ -8,13 +8,25 @@ interface Env {
 
 export const onRequest: PagesFunction<Env> = async (context) => {
   const { request } = context;
+  const origin = request.headers.get('Origin');
+  
+  // Allowed origins - same origin doesn't need CORS, but for safety
+  const allowedOrigins = [
+    'https://maiwald.work',
+    'https://www.maiwald.work',
+    'http://localhost:8788',
+    'http://localhost:5173', // Vite dev server
+  ];
+  
+  const corsOrigin = origin && allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
   
   // CORS Headers
-  const corsHeaders = {
-    'Access-Control-Allow-Origin': '*', // In production: 'https://maiwald.work'
+  const corsHeaders: Record<string, string> = {
+    'Access-Control-Allow-Origin': corsOrigin,
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Max-Age': '86400',
   };
   
   // Handle preflight requests
