@@ -283,10 +283,13 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center">
-        <GlitchText className="text-4xl font-bold cyberpunk-heading mb-4">
+        <div
+          className="br-glitch-title text-4xl mb-4"
+          data-text={currentLanguage === "EN" ? "PROJECT PORTFOLIO" : "PROJEKT PORTFOLIO"}
+        >
           {currentLanguage === "EN" ? "PROJECT PORTFOLIO" : "PROJEKT PORTFOLIO"}
-        </GlitchText>
-        <div className="text-white text-lg font-medium">
+        </div>
+        <div className="br-subtitle text-base tracking-widest">
           {currentLanguage === "EN"
             ? "Strategic R&D demonstrating deep technical capabilities"
             : "Strategische F&E zur Demonstration tiefer technischer Fähigkeiten"}
@@ -299,11 +302,16 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
           <button
             key={category}
             onClick={() => setFilter(category)}
-            className={`px-4 py-2 rounded-lg font-mono text-sm transition-all duration-300 ${
-              filter === category
-                ? "cyberpunk-button bg-cyberpunk-electric-blue text-cyberpunk-bg"
-                : "cyberpunk-button"
-            }`}
+            className="px-4 py-2 font-mono text-sm transition-all duration-300"
+            style={{
+              fontFamily: "'Orbitron', sans-serif",
+              fontSize: '0.75rem',
+              letterSpacing: '0.1em',
+              border: `1px solid ${filter === category ? 'var(--cyberpunk-electric-blue)' : 'rgba(255,255,255,0.1)'}`,
+              background: filter === category ? 'rgba(0, 240, 255, 0.15)' : 'transparent',
+              color: filter === category ? 'var(--cyberpunk-electric-blue)' : 'var(--cyberpunk-text-dim)',
+              boxShadow: filter === category ? '0 0 20px rgba(0, 240, 255, 0.3)' : 'none'
+            }}
           >
             {category}
           </button>
@@ -323,21 +331,25 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <CyberpunkPanel
-                className="h-full interactive cursor-pointer"
+              <div
+                className="br-card h-full cursor-pointer rounded-lg"
                 onClick={() => setSelectedProject(project.id)}
               >
-                <div className="p-4 md:p-6 space-y-3 md:space-y-4">
+                <div className="p-4 md:p-6 space-y-3 md:space-y-4 relative z-10">
                   {/* Project Header */}
                   <div className="flex items-start justify-between">
                     <div
-                      className={`text-2xl md:text-3xl text-${project.color}`}
+                      className="text-2xl md:text-3xl"
                       style={{ color: `var(--${project.color})` }}
                     >
                       {project.icon}
                     </div>
                     <div
                       className={`text-xs font-mono px-2 py-1 rounded ${getStatusColor(project.status)}`}
+                      style={{
+                        background: 'rgba(0, 0, 0, 0.4)',
+                        border: '1px solid currentColor'
+                      }}
                     >
                       {project.status}
                     </div>
@@ -345,13 +357,13 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
                   {/* Project Info */}
                   <div>
-                    <h3 className="text-base md:text-lg font-bold cyberpunk-heading mb-2">
+                    <h3 className="text-base md:text-lg font-bold mb-2" style={{ fontFamily: "'Orbitron', sans-serif", color: '#fff' }}>
                       {project.name}
                     </h3>
-                    <div className="text-xs md:text-sm text-cyberpunk-text-dim mb-2 md:mb-3">
+                    <div className="text-xs md:text-sm mb-2 md:mb-3 uppercase tracking-wider" style={{ color: 'var(--cyberpunk-electric-blue)', letterSpacing: '0.15em', fontSize: '0.7rem' }}>
                       {project.category}
                     </div>
-                    <p className="text-xs md:text-sm text-cyberpunk-text leading-relaxed line-clamp-3">
+                    <p className="text-xs md:text-sm leading-relaxed line-clamp-3" style={{ color: 'var(--cyberpunk-text-dim)', fontFamily: "'Rajdhani', sans-serif", lineHeight: '1.7' }}>
                       {project.description}
                     </p>
                   </div>
@@ -361,14 +373,19 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                     {project.stack.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs px-2 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text-dim"
+                        className="text-xs px-2 py-1 rounded"
+                        style={{
+                          background: 'rgba(0, 240, 255, 0.08)',
+                          border: '1px solid rgba(0, 240, 255, 0.2)',
+                          color: 'var(--cyberpunk-text-dim)'
+                        }}
                       >
                         {tech}
                       </span>
                     ))}
                     {project.stack.length > 3 && (
-                      <span className="text-xs px-2 py-1 text-cyberpunk-electric-blue">
-                        +{project.stack.length - 3} more
+                      <span className="text-xs px-2 py-1" style={{ color: 'var(--cyberpunk-electric-blue)' }}>
+                        +{project.stack.length - 3}
                       </span>
                     )}
                   </div>
@@ -377,7 +394,8 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                   <div className="flex gap-1 md:gap-2 pt-2">
                     <button
                       onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
                         CyberpunkAudio.playButtonClick();
                         setSelectedProject(project.id);
                       }}
@@ -387,14 +405,17 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                     </button>
                     <button
                       onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-                      onClick={() => CyberpunkAudio.playButtonClick()}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        CyberpunkAudio.playButtonClick();
+                      }}
                       className="cyberpunk-button text-xs px-2 md:px-3 py-1 rounded flex-1"
                     >
                       {content.manifestButton}
                     </button>
                   </div>
                 </div>
-              </CyberpunkPanel>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
