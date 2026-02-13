@@ -6,11 +6,10 @@ import { Terminal, TerminalRef } from './Terminal';
 import { Dock } from './Dock';
 import { ContactModal } from './ContactModal';
 import { InfoModal } from './InfoModal';
-import { CyberpunkEffects, GlitchText, TypewriterEffect, MatrixBackground } from './CyberpunkEffects';
+import { CyberpunkEffects, MatrixBackground } from './CyberpunkEffects';
 import { TerminalRitual } from './TerminalRitual';
 import { ProjectShowcase } from './ProjectShowcase';
 import { LegalSection } from './LegalSection';
-import { ParticleField } from './ParticleField';
 import { ScrollProgress } from './ScrollProgress';
 import { EasterEggTerminal } from './EasterEggTerminal';
 import { Calculator } from './Calculator';
@@ -171,11 +170,11 @@ export function Desktop() {
   return (
     <CyberpunkEffects>
       <div className="font-system h-screen overflow-hidden relative" style={{ background: 'var(--cyberpunk-bg)' }}>
-        {/* Simple dark blue background */}
-        <div 
-          className="fixed inset-0" 
+        {/* Blade Runner noir background */}
+        <div
+          className="fixed inset-0"
           style={{
-            background: 'linear-gradient(135deg, #000f1e 0%, #001829 100%)'
+            background: 'linear-gradient(135deg, #050510 0%, #0a0a1a 30%, #0d0818 60%, #080510 100%)'
           }}
         />
         
@@ -266,24 +265,24 @@ export function Desktop() {
                     >
                       <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
-                          <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
+                          <div
+                            className="br-glitch-title text-5xl mb-6"
+                            data-text="MAIWALD ENTERPRISES BV"
+                          >
                             MAIWALD ENTERPRISES BV
-                          </GlitchText>
-                          <div 
-                            className="text-2xl font-bold mb-8"
+                          </div>
+                          <div className="br-divider mx-auto mb-6" style={{ maxWidth: '300px' }} />
+                          <div
+                            className="br-subtitle text-lg mb-8"
                             style={{
-                              color: '#00d4ff',
-                              textShadow: '0 0 20px #00d4ff, 0 0 40px #00d4ff',
-                              display: 'block',
-                              opacity: 1,
-                              visibility: 'visible',
-                              position: 'relative',
-                              zIndex: 10,
-                              fontFamily: 'Space Grotesk, sans-serif',
-                              letterSpacing: '0.05em'
+                              color: '#00f0ff',
+                              textShadow: '0 0 20px #00f0ff, 0 0 40px #00f0ff',
+                              fontFamily: "'Rajdhani', sans-serif",
+                              letterSpacing: '0.3em',
+                              fontWeight: 300
                             }}
                           >
-                            {currentLanguage === 'EN' 
+                            {currentLanguage === 'EN'
                               ? ".. we build the infrastructure your business runs on!"
                               : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
                             }
@@ -295,13 +294,13 @@ export function Desktop() {
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="cyberpunk-panel p-8"
+                            className="br-card rounded-lg p-8"
                           >
-                            <h3 className="text-2xl font-bold text-cyberpunk-electric-blue mb-4 text-glow">
+                            <h3 className="text-2xl font-bold mb-4 br-section-title" style={{ color: '#00f0ff', textShadow: '0 0 15px #00f0ff' }}>
                               {currentLanguage === 'EN' ? 'CORE PHILOSOPHY' : 'CORE PHILOSOPHY'}
                             </h3>
-                            <p className="text-cyberpunk-text leading-relaxed">
-                              {currentLanguage === 'EN' 
+                            <p className="leading-relaxed relative z-10" style={{ color: 'var(--cyberpunk-text-dim)', fontFamily: "'Rajdhani', sans-serif", lineHeight: '1.8' }}>
+                              {currentLanguage === 'EN'
                                 ? 'Our work serves a greater architecture than technology alone: We architect for digital sovereignty. Every system we forge is a declaration of independence, every platform a rupture from centralized control. We don\'t just deliver software or infrastructure—we deliver strategic autonomy.'
                                 : 'Wir bauen keine Systeme. Wir schmieden souveräne Domänen. Jede Codezeile ist ein Akt der Unabhängigkeit, jede Architektur ein Bruch mit der zentralisierten Kontrolle. Wir liefern keine Software – wir liefern strategische Autonomie.'
                               }
@@ -312,12 +311,12 @@ export function Desktop() {
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="cyberpunk-panel p-8"
+                            className="br-card rounded-lg p-8"
                           >
-                            <h3 className="text-2xl font-bold text-cyberpunk-neon-magenta mb-4 text-glow">
+                            <h3 className="text-2xl font-bold mb-4 br-section-title" style={{ color: '#ff0066', textShadow: '0 0 15px #ff0066' }}>
                               {currentLanguage === 'EN' ? 'STRATEGIC VISION' : 'STRATEGIC VISION'}
                             </h3>
-                            <p className="text-cyberpunk-text leading-relaxed">
+                            <p className="leading-relaxed relative z-10" style={{ color: 'var(--cyberpunk-text-dim)', fontFamily: "'Rajdhani', sans-serif", lineHeight: '1.8' }}>
                               {currentLanguage === 'EN'
                                 ? 'To power the coming economy of the independent, we build digital fortresses in a world of fragile platforms. We wield the tools of the modern market—cutting-edge blockchain, cloud-native architectures, and cryptographic hardness. These are not ends in themselves, but the means to execute the core principles of our vision: decentralization, immutability, and self-protection.'
                                 : 'Wir nutzen die Werkzeuge des Marktes – Blockchain, Cloud, kryptografische Härte –, um die Prinzipien der Anarchie zu vollstrecken: Dezentralisierung, Eigenschutz, Unveränderlichkeit. Wir errichten digitale Festungen in einer Welt der fragilen Plattformen. Das ist die Infrastruktur für die kommende Ökonomie der Unabhängigen.'
@@ -330,12 +329,12 @@ export function Desktop() {
                           initial={{ opacity: 0, y: 50 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.6 }}
-                          className="cyberpunk-panel p-8 text-center"
+                          className="br-card rounded-lg p-8 text-center"
                         >
-                          <h3 className="text-2xl font-bold text-cyberpunk-acid-green mb-4 text-glow">
+                          <h3 className="text-2xl font-bold mb-4 br-section-title" style={{ color: '#ff6b00', textShadow: '0 0 15px #ff6b00', display: 'inline-block' }}>
                             {currentLanguage === 'EN' ? 'THE FORGE: PROOF IN FIRE' : 'THE FORGE'}
                           </h3>
-                          <p className="text-cyberpunk-text leading-relaxed max-w-4xl mx-auto">
+                          <p className="leading-relaxed max-w-4xl mx-auto relative z-10" style={{ color: 'var(--cyberpunk-text-dim)', fontFamily: "'Rajdhani', sans-serif", lineHeight: '1.8' }}>
                             {currentLanguage === 'EN'
                               ? 'Our innovation is not theoretical research confined to a portfolio; it is a crucible where philosophy becomes functional. From hardened operating systems to decentralized identities that no one can revoke, each project is a functional weapon in the fight for digital sovereignty. This is our proof that our architecture stands not just on paper, but in fire.'
                               : 'Von gehärteten Betriebssystemen bis zu dezentralen Identitäten, die niemand widerrufen kann: Unsere Projekte sind keine Forschung. Sie sind funktionierende Waffen im Kampf um digitale Souveränität und der Beweis, dass unsere Architektur nicht nur theoretisch, sondern auch im Feuer besteht.'

@@ -1,26 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Cyberpunk Color Palette */
-  --cyberpunk-bg: #0a0a0a;
-  --cyberpunk-surface: #121212;
-  --cyberpunk-surface-light: #1a1a1a;
-  --cyberpunk-surface-dark: #0d0d0d;
-  --cyberpunk-electric-blue: #00d4ff;
-  --cyberpunk-neon-magenta: #ff006e;
-  --cyberpunk-neon-cyan: #00ffff;
+  /* Blade Runner Noir Color Palette */
+  --cyberpunk-bg: #0a0a0f;
+  --cyberpunk-surface: #0e0e18;
+  --cyberpunk-surface-light: #161625;
+  --cyberpunk-surface-dark: #08080d;
+  --cyberpunk-electric-blue: #00f0ff;
+  --cyberpunk-neon-magenta: #ff0066;
+  --cyberpunk-neon-cyan: #00f0ff;
   --cyberpunk-acid-green: #39ff14;
   --cyberpunk-purple: #8b5cf6;
-  --cyberpunk-orange: #ff8500;
+  --cyberpunk-orange: #ff6b00;
   --cyberpunk-text: #e0e0e0;
-  --cyberpunk-text-dim: #a0a0a0;
-  --cyberpunk-text-dark: #666666;
-  --cyberpunk-shadow: rgba(0, 212, 255, 0.3);
-  --cyberpunk-glow: rgba(255, 0, 110, 0.4);
-  --cyberpunk-border: rgba(0, 212, 255, 0.5);
+  --cyberpunk-text-dim: #888888;
+  --cyberpunk-text-dark: #555555;
+  --cyberpunk-shadow: rgba(0, 240, 255, 0.3);
+  --cyberpunk-glow: rgba(255, 0, 102, 0.4);
+  --cyberpunk-border: rgba(0, 240, 255, 0.3);
+  --cyberpunk-card-bg: rgba(10, 10, 20, 0.85);
   
   /* Shadcn compatibility */
   --background: var(--cyberpunk-bg);
@@ -661,6 +662,342 @@ a, button, [role="button"], input, textarea, select {
   }
 }
 
+/* ============================================
+   BLADE RUNNER NOIR EFFECTS
+   ============================================ */
+
+/* Film Grain Overlay */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grain 0.3s steps(3) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-2px, 1px); }
+  66% { transform: translate(1px, -1px); }
+}
+
+/* Enhanced CRT Scanlines */
+.crt-scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  animation: scanlineMove 8s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+/* Neon Flicker Animation */
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.3; }
+  94% { opacity: 1; }
+  96% { opacity: 0.5; }
+  97% { opacity: 1; }
+}
+
+.neon-flicker {
+  animation: neonFlicker 3s infinite;
+}
+
+/* Blade Runner Glitch Title */
+.br-glitch-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  position: relative;
+  animation: brTextShadow 4s infinite;
+}
+
+.br-glitch-title::before,
+.br-glitch-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.br-glitch-title::before {
+  color: var(--cyberpunk-electric-blue);
+  animation: brGlitch1 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translateX(-2px);
+}
+
+.br-glitch-title::after {
+  color: var(--cyberpunk-neon-magenta);
+  animation: brGlitch2 2s infinite;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  transform: translateX(2px);
+}
+
+@keyframes brGlitch1 {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(2px); }
+}
+
+@keyframes brGlitch2 {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(3px); }
+  40% { transform: translateX(-3px); }
+  60% { transform: translateX(1px); }
+  80% { transform: translateX(-2px); }
+}
+
+@keyframes brTextShadow {
+  0%, 100% { text-shadow: 0 0 20px rgba(255,255,255,0.5), 0 0 40px var(--cyberpunk-electric-blue); }
+  50% { text-shadow: 0 0 30px rgba(255,255,255,0.7), 0 0 60px var(--cyberpunk-neon-magenta); }
+}
+
+/* Blade Runner Section Title */
+.br-section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+}
+
+.br-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyberpunk-electric-blue), var(--cyberpunk-neon-magenta));
+}
+
+/* Blade Runner Card Effects */
+.br-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 10, 20, 0.9), rgba(20, 15, 25, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.br-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cyberpunk-electric-blue), var(--cyberpunk-neon-magenta));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.br-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(0, 240, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.br-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 240, 255, 0.1);
+}
+
+.br-card:hover::before {
+  transform: scaleX(1);
+}
+
+.br-card:hover::after {
+  opacity: 1;
+}
+
+/* Rotating Conic Gradient (Theme Card Style) */
+.br-theme-card {
+  position: relative;
+  background: rgba(10, 10, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.br-theme-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, var(--cyberpunk-electric-blue), transparent 30%);
+  animation: brRotate 6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.br-theme-card:hover::before {
+  opacity: 0.1;
+}
+
+.br-theme-card:hover {
+  border-color: var(--cyberpunk-electric-blue);
+  transform: scale(1.02);
+}
+
+@keyframes brRotate {
+  100% { transform: rotate(360deg); }
+}
+
+/* Blade Runner Quote Style */
+.br-quote {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-left: 3px solid var(--cyberpunk-electric-blue);
+  transition: all 0.3s ease;
+}
+
+.br-quote:nth-child(even) {
+  border-left-color: var(--cyberpunk-neon-magenta);
+}
+
+.br-quote:hover {
+  background: rgba(0, 240, 255, 0.05);
+  transform: translateX(5px);
+}
+
+/* Blade Runner Cursor Blink */
+.br-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--cyberpunk-electric-blue);
+  margin-left: 2px;
+  animation: brBlink 0.7s infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes brBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Blade Runner Horizontal Divider */
+.br-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyberpunk-electric-blue), var(--cyberpunk-neon-magenta), transparent);
+}
+
+/* Enhanced Panel Glow */
+.cyberpunk-panel {
+  background: linear-gradient(135deg,
+    var(--cyberpunk-surface) 0%,
+    var(--cyberpunk-surface-light) 50%,
+    var(--cyberpunk-surface) 100%);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(0, 240, 255, 0.08),
+    0 0 20px rgba(0, 240, 255, 0.08);
+  backdrop-filter: blur(10px);
+  position: relative;
+  cursor: auto !important;
+}
+
+.cyberpunk-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(0, 240, 255, 0.03) 50%, transparent 70%);
+  pointer-events: none;
+}
+
+.cyberpunk-panel:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(0, 240, 255, 0.15),
+    0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+/* Blade Runner Subtitle */
+.br-subtitle {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5em;
+  color: var(--cyberpunk-text-dim);
+  text-transform: uppercase;
+}
+
+/* Enhanced Neon Glow Text */
+.br-neon-cyan {
+  color: var(--cyberpunk-electric-blue);
+  text-shadow: 0 0 10px var(--cyberpunk-electric-blue), 0 0 20px var(--cyberpunk-electric-blue), 0 0 40px var(--cyberpunk-electric-blue);
+}
+
+.br-neon-magenta {
+  color: var(--cyberpunk-neon-magenta);
+  text-shadow: 0 0 10px var(--cyberpunk-neon-magenta), 0 0 20px var(--cyberpunk-neon-magenta), 0 0 40px var(--cyberpunk-neon-magenta);
+}
+
+.br-neon-orange {
+  color: var(--cyberpunk-orange);
+  text-shadow: 0 0 10px var(--cyberpunk-orange), 0 0 20px var(--cyberpunk-orange), 0 0 40px var(--cyberpunk-orange);
+}
+
+/* Glow hover effects */
+.glow-cyan:hover {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+.glow-magenta:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 102, 0.4), inset 0 0 20px rgba(255, 0, 102, 0.1);
+}
+
+/* Blade Runner Body Font */
+.br-body-font {
+  font-family: 'Rajdhani', sans-serif;
+  line-height: 1.6;
+}
+
 /* Base layer overrides */
 @layer base {
   * {
@@ -674,7 +1011,7 @@ a, button, [role="button"], input, textarea, select {
     color: var(--cyberpunk-text);
     overflow-x: hidden;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply cyberpunk-heading;
   }

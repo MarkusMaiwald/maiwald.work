@@ -1,5 +1,5 @@
 import { Language } from '../hooks/useLanguage';
-import { CyberpunkPanel, CyberpunkAudio } from './CyberpunkEffects';
+import { CyberpunkAudio } from './CyberpunkEffects';
 import { useEffect } from 'react';
 
 interface DockProps {
@@ -113,26 +113,48 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
 
   return (
     <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40">
-      <CyberpunkPanel className="rounded-2xl p-3 interactive">
+      <div
+        className="rounded-2xl p-3"
+        style={{
+          background: 'rgba(10, 10, 20, 0.88)',
+          border: '1px solid rgba(0, 240, 255, 0.15)',
+          backdropFilter: 'blur(20px)',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.08)'
+        }}
+      >
         <div className="flex items-end space-x-1">
           {apps.map((app) => (
             <div
-            key={app.id}
-            className="dock-icon cursor-pointer"
-            title={app.title}
-            onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-            onClick={() => {
-              CyberpunkAudio.playButtonClick();
-              app.action();
-            }}
-          >
-              <div className={`w-14 h-14 bg-gradient-to-br ${app.color} rounded-lg flex items-center justify-center text-2xl font-bold border border-transparent hover:border-current transition-all duration-300 cyberpunk-button`}>
+              key={app.id}
+              className="dock-icon cursor-pointer"
+              title={app.title}
+              onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+              onClick={() => {
+                CyberpunkAudio.playButtonClick();
+                app.action();
+              }}
+            >
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center text-2xl font-bold transition-all duration-300"
+                style={{
+                  background: 'rgba(15, 15, 25, 0.9)',
+                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(0, 240, 255, 0.4)';
+                  e.currentTarget.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.3)';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.06)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
                 {app.icon}
               </div>
             </div>
           ))}
         </div>
-      </CyberpunkPanel>
+      </div>
     </div>
   );
 }

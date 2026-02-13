@@ -168,79 +168,112 @@ export function DataStreams() {
   return null;
 }
 
-// Matrix background effect - lightweight blue binary rain
+// Blade Runner Rain Effect - atmospheric rain drops
 export function MatrixBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
-    const characters = "01";
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops: number[] = [];
-    
-    // Initialize drops
-    for (let x = 0; x < columns; x++) {
-      drops[x] = Math.random() * canvas.height;
+
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    interface Raindrop {
+      x: number;
+      y: number;
+      speed: number;
+      length: number;
+      opacity: number;
+      width: number;
     }
-    
-    function draw() {
-      if (!ctx || !canvas) return;
-      
-      // Semi-transparent background for fade effect
-      ctx.fillStyle = 'rgba(0, 15, 30, 0.04)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      // Blue Matrix characters
-      ctx.fillStyle = '#0080ff';
-      ctx.font = fontSize + 'px "Courier New", monospace';
-      
-      for (let i = 0; i < drops.length; i++) {
-        const text = characters[Math.floor(Math.random() * characters.length)];
-        const x = i * fontSize;
-        const y = drops[i];
-        
-        ctx.fillText(text, x, y);
-        
-        // Reset drop to top when it reaches bottom
-        if (y > canvas.height && Math.random() > 0.98) {
-          drops[i] = 0;
-        }
-        
-        drops[i] += fontSize;
+
+    let raindrops: Raindrop[] = [];
+    let animationId: number;
+
+    function createRaindrop(): Raindrop {
+      return {
+        x: Math.random() * canvas!.width,
+        y: Math.random() * -canvas!.height,
+        speed: Math.random() * 8 + 12,
+        length: Math.random() * 20 + 10,
+        opacity: Math.random() * 0.3 + 0.1,
+        width: Math.random() * 1.5 + 0.5
+      };
+    }
+
+    function initRain() {
+      raindrops = [];
+      const dropCount = Math.floor((canvas!.width * canvas!.height) / 18000);
+      for (let i = 0; i < Math.min(dropCount, 180); i++) {
+        raindrops.push(createRaindrop());
       }
     }
-    
-    const interval = setInterval(draw, 100); // Slower animation for better performance
-    
+
+    function animate() {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      raindrops.forEach(drop => {
+        drop.y += drop.speed;
+        if (drop.y > canvas!.height) {
+          drop.x = Math.random() * canvas!.width;
+          drop.y = Math.random() * -canvas!.height;
+        }
+
+        ctx!.beginPath();
+        ctx!.moveTo(drop.x, drop.y);
+        ctx!.lineTo(drop.x + drop.width * 0.5, drop.y + drop.length);
+        ctx!.strokeStyle = `rgba(150, 200, 255, ${drop.opacity})`;
+        ctx!.lineWidth = drop.width;
+        ctx!.lineCap = 'round';
+        ctx!.stroke();
+      });
+
+      animationId = requestAnimationFrame(animate);
+    }
+
+    initRain();
+    animate();
+
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      initRain();
     };
-    
+
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
-      clearInterval(interval);
+      cancelAnimationFrame(animationId);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  
+
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-60"
-      style={{ zIndex: 0 }}
+      className="fixed inset-0 pointer-events-none"
+      style={{ zIndex: 5, opacity: 0.7 }}
     />
   );
+}
+
+// Film Grain Overlay
+export function FilmGrain() {
+  return <div className="film-grain" />;
+}
+
+// CRT Scanlines Overlay
+export function CRTScanlines() {
+  return <div className="crt-scanlines" />;
 }
 
 // Glitch text component
@@ -437,10 +470,12 @@ export function AmbientAudio() {
   return null;
 }
 
-// Main cyberpunk effects wrapper - with simple cursor
+// Main cyberpunk effects wrapper - Blade Runner noir
 export function CyberpunkEffects({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative h-screen overflow-hidden">
+      <FilmGrain />
+      <CRTScanlines />
       <ScanLine />
       <CustomCursor />
       <AmbientAudio />

@@ -101,8 +101,8 @@ export function CyberpunkWallpaper() {
           ctx.quadraticCurveTo(midX + offsetX, midY + offsetY, toX, toY);
           
           const isHighlighted = hoveredNode === connection.from || hoveredNode === connection.to;
-          const opacity = isHighlighted ? 0.6 : 0.15;
-          const color = isHighlighted ? '#00d4ff' : '#1a1a1a';
+          const opacity = isHighlighted ? 0.6 : 0.1;
+          const color = isHighlighted ? '#00f0ff' : '#151520';
           
           ctx.strokeStyle = color;
           ctx.globalAlpha = opacity;
@@ -120,8 +120,8 @@ export function CyberpunkWallpaper() {
       });
 
       // Draw grid pattern (very subtle)
-      ctx.globalAlpha = 0.03;
-      ctx.strokeStyle = '#00d4ff';
+      ctx.globalAlpha = 0.02;
+      ctx.strokeStyle = '#00f0ff';
       ctx.lineWidth = 1;
       
       for (let x = 0; x < canvas.width; x += 50) {
@@ -194,16 +194,16 @@ export function CyberpunkWallpaper() {
 
   const getNodeColor = (type: string, isHovered: boolean, isActive: boolean) => {
     const baseColors = {
-      project: '#ff006e',  // Neon magenta
-      network: '#00d4ff',  // Electric blue
-      system: '#39ff14'    // Acid green
+      project: '#ff0066',  // Blade Runner magenta
+      network: '#00f0ff',  // Blade Runner cyan
+      system: '#ff6b00'    // Blade Runner orange
     };
-    
+
     if (isHovered || isActive) {
       return baseColors[type as keyof typeof baseColors];
     }
-    
-    return '#1a1a1a';
+
+    return '#151520';
   };
 
   return (
@@ -288,14 +288,15 @@ export function CyberpunkWallpaper() {
         {Array.from({ length: 3 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-full h-px bg-gradient-to-r from-transparent via-cyberpunk-electric-blue to-transparent"
+            className="absolute w-full h-px"
             style={{
               top: '30%',
-              opacity: 0.1
+              opacity: 0.1,
+              background: 'linear-gradient(90deg, transparent, #00f0ff, transparent)'
             }}
             animate={{
               y: typeof window !== 'undefined' ? window.innerHeight : 800,
-              opacity: [0, 0.3, 0]
+              opacity: [0, 0.2, 0]
             }}
             transition={{
               duration: 8,
@@ -306,7 +307,36 @@ export function CyberpunkWallpaper() {
           />
         ))}
       </div>
-      
+
+      {/* Neon Signs - Blade Runner atmospheric text */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {[
+          { text: 'MAIWALD', left: '8%', top: '15%', color: '#00f0ff', delay: 0 },
+          { text: 'NEXUS', left: '78%', top: '25%', color: '#ff0066', delay: 0.5 },
+          { text: 'FORGE', left: '45%', top: '72%', color: '#ff6b00', delay: 1 },
+          { text: 'SOVEREIGN', left: '65%', top: '82%', color: '#00f0ff', delay: 1.5 },
+        ].map((sign, i) => (
+          <motion.div
+            key={i}
+            className="absolute font-mono text-xs tracking-widest neon-flicker"
+            style={{
+              left: sign.left,
+              top: sign.top,
+              color: sign.color,
+              textShadow: `0 0 10px ${sign.color}, 0 0 20px ${sign.color}, 0 0 40px ${sign.color}`,
+              animationDelay: `${sign.delay}s`,
+              fontFamily: "'Orbitron', sans-serif",
+              fontSize: '0.65rem',
+              letterSpacing: '0.2em'
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            transition={{ duration: 2, delay: sign.delay }}
+          >
+            {sign.text}
+          </motion.div>
+        ))}
+      </div>
 
     </div>
   );

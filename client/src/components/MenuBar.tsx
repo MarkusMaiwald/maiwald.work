@@ -37,37 +37,58 @@ export function MenuBar({ currentLanguage, onLanguageToggle, onContactClick }: M
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-8 cyberpunk-nav z-60 flex items-center justify-between px-4 text-sm">
+    <div
+      className="fixed top-0 left-0 right-0 h-8 z-60 flex items-center justify-between px-4 text-sm"
+      style={{
+        background: 'rgba(10, 10, 18, 0.92)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(0, 240, 255, 0.15)',
+        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)'
+      }}
+    >
       <div className="flex items-center space-x-4">
-        <div className="text-lg font-bold text-cyan-400">◊</div>
-        <div 
-          className="text-cyberpunk-text-dim hover:text-cyberpunk-electric-blue text-xs font-mono cursor-pointer transition-colors interactive"
+        <div className="text-lg font-bold neon-flicker" style={{ color: '#00f0ff', textShadow: '0 0 10px #00f0ff' }}>◊</div>
+        <div
+          className="hover:text-cyberpunk-electric-blue text-xs cursor-pointer transition-colors interactive"
+          style={{
+            fontFamily: "'Rajdhani', sans-serif",
+            color: 'var(--cyberpunk-text-dim)',
+            letterSpacing: '0.05em'
+          }}
           onMouseEnter={() => CyberpunkAudio.playHoverClick()}
           onClick={() => {
             CyberpunkAudio.playButtonClick();
-            onContactClick();
+            onContactClick?.();
           }}
         >
           markus@maiwald.work
         </div>
       </div>
-      
+
       {/* Center - Clock and Date */}
       <div className="absolute left-1/2 transform -translate-x-1/2 text-center">
-        <div className="text-xs font-mono text-cyberpunk-electric-blue text-glow">
+        <div className="text-xs font-mono" style={{ color: 'var(--cyberpunk-electric-blue)', textShadow: '0 0 10px var(--cyberpunk-electric-blue)' }}>
           {currentTime}
         </div>
-        <div className="text-xs font-mono text-cyberpunk-text-dim -mt-1">
+        <div className="text-xs font-mono -mt-1" style={{ color: 'var(--cyberpunk-text-dim)' }}>
           {currentDate}
         </div>
       </div>
-      
+
       <div className="flex items-center space-x-6">
-        <div className="text-cyberpunk-text-dim text-xs font-mono">
-          STATUS: <span className="text-cyberpunk-acid-green">ONLINE</span>
+        <div className="text-xs" style={{ fontFamily: "'Rajdhani', sans-serif", color: 'var(--cyberpunk-text-dim)' }}>
+          STATUS: <span style={{ color: '#39ff14', textShadow: '0 0 8px #39ff14' }}>ONLINE</span>
         </div>
-        <div 
-          className="nav-link text-xs font-mono interactive cursor-pointer hover:text-cyberpunk-electric-blue transition-colors"
+        <div
+          className="text-xs interactive cursor-pointer transition-colors"
+          style={{
+            fontFamily: "'Orbitron', sans-serif",
+            fontSize: '0.65rem',
+            letterSpacing: '0.1em',
+            color: 'var(--cyberpunk-text-dim)',
+            padding: '0.25rem 0.5rem',
+            border: '1px solid rgba(0, 240, 255, 0.2)',
+          }}
           onMouseEnter={() => CyberpunkAudio.playHoverClick()}
           onClick={() => {
             CyberpunkAudio.playButtonClick();
