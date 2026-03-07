@@ -66,16 +66,16 @@ export function MenuBar({ currentLanguage, onLanguageToggle, onContactClick }: M
         <div className="text-cyberpunk-text-dim text-xs font-mono">
           STATUS: <span className="text-cyberpunk-acid-green">ONLINE</span>
         </div>
-        <div 
-          className="nav-link text-xs font-mono interactive cursor-pointer hover:text-cyberpunk-electric-blue transition-colors"
+        <div
+          className="nav-link font-mono interactive cursor-pointer transition-all duration-300 px-2 py-0.5 rounded border border-cyberpunk-electric-blue/40 hover:border-cyberpunk-electric-blue hover:bg-cyberpunk-electric-blue/10 hover:text-cyberpunk-electric-blue text-xs"
           onMouseEnter={() => CyberpunkAudio.playHoverClick()}
           onClick={() => {
             CyberpunkAudio.playButtonClick();
-            console.log('Language toggle clicked, current:', currentLanguage);
             onLanguageToggle();
           }}
+          title={currentLanguage === 'EN' ? 'Switch to German' : 'Auf Englisch wechseln'}
         >
-          LANG: {currentLanguage.toUpperCase()}
+          {currentLanguage === 'EN' ? '🇬🇧 EN' : '🇩🇪 DE'}
         </div>
       </div>
     </div>

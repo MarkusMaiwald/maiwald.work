@@ -436,13 +436,7 @@ export function Desktop() {
                 setIsInfoModalOpen(false);
               }}
               onSectionClick={handleSectionClick}
-              onHelpClick={() => {
-                setCurrentSection('about');
-                setIsInfoModalOpen(true);
-                setIsContactModalOpen(false);
-              }}
-              onCalculatorClick={handleCalculatorClick}
-              onTextEditorClick={handleTextEditorClick}
+              onHelpClick={handleHelpClick}
               onSkillsClick={handleSkillsClick}
               onChatbotClick={handleChatbotClick}
               currentLanguage={currentLanguage}

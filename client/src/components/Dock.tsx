@@ -7,14 +7,12 @@ interface DockProps {
   onContactClick: () => void;
   onSectionClick: (section: string) => void;
   onHelpClick: () => void;
-  onCalculatorClick: () => void;
-  onTextEditorClick: () => void;
   onSkillsClick: () => void;
   onChatbotClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onCalculatorClick, onTextEditorClick, onSkillsClick, onChatbotClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onSkillsClick, onChatbotClick, currentLanguage }: DockProps) {
   // Initialize audio on first render
   useEffect(() => {
     const initAudio = () => {
@@ -42,16 +40,9 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
     {
       id: 'services',
       title: 'SERVICES',
-      icon: '🛠️',
+      icon: '💼',
       color: 'from-cyberpunk-surface via-cyberpunk-purple to-cyberpunk-surface text-cyberpunk-purple',
       action: () => onSectionClick('services')
-    },
-    {
-      id: 'cloud',
-      title: 'CLOUD',
-      icon: '☁️',
-      color: 'from-cyberpunk-surface via-cyberpunk-neon-cyan to-cyberpunk-surface text-cyberpunk-neon-cyan',
-      action: () => onSectionClick('cloud')
     },
     {
       id: 'projects',
@@ -61,16 +52,9 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       action: () => onSectionClick('projects')
     },
     {
-      id: 'development',
-      title: 'DEV',
-      icon: '⚡',
-      color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
-      action: () => onSectionClick('development')
-    },
-    {
       id: 'skills',
       title: 'SKILLS',
-      icon: '🎯',
+      icon: '🧠',
       color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
       action: onSkillsClick
     },
@@ -87,20 +71,6 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       icon: '🔗',
       color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
       action: () => onSectionClick('blockchain')
-    },
-    {
-      id: 'calculator',
-      title: 'CALC',
-      icon: '🔢',
-      color: 'from-cyberpunk-surface via-cyberpunk-electric-blue to-cyberpunk-surface text-cyberpunk-electric-blue',
-      action: onCalculatorClick
-    },
-    {
-      id: 'text-editor',
-      title: 'EDITOR',
-      icon: '📝',
-      color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
-      action: onTextEditorClick
     },
     {
       id: 'help',

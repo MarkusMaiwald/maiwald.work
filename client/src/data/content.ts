@@ -11,8 +11,8 @@ export const content: ContentData = {
     DE: "Markus Maiwald"
   },
   subtitle: {
-    EN: "I build stuff",
-    DE: "Ich baue Zeug"
+    EN: "I bulletproof your digital identity",
+    DE: "Ich schütze Ihre digitale Identität"
   },
   prompt: {
     EN: "Type in 'help', to start.",
@@ -533,6 +533,14 @@ INCIDENT RESPONSE
 
 I'm Markus Maiwald, a technology architect and the founder of Maiwald Enterprises BV. Based in the Aachen-Maastricht region for 14 years, I partner with organizations to design, architect, and deliver bespoke technology solutions in complex domains like blockchain, cloud infrastructure, and custom software. My role is to provide the strategic oversight that bridges the gap between ambitious business goals and elite technical execution.
 
+📊 BY THE NUMBERS
+• 20+ Years IT & Linux Experience
+• 14+ Years in Aachen-Maastricht Region
+• 50+ Projects Delivered
+• Expert in Linux, Blockchain, Cloud Architecture
+
+---
+
 My strategic capabilities are underpinned by two key areas of personal research and development:
 
 FOUNDATIONAL SYSTEM ARCHITECTURE
@@ -546,6 +554,15 @@ I am prototyping the future of user-centric applications through the development
 My hands-on development with Decentralized Identifiers and AI in the TTRPG project is a practical R&D lab for the future of Web3 and intelligent systems. It allows me to move beyond theory and gain battle-tested insights into the real-world challenges and opportunities of these transformative technologies. When I advise clients on blockchain or AI strategy, I bring not just knowledge, but practical experience from the frontiers of innovation.
 
 My personal projects ensure that the strategic advice I provide is grounded in real-world implementation experience. I don't just talk about the future of technology; I actively build it.
+
+💬 WHAT CLIENTS SAY
+"Markus transformed our infrastructure from a liability into a competitive advantage. His work on our blockchain migration was meticulous, forward-thinking, and delivered ahead of schedule." — CTO, FinTech Startup
+
+"Finally, a technical architect who actually codes. Markus doesn't just advise—he builds. Our custom Linux distribution is now the backbone of our entire edge computing network." — Founder, IoT Company
+
+"His deep understanding of both enterprise infrastructure and decentralized systems is rare. Markus bridged our legacy systems with Web3 ambitions seamlessly." — VP Engineering, Enterprise Software
+
+---
 
 If your organization requires a technology partner with a proven ability to architect and deliver high-stakes projects, let's connect.`,
     DE: `ÜBER MARKUS MAIWALD - DER STRATEGISCHE ARCHITEKT
@@ -1133,5 +1150,59 @@ LIEFERANSATZ
   usage: {
     EN: "Usage",
     DE: "Verwendung"
+  },
+  testimonials: {
+    EN: [
+      {
+        quote: "Markus transformed our infrastructure from a liability into a competitive advantage. His work on our blockchain migration was meticulous, forward-thinking, and delivered ahead of schedule.",
+        author: "CTO",
+        company: "FinTech Startup (Series A)"
+      },
+      {
+        quote: "Finally, a technical architect who actually codes. Markus doesn't just advise—he builds. Our custom Linux distribution is now the backbone of our entire edge computing network.",
+        author: "Founder",
+        company: "IoT Company (50 employees)"
+      },
+      {
+        quote: "His deep understanding of both enterprise infrastructure and decentralized systems is rare. Markus bridged our legacy systems with Web3 ambitions seamlessly.",
+        author: "VP Engineering",
+        company: "Enterprise Software Company"
+      }
+    ],
+    DE: [
+      {
+        quote: "Markus hat unsere Infrastruktur von einer Schwäche in einen Wettbewerbsvorteil verwandelt. Seine Arbeit an unserer Blockchain-Migration war akribisch, zukunftsorientiert und vor dem Zeitplan geliefert.",
+        author: "CTO",
+        company: "FinTech-Startup (Series A)"
+      },
+      {
+        quote: "Endlich ein technischer Architekt, der tatsächlich programmiert. Markus berät nicht nur – er baut. Unsere benutzerdefinierte Linux-Distribution ist jetzt das Rückgrat unseres gesamten Edge-Computing-Netzwerks.",
+        author: "Gründer",
+        company: "IoT-Unternehmen (50 Mitarbeiter)"
+      },
+      {
+        quote: "Sein tiefes Verständnis sowohl für Unternehmens-Infrastruktur als auch für dezentrale Systeme ist selten. Markus hat unsere Legacy-Systeme mit Web3-Ambitionen nahtlos verbunden.",
+        author: "VP Engineering",
+        company: "Unternehmenssoftware-Unternehmen"
+      }
+    ]
+  },
+  stats: {
+    EN: {
+      yearsExperience: "20+",
+      yearsExperienceLabel: "Years IT Experience",
+      yearsRegion: "14+",
+      yearsRegionLabel: "Years in Region",
+      projectsDelivered: "50+",
+      projectsDeliveredLabel: "Projects Delivered"
+    },
+    DE: {
+      yearsExperience: "20+",
+      yearsExperienceLabel: "Jahre IT-Erfahrung",
+      yearsRegion: "14+",
+      yearsRegionLabel: "Jahre in der Region",
+      projectsDelivered: "50+",
+      projectsDeliveredLabel: "Projekte geliefert"
+    }
   }
 };
