@@ -339,6 +339,26 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       icon: "⬡",
       color: "cyberpunk-electric-blue",
     },
+    {
+      id: "grafhub",
+      name: "GrafHub",
+      category: currentLanguage === "EN" ? "INFRASTRUCTURE" : "INFRASTRUKTUR",
+      stack: ["Graf-native", "Multi-service", "API", "Hub", "Registry", "Repository"],
+      description:
+        currentLanguage === "EN"
+          ? "Sovereign Git-hosting platform built Graf-native — a github.com replacement. Four-service architecture (api / hub / registry / repository) hosting Graf checkpoints and serving them with cryptographic provenance by default."
+          : "Souveräne Git-Hosting-Plattform, Graf-nativ — ein github.com-Ersatz. Vier-Service-Architektur (api / hub / registry / repository), die Graf-Checkpoints hostet und sie standardmäßig mit kryptografischer Provenienz ausliefert.",
+      status: "ACTIVE",
+      impact:
+        currentLanguage === "EN"
+          ? "Operational launch ~2026-05-09. First public Graf-native hosting platform; positions Graf as a self-sufficient ecosystem rather than a niche tool."
+          : "Operativer Start ~2026-05-09. Erste öffentliche Graf-native Hosting-Plattform; positioniert Graf als eigenständiges Ökosystem statt als Nischenwerkzeug.",
+      role:
+        currentLanguage === "EN" ? "Creator & Operator" : "Schöpfer & Betreiber",
+      icon: "⌬",
+      color: "cyberpunk-electric-blue",
+      foundationUrl: "https://grafhub.org",
+    },
   ];
 
   const projects = getProjects(currentLanguage);
