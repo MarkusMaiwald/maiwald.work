@@ -26,8 +26,24 @@ interface Project {
 
 interface ProjectShowcaseProps {
   currentLanguage: Language;
-  /** When set, immediately opens that project's detail modal on mount/change. Consumed once per value. */
+  /**
+   * When this prop transitions to a non-empty string, that project's detail modal opens.
+   * Setting it back to undefined is a no-op — the modal then closes via internal ESC / click-outside.
+   */
   initialProjectId?: string;
+}
+
+/**
+ * Render-safe extraction of a Foundation site's display hostname.
+ * Returns `null` if the URL fails to parse so a malformed `foundationUrl`
+ * can't crash the entire ProjectShowcase render.
+ */
+function foundationHost(url: string): string | null {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return null;
+  }
 }
 
 export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectShowcaseProps) {
@@ -496,23 +512,28 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
                   </div>
 
                   {/* Foundation surface badge (only if this project has a public marketing site) */}
-                  {project.foundationUrl && (
-                    <a
-                      href={project.foundationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded border transition-colors"
-                      style={{
-                        color: "var(--cyberpunk-gold)",
-                        borderColor: "rgba(245, 184, 0, 0.4)",
-                      }}
-                      title={currentLanguage === "EN" ? "Foundation surface" : "Foundation-Auftritt"}
-                    >
-                      <span>↗</span>
-                      <span>{new URL(project.foundationUrl).hostname.replace(/^www\./, "")}</span>
-                    </a>
-                  )}
+                  {(() => {
+                    if (!project.foundationUrl) return null;
+                    const host = foundationHost(project.foundationUrl);
+                    if (!host) return null;
+                    return (
+                      <a
+                        href={project.foundationUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded border transition-colors"
+                        style={{
+                          color: "var(--cyberpunk-gold)",
+                          borderColor: "rgba(245, 184, 0, 0.4)",
+                        }}
+                        title={currentLanguage === "EN" ? "Foundation surface" : "Foundation-Auftritt"}
+                      >
+                        <span>↗</span>
+                        <span>{host}</span>
+                      </a>
+                    );
+                  })()}
 
                   {/* Tech Stack Preview */}
                   <div className="flex flex-wrap gap-1">
@@ -802,27 +823,33 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
                             </div>
                           </DataVisualization>
 
-                          {project.foundationUrl && (
-                            <DataVisualization>
-                              <h4
-                                className="text-base md:text-lg font-bold mb-2 md:mb-3"
-                                style={{ color: "var(--cyberpunk-gold)" }}
-                              >
-                                {currentLanguage === "EN" ? "FOUNDATION SURFACE" : "FOUNDATION-AUFTRITT"}
-                              </h4>
-                              <a
-                                href={project.foundationUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
-                                onClick={() => CyberpunkAudio.playButtonClick()}
-                                className="underline font-mono text-sm md:text-base"
-                                style={{ color: "var(--cyberpunk-gold)" }}
-                              >
-                                {new URL(project.foundationUrl).hostname.replace(/^www\./, "")} ↗
-                              </a>
-                            </DataVisualization>
-                          )}
+                          {/* Foundation-surface link in the right column of the project detail modal */}
+                          {(() => {
+                            if (!project.foundationUrl) return null;
+                            const host = foundationHost(project.foundationUrl);
+                            if (!host) return null;
+                            return (
+                              <DataVisualization>
+                                <h4
+                                  className="text-base md:text-lg font-bold mb-2 md:mb-3"
+                                  style={{ color: "var(--cyberpunk-gold)" }}
+                                >
+                                  {currentLanguage === "EN" ? "FOUNDATION SURFACE" : "FOUNDATION-AUFTRITT"}
+                                </h4>
+                                <a
+                                  href={project.foundationUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                                  onClick={() => CyberpunkAudio.playButtonClick()}
+                                  className="underline font-mono text-sm md:text-base"
+                                  style={{ color: "var(--cyberpunk-gold)" }}
+                                >
+                                  {host} ↗
+                                </a>
+                              </DataVisualization>
+                            );
+                          })()}
                         </div>
                       </div>
 
