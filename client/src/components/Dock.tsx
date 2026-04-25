@@ -9,10 +9,15 @@ interface DockProps {
   onHelpClick: () => void;
   onSkillsClick: () => void;
   onChatbotClick: () => void;
+  onEngagementClick: () => void;
+  onChapterZeroClick: () => void;
+  onSovereignSocietyClick: () => void;
+  onDevlogClick: () => void;
+  onWritingClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onSkillsClick, onChatbotClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onSkillsClick, onChatbotClick, onEngagementClick, onChapterZeroClick, onSovereignSocietyClick, onDevlogClick, onWritingClick, currentLanguage }: DockProps) {
   // Initialize audio on first render
   useEffect(() => {
     const initAudio = () => {
@@ -31,25 +36,46 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       action: onTerminalClick
     },
     {
-      id: 'contact',
-      title: 'CONTACT',
-      icon: '📧',
-      color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
-      action: onContactClick
-    },
-    {
-      id: 'services',
-      title: 'SERVICES',
-      icon: '💼',
-      color: 'from-cyberpunk-surface via-cyberpunk-purple to-cyberpunk-surface text-cyberpunk-purple',
-      action: () => onSectionClick('services')
-    },
-    {
       id: 'projects',
       title: 'PROJECTS',
       icon: '📁',
       color: 'from-cyberpunk-surface via-cyberpunk-orange to-cyberpunk-surface text-cyberpunk-orange',
       action: () => onSectionClick('projects')
+    },
+    {
+      id: 'chapter-zero',
+      title: 'CHAPTER ZERO',
+      icon: '⚑',
+      color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
+      action: onChapterZeroClick
+    },
+    {
+      id: 'sovereign-society',
+      title: 'SOCIETY',
+      icon: '⚜',
+      color: 'from-cyberpunk-surface via-cyberpunk-gold to-cyberpunk-surface text-cyberpunk-gold',
+      action: onSovereignSocietyClick
+    },
+    {
+      id: 'engagement',
+      title: 'ENGAGEMENT',
+      icon: '◆',
+      color: 'from-cyberpunk-surface via-cyberpunk-purple to-cyberpunk-surface text-cyberpunk-purple',
+      action: onEngagementClick
+    },
+    {
+      id: 'devlog',
+      title: 'DEVLOG',
+      icon: '⟩_',
+      color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
+      action: onDevlogClick
+    },
+    {
+      id: 'writing',
+      title: 'WRITING',
+      icon: '✎',
+      color: 'from-cyberpunk-surface via-cyberpunk-purple to-cyberpunk-surface text-cyberpunk-purple',
+      action: onWritingClick
     },
     {
       id: 'skills',
@@ -66,11 +92,11 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       action: onChatbotClick
     },
     {
-      id: 'blockchain',
-      title: 'BLOCKCHAIN',
-      icon: '🔗',
-      color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
-      action: () => onSectionClick('blockchain')
+      id: 'contact',
+      title: 'CONTACT',
+      icon: '📧',
+      color: 'from-cyberpunk-surface via-cyberpunk-neon-magenta to-cyberpunk-surface text-cyberpunk-neon-magenta',
+      action: onContactClick
     },
     {
       id: 'help',
