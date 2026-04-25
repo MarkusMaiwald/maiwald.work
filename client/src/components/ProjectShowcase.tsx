@@ -486,6 +486,21 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                     </p>
                   </div>
 
+                  {/* Foundation surface badge (only if this project has a public marketing site) */}
+                  {project.foundationUrl && (
+                    <a
+                      href={project.foundationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded border border-cyberpunk-gold/40 text-cyberpunk-gold hover:bg-cyberpunk-gold/10 transition-colors"
+                      title={currentLanguage === "EN" ? "Foundation surface" : "Foundation-Auftritt"}
+                    >
+                      <span>↗</span>
+                      <span>{new URL(project.foundationUrl).hostname.replace(/^www\./, "")}</span>
+                    </a>
+                  )}
+
                   {/* Tech Stack Preview */}
                   <div className="flex flex-wrap gap-1">
                     {project.stack.slice(0, 3).map((tech) => (
@@ -773,6 +788,24 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                               Role: {project.role}
                             </div>
                           </DataVisualization>
+
+                          {project.foundationUrl && (
+                            <DataVisualization>
+                              <h4 className="text-base md:text-lg font-bold text-cyberpunk-gold mb-2 md:mb-3">
+                                {currentLanguage === "EN" ? "FOUNDATION SURFACE" : "FOUNDATION-AUFTRITT"}
+                              </h4>
+                              <a
+                                href={project.foundationUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                                onClick={() => CyberpunkAudio.playButtonClick()}
+                                className="text-cyberpunk-gold hover:text-cyberpunk-gold/80 underline font-mono text-sm md:text-base"
+                              >
+                                {new URL(project.foundationUrl).hostname.replace(/^www\./, "")} ↗
+                              </a>
+                            </DataVisualization>
+                          )}
                         </div>
                       </div>
 
