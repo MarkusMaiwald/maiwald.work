@@ -74,7 +74,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
   };
 
   return (
-    <div className="fixed top-16 left-1/2 transform -translate-x-1/2 w-full max-w-5xl mx-auto px-4 z-30">
+    <div className="w-full">
       <CyberpunkPanel className="rounded-lg shadow-2xl animate-fade-in interactive">
         {/* Cyberpunk Title Bar */}
         <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-cyberpunk-surface-dark via-cyberpunk-surface to-cyberpunk-surface-dark border-b border-cyberpunk-border">

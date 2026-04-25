@@ -21,6 +21,7 @@ import { EngagementShowcase } from './EngagementShowcase';
 import { ChapterZero } from './ChapterZero';
 import { SovereignSocietyShowcase } from './SovereignSocietyShowcase';
 import { DevlogApp } from './DevlogApp';
+import { DevlogWidget } from './DevlogWidget';
 import { WritingApp } from './WritingApp';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 import { SystemMonitor } from './SystemMonitor';
@@ -277,6 +278,7 @@ export function Desktop() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -50 }}
                       transition={{ duration: 0.5 }}
+                      className="fixed top-16 left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-4 z-30 space-y-3"
                     >
                       <Terminal
                         ref={terminalRef}
@@ -295,6 +297,7 @@ export function Desktop() {
                           setCurrentScrollSection(0); // Reset navigation to Neural Link when terminal is closed
                         }}
                       />
+                      <DevlogWidget currentLanguage={currentLanguage} />
                     </motion.div>
                   )}
 

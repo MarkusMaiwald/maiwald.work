@@ -1,21 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Language } from '../hooks/useLanguage';
+import { devlogEntries } from '../data/devlog';
 
 interface DevlogAppProps {
   isOpen: boolean;
   onClose: () => void;
   currentLanguage: Language;
 }
-
-const feeds = [
-  { key: 'janus', label: 'Janus' },
-  { key: 'nexus', label: 'Nexus OS' },
-  { key: 'graf', label: 'Graf' },
-  { key: 'libertaria', label: 'Libertaria Protocol' },
-  { key: 'chapter-zero', label: 'Chapter ZERO' },
-  { key: 'cross', label: 'Cross-project' },
-];
 
 export const DevlogApp: React.FC<DevlogAppProps> = ({ isOpen, onClose, currentLanguage }) => {
   React.useEffect(() => {
@@ -67,48 +59,41 @@ export const DevlogApp: React.FC<DevlogAppProps> = ({ isOpen, onClose, currentLa
           </p>
         </div>
 
-        <div className="p-6 md:p-8 space-y-6">
-          <div className="rounded-lg border border-green-500/20 bg-black/40 p-6 text-center">
-            <div className="text-green-400 font-mono text-xs uppercase tracking-wider mb-2">
-              ● status
-            </div>
-            <div className="text-green-300 font-mono text-lg md:text-xl">
-              {isEN ? 'STUB — coming with v2 structural reforge' : 'PLATZHALTER – kommt mit v2-Strukturumbau'}
-            </div>
-            <div className="text-gray-400 text-xs md:text-sm mt-3">
-              {isEN
-                ? 'Until then, the raw stream is on git.maiwald.work.'
-                : 'Bis dahin liegt der Rohstream auf git.maiwald.work.'}
-            </div>
+        <div className="p-6 md:p-8 space-y-4">
+          <div className="text-green-400 font-mono text-xs uppercase tracking-wider">
+            {isEN
+              ? `▸ ${devlogEntries.length} entries · newest first`
+              : `▸ ${devlogEntries.length} Einträge · neueste zuerst`}
           </div>
 
-          <section>
-            <h3 className="text-green-400 font-mono text-sm uppercase tracking-wider mb-3">
-              {isEN ? '▸ PLANNED FEEDS' : '▸ GEPLANTE FEEDS'}
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {feeds.map((f) => (
-                <div
-                  key={f.key}
-                  className="p-3 rounded border border-green-500/20 bg-black/30 text-center"
-                >
-                  <div className="font-mono text-sm text-green-300">{f.label}</div>
-                  <div className="text-gray-500 text-xs mt-1 font-mono">— pending —</div>
+          {devlogEntries.map((entry) => (
+            <article
+              key={entry.id}
+              className="p-4 md:p-5 rounded-lg border border-green-500/20 bg-black/40 hover:border-green-500/50 transition-colors"
+            >
+              <header className="flex items-baseline justify-between gap-3 mb-2 flex-wrap">
+                <div className="flex items-baseline gap-2 text-xs font-mono uppercase tracking-wider">
+                  <time className="text-green-300" dateTime={entry.date}>
+                    {entry.date}
+                  </time>
+                  <span className="text-gray-500">·</span>
+                  <span className="text-green-400">[{entry.project}]</span>
                 </div>
-              ))}
-            </div>
-          </section>
+              </header>
+              <h4 className="font-mono text-base md:text-lg font-bold text-gray-100 mb-2 leading-snug">
+                {entry.title[currentLanguage]}
+              </h4>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                {entry.summary[currentLanguage]}
+              </p>
+            </article>
+          ))}
 
-          <section>
-            <h3 className="text-green-400 font-mono text-sm uppercase tracking-wider mb-3">
-              {isEN ? '▸ FORMAT (WHEN LIVE)' : '▸ FORMAT (SOBALD LIVE)'}
-            </h3>
-            <p className="text-gray-300 text-sm md:text-base">
-              {isEN
-                ? 'Concise entries. What shipped, what broke, what got ported. No "we" where "I" is the truth.'
-                : 'Knappe Einträge. Was ausgeliefert wurde, was kaputtging, was portiert wurde. Kein "wir", wenn "ich" die Wahrheit ist.'}
-            </p>
-          </section>
+          <div className="border-t border-green-500/20 pt-4 mt-2 text-center text-xs font-mono text-gray-500">
+            {isEN
+              ? 'Hand-rolled from graf checkpoints · raw stream at git.maiwald.work'
+              : 'Handgeschrieben aus graf-Checkpoints · Rohstream auf git.maiwald.work'}
+          </div>
         </div>
       </motion.div>
     </div>
