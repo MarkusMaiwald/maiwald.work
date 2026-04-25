@@ -21,6 +21,7 @@ interface Project {
   icon: string;
   color: string;
   customers?: { name: string; url: string }[];
+  foundationUrl?: string; // Foundation/marketing site for this project, if it has a public surface
 }
 
 interface ProjectShowcaseProps {
@@ -68,7 +69,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       EN: {
         categories: [
           "ALL",
-          "ENTERPRISE",
+          "LANGUAGES",
           "SYSTEMS",
           "INFRASTRUCTURE",
           "BLOCKCHAIN",
@@ -80,7 +81,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       DE: {
         categories: [
           "ALLE",
-          "UNTERNEHMEN",
+          "SPRACHEN",
           "SYSTEME",
           "INFRASTRUKTUR",
           "BLOCKCHAIN",
@@ -95,58 +96,23 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
 
   const getProjects = (currentLanguage: Language): Project[] => [
     {
-      id: "maiwald-enterprises",
-      name: "Maiwald Enterprises BV",
-      category: currentLanguage === "EN" ? "ENTERPRISE" : "UNTERNEHMEN",
-      stack:
-        currentLanguage === "EN"
-          ? ["Strategic Consulting", "Cloud Architecture", "DevOps", "Security"]
-          : [
-              "Strategische Beratung",
-              "Cloud-Architektur",
-              "DevOps",
-              "Sicherheit",
-            ],
-      description:
-        currentLanguage === "EN"
-          ? "Strategic technology consulting firm specializing in foundational infrastructure and digital transformation."
-          : "Strategisches Technologieberatungsunternehmen, spezialisiert auf grundlegende Infrastruktur und digitale Transformation.",
-      status: "PRODUCTION",
-      impact:
-        currentLanguage === "EN"
-          ? "Delivering enterprise-grade solutions and strategic technology guidance"
-          : "Bereitstellung von Unternehmenslösungen und strategischer Technologieberatung",
-      role:
-        currentLanguage === "EN"
-          ? "Founder & Strategic Architect"
-          : "Gründer & Strategischer Architekt",
-      icon: "◊",
-      color: "cyberpunk-neon-magenta",
-      customers: [
-        { name: "BC2IP", url: "https://bc2ip.com" },
-        { name: "IOP Global", url: "https://iop-global.com" },
-        { name: "Group4IT", url: "https://groupforit.de" },
-        { name: "IT Qube", url: "https://itqube.gmbh/" },
-      ],
-    },
-    {
       id: "nexus-os",
-      name: "NexusOS",
+      name: "Nexus OS",
       category: currentLanguage === "EN" ? "SYSTEMS" : "SYSTEME",
-      stack: ["Nim", "Assembly", "Kernel", "UEFI", "SystemD"],
+      stack: ["Zig", "Nim", "RISC-V", "Unikernel", "Hypervisor", "Post-Quantum"],
       description:
         currentLanguage === "EN"
-          ? "Military-grade security and modularity. Fast boot. No bloat. Hardened kernel. Zero GNUs given."
-          : "Militärische Sicherheit und Modularität. Schneller Boot. Kein Bloat. Gehärteter Kernel. Null GNUs gegeben.",
+          ? "Sovereign operating system from scratch. Hybrid unikernel/hypervisor with capability-based security, post-quantum cryptography, and zero-trust architecture. Not a Linux distro."
+          : "Souveränes Betriebssystem von Grund auf. Hybrid-Unikernel/Hypervisor mit Capability-basierter Sicherheit, Post-Quanten-Kryptographie und Zero-Trust-Architektur. Keine Linux-Distribution.",
       status: "ACTIVE",
       impact:
         currentLanguage === "EN"
-          ? "Revolutionary OS architecture challenging conventional computing paradigms"
-          : "Revolutionäre OS-Architektur, die herkömmliche Computing-Paradigmen herausfordert",
+          ? "Complete OS stack: tickless kernel, Type-1 hypervisor, capability algebra, lock-free IPC, and sovereign network transport — 33 development phases completed"
+          : "Kompletter OS-Stack: tickless Kernel, Typ-1-Hypervisor, Capability-Algebra, lock-free IPC und souveräner Netzwerktransport — 33 Entwicklungsphasen abgeschlossen",
       role:
         currentLanguage === "EN"
-          ? "Lead Architect & Developer"
-          : "Lead-Architekt & Entwickler",
+          ? "Creator & Lead Architect"
+          : "Schöpfer & Lead-Architekt",
       icon: "⬢",
       color: "cyberpunk-electric-blue",
     },
@@ -248,6 +214,128 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
           : "Technical Lead & Produkt-Architekt",
       icon: "⬡",
       color: "cyberpunk-acid-green",
+    },
+    {
+      id: "janus-lang",
+      name: "Janus Language",
+      category: currentLanguage === "EN" ? "SYSTEMS" : "SYSTEME",
+      stack: ["Zig", "LLVM", "Compiler Design", "SSA IR", "Columnar AST"],
+      description:
+        currentLanguage === "EN"
+          ? "Systems programming language for teaching and production. Compiles through Zig natively — zero FFI overhead. Syntactic honesty: all costs visible, no hidden complexity."
+          : "Systemprogrammiersprache für Lehre und Produktion. Kompiliert nativ über Zig — kein FFI-Overhead. Syntaktische Ehrlichkeit: alle Kosten sichtbar, keine versteckte Komplexität.",
+      status: "ACTIVE",
+      impact:
+        currentLanguage === "EN"
+          ? "Core profile 100% complete. 477/478 integration tests passing. Progressive disclosure via profile system — from teaching fundamentals to GPU kernels"
+          : "Core-Profil 100% vollständig. 477/478 Integrationstests bestanden. Progressive Offenlegung via Profilsystem — von Grundlagen bis GPU-Kernel",
+      role:
+        currentLanguage === "EN"
+          ? "Language Designer & Compiler Engineer"
+          : "Sprachdesigner & Compiler-Ingenieur",
+      icon: "⬠",
+      color: "cyberpunk-acid-green",
+    },
+    {
+      id: "graf-vcs",
+      name: "Graf",
+      category: currentLanguage === "EN" ? "SYSTEMS" : "SYSTEME",
+      stack: ["Zig", "BLAKE3", "Merkle Trees", "CBOR", "Myers Diff"],
+      description:
+        currentLanguage === "EN"
+          ? "Content-addressed version control built in Janus and Zig. Merkle-tree integrity, BLAKE3 hashing, three-way merge, and fiber-based concurrency. Git reimagined for the cryptographic age."
+          : "Content-adressierte Versionskontrolle in Janus und Zig. Merkle-Tree-Integrität, BLAKE3-Hashing, Drei-Wege-Merge und faserbasierte Nebenläufigkeit. Git neu gedacht für das kryptographische Zeitalter.",
+      status: "ACTIVE",
+      impact:
+        currentLanguage === "EN"
+          ? "Fully functional VCS with sub-100ms incremental status, native M:N fiber scheduler, and cryptographic integrity by default. 101 tests passing"
+          : "Voll funktionsfähiges VCS mit sub-100ms inkrementellem Status, nativem M:N-Fiber-Scheduler und kryptographischer Integrität als Standard. 101 Tests bestanden",
+      role:
+        currentLanguage === "EN"
+          ? "Creator & Developer"
+          : "Schöpfer & Entwickler",
+      icon: "▲",
+      color: "cyberpunk-neon-cyan",
+    },
+    {
+      id: "libertaria",
+      name: "Libertaria Protocol",
+      category: "BLOCKCHAIN",
+      stack: ["Zig", "Rust", "Post-Quantum Crypto", "DID/SSI", "CRDT"],
+      description:
+        currentLanguage === "EN"
+          ? "Decentralized governance protocol stack. Four-layer architecture from wire transport to federated governance — enabling communities to coordinate without central authority. Protocol, not platform."
+          : "Dezentraler Governance-Protokollstack. Vier-Schichten-Architektur von Draht-Transport bis föderierter Governance — ermöglicht Gemeinschaften Koordination ohne zentrale Autorität. Protokoll, nicht Plattform.",
+      status: "R&D",
+      impact:
+        currentLanguage === "EN"
+          ? "Complete RFC specification across 4 layers. Post-quantum encryption (PQXDH), trust graph engine (QVL), thermodynamic spam protection. Kenya Rule: must work on solar-powered 2G devices"
+          : "Vollständige RFC-Spezifikation über 4 Schichten. Post-Quanten-Verschlüsselung (PQXDH), Trust-Graph-Engine (QVL), thermodynamischer Spam-Schutz. Kenia-Regel: muss auf solarbetriebenen 2G-Geräten funktionieren",
+      role:
+        currentLanguage === "EN"
+          ? "Protocol Architect & Founder"
+          : "Protokoll-Architekt & Gründer",
+      icon: "⚛",
+      color: "cyberpunk-neon-magenta",
+    },
+    {
+      id: "soulkey",
+      name: "SoulKey / SKH",
+      category: "BLOCKCHAIN",
+      stack: ["Zig", "ED25519", "X25519", "ML-KEM-768", "BLAKE3"],
+      description:
+        currentLanguage === "EN"
+          ? "Post-quantum hybrid identity primitive. Nobody can revoke your Soul Key — it is math, not a government service. Foundation for L1 of the Libertaria Protocol."
+          : "Post-quantische hybride Identitäts-Primitive. Niemand kann deinen Soul Key widerrufen – es ist Mathematik, kein staatlicher Dienst. Fundament für L1 des Libertaria-Protokolls.",
+      status: "R&D",
+      impact:
+        currentLanguage === "EN"
+          ? "Hybrid ED25519 + X25519 + ML-KEM-768 construction. Academic paper in draft (SKH). Migration path from classical to post-quantum identity."
+          : "Hybride ED25519 + X25519 + ML-KEM-768 Konstruktion. Akademisches Paper im Entwurf (SKH). Migrationspfad von klassischer zu post-quantischer Identität.",
+      role:
+        currentLanguage === "EN" ? "Designer & Author" : "Designer & Autor",
+      icon: "✦",
+      color: "cyberpunk-neon-magenta",
+    },
+    {
+      id: "iop",
+      name: "Internet of People (IoP)",
+      category: "BLOCKCHAIN",
+      stack: ["DID", "SSI", "Social Graph", "Layer-1"],
+      description:
+        currentLanguage === "EN"
+          ? "Decentralized identity and social networking protocol. One of the earliest SSI/DID systems in production. Co-founder."
+          : "Dezentrales Identitäts- und Social-Networking-Protokoll. Eines der frühesten SSI/DID-Systeme in Produktion. Mitgründer.",
+      status: "PRODUCTION",
+      impact:
+        currentLanguage === "EN"
+          ? "Production network; lineage traces back to PIVX governance experimentation. Direct ancestor of later Libertaria identity layer thinking."
+          : "Produktionsnetzwerk; Linie reicht zurück bis zum PIVX-Governance-Experiment. Direkter Vorfahr des späteren Denkens zur Libertaria-Identitätsschicht.",
+      role:
+        currentLanguage === "EN" ? "Co-founder" : "Mitgründer",
+      icon: "◯",
+      color: "cyberpunk-acid-green",
+    },
+    {
+      id: "vendible-feed-post",
+      name: "Vendible / Feed / Post",
+      category: currentLanguage === "EN" ? "LANGUAGES" : "SPRACHEN",
+      stack: ["Libertaria L2", "CRDT", "Janus", "Graf"],
+      description:
+        currentLanguage === "EN"
+          ? "Application layer on top of the Libertaria Protocol: Vendible (sovereign commerce), Feed (post-algorithmic timeline), Post (identity-anchored publishing). Janus-native."
+          : "Anwendungsschicht auf dem Libertaria-Protokoll: Vendible (souveräner Handel), Feed (post-algorithmische Timeline), Post (identitätsverankertes Veröffentlichen). Janus-nativ.",
+      status: "R&D",
+      impact:
+        currentLanguage === "EN"
+          ? "Reference applications that exercise L2/L3 of the protocol end-to-end. Each is a filter on how the protocol's affordances translate to daily use."
+          : "Referenz-Anwendungen, die L2/L3 des Protokolls Ende zu Ende durchlaufen. Jede ist ein Filter dafür, wie die Möglichkeiten des Protokolls sich in den Alltag übersetzen.",
+      role:
+        currentLanguage === "EN"
+          ? "Systems Architect"
+          : "Systems Architect",
+      icon: "⬡",
+      color: "cyberpunk-electric-blue",
     },
   ];
 
@@ -492,80 +580,61 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                             <h4 className="text-base md:text-lg font-bold text-cyberpunk-electric-blue mb-2 md:mb-3">
                               {project.id === "nexus-os"
                                 ? "MANIFESTO"
-                                : project.id === "maiwald-enterprises"
-                                  ? "CTO/CIO/CSO AS A SERVICE"
-                                  : "PROJECT SCOPE"}
+                                : project.id === "janus-lang"
+                                  ? "DESIGN PRINCIPLES"
+                                  : project.id === "libertaria"
+                                    ? "PROTOCOL ARCHITECTURE"
+                                    : "PROJECT SCOPE"}
                             </h4>
-                            {project.id === "maiwald-enterprises" ? (
-                              <div
-                                className="space-y-3 cursor-pointer hover:bg-cyberpunk-surface-light/20 p-3 rounded-lg transition-all duration-300 border border-transparent hover:border-cyberpunk-electric-blue/30"
-                                onClick={() => {
-                                  CyberpunkAudio.playButtonClick();
-                                  // Close project modal and open CTO modal
-                                  setSelectedProject(null);
-                                  const event = new CustomEvent(
-                                    "openCTOService",
-                                  );
-                                  window.dispatchEvent(event);
-                                }}
-                                onMouseEnter={() =>
-                                  CyberpunkAudio.playHoverClick()
-                                }
-                                title="Click to open detailed CTO service information"
-                              >
-                                <div className="text-cyberpunk-neon-cyan text-lg md:text-xl font-bold">
-                                  €1,600/month | 20 hours guaranteed
-                                </div>
-                                <p className="text-cyberpunk-text text-sm md:text-base">
-                                  Strategic technology leadership for founders.
-                                  Replace unreliable freelancers and costly
-                                  agencies with founder-friendly strategic
-                                  technology leadership at a fixed fee.
-                                </p>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
-                                  {[
-                                    "🎯 Personal Task Board",
-                                    "💰 Keep 100% of Equity",
-                                    "📊 Fixed & Predictable Pricing",
-                                    "🚀 Unlimited Requests",
-                                    "⚡ Fast Turnaround",
-                                    "👥 Invite Everyone",
-                                    "🏆 Full IP Ownership",
-                                    "📈 Flexible & Scalable",
-                                  ].map((benefit, index) => (
-                                    <div
-                                      key={index}
-                                      className="text-cyberpunk-acid-green text-xs font-mono"
-                                    >
-                                      {benefit}
-                                    </div>
-                                  ))}
-                                </div>
-                                <div className="text-xs text-cyberpunk-text-dim text-center mt-3 pt-2 border-t border-cyberpunk-border">
-                                  💡 Click for detailed CTO service information
-                                </div>
-                              </div>
-                            ) : (
-                              <p className="text-cyberpunk-text text-sm md:text-base">
-                                {project.description}
-                              </p>
-                            )}
+                            <p className="text-cyberpunk-text text-sm md:text-base">
+                              {project.description}
+                            </p>
                             {project.id === "nexus-os" && (
                               <div className="mt-3 md:mt-4 p-3 md:p-4 bg-cyberpunk-surface-dark border border-cyberpunk-electric-blue rounded font-mono text-xs md:text-sm">
                                 <div className="text-cyberpunk-electric-blue mb-2">
-                                  ❯ decode ./code_is_manifesto
+                                  ❯ decode ./sovereignty_manifest
                                 </div>
                                 <div className="text-cyberpunk-text leading-relaxed">
-                                  NexusOS is not software.
+                                  Silence Doctrine: Tickless. Burst-first. WFI-default.
                                   <br />
-                                  It is a rebellion encoded.
+                                  Capability Algebra: Born-with-nothing. 7 verbs. Caps only shrink.
                                   <br />
-                                  Decentralized. Deterministic. Unforgiving.
+                                  ION Rings: Lock-free SPSC. Zero-copy. All IPC.
                                   <br />
-                                  This is not for users.
+                                  Graft, Evolve, Sovereignize.
                                   <br />
-                                  This is for Operators.
+                                  This is not for users. This is for Operators.
                                 </div>
+                              </div>
+                            )}
+                            {project.id === "janus-lang" && (
+                              <div className="mt-3 md:mt-4 space-y-2">
+                                {[
+                                  { label: "Syntactic Honesty", desc: "All costs visible. No hidden allocations, no implicit copies." },
+                                  { label: "Mechanism over Policy", desc: "Tools, not restrictions. The programmer decides." },
+                                  { label: "Explicit Choice", desc: "All allocations, effects, and trade-offs are visible in the code." },
+                                  { label: "Revealed Complexity", desc: "No magic. Predictable behavior at every level." },
+                                ].map((principle) => (
+                                  <div key={principle.label} className="p-2 bg-cyberpunk-surface-dark border border-cyberpunk-acid-green/30 rounded text-xs">
+                                    <span className="text-cyberpunk-acid-green font-bold">{principle.label}:</span>{" "}
+                                    <span className="text-cyberpunk-text">{principle.desc}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                            {project.id === "libertaria" && (
+                              <div className="mt-3 md:mt-4 space-y-2">
+                                {[
+                                  { layer: "L0: THE WIRE", desc: "LWF transport, UTCP identity-centric protocol, works on 2G solar devices" },
+                                  { layer: "L1: THE HULL", desc: "Entropy stamps, Membrane agent, QVL trust graph, SoulKey post-quantum identity" },
+                                  { layer: "L2: THE LEDGER", desc: "Governance + Economics unified. Chapter genesis, solidarity, justice primitives" },
+                                  { layer: "L3: THE FLEET", desc: "Federation without governors. Exit-arbitrage, emergent polity, voluntary treaties" },
+                                ].map((l) => (
+                                  <div key={l.layer} className="p-2 bg-cyberpunk-surface-dark border border-cyberpunk-neon-magenta/30 rounded text-xs">
+                                    <span className="text-cyberpunk-neon-magenta font-bold">{l.layer}</span>{" "}
+                                    <span className="text-cyberpunk-text-dim">— {l.desc}</span>
+                                  </div>
+                                ))}
                               </div>
                             )}
                           </DataVisualization>
@@ -573,53 +642,60 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                           <DataVisualization>
                             <h4 className="text-base md:text-lg font-bold text-cyberpunk-neon-magenta mb-2 md:mb-3">
                               {project.id === "nexus-os"
-                                ? "SOUL INJECTION"
-                                : project.id === "maiwald-enterprises"
-                                  ? "CORE SERVICES INCLUDED"
-                                  : "BUSINESS IMPACT"}
+                                ? "ARCHITECTURE"
+                                : project.id === "janus-lang"
+                                  ? "COMPILATION PIPELINE"
+                                  : project.id === "libertaria"
+                                    ? "CORE AXIOMS"
+                                    : "BUSINESS IMPACT"}
                             </h4>
-                            {project.id === "maiwald-enterprises" ? (
-                              <div className="space-y-3">
-                                <div className="grid grid-cols-1 gap-2">
-                                  {[
-                                    "• Strategic technology roadmapping and architecture decisions",
-                                    "• MVP development and product-market fit iteration",
-                                    "• Team scaling and technical hiring guidance",
-                                    "• Code reviews and technical quality assurance",
-                                    "• Infrastructure planning and cloud architecture",
-                                    "• Security and compliance strategic planning",
-                                    "• Vendor evaluation and technology stack decisions",
-                                    "• Technical due diligence and risk assessment",
-                                  ].map((service, index) => (
-                                    <div
-                                      key={index}
-                                      className="text-cyberpunk-text text-xs"
-                                    >
-                                      {service}
-                                    </div>
-                                  ))}
-                                </div>
-                                <div className="mt-4 pt-3 border-t border-cyberpunk-border">
-                                  <div className="text-cyberpunk-electric-blue text-sm font-mono mb-2">
-                                    TRUSTED BY:
+                            {project.id === "nexus-os" ? (
+                              <div className="space-y-2 text-xs">
+                                {[
+                                  { label: "Rumpk", desc: "Event-driven, tickless, single-address-space unikernel (<1MB)" },
+                                  { label: "RumKV", desc: "Type-1 hypervisor (EL2/Ring-1) with Dual-Pledge security (<4MB)" },
+                                  { label: "Membrane", desc: "POSIX adapter, LwIP networking, MemFS compatibility layer" },
+                                  { label: "SoulKey", desc: "Hybrid ED25519+X25519+ML-KEM-768 post-quantum identity" },
+                                  { label: "ION Rings", desc: "Lock-free SPSC ring buffers for ALL inter-component IPC" },
+                                ].map((item) => (
+                                  <div key={item.label} className="flex gap-2">
+                                    <span className="text-cyberpunk-electric-blue font-mono font-bold min-w-[70px]">{item.label}</span>
+                                    <span className="text-cyberpunk-text">{item.desc}</span>
                                   </div>
-                                  <div className="flex flex-wrap gap-2">
-                                    {project.customers?.map((customer) => (
-                                      <span
-                                        key={customer.name}
-                                        className="px-2 py-1 bg-cyberpunk-surface-light rounded border border-cyberpunk-border text-cyberpunk-text text-xs"
-                                      >
-                                        {customer.name}
-                                      </span>
-                                    ))}
-                                  </div>
+                                ))}
+                              </div>
+                            ) : project.id === "janus-lang" ? (
+                              <div className="space-y-2 font-mono text-xs">
+                                <div className="text-cyberpunk-acid-green mb-2">❯ janus compile --trace</div>
+                                {[
+                                  "Source → Tokenizer → Parser",
+                                  "→ ASTDB (columnar AST database, O(1) access)",
+                                  "→ QTJIR (typed SSA IR, PHI nodes)",
+                                  "→ LLVM → Native Binary",
+                                ].map((step, i) => (
+                                  <div key={i} className="text-cyberpunk-text pl-2 border-l border-cyberpunk-acid-green/40">{step}</div>
+                                ))}
+                                <div className="mt-3 pt-2 border-t border-cyberpunk-border text-cyberpunk-text-dim">
+                                  Profiles: :core (complete) → :service → :cluster → :compute → :sovereign
                                 </div>
+                              </div>
+                            ) : project.id === "libertaria" ? (
+                              <div className="space-y-2 text-xs">
+                                {[
+                                  { axiom: "Capsule Doctrine", desc: "Default deny. Permissioned at the edge." },
+                                  { axiom: "Kenya Rule", desc: "If a solar-powered phone in Mombasa cannot participate, the protocol fails everywhere." },
+                                  { axiom: "Exit Always", desc: "Exit is a constitutional right. Exit costs are bounded. Exit cannot be prevented." },
+                                  { axiom: "Protocol vs Chapter", desc: "Protocol is physics (immutable). Chapter is politics (changeable)." },
+                                ].map((a) => (
+                                  <div key={a.axiom} className="p-2 bg-cyberpunk-surface-dark border border-cyberpunk-neon-magenta/20 rounded">
+                                    <span className="text-cyberpunk-neon-magenta font-bold">{a.axiom}:</span>{" "}
+                                    <span className="text-cyberpunk-text">{a.desc}</span>
+                                  </div>
+                                ))}
                               </div>
                             ) : (
                               <p className="text-cyberpunk-text text-sm md:text-base">
-                                {project.id === "nexus-os"
-                                  ? "Every line of code is an act of digital sovereignty. NexusOS embodies the philosophy that true computing freedom comes from understanding systems at their most fundamental level. Code is manifesto."
-                                  : project.impact}
+                                {project.impact}
                               </p>
                             )}
                           </DataVisualization>
@@ -677,37 +753,6 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
                             <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
                               CURRENTLY IN STEALTH-MODE
                             </div>
-                          </>
-                        ) : project.id === "maiwald-enterprises" ? (
-                          <>
-                            <button
-                              onClick={() => {
-                                CyberpunkAudio.playButtonClick();
-                                // Open contact modal or CTO service
-                                const event = new CustomEvent("openContact");
-                                window.dispatchEvent(event);
-                              }}
-                              onMouseEnter={() =>
-                                CyberpunkAudio.playHoverClick()
-                              }
-                              className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
-                            >
-                              START CTO SERVICE
-                            </button>
-                            <button
-                              onClick={() => {
-                                CyberpunkAudio.playButtonClick();
-                                // Open chatbot for consultation
-                                const event = new CustomEvent("openChatbot");
-                                window.dispatchEvent(event);
-                              }}
-                              onMouseEnter={() =>
-                                CyberpunkAudio.playHoverClick()
-                              }
-                              className="cyberpunk-button-secondary px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
-                            >
-                              STRATEGIC CONSULTATION
-                            </button>
                           </>
                         ) : (
                           <>
