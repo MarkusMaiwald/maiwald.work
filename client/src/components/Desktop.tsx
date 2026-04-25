@@ -276,6 +276,7 @@ export function Desktop() {
                         onOpenChatbot={() => setIsChatbotOpen(true)}
                         onOpenEngagement={() => setIsEngagementOpen(true)}
                         onOpenChapterZero={() => setIsChapterZeroOpen(true)}
+                        onOpenSovereignSociety={() => setIsSovereignSocietyOpen(true)}
                         onOpenDevlog={() => setIsDevlogOpen(true)}
                         onOpenWriting={() => setIsWritingOpen(true)}
                         onOpenAbout={handleAboutClick}

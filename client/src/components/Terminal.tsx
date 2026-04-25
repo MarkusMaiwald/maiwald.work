@@ -11,7 +11,11 @@ interface TerminalProps {
   onLanguageChange: (lang: Language) => void;
   onClose?: () => void;
   onOpenChatbot?: () => void;
-  onOpenCTOService?: () => void;
+  onOpenEngagement?: () => void;
+  onOpenChapterZero?: () => void;
+  onOpenSovereignSociety?: () => void;
+  onOpenDevlog?: () => void;
+  onOpenWriting?: () => void;
   onOpenAbout?: () => void;
 }
 
@@ -19,16 +23,25 @@ export interface TerminalRef {
   executeCommand: (command: string) => void;
 }
 
-export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot, onOpenCTOService, onOpenAbout }, ref) => {
-  const { 
-    lines, 
-    currentInput, 
-    setCurrentInput, 
-    handleKeyDown, 
-    focusInput, 
+export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot, onOpenEngagement, onOpenChapterZero, onOpenSovereignSociety, onOpenDevlog, onOpenWriting, onOpenAbout }, ref) => {
+  const {
+    lines,
+    currentInput,
+    setCurrentInput,
+    handleKeyDown,
+    focusInput,
     inputRef,
-    processCommand 
-  } = useTerminal(currentLanguage, onOpenContact, onOpenChatbot, onOpenCTOService);
+    processCommand
+  } = useTerminal(
+    currentLanguage,
+    onOpenContact,
+    onOpenChatbot,
+    onOpenEngagement,
+    onOpenChapterZero,
+    onOpenSovereignSociety,
+    onOpenDevlog,
+    onOpenWriting,
+  );
   
   const outputRef = useRef<HTMLDivElement>(null);
 
@@ -101,7 +114,9 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
                     MARKUS MAIWALD
                   </GlitchText>
                   <div className="text-lg text-cyberpunk-electric-blue text-glow mt-2">
-                    MAIWALD ENTERPRISES BV
+                    {currentLanguage === 'EN'
+                      ? 'SYSTEMS ARCHITECT · PRESIDENT, SOVEREIGN SOCIETY · LEADER, CHAPTER ZERO'
+                      : 'SYSTEMS ARCHITECT · PRÄSIDENT, SOVEREIGN SOCIETY · LEITER, CHAPTER ZERO'}
                   </div>
                   <div className="text-sm text-cyberpunk-text-dim mt-1 cyberpunk-subheading">
                     {content.subtitle[currentLanguage]}
@@ -115,7 +130,7 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
                   >
                     <img 
                       src={markusPhoto}
-                      alt="Markus Maiwald - Strategic Technology Architect"
+                      alt="Markus Maiwald – Systems Architect"
                       className="w-full h-full rounded object-cover border border-cyan-400/50 group-hover:border-cyan-300/70 transition-all duration-300"
                     />
                   </button>

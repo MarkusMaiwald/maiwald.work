@@ -10,7 +10,16 @@ export interface TerminalLine {
   timestamp: number;
 }
 
-export function useTerminal(currentLanguage: Language, onOpenContact: () => void, onOpenChatbot?: () => void, onOpenCTOService?: () => void) {
+export function useTerminal(
+  currentLanguage: Language,
+  onOpenContact: () => void,
+  onOpenChatbot?: () => void,
+  onOpenEngagement?: () => void,
+  onOpenChapterZero?: () => void,
+  onOpenSovereignSociety?: () => void,
+  onOpenDevlog?: () => void,
+  onOpenWriting?: () => void,
+) {
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -182,16 +191,60 @@ export function useTerminal(currentLanguage: Language, onOpenContact: () => void
         response = content.cloud[currentLanguage];
         break;
       case 'services':
-        response = content.services[currentLanguage];
-        break;
-      case 'cto':
-        if (onOpenCTOService) {
-          onOpenCTOService();
-          response = currentLanguage === 'EN' 
-            ? 'Opening CTO/CIO/CSO as a Service showcase...\nStrategic Technology Leadership for Founders' 
-            : 'Öffne CTO/CIO/CSO als Service Präsentation...\nStrategische Technologieführung für Gründer';
+      case 'engagement':
+        if (onOpenEngagement) {
+          onOpenEngagement();
+          response = currentLanguage === 'EN'
+            ? 'Opening engagement terms...\nI don\'t rent my brain. I invest it.'
+            : 'Öffne Engagement-Bedingungen...\nIch vermiete mein Hirn nicht. Ich investiere es.';
         } else {
-          response = content.services[currentLanguage];
+          response = content.engagement?.[currentLanguage] ?? content.services[currentLanguage];
+        }
+        break;
+      case 'roles':
+        response = content.roles[currentLanguage];
+        break;
+      case 'sovereign-society':
+      case 'sovereignsociety':
+      case 'foundation':
+        if (onOpenSovereignSociety) {
+          onOpenSovereignSociety();
+          response = currentLanguage === 'EN'
+            ? 'Opening Sovereign Society SAE...\nLibertaria Foundation, sovereign-society.org'
+            : 'Öffne Sovereign Society SAE...\nLibertaria Foundation, sovereign-society.org';
+        } else {
+          response = content.sovereignSociety[currentLanguage];
+        }
+        break;
+      case 'chapter-zero':
+      case 'chapterzero':
+      case 'czero':
+        if (onOpenChapterZero) {
+          onOpenChapterZero();
+          response = currentLanguage === 'EN'
+            ? 'Opening Chapter ZERO...\nThink you belong? Pitch me.'
+            : 'Öffne Chapter ZERO...\nGlaubst du, du gehörst dazu? Pitche mich.';
+        } else {
+          response = content.chapterZero[currentLanguage];
+        }
+        break;
+      case 'manifesto':
+        response = content.manifesto[currentLanguage];
+        break;
+      case 'devlog':
+        if (onOpenDevlog) {
+          onOpenDevlog();
+          response = currentLanguage === 'EN' ? 'Opening devlog...' : 'Öffne Devlog...';
+        } else {
+          response = content.devlog[currentLanguage];
+        }
+        break;
+      case 'writing':
+        if (onOpenWriting) {
+          onOpenWriting();
+          response = currentLanguage === 'EN' ? 'Opening writing...' : 'Öffne Writing...';
+        } else {
+          response = content.writing[currentLanguage];
         }
         break;
       case 'development':
