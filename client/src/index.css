@@ -517,21 +517,27 @@ a, button, [role="button"], input, textarea, select {
   cursor: none;
 }
 
-/* Modal Cursor Override - Show cursor in modals */
-.cto-modal,
-.cto-modal *,
-.cto-modal a,
-.cto-modal button,
-.cto-modal [role="button"],
-.cto-modal input,
-.cto-modal textarea,
-.cto-modal select {
+/* Modal Cursor Override — re-enable native cursor inside modals.
+   The global `* { cursor: none }` rule above hides the pointer on every element
+   so the custom cyberpunk cursor can be the only visible one on the desktop
+   background. Inside a modal that isn't shipping its own custom cursor div,
+   that global rule leaves the user with NO cursor at all. Adding
+   className="modal-cursor" to a modal's outermost wrapper restores the
+   native cursor for everything inside. */
+.modal-cursor,
+.modal-cursor *,
+.modal-cursor a,
+.modal-cursor button,
+.modal-cursor [role="button"],
+.modal-cursor input,
+.modal-cursor textarea,
+.modal-cursor select {
   cursor: auto !important;
 }
 
-.cto-modal button:hover,
-.cto-modal a:hover,
-.cto-modal [role="button"]:hover {
+.modal-cursor button:hover,
+.modal-cursor a:hover,
+.modal-cursor [role="button"]:hover {
   cursor: pointer !important;
 }
 
