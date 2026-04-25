@@ -359,6 +359,26 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       color: "cyberpunk-electric-blue",
       foundationUrl: "https://grafhub.org",
     },
+    {
+      id: "progit",
+      name: "ProGit",
+      category: currentLanguage === "EN" ? "SYSTEMS" : "SYSTEME",
+      stack: ["Rust", "Terminal UI", "Virtual Branches", "AI Agents", "≤10 MB"],
+      description:
+        currentLanguage === "EN"
+          ? "Terminal-based Git workflow manager. Virtual branches, line-level review, real-time CI/CD status, AI agents for refactor/test-gen/bug-find/docs, visual conflict resolution. Local-first, sub-100ms cold start, ≤ 10 MB binary."
+          : "Terminal-basierter Git-Workflow-Manager. Virtuelle Branches, zeilengenaues Review, Echtzeit-CI/CD-Status, KI-Agenten für Refactor/Tests/Bugs/Docs, visuelle Konfliktauflösung. Local-first, Sub-100ms-Kaltstart, ≤ 10 MB Binary.",
+      status: "ACTIVE",
+      impact:
+        currentLanguage === "EN"
+          ? "Stable beta v0.7. Recruiting testers. Closes the gap between GitButler's virtual-branches UX and the speed of GitUI, with native AI inside the terminal — no Web UI required."
+          : "Stabile Beta v0.7. Sucht Tester. Schließt die Lücke zwischen GitButlers Virtual-Branches-UX und der Geschwindigkeit von GitUI, mit nativer KI direkt im Terminal — kein Web-UI nötig.",
+      role:
+        currentLanguage === "EN" ? "Creator & Lead Developer" : "Schöpfer & Lead-Entwickler",
+      icon: "▶",
+      color: "cyberpunk-acid-green",
+      foundationUrl: "https://progit.dev",
+    },
   ];
 
   const projects = getProjects(currentLanguage);
