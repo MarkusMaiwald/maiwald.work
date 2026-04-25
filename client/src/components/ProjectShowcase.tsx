@@ -26,9 +26,11 @@ interface Project {
 
 interface ProjectShowcaseProps {
   currentLanguage: Language;
+  /** When set, immediately opens that project's detail modal on mount/change. Consumed once per value. */
+  initialProjectId?: string;
 }
 
-export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
+export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectShowcaseProps) {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>(
     currentLanguage === "EN" ? "ALL" : "ALLE",
@@ -48,6 +50,13 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
       return () => document.removeEventListener("mousemove", handleMouseMove);
     }
   }, [selectedProject]);
+
+  // Open a specific project's detail modal when an external trigger sets initialProjectId.
+  useEffect(() => {
+    if (initialProjectId) {
+      setSelectedProject(initialProjectId);
+    }
+  }, [initialProjectId]);
 
   // ESC key functionality for project modal
   useEffect(() => {
