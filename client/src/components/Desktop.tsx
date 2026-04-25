@@ -17,7 +17,11 @@ import { Calculator } from './Calculator';
 import { TextEditor } from './TextEditor';
 import { SkillsApp } from './SkillsApp';
 import { ChatbotApp } from './ChatbotApp';
-import { CTOServiceShowcase } from './CTOServiceShowcase';
+import { EngagementShowcase } from './EngagementShowcase';
+import { ChapterZero } from './ChapterZero';
+import { SovereignSocietyShowcase } from './SovereignSocietyShowcase';
+import { DevlogApp } from './DevlogApp';
+import { WritingApp } from './WritingApp';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 import { SystemMonitor } from './SystemMonitor';
 
@@ -35,7 +39,12 @@ export function Desktop() {
   const [isTextEditorOpen, setIsTextEditorOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
-  const [isCTOServiceOpen, setIsCTOServiceOpen] = useState(false);
+  const [isEngagementOpen, setIsEngagementOpen] = useState(false);
+  const [isChapterZeroOpen, setIsChapterZeroOpen] = useState(false);
+  const [isSovereignSocietyOpen, setIsSovereignSocietyOpen] = useState(false);
+  const [projectShowcaseInitialId, setProjectShowcaseInitialId] = useState<string | undefined>(undefined);
+  const [isDevlogOpen, setIsDevlogOpen] = useState(false);
+  const [isWritingOpen, setIsWritingOpen] = useState(false);
   const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
   const terminalRef = useRef<TerminalRef>(null);
@@ -58,18 +67,44 @@ export function Desktop() {
     // Listen for custom events
     const handleOpenContact = () => setIsContactModalOpen(true);
     const handleOpenChatbot = () => setIsChatbotOpen(true);
-    const handleOpenCTOService = () => setIsCTOServiceOpen(true);
+    const handleOpenEngagement = () => setIsEngagementOpen(true);
+    const handleOpenChapterZero = () => setIsChapterZeroOpen(true);
+    const handleOpenDevlog = () => setIsDevlogOpen(true);
+    const handleOpenWriting = () => setIsWritingOpen(true);
+    const handleOpenSovereignSociety = () => setIsSovereignSocietyOpen(true);
+    const handleOpenProjectShowcase = (event: Event) => {
+      const detail = (event as CustomEvent<{ projectId?: string }>).detail;
+      const projectId = detail?.projectId;
+      // Close the SS modal so the user sees the cross-link transition.
+      setIsSovereignSocietyOpen(false);
+      setCurrentView('projects');
+      if (projectId) {
+        // Force a fresh prop value even if the same id is requested twice in a row.
+        setProjectShowcaseInitialId(undefined);
+        setTimeout(() => setProjectShowcaseInitialId(projectId), 0);
+      }
+    };
 
     window.addEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
     window.addEventListener('openContact', handleOpenContact);
     window.addEventListener('openChatbot', handleOpenChatbot);
-    window.addEventListener('openCTOService', handleOpenCTOService);
-    
+    window.addEventListener('openEngagement', handleOpenEngagement);
+    window.addEventListener('openChapterZero', handleOpenChapterZero);
+    window.addEventListener('openDevlog', handleOpenDevlog);
+    window.addEventListener('openWriting', handleOpenWriting);
+    window.addEventListener('openSovereignSociety', handleOpenSovereignSociety);
+    window.addEventListener('openProjectShowcase', handleOpenProjectShowcase);
+
     return () => {
       window.removeEventListener('ambientAudioStateChanged', handleAudioStateChange as EventListener);
       window.removeEventListener('openContact', handleOpenContact);
       window.removeEventListener('openChatbot', handleOpenChatbot);
-      window.removeEventListener('openCTOService', handleOpenCTOService);
+      window.removeEventListener('openEngagement', handleOpenEngagement);
+      window.removeEventListener('openChapterZero', handleOpenChapterZero);
+      window.removeEventListener('openDevlog', handleOpenDevlog);
+      window.removeEventListener('openWriting', handleOpenWriting);
+      window.removeEventListener('openSovereignSociety', handleOpenSovereignSociety);
+      window.removeEventListener('openProjectShowcase', handleOpenProjectShowcase);
     };
   }, []);
 
@@ -93,15 +128,22 @@ export function Desktop() {
   const handleSectionClick = (section: string) => {
     // Always close contact modal when switching sections
     setIsContactModalOpen(false);
-    
+
     if (section === 'projects') {
       setCurrentView('projects');
       setCurrentScrollSection(2);
       setIsInfoModalOpen(false);
-    } else if (section === 'services') {
-      // Services should open InfoModal, not manifesto view
-      setCurrentSection('services');
-      setIsInfoModalOpen(true);
+    } else if (section === 'services' || section === 'engagement') {
+      // Legacy 'services' click routes to the new engagement modal.
+      setIsEngagementOpen(true);
+    } else if (section === 'chapter-zero') {
+      setIsChapterZeroOpen(true);
+    } else if (section === 'sovereign-society' || section === 'foundation') {
+      setIsSovereignSocietyOpen(true);
+    } else if (section === 'devlog') {
+      setIsDevlogOpen(true);
+    } else if (section === 'writing') {
+      setIsWritingOpen(true);
     } else {
       // Open InfoModal for blockchain, cloud, development, and other sections
       setCurrentSection(section);
@@ -226,13 +268,16 @@ export function Desktop() {
                       exit={{ opacity: 0, y: -50 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <Terminal 
+                      <Terminal
                         ref={terminalRef}
                         currentLanguage={currentLanguage}
                         onOpenContact={handleContactClick}
                         onLanguageChange={setLanguage}
                         onOpenChatbot={() => setIsChatbotOpen(true)}
-                        onOpenCTOService={() => setIsCTOServiceOpen(true)}
+                        onOpenEngagement={() => setIsEngagementOpen(true)}
+                        onOpenChapterZero={() => setIsChapterZeroOpen(true)}
+                        onOpenDevlog={() => setIsDevlogOpen(true)}
+                        onOpenWriting={() => setIsWritingOpen(true)}
                         onOpenAbout={handleAboutClick}
                         onClose={() => {
                           setIsTerminalVisible(false);
@@ -251,7 +296,10 @@ export function Desktop() {
                       transition={{ duration: 0.5 }}
                       className="px-8 py-16 min-h-screen"
                     >
-                      <ProjectShowcase currentLanguage={currentLanguage} />
+                      <ProjectShowcase
+                        currentLanguage={currentLanguage}
+                        initialProjectId={projectShowcaseInitialId}
+                      />
                     </motion.div>
                   )}
 
@@ -267,9 +315,11 @@ export function Desktop() {
                       <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-16">
                           <GlitchText className="text-5xl font-bold cyberpunk-heading mb-6" enableHover={true}>
-                            MAIWALD ENTERPRISES BV
+                            {currentLanguage === 'EN'
+                              ? "I DON'T SELL TIME – I BUILD AND OWN."
+                              : 'ICH VERKAUFE KEINE ZEIT – ICH BAUE UND BESITZE.'}
                           </GlitchText>
-                          <div 
+                          <div
                             className="text-2xl font-bold mb-8"
                             style={{
                               color: '#00d4ff',
@@ -283,10 +333,9 @@ export function Desktop() {
                               letterSpacing: '0.05em'
                             }}
                           >
-                            {currentLanguage === 'EN' 
-                              ? ".. we build the infrastructure your business runs on!"
-                              : ".. wir bauen die Infrastruktur, auf der Ihr Unternehmen läuft!"
-                            }
+                            {currentLanguage === 'EN'
+                              ? 'Systems Architect · President, Sovereign Society SAE (Libertaria Foundation) · Leader, Chapter ZERO'
+                              : 'Systems Architect · Präsident, Sovereign Society SAE (Libertaria Foundation) · Leiter, Chapter ZERO'}
                           </div>
                         </div>
 
@@ -298,13 +347,12 @@ export function Desktop() {
                             className="cyberpunk-panel p-8"
                           >
                             <h3 className="text-2xl font-bold text-cyberpunk-electric-blue mb-4 text-glow">
-                              {currentLanguage === 'EN' ? 'CORE PHILOSOPHY' : 'CORE PHILOSOPHY'}
+                              {currentLanguage === 'EN' ? 'POSTURE' : 'HALTUNG'}
                             </h3>
-                            <p className="text-cyberpunk-text leading-relaxed">
-                              {currentLanguage === 'EN' 
-                                ? 'Our work serves a greater architecture than technology alone: We architect for digital sovereignty. Every system we forge is a declaration of independence, every platform a rupture from centralized control. We don\'t just deliver software or infrastructure—we deliver strategic autonomy.'
-                                : 'Wir bauen keine Systeme. Wir schmieden souveräne Domänen. Jede Codezeile ist ein Akt der Unabhängigkeit, jede Architektur ein Bruch mit der zentralisierten Kontrolle. Wir liefern keine Software – wir liefern strategische Autonomie.'
-                              }
+                            <p className="text-cyberpunk-text leading-relaxed whitespace-pre-line">
+                              {currentLanguage === 'EN'
+                                ? 'I do not rent my brain. I invest it.\n\nNo hourly. No fixed monthly retainers. No fractional-CTO theatre. No bodyshopping. No "embedded advisor" roleplay for VC-funded ghost ships.\n\nThe filter is the feature. The positioning is the firewall.'
+                                : 'Ich vermiete mein Hirn nicht. Ich investiere es.\n\nKeine Stundensätze. Keine festen monatlichen Retainer. Kein Fractional-CTO-Theater. Kein Bodyshopping. Kein "Embedded Advisor"-Rollenspiel für VC-finanzierte Geisterschiffe.\n\nDer Filter ist das Feature. Die Positionierung ist die Firewall.'}
                             </p>
                           </motion.div>
 
@@ -315,13 +363,12 @@ export function Desktop() {
                             className="cyberpunk-panel p-8"
                           >
                             <h3 className="text-2xl font-bold text-cyberpunk-neon-magenta mb-4 text-glow">
-                              {currentLanguage === 'EN' ? 'STRATEGIC VISION' : 'STRATEGIC VISION'}
+                              {currentLanguage === 'EN' ? 'THE UNIFIED STACK' : 'DER VEREINIGTE STACK'}
                             </h3>
-                            <p className="text-cyberpunk-text leading-relaxed">
+                            <p className="text-cyberpunk-text leading-relaxed whitespace-pre-line">
                               {currentLanguage === 'EN'
-                                ? 'To power the coming economy of the independent, we build digital fortresses in a world of fragile platforms. We wield the tools of the modern market—cutting-edge blockchain, cloud-native architectures, and cryptographic hardness. These are not ends in themselves, but the means to execute the core principles of our vision: decentralization, immutability, and self-protection.'
-                                : 'Wir nutzen die Werkzeuge des Marktes – Blockchain, Cloud, kryptografische Härte –, um die Prinzipien der Anarchie zu vollstrecken: Dezentralisierung, Eigenschutz, Unveränderlichkeit. Wir errichten digitale Festungen in einer Welt der fragilen Plattformen. Das ist die Infrastruktur für die kommende Ökonomie der Unabhängigen.'
-                              }
+                                ? 'Janus – the language you code in.\nNexus OS – the kernel underneath.\nGraf – cryptographic VCS for source and history.\nSoulKey / SKH – post-quantum identity nobody can revoke.\nLibertaria Protocol – human coordination without central authority.\nChapter ZERO – the first living polity running on all of it.\n\nOne body of work. Not a service portfolio.'
+                                : 'Janus – die Sprache, in der du programmierst.\nNexus OS – der Kernel darunter.\nGraf – kryptografisches VCS für Quellcode und Historie.\nSoulKey / SKH – post-quantische Identität, die niemand widerrufen kann.\nLibertaria-Protokoll – menschliche Koordination ohne zentrale Autorität.\nChapter ZERO – das erste lebende Gemeinwesen, das auf alldem läuft.\n\nEin Werkskorpus. Kein Dienstleistungsportfolio.'}
                             </p>
                           </motion.div>
                         </div>
@@ -333,14 +380,33 @@ export function Desktop() {
                           className="cyberpunk-panel p-8 text-center"
                         >
                           <h3 className="text-2xl font-bold text-cyberpunk-acid-green mb-4 text-glow">
-                            {currentLanguage === 'EN' ? 'THE FORGE: PROOF IN FIRE' : 'THE FORGE'}
+                            {currentLanguage === 'EN' ? 'WANT ME?' : 'WILLST DU MICH?'}
                           </h3>
                           <p className="text-cyberpunk-text leading-relaxed max-w-4xl mx-auto">
                             {currentLanguage === 'EN'
-                              ? 'Our innovation is not theoretical research confined to a portfolio; it is a crucible where philosophy becomes functional. From hardened operating systems to decentralized identities that no one can revoke, each project is a functional weapon in the fight for digital sovereignty. This is our proof that our architecture stands not just on paper, but in fire.'
-                              : 'Von gehärteten Betriebssystemen bis zu dezentralen Identitäten, die niemand widerrufen kann: Unsere Projekte sind keine Forschung. Sie sind funktionierende Waffen im Kampf um digitale Souveränität und der Beweis, dass unsere Architektur nicht nur theoretisch, sondern auch im Feuer besteht.'
-                            }
+                              ? 'Bring equity. Bring vision. Bring both. Everything else is a time-waster for both of us.'
+                              : 'Bring Equity mit. Bring Vision mit. Bring beides mit. Alles andere ist Zeitverschwendung für uns beide.'}
                           </p>
+                          <div className="flex flex-wrap gap-3 justify-center mt-6">
+                            <button
+                              onClick={() => setIsEngagementOpen(true)}
+                              className="cyberpunk-button px-6 py-3 rounded-lg font-mono text-sm"
+                            >
+                              {currentLanguage === 'EN' ? 'ENGAGEMENT TERMS →' : 'ENGAGEMENT-BEDINGUNGEN →'}
+                            </button>
+                            <button
+                              onClick={() => setIsChapterZeroOpen(true)}
+                              className="cyberpunk-button px-6 py-3 rounded-lg font-mono text-sm"
+                            >
+                              {currentLanguage === 'EN' ? 'CHAPTER ZERO →' : 'CHAPTER ZERO →'}
+                            </button>
+                            <button
+                              onClick={handleContactClick}
+                              className="cyberpunk-button px-6 py-3 rounded-lg font-mono text-sm"
+                            >
+                              {currentLanguage === 'EN' ? 'PITCH ME →' : 'PITCHE MICH →'}
+                            </button>
+                          </div>
                         </motion.div>
                       </div>
                     </motion.div>
@@ -439,6 +505,11 @@ export function Desktop() {
               onHelpClick={handleHelpClick}
               onSkillsClick={handleSkillsClick}
               onChatbotClick={handleChatbotClick}
+              onEngagementClick={() => setIsEngagementOpen(true)}
+              onChapterZeroClick={() => setIsChapterZeroOpen(true)}
+              onSovereignSocietyClick={() => setIsSovereignSocietyOpen(true)}
+              onDevlogClick={() => setIsDevlogOpen(true)}
+              onWritingClick={() => setIsWritingOpen(true)}
               currentLanguage={currentLanguage}
             />
           </div>
@@ -528,18 +599,43 @@ export function Desktop() {
       <SkillsApp
         isOpen={isSkillsOpen}
         onClose={() => setIsSkillsOpen(false)}
-        currentLanguage={currentLanguage}
       />
 
-      <ChatbotApp 
+      <ChatbotApp
         isOpen={isChatbotOpen}
         onClose={() => setIsChatbotOpen(false)}
+      />
+
+      <EngagementShowcase
+        isOpen={isEngagementOpen}
+        onClose={() => setIsEngagementOpen(false)}
+        currentLanguage={currentLanguage}
+        onOpenContact={() => setIsContactModalOpen(true)}
+      />
+
+      <ChapterZero
+        isOpen={isChapterZeroOpen}
+        onClose={() => setIsChapterZeroOpen(false)}
+        currentLanguage={currentLanguage}
+        onOpenContact={() => setIsContactModalOpen(true)}
+      />
+
+      <SovereignSocietyShowcase
+        isOpen={isSovereignSocietyOpen}
+        onClose={() => setIsSovereignSocietyOpen(false)}
         currentLanguage={currentLanguage}
       />
 
-      <CTOServiceShowcase
-        isOpen={isCTOServiceOpen}
-        onClose={() => setIsCTOServiceOpen(false)}
+      <DevlogApp
+        isOpen={isDevlogOpen}
+        onClose={() => setIsDevlogOpen(false)}
+        currentLanguage={currentLanguage}
+      />
+
+      <WritingApp
+        isOpen={isWritingOpen}
+        onClose={() => setIsWritingOpen(false)}
+        currentLanguage={currentLanguage}
       />
     </CyberpunkEffects>
   );
