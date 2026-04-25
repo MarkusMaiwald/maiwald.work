@@ -57,7 +57,7 @@ function PropertyCard({
 
   return (
     <div
-      className="p-4 rounded-lg bg-black/30 hover:transition-colors flex flex-col gap-3 border"
+      className="p-4 rounded-lg bg-black/30 transition-colors flex flex-col gap-3 border"
       style={{ borderColor: GOLD_BORDER_30 }}
     >
       {/* Name + external-link arrow */}
