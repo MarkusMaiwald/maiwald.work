@@ -256,6 +256,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
           : "Schöpfer & Entwickler",
       icon: "▲",
       color: "cyberpunk-neon-cyan",
+      foundationUrl: "https://graf.tools",
     },
     {
       id: "libertaria",
@@ -277,6 +278,7 @@ export function ProjectShowcase({ currentLanguage }: ProjectShowcaseProps) {
           : "Protokoll-Architekt & Gründer",
       icon: "⚛",
       color: "cyberpunk-neon-magenta",
+      foundationUrl: "https://libertaria.dev",
     },
     {
       id: "soulkey",
