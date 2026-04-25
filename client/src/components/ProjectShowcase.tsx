@@ -502,7 +502,11 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded border border-cyberpunk-gold/40 text-cyberpunk-gold hover:bg-cyberpunk-gold/10 transition-colors"
+                      className="inline-flex items-center gap-1 text-xs font-mono px-2 py-0.5 rounded border transition-colors"
+                      style={{
+                        color: "var(--cyberpunk-gold)",
+                        borderColor: "rgba(245, 184, 0, 0.4)",
+                      }}
                       title={currentLanguage === "EN" ? "Foundation surface" : "Foundation-Auftritt"}
                     >
                       <span>↗</span>
@@ -800,7 +804,10 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
 
                           {project.foundationUrl && (
                             <DataVisualization>
-                              <h4 className="text-base md:text-lg font-bold text-cyberpunk-gold mb-2 md:mb-3">
+                              <h4
+                                className="text-base md:text-lg font-bold mb-2 md:mb-3"
+                                style={{ color: "var(--cyberpunk-gold)" }}
+                              >
                                 {currentLanguage === "EN" ? "FOUNDATION SURFACE" : "FOUNDATION-AUFTRITT"}
                               </h4>
                               <a
@@ -809,7 +816,8 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
                                 rel="noopener noreferrer"
                                 onMouseEnter={() => CyberpunkAudio.playHoverClick()}
                                 onClick={() => CyberpunkAudio.playButtonClick()}
-                                className="text-cyberpunk-gold hover:text-cyberpunk-gold/80 underline font-mono text-sm md:text-base"
+                                className="underline font-mono text-sm md:text-base"
+                                style={{ color: "var(--cyberpunk-gold)" }}
                               >
                                 {new URL(project.foundationUrl).hostname.replace(/^www\./, "")} ↗
                               </a>
