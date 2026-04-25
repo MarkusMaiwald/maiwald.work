@@ -853,39 +853,44 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
                         </div>
                       </div>
 
-                      {/* Actions */}
+                      {/* Actions — early-beta framing: status + dev-review CTA, not "stealth-mode" theatre */}
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-4 md:pt-6 border-t border-cyberpunk-border">
-                        {project.id === "nexus-os" ? (
-                          <>
-                            <a
-                              href="https://git.maiwald.work/NexusLabs/livecd-arch-nexus"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onMouseEnter={() =>
-                                CyberpunkAudio.playHoverClick()
-                              }
-                              onClick={() => CyberpunkAudio.playButtonClick()}
-                              className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
-                            >
-                              SOURCE CODE
-                            </a>
-                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
-                              CURRENTLY IN STEALTH-MODE
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
-                              CURRENTLY IN STEALTH-MODE
-                            </div>
-                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
-                              CURRENTLY IN STEALTH-MODE
-                            </div>
-                            <div className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim cursor-not-allowed">
-                              CURRENTLY IN STEALTH-MODE
-                            </div>
-                          </>
+                        {project.id === "nexus-os" && (
+                          <a
+                            href="https://git.maiwald.work/NexusLabs/livecd-arch-nexus"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                            onClick={() => CyberpunkAudio.playButtonClick()}
+                            className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
+                          >
+                            SOURCE CODE
+                          </a>
                         )}
+                        <div
+                          className="px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center bg-cyberpunk-surface-dark border border-cyberpunk-border text-cyberpunk-text-dim flex-1"
+                          title={
+                            currentLanguage === "EN"
+                              ? "Not yet for public consumption — open to developer reviews"
+                              : "Noch nicht öffentlich — offen für Developer-Reviews"
+                          }
+                        >
+                          {currentLanguage === "EN"
+                            ? "EARLY BETA · NOT YET PUBLIC"
+                            : "FRÜHE BETA · NOCH NICHT ÖFFENTLICH"}
+                        </div>
+                        <a
+                          href={`mailto:markus@maiwald.work?subject=${encodeURIComponent(
+                            `Dev Review — ${project.name}`,
+                          )}`}
+                          onMouseEnter={() => CyberpunkAudio.playHoverClick()}
+                          onClick={() => CyberpunkAudio.playButtonClick()}
+                          className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center flex-1"
+                        >
+                          {currentLanguage === "EN"
+                            ? "DEV REVIEW WELCOME →"
+                            : "DEV-REVIEW WILLKOMMEN →"}
+                        </a>
                       </div>
                     </div>
                   </CyberpunkPanel>
