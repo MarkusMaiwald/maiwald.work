@@ -64,7 +64,17 @@ export function Desktop() {
       setIsAmbientAudioPlaying(event.detail.isPlaying);
     };
 
-    // Listen for custom events
+    // Listen for custom events.
+    //
+    // Two pathways exist for opening any of these modals — by design:
+    //   1. Direct setter props (used by Dock buttons + other Desktop-direct children).
+    //      These reach the setter without going through the event bus.
+    //   2. Custom DOM events (used by callers that can't reach Desktop's setters —
+    //      the Terminal hook, dispatched-from-deep-inside-a-modal cross-links, etc.).
+    //      Each event below has a matching listener registration + cleanup pair.
+    //
+    // Adding a new modal? Wire BOTH pathways so terminal commands and direct dock
+    // clicks behave identically. The setter is the single source of truth.
     const handleOpenContact = () => setIsContactModalOpen(true);
     const handleOpenChatbot = () => setIsChatbotOpen(true);
     const handleOpenEngagement = () => setIsEngagementOpen(true);
@@ -138,7 +148,7 @@ export function Desktop() {
       setIsEngagementOpen(true);
     } else if (section === 'chapter-zero') {
       setIsChapterZeroOpen(true);
-    } else if (section === 'sovereign-society' || section === 'foundation') {
+    } else if (section === 'sovereign-society') {
       setIsSovereignSocietyOpen(true);
     } else if (section === 'devlog') {
       setIsDevlogOpen(true);
