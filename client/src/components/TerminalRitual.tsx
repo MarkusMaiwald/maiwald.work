@@ -44,34 +44,40 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
       command: 'whoami',
       output: [
         'markus@maiwald.work',
-        'Strategic Technology Architect',
-        'Founder, Maiwald Enterprises BV',
-        'Linux/BSD aficionado, platform architect, product developer, crypto-anarchist'
+        'Systems Architect',
+        'President, Sovereign Society SAE — Libertaria Foundation (sovereign-society.org)',
+        'Leader, Chapter ZERO — Libertaria genesis polity',
+        'Builder of sovereign infrastructure. Linux/BSD, crypto-anarchist, post-state systems.'
       ]
     },
     {
-      command: 'deploy --vision manifest.md',
+      command: 'cat manifesto.md',
       output: [
-        'Loading corporate manifesto...',
+        'Loading manifesto...',
         '████████████████████████████████ 100%',
-        'VISION: Building the infrastructure your business runs on',
-        'STATUS: ACTIVE',
-        'MISSION: Transform digital landscapes through strategic technology'
+        'POSTURE: I do not sell time. I build and own.',
+        'FILTER: Equity, vision, or both. Nothing else.',
+        'STACK: Janus → Nexus OS → Graf → Libertaria'
       ]
     },
     {
-      command: 'show --projects --year 2025',
+      command: 'show --ecosystem --libertaria',
       output: [
-        'Scanning project portfolio...',
+        'Scanning Libertaria ecosystem...',
         '',
-        '├── Custom OS Development (Nim/Assembly)',
-        '│   └── Status: Core kernel implementation [ACTIVE]',
-        '├── TTRPG Platform (React/Blockchain)',
-        '│   └── Status: SSI/DID integration [R&D]',
-        '├── Maiwald Enterprises BV',
-        '│   └── Status: Strategic consulting [PRODUCTION]',
-        '└── Infrastructure Services',
-        '    └── Status: Cloud-native solutions [SCALING]'
+        '├── Janus (systems language)        [ACTIVE]',
+        '│   └── :core profile 100% complete',
+        '├── Nexus OS (sovereign hybrid OS)  [ACTIVE]',
+        '│   └── 33 development phases done',
+        '├── Graf (cryptographic VCS)        [ACTIVE]',
+        '│   └── BLAKE3 + Merkle, 101 tests green',
+        '├── Libertaria Protocol (L0-L3)     [R&D]',
+        '│   └── Post-quantum, Kenya-Rule, exit-always',
+        '├── SoulKey / SKH (PQ identity)     [R&D]',
+        '├── Sovereign Society SAE           [HOSTING]',
+        '│   └── Foundation · sovereign-society.org · AGI/ASI-era projects',
+        '└── Chapter ZERO (genesis polity)   [LEADING]',
+        '    └── Leader'
       ]
     },
     {
@@ -80,26 +86,26 @@ export function TerminalRitual({ currentLanguage, onComplete }: TerminalRitualPr
         'THE CODE BEHIND THE CODE',
         '========================',
         '',
-        'Every system we build serves a greater architecture.',
-        'Every line of code contributes to digital sovereignty.',
-        'Every client engagement advances technological evolution.',
+        'I do not rent my brain. I invest it.',
+        'I do not sell time. I build and own.',
+        'I filter on values first, alignment second, capability third.',
         '',
-        'We don\'t just deliver software—we architect the future.',
-        'We don\'t just solve problems—we eliminate entire problem classes.',
+        'The filter is the feature.',
+        'The positioning is the firewall.',
         '',
-        'This is the Maiwald way.'
+        'Bring equity. Bring vision. Bring both.'
       ]
     },
     {
       command: 'initialize --portfolio-mode',
       output: [
-        'Initializing interactive portfolio...',
+        'Mounting desktop shell...',
         'Loading cyberpunk interface...',
         'Establishing neural links...',
         '████████████████████████████████ 100%',
         '',
         'SYSTEM READY',
-        'Welcome to the machine.'
+        'Welcome to the forge.'
       ]
     }
   ];

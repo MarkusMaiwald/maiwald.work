@@ -18,3 +18,7 @@ database_id = "14f28a71-347b-4e9e-a90a-e0690dacd198"
 # JWT_SECRET: wrangler secret put JWT_SECRET
 # RESEND_API_KEY: wrangler secret put RESEND_API_KEY
 # NOTIFICATION_EMAIL: wrangler secret put NOTIFICATION_EMAIL
+# GLM5_API_KEY: wrangler secret put GLM5_API_KEY    (Z.ai GLM Coding Plan key)
+# Non-secret AI defaults — override here if you want to switch model or provider:
+GLM_BASE_URL = "https://api.z.ai/api/coding/paas/v4"
+GLM_MODEL = "glm-5.1"

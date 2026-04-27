@@ -12,12 +12,11 @@ interface DockProps {
   onEngagementClick: () => void;
   onChapterZeroClick: () => void;
   onSovereignSocietyClick: () => void;
-  onDevlogClick: () => void;
   onWritingClick: () => void;
   currentLanguage: Language;
 }
 
-export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onSkillsClick, onChatbotClick, onEngagementClick, onChapterZeroClick, onSovereignSocietyClick, onDevlogClick, onWritingClick, currentLanguage }: DockProps) {
+export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpClick, onSkillsClick, onChatbotClick, onEngagementClick, onChapterZeroClick, onSovereignSocietyClick, onWritingClick, currentLanguage }: DockProps) {
   // Initialize audio on first render
   useEffect(() => {
     const initAudio = () => {
@@ -62,13 +61,6 @@ export function Dock({ onTerminalClick, onContactClick, onSectionClick, onHelpCl
       icon: '◆',
       color: 'from-cyberpunk-surface via-cyberpunk-purple to-cyberpunk-surface text-cyberpunk-purple',
       action: onEngagementClick
-    },
-    {
-      id: 'devlog',
-      title: 'DEVLOG',
-      icon: '⟩_',
-      color: 'from-cyberpunk-surface via-cyberpunk-acid-green to-cyberpunk-surface text-cyberpunk-acid-green',
-      action: onDevlogClick
     },
     {
       id: 'writing',

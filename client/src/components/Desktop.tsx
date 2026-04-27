@@ -20,8 +20,6 @@ import { ChatbotApp } from './ChatbotApp';
 import { EngagementShowcase } from './EngagementShowcase';
 import { ChapterZero } from './ChapterZero';
 import { SovereignSocietyShowcase } from './SovereignSocietyShowcase';
-import { DevlogApp } from './DevlogApp';
-import { DevlogWidget } from './DevlogWidget';
 import { WritingApp } from './WritingApp';
 import { CyberpunkWallpaper } from './CyberpunkWallpaper';
 import { SystemMonitor } from './SystemMonitor';
@@ -44,7 +42,6 @@ export function Desktop() {
   const [isChapterZeroOpen, setIsChapterZeroOpen] = useState(false);
   const [isSovereignSocietyOpen, setIsSovereignSocietyOpen] = useState(false);
   const [projectShowcaseInitialId, setProjectShowcaseInitialId] = useState<string | undefined>(undefined);
-  const [isDevlogOpen, setIsDevlogOpen] = useState(false);
   const [isWritingOpen, setIsWritingOpen] = useState(false);
   const [isAmbientAudioPlaying, setIsAmbientAudioPlaying] = useState(false);
   const [isTerminalVisible, setIsTerminalVisible] = useState(true);
@@ -80,7 +77,6 @@ export function Desktop() {
     const handleOpenChatbot = () => setIsChatbotOpen(true);
     const handleOpenEngagement = () => setIsEngagementOpen(true);
     const handleOpenChapterZero = () => setIsChapterZeroOpen(true);
-    const handleOpenDevlog = () => setIsDevlogOpen(true);
     const handleOpenWriting = () => setIsWritingOpen(true);
     const handleOpenSovereignSociety = () => setIsSovereignSocietyOpen(true);
     const handleOpenProjectShowcase = (event: Event) => {
@@ -101,7 +97,6 @@ export function Desktop() {
     window.addEventListener('openChatbot', handleOpenChatbot);
     window.addEventListener('openEngagement', handleOpenEngagement);
     window.addEventListener('openChapterZero', handleOpenChapterZero);
-    window.addEventListener('openDevlog', handleOpenDevlog);
     window.addEventListener('openWriting', handleOpenWriting);
     window.addEventListener('openSovereignSociety', handleOpenSovereignSociety);
     window.addEventListener('openProjectShowcase', handleOpenProjectShowcase);
@@ -112,7 +107,6 @@ export function Desktop() {
       window.removeEventListener('openChatbot', handleOpenChatbot);
       window.removeEventListener('openEngagement', handleOpenEngagement);
       window.removeEventListener('openChapterZero', handleOpenChapterZero);
-      window.removeEventListener('openDevlog', handleOpenDevlog);
       window.removeEventListener('openWriting', handleOpenWriting);
       window.removeEventListener('openSovereignSociety', handleOpenSovereignSociety);
       window.removeEventListener('openProjectShowcase', handleOpenProjectShowcase);
@@ -151,8 +145,6 @@ export function Desktop() {
       setIsChapterZeroOpen(true);
     } else if (section === 'sovereign-society') {
       setIsSovereignSocietyOpen(true);
-    } else if (section === 'devlog') {
-      setIsDevlogOpen(true);
     } else if (section === 'writing') {
       setIsWritingOpen(true);
     } else {
@@ -278,7 +270,7 @@ export function Desktop() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -50 }}
                       transition={{ duration: 0.5 }}
-                      className="fixed top-16 left-1/2 transform -translate-x-1/2 w-full max-w-5xl px-4 z-30 space-y-3"
+                      className="fixed top-16 inset-x-0 mx-auto w-full max-w-5xl px-4 z-30 space-y-3"
                     >
                       <Terminal
                         ref={terminalRef}
@@ -289,7 +281,6 @@ export function Desktop() {
                         onOpenEngagement={() => setIsEngagementOpen(true)}
                         onOpenChapterZero={() => setIsChapterZeroOpen(true)}
                         onOpenSovereignSociety={() => setIsSovereignSocietyOpen(true)}
-                        onOpenDevlog={() => setIsDevlogOpen(true)}
                         onOpenWriting={() => setIsWritingOpen(true)}
                         onOpenAbout={handleAboutClick}
                         onClose={() => {
@@ -297,7 +288,6 @@ export function Desktop() {
                           setCurrentScrollSection(0); // Reset navigation to Neural Link when terminal is closed
                         }}
                       />
-                      <DevlogWidget currentLanguage={currentLanguage} />
                     </motion.div>
                   )}
 
@@ -522,7 +512,6 @@ export function Desktop() {
               onEngagementClick={() => setIsEngagementOpen(true)}
               onChapterZeroClick={() => setIsChapterZeroOpen(true)}
               onSovereignSocietyClick={() => setIsSovereignSocietyOpen(true)}
-              onDevlogClick={() => setIsDevlogOpen(true)}
               onWritingClick={() => setIsWritingOpen(true)}
               currentLanguage={currentLanguage}
             />
@@ -637,12 +626,6 @@ export function Desktop() {
       <SovereignSocietyShowcase
         isOpen={isSovereignSocietyOpen}
         onClose={() => setIsSovereignSocietyOpen(false)}
-        currentLanguage={currentLanguage}
-      />
-
-      <DevlogApp
-        isOpen={isDevlogOpen}
-        onClose={() => setIsDevlogOpen(false)}
         currentLanguage={currentLanguage}
       />
 

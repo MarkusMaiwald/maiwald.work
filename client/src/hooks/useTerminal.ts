@@ -17,7 +17,6 @@ export function useTerminal(
   onOpenEngagement?: () => void,
   onOpenChapterZero?: () => void,
   onOpenSovereignSociety?: () => void,
-  onOpenDevlog?: () => void,
   onOpenWriting?: () => void,
 ) {
   const [lines, setLines] = useState<TerminalLine[]>([]);
@@ -230,14 +229,6 @@ export function useTerminal(
         break;
       case 'manifesto':
         response = content.manifesto[currentLanguage];
-        break;
-      case 'devlog':
-        if (onOpenDevlog) {
-          onOpenDevlog();
-          response = currentLanguage === 'EN' ? 'Opening devlog...' : 'Öffne Devlog...';
-        } else {
-          response = content.devlog[currentLanguage];
-        }
         break;
       case 'writing':
         if (onOpenWriting) {

@@ -1,3 +1,11 @@
+// Load .env early — zero-dep, Node's built-in env-file loader (Node ≥ 20.6).
+// Non-fatal on missing file: handlers log loudly when their own secrets are absent.
+try {
+  (process as unknown as { loadEnvFile?: (path: string) => void }).loadEnvFile?.(".env");
+} catch (err) {
+  console.warn("[boot] could not load .env:", err instanceof Error ? err.message : err);
+}
+
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";

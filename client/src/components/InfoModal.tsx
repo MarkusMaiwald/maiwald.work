@@ -181,7 +181,7 @@ export function InfoModal({ isOpen, onClose, section, currentLanguage, onOpenCha
                 <div className="w-32 h-32 rounded-lg bg-gradient-to-br from-cyan-400 to-cyan-600 p-1">
                   <img 
                     src={markusPhoto}
-                    alt="Markus Maiwald - Strategic Technology Architect"
+                    alt="Markus Maiwald – Systems Architect"
                     className="w-full h-full rounded object-cover border border-cyan-400/50"
                   />
                 </div>

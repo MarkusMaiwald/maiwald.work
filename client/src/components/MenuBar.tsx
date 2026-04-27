@@ -45,7 +45,7 @@ export function MenuBar({ currentLanguage, onLanguageToggle, onContactClick }: M
           onMouseEnter={() => CyberpunkAudio.playHoverClick()}
           onClick={() => {
             CyberpunkAudio.playButtonClick();
-            onContactClick();
+            onContactClick?.();
           }}
         >
           markus@maiwald.work

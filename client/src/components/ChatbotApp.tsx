@@ -28,7 +28,7 @@ marked.setOptions({
 const parseMarkdownToStructuredContent = (text: string) => {
   try {
     // Convert markdown to HTML - marked.parse is synchronous
-    const html = marked.parse(text);
+    const html = marked.parse(text) as string;
     
     // Parse HTML and create structured JSX
     const parser = new DOMParser();
@@ -167,12 +167,15 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
         body: JSON.stringify({ message: messageText }),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to get AI response');
+      const data = await response.json().catch(() => null) as
+        | { success: boolean; response?: string; message?: string; error?: string }
+        | null;
+
+      if (!response.ok || !data?.success) {
+        const detail = data?.error || data?.message || `HTTP ${response.status}`;
+        throw new Error(detail);
       }
 
-      const data = await response.json();
-      
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: data.response || 'I apologize, but I was unable to generate a response.',
@@ -182,11 +185,12 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
       setMessages(prev => [...prev, botResponse]);
     } catch (error) {
       console.error('AI Chat error:', error);
+      const detail = error instanceof Error ? error.message : String(error);
       const errorResponse: Message = {
         id: (Date.now() + 1).toString(),
         text: currentLanguage === 'EN'
-          ? 'I apologize, but I encountered an error. Please try again or visit http://chat.maiwald.work for the full experience.'
-          : 'Entschuldigung, aber es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder besuchen Sie http://chat.maiwald.work für die vollständige Erfahrung.',
+          ? `Chat is offline. Server said: ${detail}\n\nLikely causes: GLM5_API_KEY missing in .env, dev server not restarted, or upstream provider error.`
+          : `Chat ist offline. Server meldet: ${detail}\n\nWahrscheinliche Ursachen: GLM5_API_KEY fehlt in .env, Dev-Server nicht neu gestartet, oder Upstream-Provider-Fehler.`,
         sender: 'bot',
         timestamp: new Date()
       };
@@ -279,28 +283,28 @@ export const ChatbotApp: React.FC<ChatbotAppProps> = ({ isOpen, onClose }) => {
           <div className="p-4 border-b border-cyan-500/20 bg-gray-800/30">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 p-0.5">
-                <img 
+                <img
                   src={markusPhoto}
-                  alt="Markus Maiwald - AI Strategic Consultant"
+                  alt="Markus Maiwald – Systems Architect"
                   className="w-full h-full rounded-full object-cover border border-cyan-400/50"
                 />
               </div>
               <div className="flex-1">
                 <button
                   onClick={() => {
-                    // Dispatch event to open CTO service modal
-                    const event = new CustomEvent('openCTOService');
+                    // Open engagement terms instead of the old CTO modal.
+                    const event = new CustomEvent('openEngagement');
                     window.dispatchEvent(event);
                   }}
                   className="text-left w-full group"
                 >
                   <h3 className="text-cyan-400 font-semibold group-hover:text-cyan-300 transition-colors">
-                    Maiwald Enterprises AI
+                    Markus Maiwald · AI Interface
                   </h3>
                   <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-                    {currentLanguage === 'EN' 
-                      ? 'Showcasing AI Prompting Excellence → Click for CTO Service' 
-                      : 'KI-Prompting-Exzellenz präsentieren → Klicken für CTO Service'
+                    {currentLanguage === 'EN'
+                      ? 'Public interface for an architect → click for engagement terms'
+                      : 'Öffentliches Interface für einen Architekten → klicken für Engagement-Bedingungen'
                     }
                   </p>
                 </button>

@@ -1,11 +1,16 @@
 import type { D1Database } from '@cloudflare/workers-types';
 import { z } from 'zod';
+import { generateChatResponse } from '../shared/ai';
 
 export interface Env {
   DB: D1Database;
   JWT_SECRET: string;
   RESEND_API_KEY: string;
   NOTIFICATION_EMAIL: string;
+  GLM5_API_KEY: string;
+  GLM_BASE_URL?: string;
+  GLM_MODEL?: string;
+  GLM_THINKING?: string;
   ASSETS: {
     fetch: (request: Request) => Promise<Response>;
   };
@@ -93,6 +98,48 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   }
 }
 
+// AI Chat Handler — GLM-5.1 by default (Z.ai), OpenAI-compatible endpoint.
+const aiChatSchema = z.object({
+  message: z.string().min(1).max(4000),
+});
+
+async function handleAiChat(request: Request, env: Env): Promise<Response> {
+  if (!env.GLM5_API_KEY) {
+    return jsonResponse({
+      success: false,
+      message: 'AI chat is not configured: GLM5_API_KEY secret is missing.',
+    }, 503);
+  }
+
+  let parsed: { message: string };
+  try {
+    const body = await request.json();
+    parsed = aiChatSchema.parse(body);
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return jsonResponse({ success: false, error: 'Validation failed', details: error.errors }, 400);
+    }
+    return jsonResponse({ success: false, error: 'Invalid request body' }, 400);
+  }
+
+  try {
+    const response = await generateChatResponse(parsed.message, {
+      apiKey: env.GLM5_API_KEY,
+      baseUrl: env.GLM_BASE_URL,
+      model: env.GLM_MODEL,
+      thinking: /^(1|true|on|yes)$/i.test(env.GLM_THINKING ?? ''),
+    });
+    return jsonResponse({ success: true, response });
+  } catch (error) {
+    console.error('AI chat error:', error);
+    return jsonResponse({
+      success: false,
+      message: 'Failed to generate AI response',
+      error: error instanceof Error ? error.message : 'Unknown error',
+    }, 500);
+  }
+}
+
 // Helper functions
 function jsonResponse(data: unknown, status = 200, headers: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(data), {
@@ -138,6 +185,8 @@ export default {
       response = await handleHealth(env);
     } else if (pathname === '/api/contact' && request.method === 'POST') {
       response = await handleContact(request, env);
+    } else if (pathname === '/api/ai/chat' && request.method === 'POST') {
+      response = await handleAiChat(request, env);
     } else {
       // Serve static assets
       return env.ASSETS.fetch(request);

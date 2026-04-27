@@ -4,8 +4,9 @@ import { X, Minus } from 'lucide-react';
 import { CyberpunkPanel, GlitchText, CyberpunkAudio } from './CyberpunkEffects';
 
 interface CalculatorProps {
-  isOpen: boolean;
+  isOpen?: boolean;
   onClose: () => void;
+  onMinimize?: () => void;
 }
 
 export function Calculator({ isOpen, onClose }: CalculatorProps) {

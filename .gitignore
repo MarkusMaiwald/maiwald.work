@@ -8,3 +8,16 @@ vite.config.ts.*
 .local
 .config
 .env
+
+# Agent / AI operational dirs
+.claude/
+.agents/
+.agent/
+.kiro/
+CLAUDE.md
+AGENTS.md
+GEMINI.md
+
+# Editor / IDE
+.vscode/
+.idea/

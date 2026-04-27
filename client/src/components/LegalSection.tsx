@@ -159,9 +159,49 @@ export function LegalSection({ currentLanguage }: LegalSectionProps) {
           {content.title}
         </GlitchText>
         <div className="text-cyberpunk-text-dim text-lg">
-          Legal disclosure and privacy information required by Dutch and EU law
+          {currentLanguage === 'EN'
+            ? 'Legal entities, disclosure, and privacy. The brand is Markus Maiwald; these are just the containers.'
+            : 'Rechtsträger, Pflichtangaben und Datenschutz. Die Marke ist Markus Maiwald; das hier sind nur die Hüllen.'}
         </div>
       </div>
+
+      {/* Entities banner – demoted vehicles */}
+      <CyberpunkPanel className="p-6 mb-8">
+        <GlitchText className="text-xl font-bold cyberpunk-heading mb-4">
+          {currentLanguage === 'EN' ? 'ENTITIES' : 'RECHTSTRÄGER'}
+        </GlitchText>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-sm">
+          <div>
+            <div className="text-cyberpunk-electric-blue font-bold mb-1">Maiwald Enterprises B.V.</div>
+            <div className="text-cyberpunk-text-dim">
+              {currentLanguage === 'EN'
+                ? 'Dutch holding. Contracts, invoicing, IP.'
+                : 'Niederländische Holding. Verträge, Rechnungsstellung, IP.'}
+            </div>
+          </div>
+          <div>
+            <div className="text-cyberpunk-neon-magenta font-bold mb-1">BC2 IP GmbH</div>
+            <div className="text-cyberpunk-text-dim">
+              {currentLanguage === 'EN'
+                ? 'German IP holding and research vehicle.'
+                : 'Deutsche IP-Holding und Forschungsvehikel.'}
+            </div>
+          </div>
+          <div>
+            <div className="text-cyberpunk-acid-green font-bold mb-1">SSSF</div>
+            <div className="text-cyberpunk-text-dim">
+              {currentLanguage === 'EN'
+                ? 'Sovereign Systems Foundation (in formation).'
+                : 'Sovereign Systems Foundation (in Gründung).'}
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 text-xs font-mono text-cyberpunk-text-dim">
+          {currentLanguage === 'EN'
+            ? 'These are legal vehicles. They do not represent my identity; see: cat about.'
+            : 'Das sind juristische Vehikel. Sie repräsentieren nicht meine Identität; siehe: cat about.'}
+        </div>
+      </CyberpunkPanel>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Informatieplicht Section */}

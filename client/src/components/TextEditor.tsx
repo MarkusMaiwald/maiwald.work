@@ -4,8 +4,9 @@ import { X, Minus, Save, FolderOpen, FileText, Copy, Scissors, Clipboard } from 
 import { CyberpunkPanel, GlitchText } from './CyberpunkEffects';
 
 interface TextEditorProps {
-  isOpen: boolean;
+  isOpen?: boolean;
   onClose: () => void;
+  onMinimize?: () => void;
   currentLanguage?: any;
 }
 
@@ -22,24 +23,24 @@ export function TextEditor({ isOpen, onClose, currentLanguage }: TextEditorProps
     {
       id: 'welcome',
       name: 'welcome.txt',
-      content: `# Maiwald Enterprises BV - Text Editor v2.1.0
-# 
-# Welcome to the cyberpunk text editor!
-# 
+      content: `# Libertaria Forge – Text Editor v2.1.0
+#
+# Welcome to the cyberpunk text editor.
+#
 # Features:
 # - Syntax highlighting for various languages
 # - Multi-tab editing
 # - Real-time character and line counting
 # - Cyberpunk-themed interface with scan lines
-# 
-# This editor is part of the Maiwald portfolio system.
-# Build. Innovate. Disrupt.
-# 
+#
+# Part of the Libertaria ecosystem desktop shell.
+# Store meaning. Not artifacts.
+#
 # --------------------------------------------------
 # markus@maiwald.work | git.maiwald.work/NexusLabs
 # --------------------------------------------------
 
-Start typing to create your digital manifest...`,
+Start typing to draft your manifest, axiom, or essay…`,
       modified: false
     }
   ]);

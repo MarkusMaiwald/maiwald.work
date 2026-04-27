@@ -77,7 +77,7 @@ export function useFileSystem(currentLanguage: Language) {
                     'company-profile.md': {
                       name: 'company-profile.md',
                       type: 'file',
-                      content: '# Maiwald Enterprises B.V.\n\n## Company Information\n- **Legal Name**: Maiwald Enterprises B.V.\n- **KVK Number**: 78035902\n- **BTW Number**: NL861240716B01\n- **Founded**: 2019\n- **Headquarters**: Netherlands\n\n## Strategic Focus\nTechnology consulting and enterprise infrastructure solutions for strategic digital transformation.\n\n## Active Clients\n- BC2IP (Blockchain Infrastructure)\n- IOP Global (International Operations)\n- Group4IT (IT Solutions)\n- IT Qube (Enterprise Technology)\n\n## Core Competencies\n- Cloud Architecture & Migration\n- DevOps & Automation\n- Security & Compliance\n- Digital Transformation Strategy',
+                      content: '# Entities (legal shell, not identity)\n\n## Maiwald Enterprises B.V.\n- **Legal Name**: Maiwald Enterprises B.V.\n- **KVK Number**: 78035902\n- **BTW Number**: NL861240716B01\n- **Founded**: 2019\n- **Registered Office**: Netherlands\n\n## Companion Vehicles\n- BC2 IP GmbH (IP holding)\n- SSSF (Sovereign Systems Foundation, in formation)\n\n## Purpose\nLegal containers for contracts, IP, and invoicing. Not the brand. See: cat /home/markus/about.md for the actual identity.\n\n## Known collaborators\n- BC2IP, IOP Global, Group4IT, IT Qube – past engagements\n- Libertaria ecosystem – current focus',
                       permissions: '-rw-r--r--',
                       size: 680,
                       modified: '2025-01-23 10:30'
@@ -143,7 +143,7 @@ export function useFileSystem(currentLanguage: Language) {
                 'technology-assessment.md': {
                   name: 'technology-assessment.md',
                   type: 'file',
-                  content: '# Technology Assessment Framework\n\n## Strategic Technology Evaluation\n\nMaiwald Enterprises provides comprehensive technology assessments for enterprise organizations looking to modernize their infrastructure and optimize their technology stack.\n\n### Assessment Areas\n- Current State Analysis\n- Technology Stack Review\n- Security Posture Evaluation\n- Scalability Assessment\n- Cost-Benefit Analysis\n- Risk Management Review\n\n### Deliverables\n- Executive Summary Report\n- Technical Recommendations\n- Implementation Roadmap\n- ROI Projections\n- Risk Mitigation Strategies',
+                  content: '# Technology Assessment Framework (legacy doc)\n\nHistorical artefact from an earlier posture. Kept for file-system flavour. For current positioning, see: cat /home/markus/about.md and cat /home/markus/engagement.md.',
                   permissions: '-rw-r--r--',
                   size: 620,
                   modified: '2025-01-23 08:45'
@@ -159,7 +159,7 @@ export function useFileSystem(currentLanguage: Language) {
                 'system-architecture.yaml': {
                   name: 'system-architecture.yaml',
                   type: 'file',
-                  content: '# Maiwald Enterprises Infrastructure Blueprint\napiVersion: v1\nkind: SystemArchitecture\nmetadata:\n  name: enterprise-stack\n  author: markus@maiwald.work\nspec:\n  compute:\n    - kubernetes-clusters\n    - container-orchestration\n    - serverless-functions\n  security:\n    - zero-trust-network\n    - end-to-end-encryption\n    - identity-management\n  data:\n    - distributed-databases\n    - real-time-analytics\n    - backup-strategies',
+                  content: '# Libertaria Sovereign Stack Blueprint\napiVersion: libertaria.protocol/v1\nkind: SystemArchitecture\nmetadata:\n  name: sovereign-stack\n  author: markus@maiwald.work\nspec:\n  kernel:\n    - nexus_os (unikernel + hypervisor)\n  language:\n    - janus (systems language)\n  vcs:\n    - graf (BLAKE3 + Merkle)\n  identity:\n    - soulkey (ED25519 + X25519 + ML-KEM-768)\n  protocol:\n    - libertaria (L0 wire, L1 hull, L2 ledger, L3 fleet)\n  polity:\n    - chapter_zero',
                   permissions: '-rw-r--r--',
                   size: 420,
                   modified: '2025-01-23 06:00'
@@ -167,7 +167,7 @@ export function useFileSystem(currentLanguage: Language) {
                 'network-topology.conf': {
                   name: 'network-topology.conf',
                   type: 'file',
-                  content: '# Network Infrastructure Configuration\n# Maiwald Enterprises BV - Network Topology\n\n[CORE_INFRASTRUCTURE]\nload_balancers = nginx, haproxy\nfirewalls = pfsense, iptables\nmonitoring = prometheus, grafana\n\n[SECURITY_LAYERS]\nvpn_gateways = wireguard, openvpn\nids_ips = suricata, snort\nsiem = elastic_stack, splunk\n\n[CONNECTIVITY]\ncdn = cloudflare, aws_cloudfront\ndns = bind9, cloudflare_dns\nssl_termination = certbot, letsencrypt',
+                  content: '# Network Infrastructure Configuration\n# Libertaria reference topology\n\n[CORE_INFRASTRUCTURE]\nload_balancers = nginx, haproxy\nfirewalls = pfsense, iptables\nmonitoring = prometheus, grafana\n\n[SECURITY_LAYERS]\nvpn_gateways = wireguard, openvpn\nids_ips = suricata, snort\nsiem = elastic_stack, splunk\n\n[CONNECTIVITY]\ncdn = cloudflare, aws_cloudfront\ndns = bind9, cloudflare_dns\nssl_termination = certbot, letsencrypt',
                   permissions: '-rw-------',
                   size: 385,
                   modified: '2025-01-22 16:30'
@@ -183,7 +183,7 @@ export function useFileSystem(currentLanguage: Language) {
                 'security-framework.conf': {
                   name: 'security-framework.conf',
                   type: 'file',
-                  content: '# Security Framework Configuration\n# Maiwald Enterprises - Enterprise Security Standards\n\n[AUTHENTICATION]\nmulti_factor = required\npassword_policy = complex\nsession_timeout = 30_minutes\n\n[AUTHORIZATION]\nrole_based_access = enabled\nleast_privilege = enforced\naudit_logging = comprehensive\n\n[ENCRYPTION]\ndata_at_rest = aes_256\ndata_in_transit = tls_1_3\nkey_management = vault_enterprise\n\n[COMPLIANCE]\nstandards = iso_27001, soc2_type2\nregulations = gdpr, ccpa\nauditing = quarterly_reviews',
+                  content: '# Security Framework Configuration\n# Libertaria capability-first security baseline\n\n[IDENTITY]\nprimitive = soulkey (pq_hybrid)\nrevocation = impossible\ndefault_posture = born_with_nothing\n\n[CAPABILITIES]\ncapsule_doctrine = default_deny\nshrink_only = enforced\nverbs = 7\n\n[ENCRYPTION]\ndata_at_rest = aes_256_gcm + post_quantum\ndata_in_transit = tls_1_3, pqxdh\nkey_management = soulkey_hierarchy\n\n[COMPLIANCE]\nstandards = iso_27001, soc2_type2\nregulations = gdpr, ccpa\nauditing = quarterly_reviews',
                   permissions: '-rw-------',
                   size: 495,
                   modified: '2025-01-23 05:45'

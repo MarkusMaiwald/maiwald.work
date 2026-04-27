@@ -14,7 +14,6 @@ interface TerminalProps {
   onOpenEngagement?: () => void;
   onOpenChapterZero?: () => void;
   onOpenSovereignSociety?: () => void;
-  onOpenDevlog?: () => void;
   onOpenWriting?: () => void;
   onOpenAbout?: () => void;
 }
@@ -23,7 +22,7 @@ export interface TerminalRef {
   executeCommand: (command: string) => void;
 }
 
-export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot, onOpenEngagement, onOpenChapterZero, onOpenSovereignSociety, onOpenDevlog, onOpenWriting, onOpenAbout }, ref) => {
+export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguage, onOpenContact, onLanguageChange, onClose, onOpenChatbot, onOpenEngagement, onOpenChapterZero, onOpenSovereignSociety, onOpenWriting, onOpenAbout }, ref) => {
   const {
     lines,
     currentInput,
@@ -39,7 +38,6 @@ export const Terminal = forwardRef<TerminalRef, TerminalProps>(({ currentLanguag
     onOpenEngagement,
     onOpenChapterZero,
     onOpenSovereignSociety,
-    onOpenDevlog,
     onOpenWriting,
   );
   

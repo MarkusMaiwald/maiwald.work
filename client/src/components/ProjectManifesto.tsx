@@ -48,7 +48,7 @@ export function ProjectManifesto({ currentLanguage }: ProjectManifestoProps) {
     }
   };
 
-  const content = manifestoContent[currentLanguage] || manifestoContent.en;
+  const content = manifestoContent[currentLanguage.toLowerCase() as 'en' | 'de'] || manifestoContent.en;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm">
