@@ -73,7 +73,7 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'contact@maiwald.work',
+          from: 'markus@maiwald.work',
           to: env.NOTIFICATION_EMAIL,
           subject: `New Contact from ${data.name}`,
           html: `
