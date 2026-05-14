@@ -127,6 +127,52 @@ export const sovereignSocietyProperties: SsProperty[] = [
     status: { EN: 'PDF · March 2026', DE: 'PDF · März 2026' },
   },
   // ─── Tier 3 — Tooling ────────────────────────────────────────────────
+
+  {
+    id: 'devlog-libertaria-dev',
+    name: 'devlog.libertaria.dev',
+    tier: 'tooling',
+    roles: ['Operator', 'Author'],
+    url: 'https://devlog.libertaria.dev',
+    blurb: {
+      EN: 'Public engineering field log for the Libertaria ecosystem: Janus, Nexus, Graf, ProGit, and the sovereign tooling stack.',
+      DE: 'Öffentliches Engineering-Feldlog des Libertaria-Ökosystems: Janus, Nexus, Graf, ProGit und der souveräne Tooling-Stack.',
+    },
+    status: { EN: 'live · engineering dispatches', DE: 'live · Engineering-Dispatches' },
+  },
+  {
+    id: 'janus-lang-org',
+    name: 'janus-lang.org',
+    tier: 'tooling',
+    roles: ['Creator', 'Language Designer'],
+    url: 'https://janus-lang.org',
+    projectSibling: 'janus-lang',
+    blurb: {
+      EN: 'Public home of Janus: the systems language for syntactic honesty, visible costs, and sovereign software education.',
+      DE: 'Öffentlicher Auftritt von Janus: die Systemsprache für syntaktische Ehrlichkeit, sichtbare Kosten und souveräne Softwarebildung.',
+    },
+    status: { EN: 'live', DE: 'live' },
+    featured: [
+      { title: 'Learn Janus — The Monastery', href: 'https://learn.janus-lang.org' },
+      { title: 'Janus documentation', href: 'https://docs.janus-lang.org' },
+    ],
+  },
+  {
+    id: 'nexus-os-org',
+    name: 'nexus-os.org',
+    tier: 'tooling',
+    roles: ['Creator', 'Lead Architect'],
+    url: 'https://nexus-os.org',
+    projectSibling: 'nexus-os',
+    blurb: {
+      EN: 'Public home of Nexus OS: sovereign operating-system work, NIIX architecture, and post-cloud infrastructure doctrine.',
+      DE: 'Öffentlicher Auftritt von Nexus OS: souveräne Betriebssystemarbeit, NIIX-Architektur und Post-Cloud-Infrastruktur-Doktrin.',
+    },
+    status: { EN: 'live', DE: 'live' },
+    featured: [
+      { title: 'Nexus docs', href: 'https://docs.nexus-os.org' },
+    ],
+  },
   {
     id: 'graf-tools',
     name: 'graf.tools',

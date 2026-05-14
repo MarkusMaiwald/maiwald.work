@@ -140,6 +140,7 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
           : "Schöpfer & Lead-Architekt",
       icon: "⬢",
       color: "cyberpunk-electric-blue",
+      foundationUrl: "https://nexus-os.org",
     },
     {
       id: "nimpak",
@@ -260,6 +261,7 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
           : "Sprachdesigner & Compiler-Ingenieur",
       icon: "⬠",
       color: "cyberpunk-acid-green",
+      foundationUrl: "https://janus-lang.org",
     },
     {
       id: "graf-vcs",
@@ -857,14 +859,14 @@ export function ProjectShowcase({ currentLanguage, initialProjectId }: ProjectSh
                       <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-4 md:pt-6 border-t border-cyberpunk-border">
                         {project.id === "nexus-os" && (
                           <a
-                            href="https://git.maiwald.work/NexusLabs/livecd-arch-nexus"
+                            href="https://nexus-os.org"
                             target="_blank"
                             rel="noopener noreferrer"
                             onMouseEnter={() => CyberpunkAudio.playHoverClick()}
                             onClick={() => CyberpunkAudio.playButtonClick()}
                             className="cyberpunk-button px-4 md:px-6 py-2 md:py-3 rounded-lg text-sm md:text-base text-center"
                           >
-                            SOURCE CODE
+                            NEXUS SITE
                           </a>
                         )}
                         <div
