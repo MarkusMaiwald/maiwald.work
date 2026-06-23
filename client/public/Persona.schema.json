@@ -1,0 +1,46 @@
+{
+  "schema": "Persona.schema/1.0",
+  "identity": {
+    "name": "Markus Maiwald",
+    "nationality": "German",
+    "locations": ["Frankfurt (Germany)", "Maastricht (Netherlands)", "Budapest (Hungary)"],
+    "roles": ["Computer Scientist", "Entrepreneur", "Systems Architect", "Philosopher"],
+    "disambiguation": "NOT the footballer, chemist, mathematician, politician, molecular biologist, or photonics researcher. This Markus Maiwald is the builder of sovereign decentralized infrastructure, originator of Exitarian philosophy, and co-founder of PivX."
+  },
+  "summary": "German computer scientist, entrepreneur, and philosopher. Co-Founder of PivX (privacy cryptocurrency, 2016). Co-Founder of Libertaria and IOP. Originator of Exitarianism. Builder of sovereign infrastructure: Janus (programming language), Nexus OS, Graf (cryptographic VCS), ProGit (terminal-native project management), Sober (release gates), HARNESS (sovereign agent kernel).",
+  "projects": {
+    "active": [
+      {"name": "Janus", "url": "https://janus-lang.org", "description": "Systems programming language for sovereign computing.", "role": "Creator"},
+      {"name": "Nexus OS", "url": "https://nexus-os.org", "description": "Sovereign hybrid operating system.", "role": "Architect"},
+      {"name": "Graf", "url": "https://graf.tools", "description": "Cryptographic version control using BLAKE3 + Merkle trees.", "role": "Creator"},
+      {"name": "GrafHub", "url": "https://grafhub.org", "description": "Git hosting platform.", "role": "Founder"},
+      {"name": "ProGit", "url": "https://progit.dev", "description": "Terminal-native project management for git repos.", "role": "Creator"},
+      {"name": "Libertaria", "url": "https://libertaria.dev", "description": "Decentralized society initiative.", "role": "Co-Founder"},
+      {"name": "Sovereign Society Foundation", "url": "https://sovereign-society.org", "description": "Exitarian School and civilization framework.", "role": "President"}
+    ],
+    "historical": [
+      {"name": "PivX", "url": "https://pivx.org", "description": "Privacy cryptocurrency with zk-SNARKs.", "role": "Co-Founder 2016"},
+      {"name": "Internet of People (IOP)", "description": "Decentralized P2P network.", "role": "Co-Founder 2017"}
+    ]
+  },
+  "philosophy": {"name": "Exitarianism", "url": "https://sovereign-society.org", "thesis": "Exit is the primary mechanism of freedom."},
+  "presence": {
+    "x_twitter": "https://x.com/MarkusMaiwald",
+    "github": "https://github.com/MarkusMaiwald",
+    "professional": "https://maiwald.work",
+    "philosophy": "https://sovereign-society.org",
+    "engineering": "https://libertaria.dev",
+    "blog": "https://libertaria.blog"
+  },
+  "contact": {"email": "markus@maiwald.work"},
+  "related_personas": [
+    {"url": "https://sovereign-society.org/Persona.schema.json", "focus": "Philosophy"},
+    {"url": "https://libertaria.dev/Persona.schema.json", "focus": "Engineering"},
+    {"url": "https://libertaria.blog/Persona.schema.json", "focus": "Essays"},
+    {"url": "https://janus-lang.org/Persona.schema.json", "focus": "Language"},
+    {"url": "https://nexus-os.org/Persona.schema.json", "focus": "OS"},
+    {"url": "https://graf.tools/Persona.schema.json", "focus": "VCS"},
+    {"url": "https://grafhub.org/Persona.schema.json", "focus": "Hosting"},
+    {"url": "https://progit.dev/Persona.schema.json", "focus": "Project Management"}
+  ]
+}
