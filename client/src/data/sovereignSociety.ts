@@ -128,18 +128,10 @@ export const sovereignSocietyProperties: SsProperty[] = [
   },
   // ─── Tier 3 — Tooling ────────────────────────────────────────────────
 
-  {
-    id: 'devlog-libertaria-dev',
-    name: 'devlog.libertaria.dev',
-    tier: 'tooling',
-    roles: ['Operator', 'Author'],
-    url: 'https://devlog.libertaria.dev',
-    blurb: {
-      EN: 'Public engineering field log for the Libertaria ecosystem: Janus, Nexus, Graf, ProGit, and the sovereign tooling stack.',
-      DE: 'Öffentliches Engineering-Feldlog des Libertaria-Ökosystems: Janus, Nexus, Graf, ProGit und der souveräne Tooling-Stack.',
-    },
-    status: { EN: 'live · engineering dispatches', DE: 'live · Engineering-Dispatches' },
-  },
+  // ─── 2026-06-26: devlog.libertaria.dev retired by founder decision ───
+  // Was: Public engineering field log (Janus, Nexus, Graf, ProGit, sovereign tooling).
+  // Live surface consolidated into libertaria.blog (canonical dispatches + essays).
+  // Historical archive preserved at git.sovereign-society.org/libertaria/libertaria-devlog.
   {
     id: 'janus-lang-org',
     name: 'janus-lang.org',
